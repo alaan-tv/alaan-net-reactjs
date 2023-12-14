@@ -19,7 +19,48 @@
     overflow: hidden;
     max-width: 100%;
   }
-
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90px;
+  }
+  .navbar-menu-container {
+    display: none;
+  }
+  .navbar-links-container{
+    /*position: absolute;*/
+    right: 30px;
+    display: flex;
+   }
+   .navbar-links-container a {
+     margin-right: 24px;
+     text-decoration: none;
+     color: #292D34;
+     font-size: 17.5px;
+     font-weight: 500;
+   }
+   .light-header a{
+    color: #fff;
+   }
+   .navbar-menu-container svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .list-item{
+    border-bottom: 1px solid rgba(41, 45, 52, 0.1);
+  }
+  .menu-mobile-item{
+    text-decoration: none;
+  }
+  .menu-mobile-item span{
+    margin-right: 24px;
+      
+      color: #292D34 !important; 
+      font-size: 17.5px !important;
+      font-weight: 500 !important;
+      font-family: 'Baloo 2', sans-serif !important;
+  }
   .navigation {
     align-items: flex-start;
     align-self: center;
@@ -54,6 +95,7 @@
     align-self: center;
     width: 1px;
     height: 22px;
+    margin-right: 20px;
     display: inline-block;
   }
   
@@ -76,15 +118,14 @@
     margin-top:8px
   }
   .close-menu{
+    width: 24px;
     float: right;
     margin: 20px 20px 0px 20px;
-    color: #DF1995;
+    color: rgba(41, 45, 52, 1);
   }
-  /*.right-section{
-    position: absolute;
-    right: -40px;
-    top: 3px;
-  }*/
+  .right-section{
+    margin-top: 10px;
+  }
   /* Footer Style*/
   .footer-section{
     position: relative;
@@ -143,7 +184,22 @@
     .break-mobile{
       display: none;
     }
+    @media (max-width: 1000px) {
+      .navbar-links-container a {
+        margin-right: 1rem;
+        font-size: 1rem;
+      }}
     @media (max-width: 760px) {
+   
+        .nav-logo-container {
+          max-width: 140px;
+        }
+        .navbar-links-container {
+          display: none;
+        }
+        .navbar-menu-container {
+          display: flex;
+        }
       .information-section{
         flex-direction: column;
         margin: auto;

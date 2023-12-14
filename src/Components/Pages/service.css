@@ -1,0 +1,275 @@
+/*Style magic touch Studio */
+.hero-section{
+    background-image: url('../../Assets/banner-service-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+}
+.banner-service{
+    padding-top: 120px;
+}
+.light-heading{
+    color: #fff;
+    font-size: 48px;
+}
+.light-text{
+    color: #fff;
+    margin : 55px auto 42px;
+}
+.primary-button{
+    color: #DF1995;
+text-align: center;justify-content: center;
+display: flex;
+background-color: #ffffff;
+border-radius: 50px;
+box-sizing: border-box;
+align-items: center;
+text-decoration: none;
+margin: auto;
+padding: 11px 28px;
+position: relative;
+
+}
+.banner-service-image{
+    margin: auto;
+    padding: 20px;
+}
+
+.features h1, .testimonails h1{
+    font-size:  48px !important;
+    
+}
+.features-container , .testimonails-container{
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.feature{
+    background-image: url(../../Assets/feature-image2.png);
+   
+    width: 258px;
+    min-height: 255px;
+    border-radius: 20px;
+}
+.feature-icon{
+    padding: 20px;
+}
+.feature-desc{
+    color: #000 !important;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.feature-heading{
+    padding: 10px 20px 0px 20px;
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.video-section{
+    padding : 100px 300px;
+}
+.video-section video{
+    width: 100%;
+border-radius: 20px;}
+.testimonails{
+    padding: 100px;
+}
+.testimonail{
+    width: 355px;
+    height: 364px;
+    padding: 30px;
+box-shadow: 0px 5px 60px #817a9924;}
+.testi-desc{
+    color: #817a99;
+font-size: 20px;
+font-weight: 500;
+height: 176px;
+line-height: 33px;
+
+
+}
+.testi-info{
+    padding: 30px 0px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.name{
+  font-size: 18px; 
+}
+.booking{
+    padding: 100px;
+    padding-top: 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+}
+.booking .left-section{
+    width: 520px;
+}
+.booking .right-section{
+    width: 500px;
+}
+.left-section-container .secondary-heading{
+    text-align: left;
+}
+
+.left-section-container .third-heading{
+    font-weight: 500 !important;
+    color: #817a99 !important;
+    line-height: 126%;
+    margin: 28px 0px 
+}
+.input-wrapper {
+    position: relative;
+  }
+  
+  input  {
+    border: 1px solid;
+border-color: #e7e7e7;
+border-radius: 12px;
+padding: 0px 24px;
+    position: relative;
+    height: 58px;
+    width: 407px;
+    font-size: 16px;
+    color: #000;
+    line-height: 6px;
+  }
+  
+  label {
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+    left: 20px;
+    background-color: white;
+    padding: 0 5px;
+    color: #848D94;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .form-section form{
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px #E9EAEA solid;
+    box-shadow: 0px 3px 60px #817a992b;
+    padding: 46px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .react-tel-input .special-label{
+    white-space: nowrap;
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+    left: 20px !important;
+    background-color: white;
+    padding: 0 5px;
+    color: #848D94;
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+
+  .react-tel-input .form-control{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 48px;
+    margin-left: 0;
+    background: #FFFFFF;
+    outline: none;
+    border: 1px solid !important;
+border-color: #e7e7e7 !important;
+border-radius: 12px !important;
+padding: 0px 24px;
+    position: relative;
+    height: 58px !important;
+    width: 407px !important;
+    font-size: 16px;
+    color: #000;
+    line-height: 6px;
+}
+.react-tel-input .flag-dropdown{
+    background-color: transparent !important; 
+     border: none !important;
+}
+input[type=checkbox] {
+    
+    height: 18px;
+    position: absolute;
+    top: 3px;
+    display: inline-block;
+    width: 18px;
+    accent-color: #df1995;
+    border-radius: 10px !important;
+}
+form{
+    text-align:left !important;
+}
+.input-wrapper span{
+    padding-left: 25px;
+}
+.input-wrapper a{ 
+    color: #000;
+    font-weight: 600;
+}
+input[type=submit] {
+    border-radius: 50px;
+    background-color: #DF1995;
+    font-weight: 600px;
+    color: #fff
+}
+
+.guidebook{
+    
+    padding: 40px 0px 100px 0px ;
+   
+    margin: auto;
+}
+.guidebook-container{
+    display: flex;
+    gap: 50px;
+    
+    background-image: url(../../Assets/guidebook-background.png);
+    background-size: 100% 100%;
+    border-radius: 20px;
+    
+}
+.guidebook .secondary-heading{
+    text-align: left;
+    color: #fff !important;
+    max-width: initial;
+}
+.light-heading{
+    font-weight: normal !important;
+}
+.guidebook-container .avatar{
+    padding: 20px 20px 0px 20px;
+}
+.avatar img{ height: 100%;}
+.guidebook-container .desc{
+    padding: 65px 0px 65px 56px;
+    color: #fff !important;
+}
+.desc p{ 
+    margin: 15px 0px;
+    width: 680px;
+}
+@media (max-width: 760px) {
+    .features-container, .testimonails-container, .booking , .guidebook-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}

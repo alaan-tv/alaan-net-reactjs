@@ -11,42 +11,28 @@ img {
 }
 html {
   scroll-behavior: smooth;
+  
+
+
 }
 .App {
-  min-height: 100vh;
   
+
   max-width: 1900px;
   margin: 0rem auto;
 }
+
 body {
-  max-width: 100%;
-  overflow-x: hidden;
+  width: 100%;
+  
 }
 
 body {
   background-color: #f6f6f6;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 90px;
-}
-.navbar-menu-container {
-  display: none;
-}
-.navbar-links-container{
- position: absolute;
- right: 30px;
-}
-.navbar-links-container a {
-  margin-right: 24px;
-  text-decoration: none;
-  color: #292D34;
-  font-size: 17.5px;
-  font-weight: 500;
-}
+
+
 .primary-button {
   padding: 0.9rem 1.75rem;
   background-color: white;
@@ -64,10 +50,8 @@ nav {
 .primary-button:hover {
   background-color: rgb(234, 234, 234);
 }
-.navbar-menu-container svg {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+
+
 .home-container{
   width: 90vw;
   margin: auto;
@@ -420,7 +404,7 @@ font-weight: 600;
   font-weight: 600;
 }
 /*Our Brands Section */
-.our-brands{
+.our-brands, .our-services2{
   background-image: url(Assets/brands-background.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -430,25 +414,42 @@ font-weight: 600;
   margin-top: 140px;
   border-radius: 20px;
  }
-.our-brands h1{
+ .our-services2{
+  background: transparent !important;
+  padding : 0px;
+  margin: auto;
+  margin-top: 98px;
+
+ }
+ 
+ .service-desc p{
+ margin-right: 100px;
+   
+ }
+ .service-desc img{
+  float: right;
+  margin-top: -25px;
+  
+ }
+.our-brands h1 , .our-services h1{
   padding: 26px 0px;
 }
-.our-brands-container{
+.our-brands-container, .our-services-container2{
  
   display: flex;
   flex-direction: row;
   gap: 34px;
 }
-.brand-card{
+.brand-card, .service-card{
   background-color: #fff;
   width: auto;
   border-radius: 22px;
   padding: 28px 24px;
 }
-.brand-card h2{
+.brand-card h2 ,.service-card h2{
   margin: 26px 0px 7px 0px;
 }
-.brand-card p{
+.brand-card p, .service-card p{
   height: 40%;
 }
 .brand-links{
@@ -500,10 +501,7 @@ font-weight: 600;
  
 }
 @media (max-width: 1000px) {
-  .navbar-links-container a {
-    margin-right: 1rem;
-    font-size: 1rem;
-  }
+ 
   .primary-button {
     font-size: 1rem;
   }
@@ -512,15 +510,7 @@ font-weight: 600;
   }
 }
 @media (max-width: 760px) {
-  .nav-logo-container {
-    max-width: 140px;
-  }
-  .navbar-links-container {
-    display: none;
-  }
-  .navbar-menu-container {
-    display: flex;
-  }
+  
   .home-bannerImage-container {
     max-width: 450px;
   }
@@ -617,7 +607,7 @@ font-weight: 600;
     text-align: center;
     margin-top: 70px;
   }
-  .our-brands-container{
+  .our-brands-container , .our-services-container2{
     flex-direction: column;
   }
   .our-features{
