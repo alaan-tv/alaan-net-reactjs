@@ -5,6 +5,7 @@ import 'react-phone-input-2/lib/style.css'
 import Header from '../Common-components/LightHeader'
 import Footer from '../Common-components/Footer'
 import MagicStudioVideo from '../../Assets/Video.png'
+import MagicStudioVideoMobile from '../../Assets/video-mobile.png'
 import FeatureIcon1 from '../../Assets/feature-icon1.png'
 import FeatureIcon2 from '../../Assets/feature-icon2.png'
 import FeatureIcon3 from '../../Assets/feature-icon3.png'
@@ -38,7 +39,7 @@ const MagicTouchStudio = () => {
             <div className='home-image-container banner-service-image'>
         
             <picture>
-     <source media='(max-width: 768px)' srcSet={MagicStudioVideo} />
+     <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
      <source media='(min-width: 768px)' srcSet={MagicStudioVideo} />
      <img src={MagicStudioVideo} alt='hero' />
  </picture>
@@ -194,7 +195,7 @@ const MagicTouchStudio = () => {
          <div className='guidebook'>
           <div className='guidebook-container'>
             <div className='desc'>
-            <h1 className='secondary-heading light-heading'>
+            <h1 className='secondary-heading light-heading2'>
             Get your free copy of
             </h1>
             <h1 className='secondary-heading strong-heading'>
@@ -202,6 +203,10 @@ const MagicTouchStudio = () => {
             <p>
             Discover the secrets to crafting captivating video CVs that can change the game in your job hunt! "The Visual Resume Guidebook" is your gateway to creating resumes that resonate.
             </p>
+            <div className='get-guidebook'>
+             <input type='text' placeholder='Enter your email address' className='email-input' />
+             <input type='submit' value="Get Free Guidebook" className='submit-button'/>
+            </div>
             </div>
             <div className='avatar'>
               <img className='' src={Avatar} />

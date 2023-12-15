@@ -17,6 +17,9 @@
     color: #fff;
     margin : 55px auto 42px;
 }
+.light-heading2{
+    font-weight: normal !important;
+}
 .primary-button{
     color: #DF1995;
 text-align: center;justify-content: center;
@@ -72,18 +75,21 @@ position: relative;
 }
 
 .video-section{
-    padding : 100px 300px;
+    padding : 100px 30px;
+    margin: auto;
+    max-width: 1200px;
 }
 .video-section video{
     width: 100%;
 border-radius: 20px;}
 .testimonails{
-    padding: 100px;
+    padding: 100px 0px;
 }
 .testimonail{
     width: 355px;
     height: 364px;
     padding: 30px;
+    border-radius: 20px;
 box-shadow: 0px 5px 60px #817a9924;}
 .testi-desc{
     color: #817a99;
@@ -104,15 +110,16 @@ line-height: 33px;
   font-size: 18px; 
 }
 .booking{
-    padding: 100px;
+    padding: 100px 0px;
     padding-top: 40px;
     display: flex;
     gap: 30px;
     justify-content: center;
+    align-items: center;
 
 }
 .booking .left-section{
-    width: 520px;
+    width: 570px;
 }
 .booking .right-section{
     width: 500px;
@@ -125,7 +132,7 @@ line-height: 33px;
     font-weight: 500 !important;
     color: #817a99 !important;
     line-height: 126%;
-    margin: 28px 0px 
+    margin: 20px 0px ;
 }
 .input-wrapper {
     position: relative;
@@ -177,7 +184,7 @@ padding: 0px 24px;
     background-color: white;
     padding: 0 5px;
     color: #848D94;
-    display: block;
+    display: block !important;
     text-transform: uppercase;
     font-size: 12px !important;
     font-weight: 500 !important;
@@ -236,29 +243,31 @@ input[type=submit] {
     
     padding: 40px 0px 100px 0px ;
    
-    margin: auto;
+    margin: 30px auto -100px auto;
 }
 .guidebook-container{
     display: flex;
-    gap: 50px;
     
+    align-items: flex-end;
     background-image: url(../../Assets/guidebook-background.png);
     background-size: 100% 100%;
     border-radius: 20px;
-    
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1240px;
 }
 .guidebook .secondary-heading{
     text-align: left;
     color: #fff !important;
     max-width: initial;
 }
-.light-heading{
+/*.light-heading{
     font-weight: normal !important;
-}
+}*/
 .guidebook-container .avatar{
     padding: 20px 20px 0px 20px;
 }
-.avatar img{ height: 100%;}
+.avatar img{     margin-bottom: -8px;}
 .guidebook-container .desc{
     padding: 65px 0px 65px 56px;
     color: #fff !important;
@@ -267,9 +276,33 @@ input[type=submit] {
     margin: 15px 0px;
     width: 680px;
 }
+.get-guidebook{
+    margin-top:40px
+}
+.get-guidebook .email-input{
+    border-radius: 50px;
+    position: relative;
+    height: 64px;
+    width: 539px;
+}
+.get-guidebook .submit-button{
+   height: 54px;
+    width: 205px;
+    margin-left: -210px;
+}
 @media (max-width: 760px) {
     .features-container, .testimonails-container, .booking , .guidebook-container{
         flex-direction: column;
         align-items: center;
     }
+    .banner-service{
+        padding-top: 10px;
+    }
+    .hero-section{
+        background-image: url('../../Assets/banner-service-background-mobile.png');
+    }
+    .banner-service-image{
+        padding: 38px 0px;
+    }
 }
+
