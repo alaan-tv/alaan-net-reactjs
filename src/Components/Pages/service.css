@@ -1,11 +1,12 @@
 /*Style magic touch Studio */
 .hero-section{
-    background-image: url('../../Assets/banner-service-background.png');
+    background-image: url('../../Assets/banner-service-background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
    
 }
+
 .banner-service{
     padding-top: 120px;
 }
@@ -53,7 +54,7 @@ position: relative;
 
 .feature{
     background-image: url(../../Assets/feature-image2.png);
-   
+    background-repeat: no-repeat;
     width: 258px;
     min-height: 255px;
     border-radius: 20px;
@@ -86,6 +87,7 @@ border-radius: 20px;}
     padding: 100px 0px;
 }
 .testimonail{
+    background-color: #fff;
     width: 355px;
     height: 364px;
     padding: 30px;
@@ -218,7 +220,7 @@ input[type=checkbox] {
     position: absolute;
     top: 3px;
     display: inline-block;
-    width: 18px;
+    width: 18px !important;
     accent-color: #df1995;
     border-radius: 10px !important;
 }
@@ -260,6 +262,7 @@ input[type=submit] {
     text-align: left;
     color: #fff !important;
     max-width: initial;
+    padding-top: 8px;
 }
 /*.light-heading{
     font-weight: normal !important;
@@ -289,6 +292,7 @@ input[type=submit] {
    height: 54px;
     width: 205px;
     margin-left: -210px;
+    border: none;
 }
 @media (max-width: 760px) {
     .features-container, .testimonails-container, .booking , .guidebook-container{
@@ -299,10 +303,104 @@ input[type=submit] {
         padding-top: 10px;
     }
     .hero-section{
-        background-image: url('../../Assets/banner-service-background-mobile.png');
+        background-image: url('../../Assets/banner-service-background-mobile.webp');
     }
     .banner-service-image{
         padding: 38px 0px;
     }
+    .features{
+        margin-top: 30px;
+    }
+    .features h1 , .testimonails h1{
+        font-size: 40px !important;
+    }
+    .feature{
+        background-image: url(../../Assets/how-it-work-image.png);
+         min-height: 207px;
+        width: 350px;
+        min-height: 207px;
+    }
+    .video-section{
+        padding: 30px 0px;
+    }
+    .booking .left-section{
+        width: auto;
+        text-align: center;
+    }
+    .left-section-container .third-heading{
+        font-size: 23px;
+    }
+    .left-section-container .secondary-heading{
+        text-align: center !important;
+    }
+    .booking, .testimonails{
+        padding: 100px 0px 40px 0px;
+    }
+    .booking .right-section{
+        width: auto;
+    }
+    input , .react-tel-input .form-control{
+        width: 306px !important;
+    }
+    .form-section form{
+        padding: 40px 25px;
+    }
+    .guidebook-container .desc{
+        width: 100%;
+        padding: 35px 20px 30px 20px;
+    }
+    .guidebook .secondary-heading{
+        text-align: center;
+        font-size: 34px;
+    }
+    .desc p{
+        width: auto;
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .get-guidebook .submit-button { 
+        margin-left: 0px;
+        height: 64px;
+        margin: 10px 0px;
+    }
+    .react-multi-carousel-list{
+        display: block !important;
+    }
+    .testimonails-container{
+        display: none;
+    }
+    .testimonail{
+        box-shadow: none;
+    }
 }
 
+
+/*carousel*/
+.react-multi-carousel-list{
+    display: none;
+    padding: 0px 0px 50px 0px;
+}
+.react-multi-carousel-item{
+    border-radius: 20px;
+}
+.react-multi-carousel-item--active{
+    z-index: 9999;
+    background-color: #fff !important;
+}
+.react-multi-carousel-dot-list{
+    top: 370px;
+    z-index: 9999999999;
+    
+}
+.react-multi-carousel-dot--active button {
+    width: 15px !important;
+    background: #080808;
+    border-color: black;}
+    .react-multi-carousel-dot button {
+       width: 6px;
+       height: auto; 
+        border-radius: 30px;
+        margin-right: 3px;
+        
+    }

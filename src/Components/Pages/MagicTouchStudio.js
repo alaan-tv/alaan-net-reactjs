@@ -1,4 +1,6 @@
 import React ,{useState} from 'react'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -18,13 +20,32 @@ import BookingIcon from '../../Assets/book-icon.png'
 import Avatar from '../../Assets/avatar.png'
 const MagicTouchStudio = () => {
   const [value, setValue] = useState()
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
+    }
+  };
   return (
     
     <div>
       <div className='hero-section'>
     <div className='home-container'>
-      
-        <Header />
+      <div className='header'>
+      <Header />
+      </div>
+        
         <div className='home-banner-container banner-service'>
         
           <div className='home-text-section'>
@@ -150,6 +171,64 @@ const MagicTouchStudio = () => {
             </div>
           </div>
          </div>
+         <Carousel
+         
+  swipeable={false}
+  draggable={false}
+  showDots={true}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  autoPlay={true}
+  autoPlaySpeed={2000}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+  
+>
+   <div className='testimonail'>
+              <p className='testi-desc'>
+              "I decided to give Magic Touch a try. They transformed my plain CV into an engaging video that truly showcased my skills."
+              </p>
+              <div className='divider2'></div>
+              <div className='testi-info'>
+                <img className='testi-image' src={TistiImage1} alt="customer photo"/>
+                <div className='testi-name'>
+                  <p className='name'><b>Omar Bin Ashoor</b></p>
+                  <p>title</p>
+                </div>
+              </div>
+            </div>
+            <div className='testimonail'>
+            <p className='testi-desc'>
+            "Magic Touch proved to be a great investment. The video CV they crafted not only highlighted my qualifications but also showcased my personality."
+              </p>
+              <div className='divider2'></div>
+              <div className='testi-info'>
+                <img className='testi-image' src={TistiImage2} alt="customer photo"/>
+                <div className='testi-name'>
+                  <p className='name'><b>Mohannad Al Wadi</b></p>
+                  <p>title</p>
+                </div>
+              </div>
+            </div>
+            <div className='testimonail'>
+            <p className='testi-desc'>
+            "Magic Touch proved to be a great investment. The video CV they crafted not only highlighted my qualifications but also showcased my personality."            </p>
+              <div className='divider2'></div>
+              <div className='testi-info'>
+                <img className='testi-image' src={TistiImage3} alt="customer photo"/>
+                <div className='testi-name'>
+                  <p className='name'><b>Nada Ahmed</b></p>
+                  <p>title</p>
+                </div>
+              </div>
+            </div>
+</Carousel>
          <div className='booking'>
           <div className='left-section'>
           < div className='left-section-container'>
@@ -213,7 +292,9 @@ const MagicTouchStudio = () => {
             </div>
           </div>
          </div>
+       
           </div>
+          
         <Footer />
     </div>
   )

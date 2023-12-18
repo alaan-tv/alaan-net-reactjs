@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import { NavHashLink } from 'react-router-hash-link';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -8,27 +10,31 @@ const Footer = () => {
    <div id="contact-us" className='footer-section'>
       <div className='footer-container'>
         <div className='information-section'>
-        <div className='email'>
+        <a href="mailto:info@alaan.tv" ><div className='email'>
           <i className='info-icon'><MailOutlineIcon /></i>
           <p className='info-text'>info@alaan.tv</p>
         </div>
+        </a>
         <div className='phone'>
         <i className='info-icon'><LocalPhoneIcon /></i>
-        <p className='info-text'>+971 442 77 888</p>
+        <a href='tel:+971 442 77 888'><p className='info-text'>+971 442 77 888</p></a>
         </div>
         <div className='location'>
         <i className='info-icon'><LocationOnOutlinedIcon /></i>
-        <p className='info-text'>Dubia Media City</p>
+        <a href='https://maps.app.goo.gl/6WsNgfxpMhQgJ2NL8'><p className='info-text'>Dubia Media City</p></a>
         </div>
         </div>
         <div className='menu-section'>
         <div className="footer-links-container">
-        <a href="#about-us" className="link">About us</a>
-       <a href="#our-brands" className="link">Our Brands</a>
-        <a href="#" className="link">Our Services</a>
+        <NavHashLink to='/#about-us' className='link'>About us</NavHashLink>
+        <NavHashLink to='/#our-brands' className='link'>Our Brands</NavHashLink>
+        <Link to='/our-services' className='link'>Our Services</Link>
+
         <br className='break-mobile' />
-        <a href="#" className="link">Our Workshops</a>
+        <Link to='/our-workshops' className='link'>Our Workshops</Link>
         <a href="#contact-us" className="link">Contact Us</a>
+
+        
       
       </div>
         </div>

@@ -24,6 +24,8 @@
     align-items: center;
     justify-content: space-between;
     min-height: 90px;
+    /*position: sticky; top: 0;*/
+
   }
   .navbar-menu-container {
     display: none;
@@ -83,11 +85,15 @@
   }
 
   .link {
-    color: #292d34;
     text-align: center;
     align-self: center;
-    margin: auto 0;
-    font: 600 17.5px/19px Baloo 2, -apple-system, Roboto, Helvetica, sans-serif;
+   
+    
+    margin-right: 24px;
+    text-decoration: none;
+    color: #292D34;
+    font-size: 17.5px;
+    font-weight: 500;
   }
 
   .divider {
@@ -144,6 +150,7 @@
   
   }
   .information-section{
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -151,6 +158,9 @@
     text-align: center;
     margin: auto;
     justify-content: space-evenly;
+  }
+  .information-section a{
+    text-decoration: none;
   }
   .email, .phone, .location{
     display: flex;
@@ -223,3 +233,6 @@
         display: block;
       }
     }
+
+
+    
