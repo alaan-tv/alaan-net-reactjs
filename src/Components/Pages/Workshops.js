@@ -4,7 +4,6 @@ import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
 import BannerBackground from '../../Assets/background.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
-import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.png'
 import PodcastIcon from '../../Assets/podcast-icon.png'
 import MediaWorkshopIcon from '../../Assets/media-workshop-icon.png'
@@ -33,7 +32,7 @@ const Workshops = () => {
           </div>
            < div className='our-services2'>
            <div className='our-services-container2'>
-            <div className='service-card'>
+            {/*<div className='service-card'>
               <img src={MagicTouchClinicIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Clinic           </h2>
@@ -42,7 +41,7 @@ const Workshops = () => {
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
               </div>
-            </div>
+            </div>*/}
             <div className='service-card'>
               <img src={PodcastIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >

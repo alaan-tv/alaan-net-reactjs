@@ -9,6 +9,9 @@ import MagicTouchIcon from '../../Assets/magic-touch-icon.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.png'
 import OwnYourStoryIcon from '../../Assets/own-your-story-icon.png'
 import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
+import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.png'
+
+
 
 const Services = () => {
   return (
@@ -46,16 +49,27 @@ const Services = () => {
               </div>
             </div>
             <div className='service-card'>
+              <img src={MagicTouchClinicIcon} alt='magic touch icon'/>
+              <h2 className='third-heading' >
+              Magic Touch Clinic           </h2>
+              < div className='service-desc'>
+              <p className='third-text'>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
+              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              </div>
+            </div>
+            <div className='service-card'>
               <img src={OwnYourStoryIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Own your Story        </h2>
               < div className='service-desc'>
               <p className='third-text'>
               Engage clients with a concise promo video and expert media tips!</p>
-              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              <div className='sevice-more-icon'><Link to="/our-services/own-your-story"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
-            <div className='service-card'>
+            
+            {/*<div className='service-card'>
               <img src={BeAPresenterIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Be a Presenter         </h2>
@@ -64,7 +78,7 @@ const Services = () => {
               Begin your media career journey with skilled specialized experts.</p>
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
               </div>
-            </div>
+            </div>*/}
             </div>
           
            </div>

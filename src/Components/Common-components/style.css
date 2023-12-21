@@ -245,4 +245,9 @@
     }
 
 
-    
+    a.active{
+      color: #DF1995;
+    }
+    a.not-active{
+      color :#000 !important
+    }

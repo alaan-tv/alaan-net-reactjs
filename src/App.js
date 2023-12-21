@@ -4,6 +4,7 @@ import Services from './Components/Pages/Services';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Workshops from './Components/Pages/Workshops';
 import MagicTouchStudio from './Components/Pages/Services/MagicTouchStudio';
+import OwnYourStory from './Components/Pages/Services/OwnYourStory';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
     <Route path="/our-services" element={<Services />}  />
     <Route path="/our-workshops" element={<Workshops />}  />
     <Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio />}  />
+    <Route path="/our-services/own-your-story" element={<OwnYourStory />}  />
+
     </Routes>
 
 

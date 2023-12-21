@@ -112,7 +112,6 @@ line-height: 33px;
   font-size: 18px; 
 }
 .booking{
-    padding: 100px 0px;
     padding-top: 40px;
     display: flex;
     gap: 30px;
@@ -294,8 +293,53 @@ input[type=submit] {
     margin-left: -210px;
     border: none;
 }
+
+.packages{
+    padding: 100px 0px 40px 0px   }
+        .packages-container {
+            display: flex;
+            gap:50px;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 60px ;
+        }
+        .package{
+            background-color: #fff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 20px;
+box-shadow: 0px 5px 60px #817a9924;
+        }
+        .package-title , .package-price{
+            text-align: center;
+        }
+        .package-title {
+            font-size: 36px;
+        }
+        .package-price{
+            font-size: 40px;
+            color: #df1995
+
+        }
+        .package-decription{
+            color:#000;
+            font-size: 16px;
+            padding: 20px 0px
+        }
+        .desc-item{
+            display: flex;
+            gap: 15px;
+        }
+        .desc-item span{
+            color: #817a99;
+        }
+        .desc-item-title{
+        }
+        .desc-item .css-i4bv87-MuiSvgIcon-root{
+            color: #df1995
+        }
 @media (max-width: 760px) {
-    .features-container, .testimonails-container, .booking , .guidebook-container{
+    .features-container, .testimonails-container, .booking , .guidebook-container, .packages-container{
         flex-direction: column;
         align-items: center;
     }
@@ -404,3 +448,5 @@ input[type=submit] {
         margin-right: 3px;
         
     }
+
+   
