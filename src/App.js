@@ -3,7 +3,7 @@ import   Home  from './Components/Pages/Home';
 import Services from './Components/Pages/Services';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Workshops from './Components/Pages/Workshops';
-import MagicTouchStudio from './Components/Pages/MagicTouchStudio';
+import MagicTouchStudio from './Components/Pages/Services/MagicTouchStudio';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <Route path="/" index element={<Home />}  />
     <Route path="/our-services" element={<Services />}  />
     <Route path="/our-workshops" element={<Workshops />}  />
-    <Route path="/magic-touch-studio" element={<MagicTouchStudio />}  />
+    <Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio />}  />
     </Routes>
 
 

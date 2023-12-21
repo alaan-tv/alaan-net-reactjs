@@ -11,8 +11,9 @@ import MediaWorkshopIcon from '../../Assets/media-workshop-icon.png'
 const Workshops = () => {
   return (
     <div>
+      
     <div className='home-container'>
-        <Header />
+    <Header />
         <div className='home-banner-container'>
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />

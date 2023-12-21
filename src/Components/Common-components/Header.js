@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect,useState} from 'react';
 import { Link } from "react-router-dom";
 import { NavHashLink } from 'react-router-hash-link';
 import "./style.css";
@@ -9,7 +9,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
  const Header = () => {
   
   const [openMenu, setOpenMenu] =useState(false);
-
+  
   return (
     <nav className='mynav'>
       <div className='nav-logo-container'>

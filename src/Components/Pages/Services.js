@@ -9,13 +9,13 @@ import MagicTouchIcon from '../../Assets/magic-touch-icon.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.png'
 import OwnYourStoryIcon from '../../Assets/own-your-story-icon.png'
 import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
-import MagicTouchStudio from './MagicTouchStudio'
 
 const Services = () => {
   return (
     <div>
+      
     <div className='home-container'>
-        <Header />
+    <Header />
         <div className='home-banner-container'>
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
@@ -42,7 +42,7 @@ const Services = () => {
               < div className='service-desc'>
               <p className='third-text'>
               Empower candidates and employees in their quest for better career path!</p>
-              <div className='sevice-more-icon'><Link to="/magic-touch-studio"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              <div className='sevice-more-icon'><Link to="/our-services/magic-touch-studio"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             <div className='service-card'>

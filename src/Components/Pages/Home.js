@@ -20,7 +20,7 @@ import OurWorkshops from '../../Assets/our-workshops.png'
 const Home = () => {
   return (
     <div>
-        
+       
         <div className='home-container'>
         <Header/>
         <div className='home-banner-container'>
