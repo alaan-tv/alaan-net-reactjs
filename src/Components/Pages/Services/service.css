@@ -40,7 +40,7 @@ position: relative;
     padding: 20px;
 }
 
-.features h1, .testimonails h1{
+.features h1, .testimonails h1 , .trainers h1{
     font-size:  48px !important;
     
 }
@@ -118,6 +118,9 @@ line-height: 33px;
     justify-content: center;
     align-items: center;
 
+}
+.clinic{
+    padding-top: 80px;
 }
 .booking .left-section{
     width: 570px;
@@ -222,6 +225,9 @@ input[type=checkbox] {
     width: 18px !important;
     accent-color: #df1995;
     border-radius: 10px !important;
+}
+input[type="file" i] {
+    padding-top: 20px;
 }
 form{
     text-align:left !important;
@@ -338,6 +344,75 @@ box-shadow: 0px 5px 60px #817a9924;
         .desc-item .css-i4bv87-MuiSvgIcon-root{
             color: #df1995
         }
+        .collaps{
+            padding: 20px 0px 0px 0px;
+        }
+        .collaps .sub-title{  font-size: 14px;
+            line-height: 1;
+            padding-left: 20px;
+
+        }
+        .collaps-button{
+            background-color: transparent;
+            color: #DF1995;
+            border: none;
+            font-size: 12px;
+            text-decoration: underline;
+            padding-left: 20px;
+
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .collaps h4{
+            background-color: transparent;
+            color: #DF1995;
+            font-size: 18px;
+padding-left: 20px;
+            font-weight: 700;
+        }
+        .trainers{
+            padding: 60px 0px;
+            display: block;
+           
+
+        }
+        .trainers-container{
+            display: flex;
+            flex: 2 1;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 60px !important;
+            padding: 60px 0px 80px 0px;
+            box-shadow: 0px 5px 60px #817a9924;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            margin: auto;
+            max-width: 1128px;
+
+        }
+        .trainer-image{
+            padding: 10px;
+            background-image: url(../../../Assets/trainer-background.png);
+            background-repeat: no-repeat;
+            background-size: contain ;
+            width: 250px;
+            height: 250px;
+        }
+        .trainer-image img{
+            border-radius: 50%;
+
+        }
+        .trainer-image h4 , .trainer-image p{
+            color: #DF1995 !important;
+            text-align: center;
+        }
+        .trainer-desc{
+            max-width: 680px;
+        }
+        .trainer-desc p{
+            margin-bottom: 20px;
+        }
 @media (max-width: 760px) {
     .features-container, .testimonails-container, .booking , .guidebook-container, .packages-container{
         flex-direction: column;
@@ -355,7 +430,7 @@ box-shadow: 0px 5px 60px #817a9924;
     .features{
         margin-top: 30px;
     }
-    .features h1 , .testimonails h1{
+    .features h1 , .testimonails h1, .trainers h1{
         font-size: 40px !important;
     }
     .feature{

@@ -55,7 +55,7 @@ const Services = () => {
               < div className='service-desc'>
               <p className='third-text'>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
-              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              <div className='sevice-more-icon'><Link to="/our-services/magic-touch-clinic"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             <div className='service-card'>

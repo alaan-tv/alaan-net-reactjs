@@ -1,5 +1,6 @@
 import React ,{useState} from 'react'
 import "./service.css"
+import { useCollapse } from 'react-collapsed'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Header from '../../Common-components/LightHeader'
@@ -15,6 +16,9 @@ import BookingIcon from '../../../Assets/book-icon.png'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const OwnYourStory = () => {
     const [value, setValue] = useState()
+    const { getCollapseProps, getToggleProps, isExpanded , isExpanded2 } = useCollapse()
+
+
 
   return (
     <div>
@@ -116,7 +120,23 @@ You'll get          </h1>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Professional Production:</strong><p>A 3-minute pre-recorded story, shot in Al Aan's studios, with non-Arabic speakers accommodated through subtitles. The story airs during a prime time slot on Al Aan TV.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Extensive Distribution and Affordability:</strong><p>Your story gets published on akhbaralaan.net (10m+ monthly views) and shared on various social media, with links provided for your sharing.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Elevate Your Presence:</strong><p> For an additional AED 10,000, extend your content and feature in a dedicated Business Show. Amplify your reach and impact with this exclusive option, putting your story in the spotlight.</p></p></div>
+<div className='collaps'>
+      <h4> Add a campaign</h4>
+      <p className='sub-title'>(Adding AED10,000 to the cost)</p>
+      <button className='collaps-button' {...getToggleProps()}>
+        {isExpanded ? 'Hide details' : '  Show details'}
+      </button>
+      <section {...getCollapseProps()}>
+      <div className='package-decription'>
 
+      <div className='desc-item'><CheckCircleIcon /><p><strong>Pre-Release Boost:</strong><p> Initiate a buzz with a campaign before your story airs.</p></p></div>
+<div className='desc-item'><CheckCircleIcon /><p><strong>TV & Online Promo:</strong><p>A 30-second ad will run 60 times on Al Aan TV and be shared online, building anticipation.</p></p></div>
+<div className='desc-item'><CheckCircleIcon /><p><strong>Broad Exposure:</strong><p>Promo will be featured on our website and social media for extra impact.</p></p></div>
+<div className='desc-item'><CheckCircleIcon /><p><strong>Effective Messaging:</strong><p>Promos include key points, ensuring your message reaches viewers even if they miss the main event.</p></p></div>
+
+</div>
+      </section>
+    </div>
 </div>
             </div>
             <div className='package'>
@@ -131,7 +151,23 @@ You'll get          </h1>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Wide Dissemination:</strong><p>Your story, accompanied by a professional photoshoot, will be shared across multiple social media platforms for maximum reach.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>All-Inclusive Package:</strong><p> On-site services include hair and makeup if required.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Elevate Your Presence:</strong><p> For an additional AED 10,000, extend your content and feature in a dedicated Business Show. Amplify your reach and impact with this exclusive option, putting your story in the spotlight.</p></p></div>
+<div className='collaps'>
+      <h4> Add a campaign</h4>
+      <p className='sub-title'>(Adding AED10,000 to the cost)</p>
+      <button className='collaps-button' {...getToggleProps()}>
+        {isExpanded2 ? 'Hide details' : '  Show details'}
+      </button>
+      <section {...getCollapseProps()}>
+      <div className='package-decription'>
 
+      <div className='desc-item'><CheckCircleIcon /><p><strong>Pre-Release Boost:</strong><p> Initiate a buzz with a campaign before your story airs.</p></p></div>
+<div className='desc-item'><CheckCircleIcon /><p><strong>TV & Online Promo:</strong><p>A 30-second ad will run 60 times on Al Aan TV and be shared online, building anticipation.</p></p></div>
+<div className='desc-item'><CheckCircleIcon /><p><strong>Broad Exposure:</strong><p>Promo will be featured on our website and social media for extra impact.</p></p></div>
+<div className='desc-item'><CheckCircleIcon /><p><strong>Effective Messaging:</strong><p>Promos include key points, ensuring your message reaches viewers even if they miss the main event.</p></p></div>
+
+</div>
+      </section>
+    </div>
 </div>
             </div>
            
