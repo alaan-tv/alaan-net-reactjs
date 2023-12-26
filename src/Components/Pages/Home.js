@@ -14,8 +14,8 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YoutubeIcon from '@mui/icons-material/YouTube';
 import LinkIcon from '@mui/icons-material/Link';
-import OurServices from '../../Assets/our-services.png'
-import OurWorkshops from '../../Assets/our-workshops.png'
+import OurServices from '../../Assets/our-services.svg'
+import OurWorkshops from '../../Assets/Our-workshops.svg'
 
 const Home = () => {
   return (

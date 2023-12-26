@@ -4,9 +4,9 @@ import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
 import BannerBackground from '../../Assets/background.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
-import ServiceMoreIcon from '../../Assets/services-more-icon.png'
-import PodcastIcon from '../../Assets/podcast-icon.png'
-import MediaWorkshopIcon from '../../Assets/media-workshop-icon.png'
+import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
+import PodcastIcon from '../../Assets/podcast-icon.svg'
+import MediaWorkshopIcon from '../../Assets/media-workshop-icon.svg'
 const Workshops = () => {
   return (
     <div>

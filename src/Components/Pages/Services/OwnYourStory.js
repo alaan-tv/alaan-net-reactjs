@@ -12,11 +12,11 @@ import FeatureIcon1 from '../../../Assets/feature-icon1.png'
 import FeatureIcon2 from '../../../Assets/feature-icon2.png'
 import FeatureIcon3 from '../../../Assets/feature-icon3.png'
 import FeatureIcon4 from '../../../Assets/feature-icon4.png'
-import BookingIcon from '../../../Assets/book-icon.png'
+import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const OwnYourStory = () => {
     const [value, setValue] = useState()
-    const { getCollapseProps, getToggleProps, isExpanded , isExpanded2 } = useCollapse()
+    const { getCollapseProps, getToggleProps, isExpanded  } = useCollapse()
 
 
 
@@ -35,7 +35,7 @@ const OwnYourStory = () => {
           <p className='primary-text light-text' >
           What do people know about you, your product or service, your success story, what sets you apart, and how you excel? Al Aan can craft and distribute compelling content, ensuring you control your narrative. Don't worry about the media; we've got you covered.  In today's digital age, with AI, social media, ratings, and reviews, it's crucial to control your story, and we empower you to do so.
         </p>
-          <a className='service-cta primary-button' href="">Contact Us!</a>
+          <a className='service-cta primary-button' href="#contact-form">Contact Us!</a>
           <div className='home-image-container banner-service-image'>
       
           <picture>
@@ -155,7 +155,7 @@ You'll get          </h1>
       <h4> Add a campaign</h4>
       <p className='sub-title'>(Adding AED10,000 to the cost)</p>
       <button className='collaps-button' {...getToggleProps()}>
-        {isExpanded2 ? 'Hide details' : '  Show details'}
+        {isExpanded ? 'Hide details' : '  Show details'}
       </button>
       <section {...getCollapseProps()}>
       <div className='package-decription'>
@@ -174,7 +174,7 @@ You'll get          </h1>
 
         </div>
     </div>
-    <div className='booking'>
+    <div className='booking' id="contact-form">
           <div className='left-section'>
           < div className='left-section-container'>
             <img src={BookingIcon} alt="Booking Icon" />
@@ -186,7 +186,7 @@ You'll get          </h1>
           </div>
           </div>
           <div className='right-section'>
-           <div className='form-section'>
+           <div className='form-section' >
             <form action=''>
             <div class="input-wrapper">
             <label for="first">FULL NAME</label>

@@ -5,11 +5,11 @@ import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
 import BannerBackground from '../../Assets/background.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
-import MagicTouchIcon from '../../Assets/magic-touch-icon.png'
-import ServiceMoreIcon from '../../Assets/services-more-icon.png'
-import OwnYourStoryIcon from '../../Assets/own-your-story-icon.png'
+import MagicTouchIcon from '../../Assets/magic-touch-icon.svg'
+import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
+import OwnYourStoryIcon from '../../Assets/own-your-story-icon.svg'
 import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
-import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.png'
+import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.svg'
 
 
 

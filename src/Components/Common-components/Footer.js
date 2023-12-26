@@ -27,7 +27,7 @@ const Footer = () => {
         <div className='menu-section'>
         <div className="footer-links-container">
         <NavHashLink to='/#about-us' className='link'>About us</NavHashLink>
-        <NavHashLink to='/#our-brands' className='link'>Our Brands</NavHashLink>
+        <NavHashLink to='/#our-brands' className='link not-active'>Our Brands</NavHashLink>
         <Link to='/our-services' className='link'>Our Services</Link>
 
         <br className='break-mobile' />

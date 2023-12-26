@@ -8,16 +8,16 @@ import Header from '../../Common-components/LightHeader'
 import Footer from '../../Common-components/Footer'
 import MagicStudioVideo from '../../../Assets/Video.png'
 import MagicStudioVideoMobile from '../../../Assets/video-mobile.png'
-import FeatureIcon1 from '../../../Assets/feature-icon1.png'
-import FeatureIcon2 from '../../../Assets/feature-icon2.png'
-import FeatureIcon3 from '../../../Assets/feature-icon3.png'
-import FeatureIcon4 from '../../../Assets/feature-icon4.png'
+import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
+import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
+import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
+import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
 import video from '../../../Assets/promo.mp4'
-import TistiImage1 from '../../../Assets/testi-image1.png'
-import TistiImage2 from '../../../Assets/testi-image2.png'
-import TistiImage3 from '../../../Assets/testi-image3.png'
-import BookingIcon from '../../../Assets/book-icon.png'
-import Avatar from '../../../Assets/avatar.png'
+import TistiImage1 from '../../../Assets/testi-image1.svg'
+import TistiImage2 from '../../../Assets/testi-image2.svg'
+import TistiImage3 from '../../../Assets/testi-image3.svg'
+import BookingIcon from '../../../Assets/book-icon.svg'
+import Avatar from '../../../Assets/avatar.svg'
 const MagicTouchStudio = () => {
   const [value, setValue] = useState()
   const responsive = {
@@ -58,7 +58,7 @@ const MagicTouchStudio = () => {
             We'll turn your traditional resume into an amazing video CV, showcasing your personality, skills, and talents, making it easy for recruiters to see your true potential. Book now to elevate your job search!
 
           </p>
-            <a className='service-cta primary-button' href="">Book Now!</a>
+            <a className='service-cta primary-button' href="#contact-form">Book Now!</a>
             <div className='home-image-container banner-service-image'>
         
             <picture>
@@ -231,7 +231,7 @@ const MagicTouchStudio = () => {
               </div>
             </div>
 </Carousel>
-         <div className='booking'>
+         <div className='booking' id="contact-form">
           <div className='left-section'>
           < div className='left-section-container'>
             <img src={BookingIcon} alt="Booking Icon" />
@@ -244,7 +244,7 @@ const MagicTouchStudio = () => {
           </div>
           </div>
           <div className='right-section'>
-           <div className='form-section'>
+           <div className='form-section' id="contact-form">
             <form action=''>
             <div class="input-wrapper">
             <label for="first">FULL NAME</label>
