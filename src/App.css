@@ -106,7 +106,7 @@ body {
   align-items: center;
 }
 .advertise-image img{
-  max-width: none !important;
+  max-width: 250px;
   margin-bottom: -20px;
 }
 .advertise-text{
