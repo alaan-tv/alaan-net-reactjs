@@ -26,7 +26,7 @@ const ArabicFooter = () => {
         </div>
         <div className='menu-section'>
         <div className="footer-links-container">
-        <NavHashLink to='/#about-us' className='link'> من نحن</NavHashLink>
+        <NavHashLink to='/#about-us' className='link'> من نحن </NavHashLink>
         <NavHashLink to='/#our-brands' className='link not-active'>قنواتنا</NavHashLink>
         <Link to='/our-services' className='link'>خدماتنا</Link>
 
