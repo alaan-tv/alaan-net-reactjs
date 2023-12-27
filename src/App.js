@@ -6,6 +6,7 @@ import Workshops from './Components/Pages/Workshops';
 import MagicTouchStudio from './Components/Pages/Services/MagicTouchStudio';
 import MagicTouchClinic from './Components/Pages/Services/MagicTouchClinic';
 import OwnYourStory from './Components/Pages/Services/OwnYourStory';
+import AR from './Components/Pages/AR';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio />}  />
     <Route path="/our-services/magic-touch-clinic" element={<MagicTouchClinic />}  />
     <Route path="/our-services/own-your-story" element={<OwnYourStory />}  />
+    <Route path="/ar" element={< AR/>}></Route>
 
     </Routes>
 

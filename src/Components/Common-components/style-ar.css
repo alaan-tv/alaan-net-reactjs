@@ -1,0 +1,10 @@
+.arabic-nav{
+    direction: rtl;
+    
+}
+.advertise-image img{
+    transform: scale(-1, 1);
+}
+.advertise-text{
+    width: 500px;
+}
