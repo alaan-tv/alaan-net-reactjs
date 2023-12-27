@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../Common-components/ArabicHeader'
+import Header1 from '../Common-components/ArabicHeader'
 import "./style-ar1.css";
 import Footer from '../Common-components/ArabicFooter'
 import Advertise from '../Common-components/ArabicAdvertise'
@@ -23,7 +23,7 @@ const AR = () => {
     <div>
        
         <div className='home-container'>
-        <Header/>
+        <Header1/>
         <div className='home-banner-container'>
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
