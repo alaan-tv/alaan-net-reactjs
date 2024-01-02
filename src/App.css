@@ -86,11 +86,11 @@ body {
 .home-banner-container {
   position: relative;
   display: flex;
-  padding-top: 80px;
+  /*padding-top: 80px;*/
 }
 .home-image-container{
   text-align: center;
-  padding: 70px 0px;
+  /*padding: 20px 0px;*/
 }
 .home-bannerImage-container {
   position: absolute;
@@ -98,6 +98,9 @@ body {
   right: -170px;
   z-index: -2;
   max-width: 700px;
+}
+.banner-image{
+  border-radius: 20px;
 }
 .home-bannerImageLeft-container{
   position: absolute;
@@ -116,6 +119,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 100px 0px;
 }
 .advertise-section{
   max-width: 1240px;
@@ -439,7 +443,6 @@ font-weight: 600;
   max-width: 1242px;
   margin: auto;
   padding : 50px;
-  margin-top: 140px;
   border-radius: 20px;
  }
  .our-services2{
@@ -561,7 +564,9 @@ font-weight: 600;
     padding-top: 30px;
 
   }
-  
+  .home-text-section{
+    padding: 50px 0px ;
+  }
   .primary-heading {
     text-align: center;
     font-size: 40px;
@@ -680,5 +685,10 @@ font-weight: 600;
   }
 }
 
+/*Arabic version */
+/*Homepage*/
+.arabic-home-text-section .primary-heading{
+  line-height: 140%;
+}
 
 

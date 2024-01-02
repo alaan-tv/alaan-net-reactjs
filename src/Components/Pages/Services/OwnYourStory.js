@@ -6,8 +6,8 @@ import 'react-phone-input-2/lib/style.css'
 import Header from '../../Common-components/LightHeader'
 import Footer from '../../Common-components/Footer'
 import Advertise from '../../Common-components/Advertise'
-import Banner from '../../../Assets/own-story-banner.jpg'
-import BannerMobile from '../../../Assets/own-story-banner-mobile.webp'
+import Banner from '../../../Assets/1.jpg'
+import BannerMobile from '../../../Assets/1mobile.png'
 import FeatureIcon1 from '../../../Assets/feature-icon1.png'
 import FeatureIcon2 from '../../../Assets/feature-icon2.png'
 import FeatureIcon3 from '../../../Assets/feature-icon3.png'
@@ -41,7 +41,7 @@ const OwnYourStory = () => {
           <picture>
    <source media='(max-width: 768px)' srcSet={BannerMobile} />
    <source media='(min-width: 768px)' srcSet={Banner} />
-   <img src={Banner} alt='hero' />
+   <img src={Banner} className='banner-image' alt='hero' />
 </picture>
 
         </div>

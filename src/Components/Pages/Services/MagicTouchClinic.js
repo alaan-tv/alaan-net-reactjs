@@ -7,8 +7,8 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Header from '../../Common-components/LightHeader'
 import Footer from '../../Common-components/Footer'
-import MagicStudioVideo from '../../../Assets/Video.png'
-import MagicStudioVideoMobile from '../../../Assets/video-mobile.png'
+import MagicStudioVideo from '../../../Assets/4.jpg'
+import MagicStudioVideoMobile from '../../../Assets/4mobile.png'
 import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
 import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
 import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
@@ -63,7 +63,7 @@ const MagicTouchClinic = () => {
             <picture>
      <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
      <source media='(min-width: 768px)' srcSet={MagicStudioVideo} />
-     <img src={MagicStudioVideo} alt='hero' />
+     <img src={MagicStudioVideo} className='banner-image' alt='hero' />
  </picture>
 
           </div>

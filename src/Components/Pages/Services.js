@@ -28,7 +28,8 @@ const Services = () => {
             Our Services
             </h1>
             <p className='primary-text' >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.          </p>
+            We offer a variety of services designed to showcase your best self and ensure your story is heard loud and clear.
+ </p>
           </div>
          
         </div>
@@ -44,7 +45,8 @@ const Services = () => {
               Magic Touch Studio           </h2>
               < div className='service-desc'>
               <p className='third-text'>
-              Empower candidates and employees in their quest for better career path!</p>
+              Convert your resume into a video CV to showcase your skills and personality, making job hunting more effective.
+</p>
               <div className='sevice-more-icon'><Link to="/our-services/magic-touch-studio"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
@@ -54,7 +56,8 @@ const Services = () => {
               Magic Touch Clinic           </h2>
               < div className='service-desc'>
               <p className='third-text'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
+              Enhance Your Digital Persona at Magic Touch Clinic and Accelerate Your Job Search by Highlighting Your Greatest Qualities!
+</p>
               <div className='sevice-more-icon'><Link to="/our-services/magic-touch-clinic"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
@@ -64,7 +67,8 @@ const Services = () => {
               Own your Story        </h2>
               < div className='service-desc'>
               <p className='third-text'>
-              Engage clients with a concise promo video and expert media tips!</p>
+              Al Aan shapes your story and manages your media presence, ensuring you stand out and control your narrative in the digital age.
+</p>
               <div className='sevice-more-icon'><Link to="/our-services/own-your-story"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>

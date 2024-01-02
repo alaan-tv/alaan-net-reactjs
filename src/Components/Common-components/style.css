@@ -75,6 +75,9 @@
   .navigation a{
     text-decoration: none;
   }
+  .light-link-lang{
+    color: #000 !important;
+  }
 
   @media (max-width: 991px) {
     .navigation {
@@ -251,3 +254,60 @@
     a.not-active{
       color :#000 !important
     }
+    .right-section .menu{
+      position: relative;
+    }
+    .right-section ul {
+      list-style: none;
+      padding: unset;
+      margin: unset;
+    }
+    li{
+      padding: 14px;
+      
+    }
+    
+     li a{
+      font-size: 14px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all linear 0.3s;
+    }
+    
+    .right-section li:hover {
+      background: gray;
+      cursor: pointer;
+      color: #fff;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      z-index: 99999;
+      background: #fff;
+      box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+      transition: all linear 0.3s;
+    }
+    .lang-flag{
+      width: 15px;
+      height: 15px;
+      float: left;
+    }
+  /*Arabic version */
+  .arabic-nav {
+    direction: rtl;
+    
+}
+.arabic-menu{
+  direction: rtl !important;
+
+}
+.arabic-advertise{
+  direction: rtl;
+}
+.arabic-advertise-image img{
+    transform: scale(-1, 1);
+}
+.arabic-advertise-text{
+    width: 500px;
+}

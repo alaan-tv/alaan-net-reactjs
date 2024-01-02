@@ -1,13 +1,21 @@
 import React, {useEffect,useState} from 'react';
 import { Link ,NavLink } from "react-router-dom";
 import { NavHashLink } from 'react-router-hash-link';
-import "./style-ar.css";
 import "./style.css";
 import {Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material"
 import  Language  from '@mui/icons-material/LanguageRounded';
 import { HiMiniBars3 } from "react-icons/hi2";
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
  const ArabicHeader = () => {
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
+  };
   
   const [openMenu, setOpenMenu] =useState(false);
   
@@ -26,7 +34,25 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
         <NavLink exact  to='/our-workshops' className='link' activeClassName="active" >ورشاتنا</NavLink>
         <a href="#contact-us" className="link"> تواصل معنا </a>
      <div className="divider"/>
-        <a href="#" className="link right-section"><Language/></a>
+     <a href="#" className="link right-section">
+        <div
+          className="menu"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+         <Language/>
+          {/* <DropdownMenu /> */}
+          {isDropdownVisible && <div className="dropdown-menu">
+      <ul>
+        <li><NavLink  to="/"> 
+English</NavLink></li>
+        <li><a href="/ar">العربية</a></li>
+        
+      </ul>
+    </div>}
+        </div>
+      
+         </a>
       </div>
       <div className="navbar-menu-container">
         <HiMiniBars3 className='menu-icon' onClick={() => setOpenMenu(true)} />
@@ -38,7 +64,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
         onKeyDown={() => setOpenMenu(false)}
         >
           <HighlightOffRoundedIcon className='close-menu' onClick={() => setOpenMenu(false)} />
-          <List>
+          <List className='arabic-menu'>
            
               <ListItem className='list-item'>
                 <ListItemButton><NavHashLink to='/#about-us' className='link'>من نحن</NavHashLink></ListItemButton>
@@ -57,7 +83,25 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
                 <ListItemButton>  <a href="#contact-us" className="link"> تواصل معنا</a></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton>  <a href="#" className="link right-section"><Language/></a></ListItemButton>
+                <ListItemButton> <a href="#" className="link right-section">
+        <div
+          className="menu"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+         <Language/>
+          {/* <DropdownMenu /> */}
+          {isDropdownVisible && <div className="dropdown-menu">
+      <ul>
+        <li><Link to="./"> 
+English</Link></li>
+        <li><a href="./ar">العربية</a></li>
+        
+      </ul>
+    </div>}
+        </div>
+      
+         </a></ListItemButton>
               </ListItem>
           </List>
 

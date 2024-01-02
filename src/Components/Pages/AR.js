@@ -1,11 +1,10 @@
 import React from 'react'
-import Header1 from '../Common-components/ArabicHeader'
-import "./style-ar1.css";
+import Header from '../Common-components/ArabicHeader'
 import Footer from '../Common-components/ArabicFooter'
 import Advertise from '../Common-components/ArabicAdvertise'
 import BannerBackground from '../../Assets/background.png'
-import BannerImage from '../../Assets/banner-image.png'
-import BannerImageMobile from '../../Assets/banner-image-mobile.png'
+import BannerImage from '../../Assets/3.jpg'
+import BannerImageMobile from '../../Assets/3mobile.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import AlaanTvLogo from '../../Assets/alaan-tv-logo.svg'
 import AkhbarAlaanLogo from '../../Assets/akhbar-aalan-logo.svg'
@@ -23,12 +22,12 @@ const AR = () => {
     <div>
        
         <div className='home-container'>
-        <Header1/>
+        <Header/>
         <div className='home-banner-container'>
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
           </div>
-          <div id="about-us"  className='home-text-section'>
+          <div id="about-us"  className='home-text-section arabic-home-text-section'>
             <h1 className='primary-heading' >
             شريكك المُفضل في عالم الخدمات الرقمية الشاملة والمتطورة
             </h1>
@@ -50,7 +49,7 @@ const AR = () => {
             <picture>
      <source media='(max-width: 768px)' srcSet={BannerImageMobile} />
      <source media='(min-width: 768px)' srcSet={BannerImage} />
-     <img src={BannerImage} alt='hero' />
+     <img src={BannerImage} className='banner-image' alt='hero' />
  </picture>
 
           </div>
@@ -125,15 +124,16 @@ const AR = () => {
             </div>  
             < div className='our-features'>
              
-              <div className='our-workshops'>
-              <div className='our-services-container'>
-               <a href=""> <img src={OurWorkshops} /></a>
-              </div>
-  
-              </div>
+              
               <div className='our-services'>
               <div className='our-services-container'>
                <a href=""> <img src={OurServices} /></a>
+              </div>
+  
+              </div>
+              <div className='our-workshops'>
+              <div className='our-services-container'>
+               <a href=""> <img src={OurWorkshops} /></a>
               </div>
   
               </div>

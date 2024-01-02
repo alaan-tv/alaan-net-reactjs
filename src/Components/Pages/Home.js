@@ -3,8 +3,8 @@ import Header from '../Common-components/Header'
 import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
 import BannerBackground from '../../Assets/background.png'
-import BannerImage from '../../Assets/banner-image.png'
-import BannerImageMobile from '../../Assets/banner-image-mobile.png'
+import BannerImage from '../../Assets/3.jpg'
+import BannerImageMobile from '../../Assets/3mobile.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import AlaanTvLogo from '../../Assets/alaan-tv-logo.svg'
 import AkhbarAlaanLogo from '../../Assets/akhbar-aalan-logo.svg'
@@ -43,7 +43,7 @@ const Home = () => {
             <picture>
      <source media='(max-width: 768px)' srcSet={BannerImageMobile} />
      <source media='(min-width: 768px)' srcSet={BannerImage} />
-     <img src={BannerImage} alt='hero' />
+     <img src={BannerImage} className='banner-image' alt='hero' />
  </picture>
 
           </div>

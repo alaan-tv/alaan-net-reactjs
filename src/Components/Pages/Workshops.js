@@ -22,7 +22,8 @@ const Workshops = () => {
             Our Workshops
                         </h1>
             <p className='primary-text' >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.         </p>
+            We are excited to offer an array of workshops designed to enhance your media skills and expand your creative horizons.
+        </p>
           </div>
          
         </div>
@@ -48,7 +49,8 @@ const Workshops = () => {
               Podcast Workshop      </h2>
               < div className='service-desc'>
               <p className='third-text'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
+              Our Podcast Workshop offers essential skills for successful podcasting, from creating your concept to production and distribution.
+</p>
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
               </div>
             </div>
@@ -58,7 +60,8 @@ const Workshops = () => {
               Media Workshop         </h2>
               < div className='service-desc'>
               <p className='third-text'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
+              Our Media Workshop is tailored to enhance your media presence and develop your skills as a presenter.
+</p>
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
               </div>
             </div>
