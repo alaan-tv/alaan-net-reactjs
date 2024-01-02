@@ -34,7 +34,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
         <NavLink exact  to='/our-workshops' className='link' activeClassName="active" >ورشاتنا</NavLink>
         <a href="#contact-us" className="link"> تواصل معنا </a>
      <div className="divider"/>
-     <a href="#" className="link right-section">
+     <div className="link right-section">
         <div
           className="menu"
           onMouseEnter={handleMouseEnter}
@@ -44,15 +44,15 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
           {/* <DropdownMenu /> */}
           {isDropdownVisible && <div className="dropdown-menu">
       <ul>
-        <li><NavLink  to="/"> 
-English</NavLink></li>
+        <li><li><a href="/"> 
+English</a></li></li>
         <li><a href="/ar">العربية</a></li>
         
       </ul>
     </div>}
         </div>
       
-         </a>
+         </div>
       </div>
       <div className="navbar-menu-container">
         <HiMiniBars3 className='menu-icon' onClick={() => setOpenMenu(true)} />
