@@ -1,23 +1,33 @@
 import React ,{useState} from 'react'
 import "./service.css"
-import { useCollapse } from 'react-collapsed'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Header from '../../Common-components/LightHeader'
 import Footer from '../../Common-components/Footer'
 import Advertise from '../../Common-components/Advertise'
-import Banner from '../../../Assets/1.jpg'
-import BannerMobile from '../../../Assets/1mobile.png'
+import Banner from '../../../Assets/1.webp'
+import BannerMobile from '../../../Assets/1mobile.webp'
 import FeatureIcon1 from '../../../Assets/feature-icon1.png'
 import FeatureIcon2 from '../../../Assets/feature-icon2.png'
 import FeatureIcon3 from '../../../Assets/feature-icon3.png'
 import FeatureIcon4 from '../../../Assets/feature-icon4.png'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { CCollapse, CButton, CCard, CCardBody } from '@coreui/react';
 const OwnYourStory = () => {
     const [value, setValue] = useState()
-    const { getCollapseProps, getToggleProps, isExpanded  } = useCollapse()
+    
+    const [open, setOPen] = useState(false);
+    const [open1, setOPen1] = useState(false);
 
+    const toggle = () => {
+      setOPen(!open);
+    };
+    const toggle1 = () => {
+      setOPen1(!open1);
+    };
+
+    const [visible1, setVisible1] = useState(false)
 
 
   return (
@@ -123,19 +133,20 @@ You'll get          </h1>
 <div className='collaps'>
       <h4> Add a campaign</h4>
       <p className='sub-title'>(Adding AED10,000 to the cost)</p>
-      <button className='collaps-button' {...getToggleProps()}>
-        {isExpanded ? 'Hide details' : '  Show details'}
+      <button className='collaps-button' onClick={toggle}>
+        Show details
       </button>
-      <section {...getCollapseProps()}>
-      <div className='package-decription'>
+     
+   
+      {open && ( <div className='toggle package-decription'>
 
       <div className='desc-item'><CheckCircleIcon /><p><strong>Pre-Release Boost:</strong><p> Initiate a buzz with a campaign before your story airs.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>TV & Online Promo:</strong><p>A 30-second ad will run 60 times on Al Aan TV and be shared online, building anticipation.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Broad Exposure:</strong><p>Promo will be featured on our website and social media for extra impact.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Effective Messaging:</strong><p>Promos include key points, ensuring your message reaches viewers even if they miss the main event.</p></p></div>
 
-</div>
-      </section>
+</div>)}
+     
     </div>
 </div>
             </div>
@@ -154,19 +165,17 @@ You'll get          </h1>
 <div className='collaps'>
       <h4> Add a campaign</h4>
       <p className='sub-title'>(Adding AED10,000 to the cost)</p>
-      <button className='collaps-button' {...getToggleProps()}>
-        {isExpanded ? 'Hide details' : '  Show details'}
+      <button className='collaps-button' onClick={toggle1}>
+         Show details
       </button>
-      <section {...getCollapseProps()}>
-      <div className='package-decription'>
+      {open1 && (<div className='package-decription'>
 
       <div className='desc-item'><CheckCircleIcon /><p><strong>Pre-Release Boost:</strong><p> Initiate a buzz with a campaign before your story airs.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>TV & Online Promo:</strong><p>A 30-second ad will run 60 times on Al Aan TV and be shared online, building anticipation.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Broad Exposure:</strong><p>Promo will be featured on our website and social media for extra impact.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>Effective Messaging:</strong><p>Promos include key points, ensuring your message reaches viewers even if they miss the main event.</p></p></div>
 
-</div>
-      </section>
+</div> )}
     </div>
 </div>
             </div>
