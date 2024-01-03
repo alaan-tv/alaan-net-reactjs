@@ -19,7 +19,6 @@ function App() {
     <Routes>
     <Route path="/" index element={<Home />}  />
     <Route path="/our-services" element={<Services />}  />
-
     <Route path="/our-workshops" element={<Workshops />}  />
     <Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio />}  />
     <Route path="/our-services/magic-touch-clinic" element={<MagicTouchClinic />}  />
