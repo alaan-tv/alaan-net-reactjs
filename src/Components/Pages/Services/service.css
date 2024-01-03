@@ -343,7 +343,7 @@ box-shadow: 0px 5px 60px #817a9924;
         .desc-item-title{
         }
         .desc-item .css-i4bv87-MuiSvgIcon-root{
-            color: #df1995
+            color: #df1995 !important
         }
         .collaps{
             padding: 20px 0px 0px 0px;
