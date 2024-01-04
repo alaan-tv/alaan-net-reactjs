@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 import Header from '../Common-components/Header'
 import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
@@ -51,7 +53,7 @@ const Workshops = () => {
               <p className='third-text'>
               Our Podcast Workshop offers essential skills for successful podcasting, from creating your concept to production and distribution.
 </p>
-              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              <div className='sevice-more-icon'><Link to="/our-workshops/podcast"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             <div className='service-card'>
@@ -62,7 +64,7 @@ const Workshops = () => {
               <p className='third-text'>
               Our Media Workshop is tailored to enhance your media presence and develop your skills as a presenter.
 </p>
-              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              <div className='sevice-more-icon'><Link to="/our-workshops/media"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>
