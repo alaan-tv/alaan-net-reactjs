@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link ,NavLink } from "react-router-dom";
+
 import Header from '../Common-components/ArabicHeader'
 import Footer from '../Common-components/ArabicFooter'
 import Advertise from '../Common-components/ArabicAdvertise'
@@ -27,7 +29,7 @@ const AR = () => {
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
           </div>
-          <div id="about-us"  className='home-text-section arabic-home-text-section'>
+          <div id="about-us"  className='home-text-section home-text-main-section arabic-home-text-section'>
             <h1 className='primary-heading' >
             شريكك المُفضل في عالم الخدمات الرقمية الشاملة والمتطورة
             </h1>
@@ -53,7 +55,7 @@ const AR = () => {
  </picture>
 
           </div>
-          <div className='home-text-section'>
+          <div className='home-text-section home-text-main-section'>
             <h2 className='secondary-heading' >
             عدة أدوات مصممة لتمكين المستقبل
            </h2>
@@ -70,7 +72,7 @@ const AR = () => {
           <h1 className='secondary-heading' >
             قنواتنا
             </h1>
-             <div className='our-brands-container'>
+             <div className='our-brands-container arabic-brands'>
               <div className='brand-card'>
                <img src={AlaanTvLogo} alt='Alaan Tv'/>
                <h2 className='third-heading' >
@@ -127,13 +129,13 @@ const AR = () => {
               
               <div className='our-services'>
               <div className='our-services-container'>
-               <a href=""> <img src={OurServices} /></a>
+               <Link to="/our-services"> <img src={OurServices} /></Link>
               </div>
   
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
-               <a href=""> <img src={OurWorkshops} /></a>
+               <Link to="/our-workshops"> <img src={OurWorkshops} /></Link>
               </div>
   
               </div>

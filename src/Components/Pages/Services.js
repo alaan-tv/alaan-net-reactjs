@@ -23,7 +23,7 @@ const Services = () => {
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
           </div>
-          <div className='home-text-section'>
+          <div className='home-text-main-section'>
             <h1 className='primary-heading' >
             Our Services
             </h1>

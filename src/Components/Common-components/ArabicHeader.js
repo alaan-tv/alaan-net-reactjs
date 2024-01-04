@@ -22,7 +22,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
   return (
     <nav className='mynav arabic-nav'>
       <div className='nav-logo-container'>
-      <NavHashLink to='/'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/alaan/images/newlogo.png" alt="logo" className="logo-img"/></NavHashLink> 
+      <NavHashLink to='/ar'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/alaan/images/newlogo.png" alt="logo" className="logo-img"/></NavHashLink> 
 </div>
       <div className="navbar-links-container">
         <NavHashLink to='/ar/#about-us' className='link' >من نحن</NavHashLink>
