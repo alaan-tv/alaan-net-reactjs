@@ -23,7 +23,7 @@ const LightHeader = () => {
   return (
     <nav >
     <div className='nav-logo-container'>
-      <img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/magic-touch/assets/img/whitelogo.png" alt="logo" className="logo-img"/>
+    <NavHashLink to='/'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/magic-touch/assets/img/whitelogo.png" alt="logo" className="logo-img"/></NavHashLink>
 </div>
     <div className="navbar-links-container light-header">
       <NavHashLink to='/#about-us' className='link'>About us</NavHashLink>

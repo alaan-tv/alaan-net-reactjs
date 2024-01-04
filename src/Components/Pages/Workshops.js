@@ -17,7 +17,7 @@ const Workshops = () => {
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
           </div>
-          <div className='home-text-section'>
+          <div className='home-text-main-section'>
             <h1 className='primary-heading' >
             Our Workshops
                         </h1>
@@ -32,7 +32,7 @@ const Workshops = () => {
             <img src={BannerBackgroundLeft} alt="background" />
           </div>
            < div className='our-services2'>
-           <div className='our-services-container2'>
+           <div className='our-services-container2 workshops-services'>
             {/*<div className='service-card'>
               <img src={MagicTouchClinicIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >

@@ -59,7 +59,7 @@ const MagicTouchStudio = () => {
 
           </p>
             <a className='service-cta primary-button' href="#contact-form">Book Now!</a>
-            <div className='home-image-container banner-service-image'>
+            {/*<div className='home-image-container banner-service-image'>
         
             <picture>
      <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
@@ -67,7 +67,7 @@ const MagicTouchStudio = () => {
      <img src={MagicStudioVideo} className='banner-image' alt='hero' />
  </picture>
 
-          </div>
+          </div>*/}
             
           </div>
          
@@ -142,7 +142,6 @@ const MagicTouchStudio = () => {
                 <img className='testi-image' src={TistiImage1} alt="customer photo"/>
                 <div className='testi-name'>
                   <p className='name'><b>Omar Bin Ashoor</b></p>
-                  <p>title</p>
                 </div>
               </div>
             </div>
@@ -155,19 +154,17 @@ const MagicTouchStudio = () => {
                 <img className='testi-image' src={TistiImage2} alt="customer photo"/>
                 <div className='testi-name'>
                   <p className='name'><b>Mohannad Al Wadi</b></p>
-                  <p>title</p>
                 </div>
               </div>
             </div>
             <div className='testimonail'>
             <p className='testi-desc'>
-            "Magic Touch proved to be a great investment. The video CV they crafted not only highlighted my qualifications but also showcased my personality."            </p>
+            "Choosing Magic touch studio was a game-changer for me. The personalized touch they brought to my video CV exceeded my expectations."            </p>
               <div className='divider2'></div>
               <div className='testi-info'>
                 <img className='testi-image' src={TistiImage3} alt="customer photo"/>
                 <div className='testi-name'>
                   <p className='name'><b>Nada Ahmed</b></p>
-                  <p>title</p>
                 </div>
               </div>
             </div>

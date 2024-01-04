@@ -13,7 +13,7 @@ const Advertise = () => {
 Reach out to start working with us today.</p>
       </div>
       <div className='advertise button'>
-    <button className='banner-button'>Contact us now!</button>
+   <a href="mailto:omar.othman@alaan.tv"> <button className='banner-button'>Contact us now!</button></a>
       </div>
     </div>
   </div>

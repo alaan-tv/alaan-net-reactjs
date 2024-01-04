@@ -20,7 +20,7 @@ const ArabicAdvertise = () => {
 تواصل معنا للبدء بإعلانك اليوم.</p>
       </div>
       <div className='advertise button'>
-    <button className='banner-button'> تواصل معنا الآن!</button>
+      <a href="mailto:omar.othman@alaan.tv"><button className='banner-button'> تواصل معنا الآن!</button></a>
       </div>
     </div>
   </div>

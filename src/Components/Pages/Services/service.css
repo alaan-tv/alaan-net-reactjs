@@ -1,6 +1,6 @@
 /*Style magic touch Studio */
 .hero-section{
-    background-image: url('../../../Assets/banner-service-background.webp');
+    background-image: url('../../../Assets/banner-service-background2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -8,7 +8,7 @@
 }
 
 .banner-service{
-    padding-top: 120px;
+    padding-top: 5%;
 }
 .light-heading{
     color: #fff;
@@ -57,7 +57,7 @@ position: relative;
     background-image: url(../../../Assets/feature-image2.svg);
     background-repeat: no-repeat;
     width: 258px;
-    min-height: 255px;
+    /*min-height: 255px;*/
     border-radius: 20px;
 }
 .feature-icon{
@@ -243,7 +243,7 @@ form{
 input[type=submit] {
     border-radius: 50px;
     background-color: #DF1995;
-    font-weight: 600px;
+    font-weight: 600;
     color: #fff
 }
 
@@ -305,12 +305,15 @@ input[type=submit] {
     padding: 100px 0px 40px 0px   }
         .packages-container {
             display: flex;
-            gap:50px;
-            flex-direction: row;
+            grid-template-columns: auto auto auto;
             justify-content: center;
+          width: 100%;
+            margin: auto;
             margin-top: 60px ;
         }
         .package{
+            position: relative;
+            margin: 15px;
             background-color: #fff;
     width: 360px;
     padding: 30px;
@@ -343,7 +346,7 @@ box-shadow: 0px 5px 60px #817a9924;
         .desc-item-title{
         }
         .desc-item .css-i4bv87-MuiSvgIcon-root{
-            color: #df1995
+            color: #df1995 !important
         }
         .collaps{
             padding: 20px 0px 0px 0px;
@@ -370,6 +373,16 @@ box-shadow: 0px 5px 60px #817a9924;
             font-size: 18px;
 padding-left: 20px;
             font-weight: 700;
+        }
+        .toggle , .toggle1{
+            width: 100%;
+    left: 0;
+    position: absolute;
+    background: #fff; 
+    z-index: 99999;
+    padding: 20px 40px;
+    border-radius: 20px;
+   
         }
         .trainers{
             padding: 60px 0px;
@@ -414,6 +427,21 @@ padding-left: 20px;
         .trainer-desc p{
             margin-bottom: 20px;
         }
+        .react-tel-input .country-list .country:hover {
+            background-color: #f1f1f1 !important;
+        }
+        .right-section li:hover {
+            background: gray;
+            cursor: pointer;
+            color: #000;}
+            .react-tel-input .flag-dropdown.open .selected-flag{
+                background-color: transparent !important;
+            }
+        @media (min-width: 1290px){
+            .banner-service{
+                padding-top: 7%;
+            }
+        }
 @media (max-width: 760px) {
     .features-container, .testimonails-container, .booking , .guidebook-container, .packages-container, .trainers-container{
         flex-direction: column;
@@ -423,7 +451,7 @@ padding-left: 20px;
         padding-top: 10px;
     }
     .hero-section{
-        background-image: url('../../../Assets/banner-service-background-mobile.webp');
+        background-image: url('../../../Assets/banner-service-background-mobile.png');
     }
     .banner-service-image{
         padding: 38px 0px;
@@ -499,6 +527,9 @@ padding-left: 20px;
     .trainer-desc{
         padding: 40px 30px 0px 30px ;
         text-align: center;
+    }
+    .light-heading , .light-heading2{
+        font-size: 40px;
     }
 }
 

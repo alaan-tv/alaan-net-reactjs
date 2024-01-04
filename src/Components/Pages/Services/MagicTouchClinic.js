@@ -58,7 +58,7 @@ const MagicTouchClinic = () => {
             Get Hired Faster by Showcasing Your Best Self!
           </p>
             <a className='service-cta primary-button' href="#contact-form">Book Now!</a>
-            <div className='home-image-container banner-service-image'>
+            {/*<div className='home-image-container banner-service-image'>
         
             <picture>
      <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
@@ -66,7 +66,7 @@ const MagicTouchClinic = () => {
      <img src={MagicStudioVideo} className='banner-image' alt='hero' />
  </picture>
 
-          </div>
+  </div>*/}
             
           </div>
          

@@ -32,6 +32,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: baloo, sans-serif;}
+  a {text-decoration: none !important; }
 img {
   max-width: 100%;
   height: auto;
@@ -119,7 +120,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 100px 0px;
+  padding: 8% 0px 15% 0px;
+}
+.home-text-main-section{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8% 0px;
 }
 .advertise-section{
   max-width: 1240px;
@@ -449,7 +458,7 @@ font-weight: 600;
   background: transparent !important;
   padding : 0px;
   margin: auto;
-  margin-top: 98px;
+  /*margin-top: 98px;*/
 
  }
  
@@ -471,11 +480,15 @@ font-weight: 600;
   flex-direction: row;
   gap: 34px;
 }
+
 .brand-card, .service-card{
   background-color: #fff;
   width: auto;
   border-radius: 22px;
   padding: 28px 24px;
+}
+.workshops-services .service-card{
+  width: 50%;
 }
 .brand-card h2 ,.service-card h2{
   margin: 26px 0px 7px 0px;
@@ -664,6 +677,9 @@ font-weight: 600;
     padding: 0px;
 
   }
+  .workshops-services .service-card{
+    width: 100%;
+  }
   .footer-wrapper {
     flex-direction: column;
   }
@@ -684,11 +700,16 @@ font-weight: 600;
     display: none;
   }
 }
-
+.clear{
+  clear: both ;
+}
 /*Arabic version */
 /*Homepage*/
 .arabic-home-text-section .primary-heading{
   line-height: 140%;
+}
+.arabic-brands{
+  text-align: right;
 }
 
 

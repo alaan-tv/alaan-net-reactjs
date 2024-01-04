@@ -1,0 +1,115 @@
+.hero-workshop-section{
+    display: flex;
+    margin: auto;
+    padding: 100px 0px;
+    gap: 30px;
+    text-align: right;
+    direction: rtl;
+}
+.hero-workshop-section .light-heading{
+    color: #000 !important;
+    text-align: right;
+    max-width: 489px;
+}
+.hero-workshop-section .cta-button{
+    border-radius: 50px;
+    background-color: #DF1995;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid;
+    border-color: #e7e7e7;
+    padding: 0px 24px;
+    position: relative;
+    height: 64px;
+    width: 165px;
+    font-size: 20px;
+    line-height: 6px;
+    margin: 45px 0px;
+}
+.hero-workshop-section p{
+font-size: 24px;
+color: #817A99;
+max-width: 450px;
+}
+.workshop-date{
+    display: flex;
+    margin-top: 22px;
+    gap: 10px;
+    align-items: center;
+}
+.workshop-intro .css-i4bv87-MuiSvgIcon-root{
+    color: #df1995;
+}
+.workshop-intro{
+    background-image: url(../../../Assets/workshop-background.png);
+    background-repeat: no-repeat;
+    max-width: 1128px;
+    padding:60px 130px;
+    margin: auto;
+    border-radius: 20px;
+}
+.workshop-intro h1, .workshop-intro p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 22px;
+    direction: rtl;
+}
+.workshop-details-section { 
+    direction: rtl;
+}
+.workshop-details-section .light-heading{
+    color: #000;
+    text-align: center;
+    padding: 120px 0px 53px 0px;
+    max-width: 613px;
+    margin: auto;
+
+}
+.workshop-features .features{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.workshop-features .feature{
+background-image: url(../../../Assets/workshop-features-background.png);
+width: 356px;
+height: 298px;
+}
+.workshop-features .feature-heading{
+    padding: 40px 20px 0px 20px;
+}
+.workshop-features-section {
+    direction: rtl;
+    text-align: center;
+    padding: 0px 100px;
+}
+.workshop-features-section .feature{
+    background-image: url(../../../Assets/worshop-feature-background2.png);
+    width: 356px;
+    height: 138px;
+}
+.workshop-features-section .light-heading{
+    color: #000;
+    text-align: center;
+    padding: 50px 0px 53px 0px;
+    max-width: 613px;
+    margin: auto;
+
+}
+.workshop-features-section .features{
+    display: table;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.workshop-features-section .feature{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+
+
+}
+.workshop-features-section .feature-desc{
+
+   }

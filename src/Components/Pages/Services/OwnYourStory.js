@@ -13,7 +13,6 @@ import FeatureIcon3 from '../../../Assets/feature-icon3.png'
 import FeatureIcon4 from '../../../Assets/feature-icon4.png'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { CCollapse, CButton, CCard, CCardBody } from '@coreui/react';
 const OwnYourStory = () => {
     const [value, setValue] = useState()
     
@@ -46,7 +45,7 @@ const OwnYourStory = () => {
           What do people know about you, your product or service, your success story, what sets you apart, and how you excel? Al Aan can craft and distribute compelling content, ensuring you control your narrative. Don't worry about the media; we've got you covered.  In today's digital age, with AI, social media, ratings, and reviews, it's crucial to control your story, and we empower you to do so.
         </p>
           <a className='service-cta primary-button' href="#contact-form">Contact Us!</a>
-          <div className='home-image-container banner-service-image'>
+          {/*<div className='home-image-container banner-service-image'>
       
           <picture>
    <source media='(max-width: 768px)' srcSet={BannerMobile} />
@@ -54,7 +53,7 @@ const OwnYourStory = () => {
    <img src={Banner} className='banner-image' alt='hero' />
 </picture>
 
-        </div>
+        </div>*/}
           
         </div>
        
@@ -65,7 +64,7 @@ const OwnYourStory = () => {
         
     <div className='features'>
           < h1 className='primary-heading'>
-You'll get          </h1>
+With this service You'll get          </h1>
           <div className='features-container'>
             <div className='feature'>
              <img src={FeatureIcon1} alt="Feature Icon" className='feature-icon' />
@@ -168,7 +167,7 @@ You'll get          </h1>
       <button className='collaps-button' onClick={toggle1}>
          Show details
       </button>
-      {open1 && (<div className='package-decription'>
+      {open1 && (<div className='toggle1 package-decription'>
 
       <div className='desc-item'><CheckCircleIcon /><p><strong>Pre-Release Boost:</strong><p> Initiate a buzz with a campaign before your story airs.</p></p></div>
 <div className='desc-item'><CheckCircleIcon /><p><strong>TV & Online Promo:</strong><p>A 30-second ad will run 60 times on Al Aan TV and be shared online, building anticipation.</p></p></div>
@@ -183,6 +182,7 @@ You'll get          </h1>
 
         </div>
     </div>
+    < div className='clear'></div>
     <div className='booking' id="contact-form">
           <div className='left-section'>
           < div className='left-section-container'>

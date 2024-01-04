@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link ,NavLink } from "react-router-dom";
 import Header from '../Common-components/Header'
 import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
@@ -17,6 +18,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import OurServices from '../../Assets/our-services.svg'
 import OurWorkshops from '../../Assets/Our-workshops.svg'
 
+
 const Home = () => {
   return (
     <div>
@@ -27,7 +29,7 @@ const Home = () => {
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
           </div>
-          <div id="about-us"  className='home-text-section'>
+          <div id="about-us"  className='home-text-section home-text-main-section'>
             <h1 className='primary-heading' >
             Your dedicated partner for comprehensive digital services
             </h1>
@@ -47,7 +49,7 @@ const Home = () => {
  </picture>
 
           </div>
-          <div className='home-text-section'>
+          <div className='home-text-section home-text-main-section'>
             <h2 className='secondary-heading' >
             Toolkit built for empowering futures            </h2>
             <p className='secondary-text' >
@@ -110,13 +112,13 @@ const Home = () => {
             < div className='our-features'>
               <div className='our-services'>
               <div className='our-services-container'>
-               <a href=""> <img src={OurServices} /></a>
+               <Link to='/our-services'> <img src={OurServices} /></Link>
               </div>
   
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
-               <a href=""> <img src={OurWorkshops} /></a>
+               <Link to="/our-workshops"> <img src={OurWorkshops} /></Link>
               </div>
   
               </div>
