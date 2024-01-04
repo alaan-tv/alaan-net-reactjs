@@ -2,7 +2,7 @@
     display: flex;
     margin: auto;
     padding: 100px 0px;
-    gap: 30px;
+    gap: 40px;
     text-align: right;
     direction: rtl;
 }
@@ -97,19 +97,179 @@ height: 298px;
 
 }
 .workshop-features-section .features{
-    display: table;
+    display: flex;
     gap: 40px;
     justify-content: center;
     flex-wrap: wrap;
     justify-content: center;
 }
 .workshop-features-section .feature{
-    display: table-cell;
+    display: grid;
+    align-items: center;
+    width: 356px;
     vertical-align: middle;
     padding: 15px;
 
 
 }
+.workshops-trainers{
+    direction: rtl;
+    padding: 140px 0px 60px 0px;
+}
+.workshops-trainers img{
+    width: 100%;
+}
+.workshops-trainers .trainer-image{
+    width: 215px;
+}
+.workshops-trainers .trainers-container{
+    align-items: center;
+}
+.trainer-desc{
+    color: #817A99
+}
 .workshop-features-section .feature-desc{
-
+padding: 0px
    }
+   .workshops-booking{
+    direction: rtl;
+    padding-top: 80px;
+   }
+   .workshops-booking .third-heading{
+    font-size: 28px;
+   }
+   .workshops-booking .secondary-heading{
+    font-size: 46px;
+    text-align: right;
+   }
+   .workshops-booking label{
+    left: 310px !important;
+    text-align: right;
+   }
+   .workshops-booking .special-label{
+    left: 340px !important;
+   }
+   .workshops-booking .react-tel-input .form-control{
+    text-align: right;
+    padding-right: 60px;
+   }
+   .workshops-booking .react-tel-input .flag-dropdown {
+    right: 35px;
+   }
+   .workshops-booking  .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+    background-color: transparent !important;
+}
+.workshops-booking .input-wrapper span{
+    padding-right: 25px;
+}
+.workshops-booking .input-wrapper{
+    text-align: right;
+}
+/*Podcast workshop*/
+.features-wrap{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px 115px;
+
+}
+.trainers-podcasts{
+    display: flex;
+    gap: 30px;
+}
+.trainers-podcasts .trainers-container{
+    flex-direction: column;
+    margin: 0px;
+    padding: 40px 0px;
+}
+.trainer-image span {
+    color: #DF1995 !important;
+    text-align: center; 
+}
+.trainers-podcasts .trainers-container .trainer-desc p{
+    margin-top: 20px;
+}
+.social-icon{
+    text-align: center; 
+
+}
+.podcast-hero .workshop-image{
+    max-width: 800px;
+}
+.podcast-hero .workshop-image img{
+    border-radius: 20px;
+
+}
+.podcast-heading{ 
+    max-width: 798px !important;
+}
+.features-wrap .feature{
+    height: 200px;
+}
+   @media (max-width: 1290px){
+    .workshop-features-section .feature{
+       max-width: 290px;
+    }
+    .features-wrap{
+        padding: 0px;
+    }
+    .trainers-podcasts .trainers-container .trainer-desc{
+        padding: 0px 20px;
+    }
+}
+@media (max-width: 760px) {
+    .hero-workshop-section{
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+    .workshop-intro{
+        padding: 20px;
+        background-size: 100% 100%;
+    }
+    .workshop-intro .third-heading{
+        font-size: 24px;
+    }
+    .workshop-intro p{
+        font-size: 16px;
+    }
+    .workshop-features .features {
+        flex-direction: column;
+        align-items: center;
+}
+.workshop-features-section{
+    padding: 0px
+}
+.workshop-features-section .feature{
+    max-width: 100% !important;
+}
+.workshop-features-section .feature{
+    background-size: 100% 100%;
+}
+.workshops-booking label{
+    left: 215px !important;
+}
+.workshops-booking .special-label{
+    left: 252px !important;
+}
+.workshops-booking .secondary-heading{
+    font-size: 40px;}
+    .workshops-booking .third-heading{
+        font-size: 23px;
+       }
+       .workshop-date{
+        justify-content: center;
+       }
+       .hero-workshop-section .hero-text{
+        text-align: center;
+       }
+       .hero-workshop-section .light-heading {
+        text-align: center;
+    }
+    .trainers-podcasts{
+        flex-direction: column;
+        gap: 0px;
+    }
+    .trainers-podcasts .trainers-container .trainer-desc{
+       font-size: 16px;
+    }
+}

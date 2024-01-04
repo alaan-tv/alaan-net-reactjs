@@ -8,6 +8,8 @@ import MagicTouchClinic from './Components/Pages/Services/MagicTouchClinic';
 import OwnYourStory from './Components/Pages/Services/OwnYourStory';
 import AR from './Components/Pages/AR';
 import Podcast from './Components/Pages/Workshops/Podcast';
+import Media from './Components/Pages/Workshops/Media';
+
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
     <Route path="/our-services/magic-touch-clinic" element={<MagicTouchClinic />}  />
     <Route path="/our-services/own-your-story" element={<OwnYourStory />}  />
     <Route path="/our-workshops/podcast" element={<Podcast />}  />
+    <Route path="/our-workshops/media" element={<Media />}  />
+
 
     <Route path="/ar" element={< AR/>}></Route>
 
