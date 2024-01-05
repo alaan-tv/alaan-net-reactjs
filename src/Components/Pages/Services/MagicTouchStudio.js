@@ -12,6 +12,13 @@ import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
 import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
 import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
 import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
+import Feature1 from '../../../Assets/f1.svg'
+import Feature2 from '../../../Assets/f2.svg'
+
+import Feature3 from '../../../Assets/f3.svg'
+
+import Feature4 from '../../../Assets/f4.svg'
+
 import video from '../../../Assets/promo.mp4'
 import TistiImage1 from '../../../Assets/testi-image1.svg'
 import TistiImage2 from '../../../Assets/testi-image2.svg'
@@ -110,21 +117,21 @@ const MagicTouchStudio = () => {
           </h1>
           <div className='features-container'>
             <div className='feature'>
-             <img src={FeatureIcon1} alt="Feature Icon" className='feature-icon' />
-             <p className='feature-heading'>1-Register and Pay</p>
+             <img src={Feature1} alt="Feature Icon" className='feature-icon' />
+             <p className='feature-heading'>Register and Pay</p>
              < p className='feature-desc third-text'> Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time.</p>
             </div>
             <div className='feature'>
-            <img src={FeatureIcon2} alt="Feature Icon" className='feature-icon' />
-            <p className='feature-heading'>2-Studio Session and Questionnaire</p>
+            <img src={Feature2} alt="Feature Icon" className='feature-icon' />
+            <p className='feature-heading'>Studio Session and Questionnaire</p>
              < p className='feature-desc third-text'> Attend your studio session for a professional video shoot and questionnaire.</p>            </div>
             <div className='feature'>
-            <img src={FeatureIcon3} alt="Feature Icon" className='feature-icon' />
-            <p className='feature-heading'>3-Video Production and Editing</p>
+            <img src={Feature3} alt="Feature Icon" className='feature-icon' />
+            <p className='feature-heading'>Video Production and Editing</p>
              < p className='feature-desc third-text'> We'll expertly produce and edit your Video CV.</p>            </div>
             <div className='feature'>
-            <img src={FeatureIcon4} alt="Feature Icon" className='feature-icon' />
-            <p className='feature-heading'>4-Receive Your Ready-to-Use Video CV</p>
+            <img src={Feature4} alt="Feature Icon" className='feature-icon' />
+            <p className='feature-heading'>Receive Your Ready-to-Use Video CV</p>
              < p className='feature-desc third-text'> You'll receive your polished Video CV for immediate use on platforms like LinkedIn to enhance your job prospects.</p>            </div>
           </div>
          </div>

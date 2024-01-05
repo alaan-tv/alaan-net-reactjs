@@ -31,7 +31,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
         
        
         
-        <NavLink exact  to='/our-workshops' className='link' activeClassName="active" >ورشاتنا</NavLink>
+        <NavLink exact  to='/our-workshops/ar' className='link' activeClassName="active" >ورشاتنا</NavLink>
         <a href="#contact-us" className="link"> تواصل معنا </a>
      <div className="divider"/>
      <div className="link right-section">
@@ -76,7 +76,7 @@ English</a></li></li>
                 <ListItemButton><Link to='/our-services' className='link'>خدماتنا</Link></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton>        <Link to='/our-workshops' className='link'>ورشاتنا</Link></ListItemButton>
+                <ListItemButton>        <Link to='/our-workshops/ar' className='link'>ورشاتنا</Link></ListItemButton>
                 </ListItem>
               <ListItem className='list-item'>
                 <ListItemButton>  <a href="#contact-us" className="link"> تواصل معنا</a></ListItemButton>

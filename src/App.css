@@ -121,7 +121,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 8% 0px 15% 0px;
+  padding: 8% 0px 18% 0px;
 }
 .home-text-main-section{
   flex: 1;
@@ -489,7 +489,16 @@ font-weight: 600;
   padding: 28px 24px;
 }
 .service-card{
-  width: 390px
+  width: 390px;
+  position: relative;
+}
+.service-card-icon{
+  height: 140px;
+}
+.sevice-more-icon{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 .workshops-services .service-card{
   width: 50%;
@@ -582,7 +591,6 @@ font-weight: 600;
 
   }
   .home-text-section{
-    padding: 50px 0px ;
   }
   .primary-heading {
     text-align: center;
@@ -604,7 +612,7 @@ font-weight: 600;
   .about-section-text-container {
     justify-content: center;
     align-items: center;
-    margin-top: 47px;
+    /*margin-top: 47px;*/
   }
   .secondary-button {
     font-size: 1rem;
@@ -700,6 +708,12 @@ font-weight: 600;
   .service-card{
     width: 350px
   }
+  .service-desc p{
+    margin-right: 50px;
+  }
+  .brand-card h2, .service-card h2{
+    margin: 8px 0px 7px 0px ;
+  }
 }
 @media (max-width: 600px) {
   .home-bannerImage-container,
@@ -729,3 +743,15 @@ body{
 }
 
 
+/*Workshops Arabic Page*/
+.workshops-arabic{direction: rtl;}
+
+.workshops-arabic .sevice-more-icon{
+  left: 20px !important;
+  right: auto;
+  transform: rotate(180deg);
+}
+.workshops-arabic .service-desc p{
+  margin-left: 100px;
+  margin-right: auto;
+}
