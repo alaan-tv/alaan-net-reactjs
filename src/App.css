@@ -32,7 +32,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: baloo, sans-serif;}
-  html, body{
+  html{
     overflow-x: hidden;
   }
   a {text-decoration: none !important; }
@@ -42,7 +42,6 @@ img {
 }
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 
 
 }
@@ -698,6 +697,9 @@ font-weight: 600;
   }
   .App {
     max-width: 100vw;
+  }
+  .service-card{
+    width: 350px
   }
 }
 @media (max-width: 600px) {
