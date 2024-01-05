@@ -48,7 +48,6 @@ html {
 .App {
   
 
-  max-width: 1900px;
   margin: 0rem auto;
 }
 
@@ -695,9 +694,9 @@ font-weight: 600;
   .footer-section-columns {
     margin: 1rem 0rem;
   }
-  .App {
+  /*.App {
     max-width: 100vw;
-  }
+  }*/
   .service-card{
     width: 350px
   }
@@ -707,6 +706,15 @@ font-weight: 600;
   .about-background-image-container {
     display: none;
   }
+}
+@media (max-width: 300px) {
+
+body{
+  overflow-x: hidden;
+}
+
+
+
 }
 .clear{
   clear: both ;
