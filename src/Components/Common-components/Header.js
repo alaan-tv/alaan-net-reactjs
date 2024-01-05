@@ -63,10 +63,10 @@ English</a></li>
       <Drawer open={openMenu} onClose={() => (false)} anchor='right'>
         <Box sx={{ width: 250}}
         role="presentation"
-        onClick={() => setOpenMenu(false)}
+        
         onKeyDown={() => setOpenMenu(false)}
         >
-          <HighlightOffRoundedIcon className='close-menu' onClick={() => setOpenMenu(false)} />
+          <button className="close-EV" onClick={() => setOpenMenu(false)}><HighlightOffRoundedIcon className='close-menu'  /></button>
           <List>
            
               <ListItem className='list-item'>

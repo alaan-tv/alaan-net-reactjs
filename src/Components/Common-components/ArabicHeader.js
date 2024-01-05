@@ -60,10 +60,9 @@ English</a></li></li>
       <Drawer open={openMenu} onClose={() => (false)} anchor='right'>
         <Box sx={{ width: 250}}
         role="presentation"
-        onClick={() => setOpenMenu(false)}
         onKeyDown={() => setOpenMenu(false)}
         >
-          <HighlightOffRoundedIcon className='close-menu' onClick={() => setOpenMenu(false)} />
+          <button className="close-AV" onClick={() => setOpenMenu(false)}><HighlightOffRoundedIcon className='close-menu'  /></button>
           <List className='arabic-menu'>
            
               <ListItem className='list-item'>
@@ -83,8 +82,7 @@ English</a></li></li>
                 <ListItemButton>  <a href="#contact-us" className="link"> تواصل معنا</a></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton> <a href="#" className="link right-section">
-        <div
+              <ListItemButton>  <a href="#" className="link right-section"> <div
           className="menu"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -93,15 +91,13 @@ English</a></li></li>
           {/* <DropdownMenu /> */}
           {isDropdownVisible && <div className="dropdown-menu">
       <ul>
-        <li><Link to="./"> 
-English</Link></li>
-        <li><a href="./ar">العربية</a></li>
+        <li><a className='link' href="/"> 
+English</a></li>
+        <li><a className='link' href="/ar">العربية</a></li>
         
       </ul>
     </div>}
-        </div>
-      
-         </a></ListItemButton>
+        </div></a></ListItemButton>
               </ListItem>
           </List>
 
