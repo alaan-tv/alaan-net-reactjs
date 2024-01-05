@@ -39,10 +39,10 @@ const OwnYourStory = () => {
         
         <div className='home-text-section'>
           <h1 className='primary-heading light-heading' >
-          Master Your Story: Stand Out with Our Top-Notch Content and Media Expertise
+          Stand Out with Our Top-Notch Content and Media Expertise
           </h1>
           <p className='primary-text light-text' >
-          What do people know about you, your product or service, your success story, what sets you apart, and how you excel? Al Aan can craft and distribute compelling content, ensuring you control your narrative. Don't worry about the media; we've got you covered.  In today's digital age, with AI, social media, ratings, and reviews, it's crucial to control your story, and we empower you to do so.
+          What do people know about you, your product or service, your success story, what sets you apart, and how you excel? Al Aan can craft and distribute compelling content, ensuring you control your narrative.
         </p>
           <a className='service-cta primary-button' href="#contact-form">Contact Us!</a>
           {/*<div className='home-image-container banner-service-image'>
@@ -188,7 +188,9 @@ With this service You'll get          </h1>
           < div className='left-section-container'>
             <img src={BookingIcon} alt="Booking Icon" />
             <p className='third-heading'>
-            Get Your Tailored Quote Now and Elevate Your Advertising Game with Alaan</p>
+            Get Your Tailored Quote Now and Elevate Your Advertising Game with Alaan
+
+</p>
             <h1 className='secondary-heading'>
             Contact Now!
             </h1>

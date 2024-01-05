@@ -72,16 +72,16 @@ const Media = () => {
                     </div>
                 </div>
             </div>
-            <div className='video-section'>
+            {/*<div className='video-section'>
          <video src={video} autoPlay muted loop controls/>
-         </div>
+         </div>*/}
          <div className='workshop-features-section'>
          <h1 className='light-heading'>
          مقابل 3,500 درهم فقط،
 سوف تحصل على التالي:                    </h1>
 <div className='features'>
     <div className='feature'>
-    <p className='feature-desc third-text'> تدرب على أهمّ أسس تقديم الأخبار والبرامج التلفزيونية لكل لصحافيين المبتدئين الراغبين بتطوير مهاراتهم و لكل الباحثين عن فرص عمل جديدة في عالم الإعلام
+    <p className='feature-desc third-text'> تدرب على أهمّ أسس تقديم الأخبار والبرامج التلفزيونية 
     </p>
 
     </div>

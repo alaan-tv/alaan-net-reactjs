@@ -42,19 +42,18 @@ const Podcast = () => {
           <div className='workshop-details-section'>
                   <div className='workshop-intro'>
                       <h1 className='third-heading'>
-                      هل تفكر في بدء بودكاست خاص بك ولكنك لست متأكداً من أين تبدأ؟ أو كيف تصل إلى جمهورك؟ أو حتى كيف تستطيع إنشاء محتوى يتردد صداه ويتفاعل مع المستمعين؟ لا تقلق، فلست الوحيد!
+                      هل تفكر في بدء بودكاست خاص بك ولكنك لست متأكداً من أين تبدأ؟<br/> أو كيف تصل إلى جمهورك؟ أو حتى كيف تستطيع إنشاء محتوى يتردد صداه ويتفاعل مع المستمعين؟ لا تقلق، فلست الوحيد!
 
 </h1>
                       <p>لهذا السبب قمنا بتصميم ورشة عمل مكثفة لمدة 4 أيام لتحويل محبي البودكاست إلى مبدعين! نحن هنا لنزودك بالمعرفة، والمهارات، والثقة التي تحتاجها لاكتشاف تخصصك، وصياغة محتوى رائع له، وإطلاق البودكاست الخاص بك بنجاح!
 
 </p>
                   </div>
-                  <div className='workshop-features'>
+                  <div className='workshop-features-section'>
                       <h1 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
 </h1>
                       <div className='features features-wrap'>
                           <div className='feature'>
-                          <img src={WorkshopFeatureImageIcon} alt="Feature Icon" className='feature-icon' />
                           
   < p className='feature-desc third-text'> فهم أهمية وطريقة تصميم الهوية البصرية، وتصميم غلاف البودكاست والحلقات
  
@@ -62,7 +61,6 @@ const Podcast = () => {
   </p>
                           </div>
                           <div className='feature'>
-                          <img src={WorkshopFeatureImageIcon} alt="Feature Icon" className='feature-icon' />
                           
   < p className='feature-desc third-text'> تحرير وتحسين جودة الصوت وتعزيز السرد القصصي من خلال التصميم الصوتي، مع تجربة عملية.
 
@@ -70,14 +68,12 @@ const Podcast = () => {
   </p>
                           </div>
                           <div className='feature'>
-                          <img src={WorkshopFeatureImageIcon} alt="Feature Icon" className='feature-icon' />
  
   < p className='feature-desc third-text'> تطوير القدرة على التخطيط وكتابة وهيكلة حلقات بودكاست ممتعة.
 
   </p>
                           </div>
                           <div className='feature'>
-                          <img src={WorkshopFeatureImageIcon} alt="Feature Icon" className='feature-icon' />
  
   < p className='feature-desc third-text'> القدرة على تسجيل الصوت، وإجراء المقابلات، وسرد المحتوى بفعالية.
 
@@ -85,7 +81,6 @@ const Podcast = () => {
   </p>
                           </div>
                           <div className='feature'>
-                          <img src={WorkshopFeatureImageIcon} alt="Feature Icon" className='feature-icon' />
  
   < p className='feature-desc third-text'> القدرة على فهم مشهد العام لصناعة البودكاست والاستقرار على تخصصك الفريد.
 
@@ -97,7 +92,7 @@ const Podcast = () => {
 
                 
               </div>
-              <div className='video-section'>
+              <div className='video-section podcast-video'>
            <video height={480} style={{background: '#000'}} src={video} autoPlay muted loop controls/>
            </div>
            <div className='workshop-features-section'>
@@ -138,7 +133,7 @@ const Podcast = () => {
           المدربين
                    </h1>
                    <p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث عنها لتميز نفسك</p>
-                   <div className='trainers-podcasts'>
+                   
                    <div className='trainers-container'>
                       <div className='trainer-image'>
                         <img src={TrainerImage} alt='trainer photo'/>
@@ -161,7 +156,7 @@ const Podcast = () => {
                           <p>صحفية ومقدمة برامج حاصلة على بكالوريوس في الصحافة والإعلام من جامعة دمشق انضمت لفريق العمل في تلفزيون الآن عام 2018 قدمت العديد من البرامج الإذاعية المباشرة أبرزها برنامج "ساعة عالهوا" كما تعد وتقدم برامج اجتماعية منها: بودكاست صارت معي - البرنامج التلفزيوني "أنا موجود" وشاركت في تقديم البرامج التلفزيوني المباشر "تلي تيرابي. لديها اهتمام بالتعرف على تجارب الناس في شتى نواحي الحياة بمختلف جنسياتهم وخلفياتهم الثقافية والاجتماعية وتقديمها كقصص إيماناً منها بأن للقصة أثراً كبيراً في تغيير طريقة تفكيرنا نحو الأفضل وجعلنا منفتحين على الآخرين وقادرين على التضامن والتعاطف معهم. </p>
                       </div>
                    </div>
-                   </div>
+                  
                    
            </div>
            <div className='booking workshops-booking' id="contact-form">
@@ -169,12 +164,13 @@ const Podcast = () => {
             < div className='left-section-container'>
               <img src={BookingIcon} alt="Booking Icon" />
               <p className='third-heading'>
-              هل أنت مستعد لإظهار مهاراتك أمام الجمهور؟ 
+              هل أنت مستعد لتطلق العنان لصوتك وتترك بصمتك؟
               </p>
               <p className='third-heading'>
-              كن معنا من 4 إلى 6 ديسمبر 2023 لمدة ثلاث أيام
-  (4 ساعات في اليوم) مقابل 3,500 درهم إماراتي فقط   
-              </p>
+              كن معنا من 11 إلى 14 ديسمبر 2023
+لمدة أربع أيام (4 ساعات في اليوم)
+المقاعد محدودة (6 مقاعد )
+مقابل 4,000 درهم إماراتي فقط              </p>
               <h1 className='secondary-heading'>
               احجز مقعدك الآن !
               </h1>
