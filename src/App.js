@@ -9,12 +9,13 @@ import OwnYourStory from './Components/Pages/Services/OwnYourStory';
 import AR from './Components/Pages/AR';
 import Podcast from './Components/Pages/Workshops/Podcast';
 import Media from './Components/Pages/Workshops/Media';
-
+import ScrollToTop from './Components/Pages/ScrollToTop';
 
 
 function App() {
   return (
     <Router>
+       <ScrollToTop />
     <div className="App">
     
     
@@ -38,6 +39,7 @@ function App() {
     
     </div>
     </Router>
+    
   );
 }
 

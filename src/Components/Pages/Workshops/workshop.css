@@ -165,6 +165,9 @@ padding: 0px
 .workshops-booking .input-wrapper{
     text-align: right;
 }
+.workshops-booking input[type=checkbox] {
+    right: 0 !important;
+}
 /*Podcast workshop*/
 .features-wrap{
     flex-wrap: wrap;
