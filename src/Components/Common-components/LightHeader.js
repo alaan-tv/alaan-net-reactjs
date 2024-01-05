@@ -57,10 +57,10 @@ English</a></li>
     <Drawer open={openMenu} onClose={() => (false)} anchor='right'>
       <Box sx={{ width: 250}}
       role="presentation"
-      onClick={() => setOpenMenu(false)}
       onKeyDown={() => setOpenMenu(false)}
       >
-        <HighlightOffRoundedIcon className='close-menu' onClick={() => setOpenMenu(false)} />
+        
+        <button className="close-EV" onClick={() => setOpenMenu(false)}><HighlightOffRoundedIcon className='close-menu' /></button>
         <List>
         <ListItem className='list-item'>
                 <ListItemButton><NavHashLink to='/#about-us' className='link'>About us</NavHashLink></ListItemButton>
@@ -79,8 +79,23 @@ English</a></li>
                 <ListItemButton>  <a href="#contact-us" className="link">Contact Us</a></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton>  <a href="#" className="link right-section"><Language/></a></ListItemButton>
-              </ListItem>
+              <ListItemButton>  <a href="#" className="link right-section"> <div
+          className="menu"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+         <Language/>
+          {/* <DropdownMenu /> */}
+          {isDropdownVisible && <div className="dropdown-menu">
+      <ul>
+        <li><a className='link' href="/"> 
+English</a></li>
+        <li><a className='link' href="/ar">العربية</a></li>
+        
+      </ul>
+    </div>}
+        </div></a></ListItemButton>
+              </ListItem>            
         </List>
 
       </Box>

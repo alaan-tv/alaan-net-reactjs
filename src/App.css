@@ -32,6 +32,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: baloo, sans-serif;}
+  html, body{
+    overflow-x: hidden;
+  }
   a {text-decoration: none !important; }
 img {
   max-width: 100%;
@@ -251,7 +254,7 @@ height: 64px;
 justify-content: center;
 padding: 21.5px;
 position: relative;
-width: 185px;
+width: 220px;
 font-size: 20px;
 font-weight: 600;
 }
@@ -486,6 +489,9 @@ font-weight: 600;
   width: auto;
   border-radius: 22px;
   padding: 28px 24px;
+}
+.service-card{
+  width: 390px
 }
 .workshops-services .service-card{
   width: 50%;

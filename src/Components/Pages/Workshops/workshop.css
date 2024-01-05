@@ -37,8 +37,8 @@ max-width: 450px;
     gap: 10px;
     align-items: center;
 }
-.workshop-intro .css-i4bv87-MuiSvgIcon-root{
-    color: #df1995;
+.workshop-date .css-i4bv87-MuiSvgIcon-root{
+    color: #df1995 !important;
 }
 .workshop-intro{
     background-image: url(../../../Assets/workshop-background.png);
@@ -98,7 +98,7 @@ height: 298px;
 }
 .workshop-features-section .features{
     display: flex;
-    gap: 40px;
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
     justify-content: center;

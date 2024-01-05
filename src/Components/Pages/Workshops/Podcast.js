@@ -4,7 +4,7 @@ import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
 import EventIcon from '@mui/icons-material/Event'
 import WorkshopFeatureImageIcon from '../../../Assets/workshop-feature-image.svg'
-import video from '../../../Assets/promo.mp4'
+import video from '../../../Assets/podcast-video.mp4'
 import TrainerImage from '../../../Assets/Mohammad-ali.webp'
 import TrainerImage2 from '../../../Assets/maha.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -98,7 +98,7 @@ const Podcast = () => {
                 
               </div>
               <div className='video-section'>
-           <video src={video} autoPlay muted loop controls/>
+           <video height={480} style={{background: '#000'}} src={video} autoPlay muted loop controls/>
            </div>
            <div className='workshop-features-section'>
            <h1 className='light-heading'>
