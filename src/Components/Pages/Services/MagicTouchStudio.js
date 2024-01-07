@@ -39,6 +39,7 @@ const MagicTouchStudio = () => {
 	useEffect(() => {
 		if (getQs('status') == 'captured') {
 			setModal(true);
+			window.history.pushState({}, document.title, window.location.pathname);
 		}
 	}, []);
 
@@ -292,7 +293,7 @@ const MagicTouchStudio = () => {
 									onChange={setPhone} required/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
-									<span>I agree with <a
+									<span id="terms-label">I agree with <a
 										href='https://www.alaan.net/terms/'>Terms & Conditions</a> </span>
 								</div>
 								<div className="input-wrapper">
