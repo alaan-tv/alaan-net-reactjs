@@ -17,16 +17,10 @@ import TistiImage3 from '../../../Assets/testi-image3.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import TickIcon from '../../../Assets/tick.png'
-import {ajax_url, formData, getQS} from "../../../custom-functions";
+import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 
 const MagicTouchStudio = () => {
-	
-	useEffect(() => {
-		if (getQS('status') == 'captured') {
-			setModal(true);
-		}
-	}, []);
 
 	/**
 	 *  
@@ -37,7 +31,13 @@ const MagicTouchStudio = () => {
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
-	
+
+	useEffect(() => {
+		if (getQs('status') == 'captured') {
+			setModal(true);
+		}
+	}, []);
+
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
@@ -53,19 +53,17 @@ const MagicTouchStudio = () => {
 				lp_type: 'studio',
 				title: 'Magic Touch Studio - Service',
 				subject: 'Magic Touch Studio',
+				page_url: window.location.origin+window.location.pathname,
 			})
 		})
 			.then(response => response.json())
 			.then(data => {
 				if (data.id) {
 					setInputs({});
-					setModal(true);
+					setPhone('971');
+					window.location = data.payment_link;
 				}
-			})
-			.catch(error => {
-				console.error(error);
-			});
-
+			}).catch(error => console.error(error));
 	}
 	/**
 	 * 
@@ -274,7 +272,7 @@ const MagicTouchStudio = () => {
 							<form action='' onSubmit={handleSubmit}>
 								<div className="input-wrapper">
 									<label for="first">FULL NAME</label>
-									<input type="text" name='fullname' value={inputs.fullname || ""}
+									<input type="text" name='name' value={inputs.name || ""}
 									       onChange={handleChange} placeholder='Enter you name' required/>
 								</div>
 								<div className="input-wrapper">

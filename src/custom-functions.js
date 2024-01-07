@@ -17,7 +17,7 @@ export const formData = obj => {
 	return formData;
 }
 
-export const getQS=(name)=>{
+export const getQs=(name)=>{
 	let search = window.location.search;
 	let params = new URLSearchParams(search);
 	return params.get(name);

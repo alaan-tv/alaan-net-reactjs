@@ -390,3 +390,6 @@
 .modal strong {
   width: 200px;
 }
+#terms-label{
+  left:unset!important;
+}
