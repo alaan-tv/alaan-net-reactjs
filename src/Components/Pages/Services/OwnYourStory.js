@@ -63,10 +63,22 @@ const OwnYourStory = () => {
 	}
 
 	const youWillGetList = [
-		{icon: FeatureIcon1,title:'Custom Messaging', desc: 'You provide the key message, we handle the rest, ensuring your story is heard by the right audience through our extensive regional network.'},
-		{icon: FeatureIcon2,title:'Comprehensive Services', desc: 'Benefit from professional photoshoots in our studio for all your PR needs, and receive content tailored for your digital and social platforms.'},
-		{icon: FeatureIcon3,title:'Image Management', desc: 'From hair and makeup to dress code advice, we\'ve got you covered, ensuring you look your best on camera.'},
-		{icon: FeatureIcon4,title:'Expert Guidance', desc: 'Regardless of experience, our experts offer support and training to prepare you for your on-camera appearances.'},
+		{
+			icon: FeatureIcon1,
+			title:"Custom Messaging",
+			desc: "You provide the key message, we handle the rest, ensuring your story is heard by the right audience through our extensive regional network."},
+		{
+			icon: FeatureIcon2,
+			title:"Comprehensive Services",
+			desc: "Benefit from professional photoshoots in our studio for all your PR needs, and receive content tailored for your digital and social platforms."},
+		{
+			icon: FeatureIcon3,
+			title:"Image Management",
+			desc: "From hair and makeup to dress code advice, we've got you covered, ensuring you look your best on camera."},
+		{
+			icon: FeatureIcon4,
+			title:"Expert Guidance",
+			desc: "Regardless of experience, our experts offer support and training to prepare you for your on-camera appearances."},
 	];
 
 	const Feature = ({item}) => {

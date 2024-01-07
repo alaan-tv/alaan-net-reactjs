@@ -10,6 +10,10 @@ import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
 import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
 import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
 import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
+import Feature1 from '../../../Assets/f1.svg'
+import Feature2 from '../../../Assets/f2.svg'
+import Feature3 from '../../../Assets/f3.svg'
+import Feature4 from '../../../Assets/f4.svg'
 import video from '../../../Assets/promo.mp4'
 import TistiImage1 from '../../../Assets/testi-image1.svg'
 import TistiImage2 from '../../../Assets/testi-image2.svg'
@@ -23,9 +27,9 @@ import Modal from '../../Common-components/Modal';
 const MagicTouchStudio = () => {
 
 	/**
-	 *  
-	 *  Send From Data 
-	 *  
+	 *
+	 *  Send From Data
+	 *
 	 */
 	const [inputs, setInputs] = useState({});
 	const [modal, setModal] = useState(false);
@@ -66,9 +70,9 @@ const MagicTouchStudio = () => {
 			}).catch(error => console.error(error));
 	}
 	/**
-	 * 
+	 *
 	 *  Send Guidebook Email
-	 *  
+	 *
 	 */
 	const [guideEmail, setGuideEmail] = useState('');
 	const submitGuidBtn = useRef();
@@ -117,24 +121,24 @@ const MagicTouchStudio = () => {
 
 	const howItWorkList = [
 		{
-			icon: FeatureIcon1,
-			title: '1-Register and Pay',
-			desc: 'Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time.'
+			icon: Feature1,
+			title: "Register and Pay",
+			desc: "Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time."
 		},
 		{
-			icon: FeatureIcon2,
-			title: '2-Studio Session and Questionnaire',
-			desc: 'Attend your studio session for a professional video shoot and questionnaire.'
+			icon: Feature2,
+			title: "Studio Session and Questionnaire",
+			desc: "Attend your studio session for a professional video shoot and questionnaire."
 		},
 		{
-			icon: FeatureIcon3,
-			title: '3-Video Production and Editing',
-			desc: 'We\'ll expertly produce and edit your Video CV.'
+			icon: Feature3,
+			title: "Video Production and Editing",
+			desc: "We'll expertly produce and edit your Video CV."
 		},
 		{
-			icon: FeatureIcon4,
-			title: '4-Receive Your Ready-to-Use Video CV',
-			desc: 'You\'ll receive your polished Video CV for immediate use on platforms like LinkedIn to enhance your job prospects.'
+			icon: Feature4,
+			title: 'Receive Your Ready-to-Use Video CV',
+			desc: "You'll receive your polished Video CV for immediate use on platforms like LinkedIn to enhance your job prospects."
 		},
 	];
 
@@ -152,7 +156,7 @@ const MagicTouchStudio = () => {
 		},{
 			image: TistiImage3,
 			title: '',
-			name: 'Omar Bin Ashoor',
+			name: 'Nada Ahmed',
 			desc: '"Choosing Magic touch studio was a game-changer for me. The personalized touch they brought to my video CV exceeded my expectations."'
 		},
 

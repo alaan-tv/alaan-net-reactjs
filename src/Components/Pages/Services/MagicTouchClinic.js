@@ -10,6 +10,11 @@ import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
 import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
 import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
 import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
+import Feature1 from '../../../Assets/f1.svg'
+import Feature2 from '../../../Assets/f2.svg'
+import Feature3 from '../../../Assets/f3.svg'
+import Feature4 from '../../../Assets/f4.svg'
+import Feature5 from '../../../Assets/f5.svg'
 import TrainerImage from '../../../Assets/christin.webp'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
@@ -112,38 +117,48 @@ const MagicTouchClinic = () => {
 	const youWillGetList = [
 		{
 			icon: FeatureIcon1,
-			title: 'Personal Career Boost',
-			desc: 'RGet a 30-minute one on one session with our expert to supercharge your career.'
+			title: "Personal Career Boost",
+			desc: "RGet a 30-minute one on one session with our expert to supercharge your career."
 		},
 		{
 			icon: FeatureIcon2,
-			title: 'Complete Review',
-			desc: 'We\'ll make sure your digital presence such as (LinkedIn Profile) are excellent.'
+			title: "Complete Review",
+			desc: "We'll make sure your digital presence such as (LinkedIn Profile) are excellent."
 		},
-		{icon: FeatureIcon3, title: 'Pro Advice', desc: 'Benefit from our experts\' recommendations and tips.'},
+		{
+			icon: FeatureIcon3,
+			title: "Pro Advice", desc: "Benefit from our experts' recommendations and tips."},
 		{
 			icon: FeatureIcon4,
-			title: 'Guidance Just for You',
-			desc: 'We\'ll give you personalized advice for your career.'
+			title: "Guidance Just for You",
+			desc: "We'll give you personalized advice for your career."
 		},
 	];
 
 	const howItWorkList = [
 		{
-			icon: FeatureIcon1,
-			title: '1-Register and Pay',
-			desc: 'Begin by registering and making the payment of AED 1,200.'
+			icon: Feature1,
+			title: "Register and Pay",
+			desc: "Begin by registering and making the payment of AED 1,200."
 		},
-		{icon: FeatureIcon2, title: '2-Submission', desc: 'Provide your CVs and LinkedIn profile.'},
-		{icon: FeatureIcon3, title: '3-In-Depth Analysis', desc: 'Our experts find errors and inconsistencies.'},
 		{
-			icon: FeatureIcon4,
-			title: '4-Clear Feedback',
-			desc: 'Receive actionable advice and issue alerts.'
+			icon: Feature2,
+			title: "Submission",
+			desc: "Provide your CVs and LinkedIn profile."
+		},
+		{
+			icon: Feature3,
+			title: "In-Depth Analysis',
+			desc: "Our experts find errors and inconsistencies."
+		},
+		{
+			icon: Feature4,
+			title: "Clear Feedback",
+			desc: "Receive actionable advice and issue alerts."
 		}, {
-			icon: FeatureIcon1,
-			title: '5-Expert Consultation',
-			desc: 'Our expert will contact you to book a 30-minute session to Implement recommended changes for a standout profile.'
+			icon: Feature5,
+			title: "Expert Consultation",
+			desc: "Our expert will contact you to book a 30-minute session to Implement recommended changes for a standout profile."
 		},
 	];
 
@@ -263,8 +278,8 @@ const MagicTouchClinic = () => {
 								</div>
 								<div className="input-wrapper">
 									<label><input type='checkbox' required/>
-									<span>I agree with <a
-										href='https://www.alaan.net/terms/'>Terms & Conditions</a> </span></label>
+										<span>I agree with <a
+											href='https://www.alaan.net/terms/'>Terms & Conditions</a> </span></label>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' value="Pay Now!"/>
