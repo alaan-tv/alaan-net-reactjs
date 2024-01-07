@@ -109,7 +109,7 @@ const Home = () => {
               </div>
             </div>
             </div>  
-            < div className='our-features'>
+            <div className='our-features'>
               <div className='our-services'>
               <div className='our-services-container'>
                <Link to='/our-services'> <img src={OurServices} /></Link>

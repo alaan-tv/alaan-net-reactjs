@@ -34,7 +34,7 @@ function App() {
 
 
 
-    <Route path="/ar" element={< AR/>}></Route>
+    <Route path="/ar" element={<AR/>}></Route>
 
     </Routes>
 

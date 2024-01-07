@@ -34,13 +34,13 @@ const WorkshopsArabic = () => {
         <div className='home-bannerImageLeft-container' >
             <img src={BannerBackgroundLeft} alt="background" />
           </div>
-           < div className='our-services2'>
+           <div className='our-services2'>
            <div className='our-services-container2 workshops-services'>
             {/*<div className='service-card'>
               <img src={MagicTouchClinicIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Clinic           </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
@@ -51,7 +51,7 @@ const WorkshopsArabic = () => {
               <h2 className='third-heading' >
 ورشات البودكاست
                    </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Our Podcast Workshop offers essential skills for successful podcasting, from creating your concept to production and distribution.
 </p>
@@ -64,7 +64,7 @@ const WorkshopsArabic = () => {
               <h2 className='third-heading' >
 ورشات الميديا
                      </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Our Media Workshop is tailored to enhance your media presence and develop your skills as a presenter.
 </p>
