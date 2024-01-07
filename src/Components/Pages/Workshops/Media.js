@@ -49,7 +49,7 @@ const Media = () => {
 				phone: phone,
 				lp_type: 'media-workshop',
 				title: 'Media Workshop - Service',
-				subject: 'Media Workshop',
+				email_subject: 'Media Workshop',
 				page_url: window.location.origin + window.location.pathname,
 			})
 		})
