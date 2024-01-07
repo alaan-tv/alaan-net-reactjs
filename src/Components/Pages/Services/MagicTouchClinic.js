@@ -23,29 +23,6 @@ import TickIcon from "../../../Assets/tick.png";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 
 const MagicTouchClinic = () => {
-	const responsive = {
-		desktop: {
-			breakpoint: {max: 3000, min: 1024},
-			items: 3,
-			slidesToSlide: 3 // optional, default to 1.
-		},
-		tablet: {
-			breakpoint: {max: 1024, min: 464},
-			items: 2,
-			slidesToSlide: 2 // optional, default to 1.
-		},
-		mobile: {
-			breakpoint: {max: 464, min: 0},
-			items: 1,
-			slidesToSlide: 1 // optional, default to 1.
-		}
-	};
-
-	useEffect(() => {
-		if (getQs('status') == 'captured') {
-			setModal(true);
-		}
-	}, []);
 
 	/**
 	 *
@@ -55,13 +32,22 @@ const MagicTouchClinic = () => {
 	const [inputs, setInputs] = useState({});
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
+	//const [file, setFile] = useState<File | null>(null);
+	const inputFile = useRef(null);
 	const submitBtn = useRef(null);
 
 	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
+		const name = event.target.name??'';
+		const value = event.target.value??'';
 		setInputs(values => ({...values, [name]: value}))
 	}
+
+	useEffect(() => {
+		if (getQs('status') === 'captured') {
+			setModal(true);
+			window.history.pushState({}, document.title, window.location.pathname);
+		}
+	}, []);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -70,6 +56,7 @@ const MagicTouchClinic = () => {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
+				cv: inputFile.current.files[0],
 				lp_type: 'clinic',
 				title: 'Magic Touch Clinic - Service',
 				subject: 'Magic Touch Clinic',
@@ -165,7 +152,7 @@ const MagicTouchClinic = () => {
 	const Feature = ({item}) => {
 		return (
 			<div className='feature'>
-				<img src={item.icon} alt="Feature Icon" className='feature-icon'/>
+				<img src={item.icon} alt="Feature Icon" className='feature-icon' />
 				{item.title && <p className='feature-heading'>{item.title}</p>}
 				{item.desc && <p className='feature-desc third-text'>{item.desc}</p>}
 			</div>
@@ -251,7 +238,7 @@ const MagicTouchClinic = () => {
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id='contact-form'>
-							<form action='' onSubmit={handleSubmit} enctype="multipart/form-data">
+							<form action='' onSubmit={handleSubmit} encType="multipart/form-data">
 								<div className="input-wrapper">
 									<label for="first">FULL NAME</label>
 									<input type="text" name='name' value={inputs.name || ""}
@@ -267,22 +254,22 @@ const MagicTouchClinic = () => {
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
-									onChange={setPhone}/>
+									onChange={setPhone} />
 								<div className="input-wrapper">
 									<label for="first">LINKEDIN PROFILE</label>
-									<input type="text" name="linked_in" value={inputs.linked_in || ""} onChange={handleChange} placeholder='Enter you linkedin profile'/>
+									<input type="text" name="linked_in" value={inputs.linked_in || ""} onChange={handleChange} placeholder='Enter you linkedin profile' required/>
 								</div>
 								<div className="input-wrapper">
 									<label for="first">UPLOUD CV</label>
-									<input type="file" placeholder='Uploud your CV'/>
+									<input type="file" placeholder='Uploud your CV' ref={inputFile} name="cv" accept="application/msword,application/pdf" required/>
 								</div>
 								<div className="input-wrapper">
-									<label><input type='checkbox' required/>
+									<input type='checkbox' required/>
 										<span>I agree with <a
-											href='https://www.alaan.net/terms/'>Terms & Conditions</a> </span></label>
+											href='https://www.alaan.net/terms/'>Terms & Conditions</a> </span>
 								</div>
 								<div className="input-wrapper">
-									<input type='submit' value="Pay Now!"/>
+									<input type='submit' ref={submitBtn} value="Pay Now!"/>
 								</div>
 							</form>
 						</div>
@@ -309,18 +296,18 @@ const MagicTouchClinic = () => {
 							</div>
 						</div>
 						<div className='avatar'>
-							<img className='' src={Avatar}/>
+							<img className='' src={Avatar} alt=""/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <img src={TickIcon}/> <p>Thank you for sharing your email with us. Your requested file
+			       children={<> <img src={TickIcon} alt=""/> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)

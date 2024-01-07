@@ -36,6 +36,7 @@ const Podcast = () => {
 	useEffect(() => {
 		if (getQs('status') == 'captured') {
 			setModal(true);
+			window.history.pushState({}, document.title, window.location.pathname);
 		}
 	}, []);
 
@@ -229,9 +230,9 @@ const Podcast = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<label id="terms-label"><input type='checkbox' required/>
+									<input type='checkbox' required/>
 										<span>أنا أوافق على <a
-											href='https://www.alaan.net/terms/'>الشروط و الأحكام</a> </span></label>
+											href='https://www.alaan.net/terms/'>الشروط و الأحكام</a> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' ref={submitBtn} value="متابعة"/>
