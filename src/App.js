@@ -10,6 +10,7 @@ import AR from './Components/Pages/AR';
 import Podcast from './Components/Pages/Workshops/Podcast';
 import Media from './Components/Pages/Workshops/Media';
 import ScrollToTop from './Components/Pages/ScrollToTop';
+import WorkshopsArabic from './Components/Pages/WorkshopsArabic'
 
 
 function App() {
@@ -29,9 +30,11 @@ function App() {
     <Route path="/our-services/own-your-story" element={<OwnYourStory />}  />
     <Route path="/our-workshops/podcast" element={<Podcast />}  />
     <Route path="/our-workshops/media" element={<Media />}  />
+    <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
 
 
-    <Route path="/ar" element={< AR/>}></Route>
+
+    <Route path="/ar" element={<AR/>}></Route>
 
     </Routes>
 

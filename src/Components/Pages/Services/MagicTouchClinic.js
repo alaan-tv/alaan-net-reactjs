@@ -148,7 +148,7 @@ const MagicTouchClinic = () => {
 		},
 		{
 			icon: Feature3,
-			title: "In-Depth Analysis',
+			title: "In-Depth Analysis",
 			desc: "Our experts find errors and inconsistencies."
 		},
 		{

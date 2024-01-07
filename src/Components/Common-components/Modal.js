@@ -9,7 +9,7 @@ export const Modal = ({ handleClose, show, children }) => {
           <div className="modal-bg modal-exit"></div>
           <div className="modal-container">
               {children}
-              <button class="modal-close modal-exit" onClick={handleClose}>&times;</button>
+              <button className="modal-close modal-exit" onClick={handleClose}>&times;</button>
           </div>
       </div>
   );

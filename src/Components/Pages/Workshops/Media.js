@@ -167,7 +167,7 @@ const Media = () => {
 				</div>
 				<div className='booking workshops-booking' id="contact-form">
 					<div className='left-section'>
-						< div className='left-section-container'>
+						<div className='left-section-container'>
 							<img src={BookingIcon} alt="Booking Icon"/>
 							<p className='third-heading'>
 								هل أنت مستعد لإظهار مهاراتك أمام الجمهور؟

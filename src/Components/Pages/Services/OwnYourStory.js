@@ -114,7 +114,7 @@ const OwnYourStory = () => {
 							</p>
 							<a className='service-cta primary-button' href="#contact-form">Contact Us!</a>
 							{/*<div className='home-image-container banner-service-image'>
-      
+
           <picture>
    <source media='(max-width: 768px)' srcSet={BannerMobile} />
    <source media='(min-width: 768px)' srcSet={Banner} />

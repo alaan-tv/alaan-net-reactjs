@@ -1,7 +1,7 @@
 .hero-workshop-section{
     display: flex;
     margin: auto;
-    padding: 100px 0px;
+    padding: 50px 0px;
     gap: 40px;
     text-align: right;
     direction: rtl;
@@ -61,7 +61,7 @@ max-width: 450px;
     color: #000;
     text-align: center;
     padding: 120px 0px 53px 0px;
-    max-width: 613px;
+    /*max-width: 613px;*/
     margin: auto;
 
 }
@@ -73,10 +73,13 @@ max-width: 450px;
 .workshop-features .feature{
 background-image: url(../../../Assets/workshop-features-background.png);
 width: 356px;
-height: 298px;
+/*height: 298px;*/
 }
 .workshop-features .feature-heading{
-    padding: 40px 20px 0px 20px;
+    padding: 30px 35px 0px 35px;
+}
+.workshop-features .feature-desc{
+    padding: 15px 35px 20px 35px;
 }
 .workshop-features-section {
     direction: rtl;
@@ -91,8 +94,8 @@ height: 298px;
 .workshop-features-section .light-heading{
     color: #000;
     text-align: center;
-    padding: 50px 0px 53px 0px;
-    max-width: 613px;
+    padding: 70px 0px 40px 0px;
+    /*max-width: 613px;*/
     margin: auto;
 
 }
@@ -196,7 +199,7 @@ padding: 0px
 
 }
 .podcast-hero .workshop-image{
-    max-width: 800px;
+    max-width: 720px;
 }
 .podcast-hero .workshop-image img{
     border-radius: 20px;
@@ -206,7 +209,11 @@ padding: 0px
     max-width: 798px !important;
 }
 .features-wrap .feature{
-    height: 200px;
+    /*height: 200px;*/
+}
+.podcast-video{
+    padding: 100px 30px 50px 30px;
+
 }
    @media (max-width: 1290px){
     .workshop-features-section .feature{
@@ -244,6 +251,9 @@ padding: 0px
 }
 .workshop-features-section .feature{
     max-width: 100% !important;
+   
+        min-height: 50px;
+   
 }
 .workshop-features-section .feature{
     background-size: 100% 100%;
@@ -267,6 +277,12 @@ padding: 0px
        }
        .hero-workshop-section .light-heading {
         text-align: center;
+    }
+    .workshop-features-section .light-heading{
+        padding: 50px 0px 10px 0px;
+    }
+    .workshops-trainers{
+        padding: 100px 0px 60px 0px;
     }
     .trainers-podcasts{
         flex-direction: column;
