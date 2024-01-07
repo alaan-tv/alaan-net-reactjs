@@ -57,7 +57,7 @@ const MagicTouchStudio = () => {
 				phone: phone,
 				lp_type: 'studio',
 				title: 'Magic Touch Studio - Service',
-				subject: 'Magic Touch Studio',
+				email_subject: 'Magic Touch Studio',
 				page_url: window.location.origin+window.location.pathname,
 			})
 		})
@@ -83,7 +83,7 @@ const MagicTouchStudio = () => {
 		submitGuidBtn.current.value = 'Please wait...';
 		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', subject: 'Guidebook',
+				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
 			})
 		})
 			.then(response => response.json())
