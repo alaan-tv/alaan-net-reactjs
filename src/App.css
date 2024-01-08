@@ -35,7 +35,12 @@
   html{
     overflow-x: hidden;
   }
-  a {text-decoration: none !important; }
+  a {text-decoration: none !important;
+    cursor: pointer !important ;
+   }
+   button{
+    cursor:  pointer !important;
+   }
 img {
   max-width: 100%;
   height: auto;

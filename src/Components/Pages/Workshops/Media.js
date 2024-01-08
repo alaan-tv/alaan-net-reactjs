@@ -114,7 +114,7 @@ const Media = () => {
 							<p>ورشة تدريب إعلامية تساعدك على صقل موهبتك وتطوير مهارتك في عالم الإعلام والميديا
 								الحديثة.</p>
 							<div className='workshop-date'><EventIcon/> <p>تاريخ الورشة: 4-6 ديسمبر </p></div>
-							<button className='cta-button'>احجز الآن</button>
+							<a href='#contact-form'><button className='cta-button'>احجز الآن</button></a>
 						</div>
 						<div className='workshop-image'>
 							<img src={WorkshopImage}/>
