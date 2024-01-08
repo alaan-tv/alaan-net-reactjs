@@ -54,7 +54,7 @@ const Podcast = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
@@ -155,7 +155,7 @@ const Podcast = () => {
 							<button className='cta-button'>احجز الآن</button>
 						</div>
 						<div className='workshop-image'>
-							<img src={WorkshopImage}/>
+							<img src={WorkshopImage} alt=''/>
 						</div>
 					</div>
 				</div>
@@ -249,7 +249,7 @@ const Podcast = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<> <img src={TickIcon} alt=''/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }

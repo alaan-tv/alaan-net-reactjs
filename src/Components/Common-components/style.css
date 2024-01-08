@@ -406,7 +406,7 @@
 .workshops-arabic .our-services-container2{
   flex-wrap: nowrap;
 }
-
+.invalid-code{color:red;}
 /*terms page*/
 .terms-section{
   padding: 100px 0px 0px 0px;
