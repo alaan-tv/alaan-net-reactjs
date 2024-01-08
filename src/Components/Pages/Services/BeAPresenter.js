@@ -8,44 +8,33 @@ import 'react-phone-input-2/lib/style.css'
 import TrainerImage1 from '../../../Assets/Muna.svg'
 import TrainerImage2 from '../../../Assets/Kareem.svg'
 import TrainerImage3 from '../../../Assets/Rasha.svg'
-
 import TrainerImage4 from '../../../Assets/Sajad.png'
-
 import InstagramIcon from '@mui/icons-material/Instagram'
-import YoutubeIcon from '@mui/icons-material/YouTube'
+//import YoutubeIcon from '@mui/icons-material/YouTube'
 import TwitterIcon from '@mui/icons-material/Twitter'
-
 import Header from '../../Common-components/ArabicLightHeader'
 import Footer from '../../Common-components/Footer'
-import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
-import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
-import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
-import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
 import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import Feature5 from '../../../Assets/f5.svg'
 import Feature6 from '../../../Assets/f6.svg'
-import video from '../../../Assets/promo.mp4'
-import TistiImage1 from '../../../Assets/testi-image1.svg'
-import TistiImage2 from '../../../Assets/testi-image2.svg'
-import TistiImage3 from '../../../Assets/testi-image3.svg'
+//import video from '../../../Assets/promo.mp4'
 import BookingIcon from '../../../Assets/booking2.svg'
-import Avatar from '../../../Assets/avatar.svg'
 import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
 
 const BeAPresenter = () => {
-    const [inputs, setInputs] = useState({});
+    const [inputs, setInputs] = useState({name:'',email:'',promo_code:''});
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
 
 	useEffect(() => {
-		if (getQs('status') == 'captured') {
+		if (getQs('status') === 'captured') {
 			setModal(true);
 			window.history.pushState({}, document.title, window.location.pathname);
 		}
@@ -59,13 +48,13 @@ const BeAPresenter = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
-				lp_type: 'studio',
-				title: 'Magic Touch Studio - Service',
-				email_subject: 'Magic Touch Studio',
+				lp_type: 'presenter',
+				title: 'Be A Presenter - Service',
+				email_subject: 'Be A Presenter',
 				page_url: window.location.origin+window.location.pathname,
 			})
 		})
@@ -80,53 +69,23 @@ const BeAPresenter = () => {
 	}
 	/**
 	 *
-	 *  Send Guidebook Email
+	 *  Validate Promotion code
 	 *
 	 */
-	const [guideEmail, setGuideEmail] = useState('');
-	const submitGuidBtn = useRef();
-	const [guideModal, setGuideModal] = useState(false);
-	const sendGuideBook = (event) => {
+	const promoMsg = useRef(null);
+	const validatePromoCode = (event) => {
 		event.preventDefault();
-		submitGuidBtn.current.value = 'Please wait...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({
-				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
+		if (inputs.promo_code.length >= 4) {
+			fetch(ajax_url("wp-api/v2/alaan-net/validate-promo-code.php"), {
+				method: 'Post', body: formData({ promo_code: inputs.promo_code,}),
 			})
-		})
-			.then(response => response.json())
-			.then(data => {
-				if (data.id) {
-					setGuideEmail('');
-					setGuideModal(true);
-				}
-			}).catch(error => console.error(error));
-	}
-
-
-	const responsive = {
-		desktop: {
-			breakpoint: {max: 3000, min: 1024},
-			items: 3,
-			slidesToSlide: 3 // optional, default to 1.
-		},
-		tablet: {
-			breakpoint: {max: 1024, min: 464},
-			items: 2,
-			slidesToSlide: 2 // optional, default to 1.
-		},
-		mobile: {
-			breakpoint: {max: 464, min: 0},
-			items: 1,
-			slidesToSlide: 1 // optional, default to 1.
+				.then(response => response.json())
+				.then(data =>  promoMsg.current.innerText=(data.status!=='success')?'Invalid Promo Code':'' )
+				.catch(error => console.error(error));
+		}else{
+			promoMsg.current.innerText='';
 		}
-	};
-	const youWillGetList = [
-		{icon: FeatureIcon1, desc: 'Tailored Interview Questions Highlighting Your Strengths'},
-		{icon: FeatureIcon2, desc: 'Professional Video Shooting and great pictures for an Outstanding Presentation'},
-		{icon: FeatureIcon3, desc: 'Expertly Produced and Edited Video CVs'},
-		{icon: FeatureIcon4, desc: 'Optional Makeup Service for Camera-Ready Confidence'},
-	];
+	}
 
 	const howItWorkList = [
 		{
@@ -161,43 +120,6 @@ const BeAPresenter = () => {
 		},
 	];
 
-	const testimonialList = [
-		{
-			image: TistiImage1,
-			title: '',
-			name: 'Omar Bin Ashoor',
-			desc: '"I decided to give Magic Touch a try. They transformed my plain CV into an engaging video that truly showcased my skills."'
-		},{
-			image: TistiImage2,
-			title: '',
-			name: 'Mohannad Al Wadi',
-			desc: '"Magic Touch proved to be a great investment. The video CV they crafted not only highlighted my qualifications but also showcased my personality."'
-		},{
-			image: TistiImage3,
-			title: '',
-			name: 'Nada Ahmed',
-			desc: '"Choosing Magic touch studio was a game-changer for me. The personalized touch they brought to my video CV exceeded my expectations."'
-		},
-
-	];
-
-	const Testimonial = ({item})=>{
-		return (
-			<>
-				<div className='testimonail'>
-					<p className='testi-desc'>{item.desc}</p>
-					<div className='divider2'></div>
-					<div className='testi-info'>
-						<img className='testi-image' src={item.image} alt="customer photo"/>
-						<div className='testi-name'>
-							<p className='name'><b>{item.name}</b></p>
-							<p>{item.title}</p>
-						</div>
-					</div>
-				</div>
-			</>
-		);
-	}
 
 	const Feature = ({item}) => {
 		return (
@@ -251,7 +173,7 @@ const BeAPresenter = () => {
 		return (
 			<div className='trainers-container'>
 				<div className='trainer-image'>
-					<img src={item.image} alt='trainer photo'/>
+					<img src={item.image} alt='trainer'/>
 					<h4>{item.name}</h4>
 					{item.social && <div className='social-icon'>{item.social.map(s => <a
 						href={s.link}><span>{s.icon}</span></a>)}</div>}
@@ -334,12 +256,12 @@ const BeAPresenter = () => {
 							<form action='' onSubmit={handleSubmit}>
 								<div className="input-wrapper">
 									<label for="first"> الاسم الكامل</label>
-									<input type="text" name='name' value={inputs.name || ""}
+									<input type="text" name='name' value={inputs.name}
 									       onChange={handleChange} placeholder='أدخل اسمك الكامل ' required/>
 								</div>
 								<div className="input-wrapper">
 									<label for="first">البريد الالكتروني</label>
-									<input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
+									<input type="email" name='email' value={inputs.email} onChange={handleChange}
 									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
@@ -350,8 +272,9 @@ const BeAPresenter = () => {
 									onChange={setPhone}/>
                                     <div className="input-wrapper">
 									<label for="first">كود الخصم </label>
-									<input type="text" name='code'  onChange={handleChange}
-									       placeholder='أدخل كود الخصم ' required/>
+									<input type="text" name='promo_code' value={inputs.promo_code} onChange={handleChange}
+									   onInput={validatePromoCode} onKeyUp={validatePromoCode}   placeholder='أدخل كود الخصم ' required/>
+	                                    <div className="invalid-code" ref={promoMsg}></div>
 								</div>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
@@ -371,12 +294,8 @@ const BeAPresenter = () => {
 			<Footer/>
         
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
+			       children={<> <img src={TickIcon}/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 
-			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <img src={TickIcon}/> <p>Thank you for sharing your email with us. Your requested file
-				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>  )
 }
 

@@ -5,7 +5,7 @@ import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
 import EventIcon from '@mui/icons-material/Event'
-import WorkshopFeatureImageIcon from '../../../Assets/workshop-feature-image.svg'
+//import WorkshopFeatureImageIcon from '../../../Assets/workshop-feature-image.svg'
 import video from '../../../Assets/podcast-video.mp4'
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import TrainerImage2 from '../../../Assets/maha.webp'
@@ -25,8 +25,6 @@ import Modal from "../../Common-components/Modal";
 
 
 const Podcast = () => {
-	const [value, setValue] = useState();
-
 
 	/**
 	 *
@@ -39,7 +37,7 @@ const Podcast = () => {
 	const submitBtn = useRef(null);
 
 	useEffect(() => {
-		if (getQs('status') == 'captured') {
+		if (getQs('status') === 'captured') {
 			setModal(true);
 			window.history.pushState({}, document.title, window.location.pathname);
 		}
@@ -54,7 +52,7 @@ const Podcast = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
@@ -129,7 +127,7 @@ const Podcast = () => {
 		return (
 			<div className='trainers-container'>
 				<div className='trainer-image'>
-					<img src={item.image} alt='trainer photo'/>
+					<img src={item.image} alt='trainer'/>
 					<h4>{item.name}</h4>
 					{item.social && <div className='social-icon'>{item.social.map(s => <a
 						href={s.link}><span>{s.icon}</span></a>)}</div>}
@@ -155,7 +153,7 @@ const Podcast = () => {
 							<button className='cta-button'>احجز الآن</button>
 						</div>
 						<div className='workshop-image'>
-							<img src={WorkshopImage}/>
+							<img src={WorkshopImage} alt=''/>
 						</div>
 					</div>
 				</div>
@@ -249,7 +247,7 @@ const Podcast = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<> <img src={TickIcon} alt=''/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }
