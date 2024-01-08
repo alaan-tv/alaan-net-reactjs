@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
+import { Link } from "react-router-dom";
+
 import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
@@ -9,6 +11,9 @@ import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import TrainerImage2 from '../../../Assets/maha.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import YoutubeIcon from '@mui/icons-material/YouTube'
+import TwitterIcon from '@mui/icons-material/Twitter'
+
+
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import BookingIcon from '../../../Assets/booking2.svg'
@@ -114,7 +119,7 @@ const Podcast = () => {
 			name: "مها فطوم",
 			social: [
 				{icon: <InstagramIcon/>, link: "https://www.instagram.com/maha.fattoum/"},
-				{icon: <YoutubeIcon/>, link: "https://twitter.com/mahafattoum"},
+				{icon: <TwitterIcon/>, link: "https://twitter.com/mahafattoum"},
 			],
 			desc: "صحفية ومقدمة برامج حاصلة على بكالوريوس في الصحافة والإعلام من جامعة دمشق انضمت لفريق العمل في تلفزيون الآن عام 2018 قدمت العديد من البرامج الإذاعية المباشرة أبرزها برنامج \"ساعة عالهوا\" كما تعد وتقدم برامج اجتماعية منها: بودكاست صارت معي - البرنامج التلفزيوني \"أنا موجود\" وشاركت في تقديم البرامج التلفزيوني المباشر \"تلي تيرابي. لديها اهتمام بالتعرف على تجارب الناس في شتى نواحي الحياة بمختلف جنسياتهم وخلفياتهم الثقافية والاجتماعية وتقديمها كقصص إيماناً منها بأن للقصة أثراً كبيراً في تغيير طريقة تفكيرنا نحو الأفضل وجعلنا منفتحين على الآخرين وقادرين على التضامن والتعاطف معهم."
 		},
@@ -165,7 +170,7 @@ const Podcast = () => {
 							البودكاست الخاص بك بنجاح!
 						</p>
 					</div>
-					<div className='workshop-features'>
+					<div className='workshop-features-section'>
 						<h1 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
 						</h1>
 						<div className='features features-wrap'>
@@ -190,7 +195,7 @@ const Podcast = () => {
 					</h1>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
-					<div className='trainers-podcasts'>
+					<div className=''>
 						{trainerList.map((item) => <Trainer item={item}/>)}
 					</div>
 				</div>
@@ -216,23 +221,22 @@ const Podcast = () => {
 								<div className="input-wrapper">
 									<label for="first"> الاسم الكامل</label>
 									<input type="text" name='name' value={inputs.name || ""}
-									       onChange={handleChange} placeholder='Enter you name' required/>
+									       onChange={handleChange} placeholder='أدخل اسمك الكامل' required/>
 								</div>
 								<div className="input-wrapper">
 									<label for="first">البريد الالكتروني</label>
 									<input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
-									       placeholder='Enter you Email' required/>
+									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
-									special-label="رقم الهاتف"
+									  specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
-										<span>أنا أوافق على <a
-											href='https://www.alaan.net/terms/'>الشروط و الأحكام</a> </span>
+									<span>أنا أوافق على   <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' ref={submitBtn} value="متابعة"/>

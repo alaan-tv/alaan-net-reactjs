@@ -25,8 +25,13 @@ const WorkshopsArabic = () => {
                 ورشاتنا التدريبية
                         </h1>
             <p className='primary-text' >
-            We are excited to offer an array of workshops designed to enhance your media skills and expand your creative horizons.
-        </p>
+            نحن متحمسون لتقديم مجموعة من ورش العمل المصممة لتعزيز مهاراتك في مجال الإعلام وتوسيع آفاق إبداعك.
+
+
+
+
+
+</p>
           </div>
          
         </div>
@@ -53,8 +58,7 @@ const WorkshopsArabic = () => {
                    </h2>
               <div className='service-desc'>
               <p className='third-text'>
-              Our Podcast Workshop offers essential skills for successful podcasting, from creating your concept to production and distribution.
-</p>
+               تقدم المهارات الأساسية للبودكاست الناجح، ابتداءً من صياغة فكرتك إلى الإنتاج والتوزيع.</p>
               
             </div>
             <div className='sevice-more-icon'><Link to="/our-workshops/podcast"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
@@ -66,7 +70,12 @@ const WorkshopsArabic = () => {
                      </h2>
               <div className='service-desc'>
               <p className='third-text'>
-              Our Media Workshop is tailored to enhance your media presence and develop your skills as a presenter.
+              ورشة العمل الخاصة بوسائل الإعلام لدينا مصممة لتعزيز وجودك في وسائل الإعلام وتطوير مهاراتك كمقدم.
+
+
+
+
+
 </p>
               
             </div>

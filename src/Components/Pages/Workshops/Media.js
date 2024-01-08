@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
+import { Link } from "react-router-dom";
+
 import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-image.png'
@@ -140,7 +142,7 @@ const Media = () => {
 				<div className='video-section'>
 					<video src={video} autoPlay muted loop controls/>
 				</div>
-				<div className='workshop-features-section'>§
+				<div className='workshop-features-section'>
 					<h1 className='light-heading'>
 						مقابل 3,500 درهم فقط،
 						سوف تحصل على التالي: </h1>
@@ -186,22 +188,22 @@ const Media = () => {
 								<div className="input-wrapper">
 									<label for="first"> الاسم الكامل</label>
 									<input type="text" name='name' value={inputs.name || ""}
-									       onChange={handleChange} placeholder='Enter you name' required/>
+									       onChange={handleChange} placeholder='أدخل اسمك الكامل' required/>
 								</div>
 								<div className="input-wrapper">
 									<label for="first">البريد الالكتروني</label>
 									<input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
-									       placeholder='Enter you Email' required/>
+									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
-									special-label="رقم الهاتف"
+									  specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
-										<span>أنا أوافق على <a href='https://www.alaan.net/terms/'>الشروط و الأحكام</a> </span>
+										<span>أنا أوافق على   <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' ref={submitBtn} value="متابعة"/>

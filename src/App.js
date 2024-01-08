@@ -11,6 +11,8 @@ import Podcast from './Components/Pages/Workshops/Podcast';
 import Media from './Components/Pages/Workshops/Media';
 import ScrollToTop from './Components/Pages/ScrollToTop';
 import WorkshopsArabic from './Components/Pages/WorkshopsArabic'
+import BeAPresenter from './Components/Pages/Services/BeAPresenter';
+import Terms from './Components/Common-components/Terms';
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
     <Route path="/our-workshops/podcast" element={<Podcast />}  />
     <Route path="/our-workshops/media" element={<Media />}  />
     <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
+    <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
+    <Route path="/terms" element={<Terms />}  />
+
+
 
 
 

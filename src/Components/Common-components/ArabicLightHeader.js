@@ -6,8 +6,8 @@ import {Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText}
 import  Language  from '@mui/icons-material/LanguageRounded';
 import { HiMiniBars3 } from "react-icons/hi2";
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
-const LightHeader = () => {
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
+const ArabicLightHeader = () => {
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const handleMouseEnter = () => {
     setDropdownVisible(true);
@@ -21,16 +21,16 @@ const LightHeader = () => {
 
 
   return (
-    <nav >
+    <nav className='mynav arabic-nav'>
     <div className='nav-logo-container'>
-    <NavHashLink to='/'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/magic-touch/assets/img/whitelogo.png" alt="logo" className="logo-img"/></NavHashLink>
+    <NavHashLink to='/ar'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/magic-touch/assets/img/whitelogo.png" alt="logo" className="logo-img"/></NavHashLink>
 </div>
     <div className="navbar-links-container light-header">
-      <NavHashLink to='/#about-us' className='link'>About us</NavHashLink>
-      <NavHashLink to='/#our-brands' className='link'>Our Brands</NavHashLink>
-      <Link to='/our-services' className='link' activeClassName="active">Our Services</Link>
-      <Link to='/our-workshops' className='link' activeClassName="active">Our Workshops</Link>
-      <a href="#contact-us" className="link">Contact Us</a>
+      <NavHashLink to='/ar/#about-us' className='link'>من نحن</NavHashLink>
+      <NavHashLink to='/ar/#our-brands' className='link'>قنواتنا</NavHashLink>
+      <Link to='/our-services' className='link' activeClassName="active">خدماتنا</Link>
+      <Link to='/our-workshops/ar' className='link' activeClassName="active">ورشاتنا</Link>
+      <a href="#contact-us" className="link">تواصل معنا</a>
    <div className="divider"/>
       <a href="#" className="link right-section">
       <div
@@ -45,13 +45,13 @@ const LightHeader = () => {
         <li><a className='link light-link-lang' href="./"> 
 English</a></li>
         <li><a className='link light-link-lang' href="./ar">العربية</a></li>
-
         
       </ul>
     </div>}
         </div>
       </a>
     </div>
+    
     <div className="navbar-menu-container">
       <HiMiniBars3 className='menu-icon-light' onClick={() => setOpenMenu(true)} />
     </div>
@@ -62,22 +62,22 @@ English</a></li>
       >
         
         <button className="close-EV" onClick={() => setOpenMenu(false)}><HighlightOffRoundedIcon className='close-menu' /></button>
-        <List>
+        <List className='arabic-menu'>
         <ListItem className='list-item'>
-                <ListItemButton><NavHashLink to='/#about-us' className='link'>About us</NavHashLink></ListItemButton>
+                <ListItemButton><NavHashLink to='/ar/#about-us' className='link'>من نحن</NavHashLink></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton><NavHashLink to='/#our-brands' className='link'>Our Brands</NavHashLink></ListItemButton>
+                <ListItemButton><NavHashLink to='/ar/#our-brands' className='link'>قنواتنا</NavHashLink></ListItemButton>
               </ListItem>
               
               <ListItem className='list-item'>
-                <ListItemButton><Link to='/our-services' className='link'>Our Services</Link></ListItemButton>
+                <ListItemButton><Link to='/our-services' className='link'>خدماتنا</Link></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton>        <Link to='/our-workshops' className='link'>Our Workshops</Link></ListItemButton>
+                <ListItemButton>        <Link to='/our-workshops/ar' className='link'>ورشاتنا</Link></ListItemButton>
                 </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton>  <a href="#contact-us" className="link">Contact Us</a></ListItemButton>
+                <ListItemButton>  <a href="#contact-us" className="link">تواصل معنا</a></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
               <ListItemButton>  <a href="#" className="link right-section"> <div
@@ -103,9 +103,7 @@ English</a></li>
     </Drawer>
     
  
-</nav>
-
-  )
+</nav>  )
 }
 
-export default LightHeader
+export default ArabicLightHeader

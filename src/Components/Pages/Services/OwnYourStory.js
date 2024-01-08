@@ -22,6 +22,7 @@ const OwnYourStory = () => {
 
 	const toggle = () => {
 		setOPen(!open);
+		
 	};
 	const toggle1 = () => {
 		setOPen1(!open1);
@@ -197,7 +198,8 @@ const OwnYourStory = () => {
 									<h4> Add a campaign</h4>
 									<p className='sub-title'>(Adding AED10,000 to the cost)</p>
 									<button className='collaps-button' onClick={toggle}>
-										Show details
+									{open ? 'Show Less' : 'Show More'}
+
 									</button>
 									{open && (<div className='toggle package-decription'>
 										<div className='desc-item'><CheckCircleIcon/>
@@ -255,7 +257,7 @@ const OwnYourStory = () => {
 									<h4> Add a campaign</h4>
 									<p className='sub-title'>(Adding AED10,000 to the cost)</p>
 									<button className='collaps-button' onClick={toggle1}>
-										Show details
+									{open1 ? 'Show Less' : 'Show More'}
 									</button>
 									{open1 && (<div className='toggle1 package-decription'>
 										<div className='desc-item'><CheckCircleIcon/>

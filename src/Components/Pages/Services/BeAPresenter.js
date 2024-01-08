@@ -1,11 +1,21 @@
 import React, {useEffect, useRef, useState} from 'react'
-import Carousel from 'react-multi-carousel';
 import { Link } from "react-router-dom";
+
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import Header from '../../Common-components/LightHeader'
+import TrainerImage1 from '../../../Assets/Muna.svg'
+import TrainerImage2 from '../../../Assets/Kareem.svg'
+import TrainerImage3 from '../../../Assets/Rasha.svg'
+
+import TrainerImage4 from '../../../Assets/Sajad.png'
+
+import InstagramIcon from '@mui/icons-material/Instagram'
+import YoutubeIcon from '@mui/icons-material/YouTube'
+import TwitterIcon from '@mui/icons-material/Twitter'
+
+import Header from '../../Common-components/ArabicLightHeader'
 import Footer from '../../Common-components/Footer'
 import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
 import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
@@ -15,24 +25,21 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
+import Feature5 from '../../../Assets/f5.svg'
+import Feature6 from '../../../Assets/f6.svg'
 import video from '../../../Assets/promo.mp4'
 import TistiImage1 from '../../../Assets/testi-image1.svg'
 import TistiImage2 from '../../../Assets/testi-image2.svg'
 import TistiImage3 from '../../../Assets/testi-image3.svg'
-import BookingIcon from '../../../Assets/book-icon.svg'
+import BookingIcon from '../../../Assets/booking2.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
+import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
 
-const MagicTouchStudio = () => {
-
-	/**
-	 *
-	 *  Send From Data
-	 *
-	 */
-	const [inputs, setInputs] = useState({});
+const BeAPresenter = () => {
+    const [inputs, setInputs] = useState({});
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
@@ -124,23 +131,33 @@ const MagicTouchStudio = () => {
 	const howItWorkList = [
 		{
 			icon: Feature1,
-			title: "Register and Pay",
-			desc: "Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time."
+			title: "جلسة تدريبية مكثفة",
+			desc: "أنت على موعد مع جلسة تدريبية وأخرى تطبيقية لمدة ساعتين أو أكثر، مع نخبة من الإعلاميين والخبراء المتمرسين في تدريب المواهب الناشئة للقيام بأفضل أداء أمام الكاميرا. "
 		},
 		{
 			icon: Feature2,
-			title: "Studio Session and Questionnaire",
-			desc: "Attend your studio session for a professional video shoot and questionnaire."
+			title: "جولة في قسم الأخبار ",
+			desc: "ابدأ يومك بجولة تعريفية تتنقل خلالها بين غرف الأخبار والاستوديوهات تارة، وبين أقسام المونتاج ومواقع التواصل الاجتماعي تارة أخرى.            "
 		},
 		{
 			icon: Feature3,
-			title: "Video Production and Editing",
-			desc: "We'll expertly produce and edit your Video CV."
+			title: "تأنّق وتألّق            ",
+			desc: "أوبرا وينفري ليست أفضل منك! دع خبيرة التجميل والماكياج والمظهر الإعلامي تتولى مهمة العناية بشعرك ولبسك ووجهك لتكون متألقاً بأمثل إطلالة إعلامية لك أمام الكاميرا.            "
 		},
 		{
 			icon: Feature4,
-			title: 'Receive Your Ready-to-Use Video CV',
-			desc: "You'll receive your polished Video CV for immediate use on platforms like LinkedIn to enhance your job prospects."
+			title: 'جلسة تصويرية            ',
+			desc: "تمتع بجلسة تصوير احترافية توثق أبرز اللحظات خلال هذا اليوم من خلال باقة من الصور الفوتوغرافية المتقنة.            "
+		},
+        {
+			icon: Feature5,
+			title: "تدريب مسجل            ",
+			desc: "    سيكون تدريبك موثقاً بفيديو يتم نشره على صفحات التواصل الاجتماعي الخاصة بـ  الآن "
+		},
+		{
+			icon: Feature6,
+			title: 'فقرة تلفزيونية خاصة           ',
+			desc: "سيتم تصوير حلقة خاصة بك وحدك، ليتم بثها على التلفزيون ونشرها فوراً على منصات التواصل الاجتماعي وموقعنا الإلكتروني.            "
 		},
 	];
 
@@ -191,24 +208,75 @@ const MagicTouchStudio = () => {
 			</div>
 		);
 	}
+    const trainerList = [
+		{
+			image: TrainerImage1,
+			name: " منى عواد ",
+			social: [
+				{icon: <InstagramIcon/>, link: "https://www.instagram.com/muna_awwad_/"},
+				{icon: <TwitterIcon/>, link: "https://twitter.com/munaawwad"},
+			],
+			desc: "      إعلامية و مذيعة اخبار"
+		},
+        {
+			image: TrainerImage2,
+			name: "  كريم كوكب ",
+			social: [
+				{icon: <InstagramIcon/>, link: "https://www.instagram.com/karimkawkab/"},
+				{icon: <TwitterIcon/>, link: "https://twitter.com/karimkawkabb"},
+			],
+			desc: "     منتج في القسم الاستقصائي "
+		},
+		{
+			image: TrainerImage3,
+			name: " رشا مقران ",
+			social: [
+				{icon: <InstagramIcon/>, link: "https://www.instagram.com/rachamokrane/"},
+				
+			],
+			desc: "  مذيعة نشرات اخبارية ومنتجة أخبار            "
+		},
+        {
+			image: TrainerImage4,
+			name: " سجد الجبوري ",
+			social: [
+				{icon: <InstagramIcon/>, link: "https://www.instagram.com/sjdaljubory/"},
+				{icon: <TwitterIcon/>, link: "https://twitter.com/sjd_aljubori"},
+			],
+			desc: " مذيعة أخبار ومقدمة برامج سياسية   "
+		},
+	];
 
-	return (
+	const Trainer = ({item}) => {
+		return (
+			<div className='trainers-container'>
+				<div className='trainer-image'>
+					<img src={item.image} alt='trainer photo'/>
+					<h4>{item.name}</h4>
+					{item.social && <div className='social-icon'>{item.social.map(s => <a
+						href={s.link}><span>{s.icon}</span></a>)}</div>}
+				</div>
+				<div className='trainer-desc'>
+					<p>{item.desc}</p>
+				</div>
+			</div>
+		);
+	}
 
-		<div>
+  return (
+<div>
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
 					<div className='home-banner-container banner-service'>
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
-								Transform your CV into a video masterpiece!
+								يوم مع الآن يجعلك نجم الإعلام
 							</h1>
 							<p className='primary-text light-text'>
-								We'll turn your traditional resume into an amazing video CV, showcasing your
-								personality, skills, and talents, making it easy for recruiters to see your true
-								potential. Book now to elevate your job search!
-							</p>
-							<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
+                            ما رأيك لو أعطيناك فرصة إعداد وتقديم فقرة إخبارية بنفسك ضمن نشرة حقيقية يراها المشاهدون من كافة أنحاء العالم؟ فرصة العمر قد لا تأتي إلا مرة واحدة في العمر! لذا، اضمن مستقبلك الإعلامي.. بيوم واحد استثنائي، مع الآن
+                            </p>
+							<a className='service-cta primary-button' href="#contact-form">احجز الآن</a>
 							{/*<div className='home-image-container banner-service-image'>
             <picture>
      <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
@@ -221,118 +289,87 @@ const MagicTouchStudio = () => {
 				</div>
 
 			</div>
-			<div className='home-container'>
+			<div className='home-container arabic-service'>
 				<div className='features'>
-					<h1 className='primary-heading'> With only AED 895 you'll get </h1>
+					<h1 className='primary-heading'> 
+                    مقابل 9,500 درهم فقط ، إليك ما ستحصل عليه  في هذا اليوم
+
+                     </h1>
 					<div className='features-container'>
-						{youWillGetList.map((item) => <Feature item={item}/>)}
+                    {howItWorkList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
 				<div className='video-section'>
-					<video src={video} autoPlay muted loop controls/>
+					<video src="https://cdn.alaan.tv/2023/08/10/20230810-1691665028311-original.mp4" autoPlay muted loop controls/>
 				</div>
-				<div className='features'>
-					<h1 className='primary-heading'> How it works </h1>
-					<div className='features-container'>
-						{howItWorkList.map((item) => <Feature item={item}/>)}
+				
+				<div className='trainers workshops-trainers '>
+					<h1 className='primary-heading'>
+						المدربين
+					</h1>
+					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
+						عنها لتميز نفسك</p>
+					<div className='trainers-presenter'>
+						{trainerList.map((item) => <Trainer item={item}/>)}
 					</div>
 				</div>
-				<div className='testimonials'>
-					<h1 className='primary-heading'> Success seekers love Magic Touch </h1>
-					<div className='testimonials-container'>
-						{testimonialList.map((item) => <Testimonial item={item}/>)}
-					</div>
-				</div>
-				<Carousel
-					swipeable={false}
-					draggable={false}
-					showDots={true}
-					responsive={responsive}
-					ssr={true} // means to render carousel on server-side.
-					infinite={true}
-					autoPlay={true}
-					autoPlaySpeed={2000}
-					keyBoardControl={true}
-					customTransition="all .5"
-					transitionDuration={500}
-					containerClass="carousel-container"
-					removeArrowOnDeviceType={["tablet", "mobile"]}
-					dotListClass="custom-dot-list-style"
-					itemClass="carousel-item-padding-40-px"
-				>
-					{testimonialList.map((item) => <Testimonial item={item}/>)}
-				</Carousel>
-				<div className='booking' id="contact-form">
+				
+				<div className='booking workshops-booking' id="contact-form">
 					<div className='left-section'>
 						<div className='left-section-container'>
 							<img src={BookingIcon} alt="Booking Icon"/>
 							<p className='third-heading'>
-								Ready to make a lasting impression and accelerate your career with a compelling video
-								CV?
+								هل أنت مستعد لإظهار مهاراتك أمام الجمهور؟
 							</p>
-							<h1 className='secondary-heading'> Book Now! </h1>
+							<p className='third-heading'>
+                            سجّل الآن ليرتقي مستقبلك مع
+الآن مقابل 9,500 درهم							</p>
+							<h1 className='secondary-heading'>
+								احجز مقعدك الآن !
+							</h1>
 						</div>
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
 							<form action='' onSubmit={handleSubmit}>
 								<div className="input-wrapper">
-									<label for="first">FULL NAME</label>
+									<label for="first"> الاسم الكامل</label>
 									<input type="text" name='name' value={inputs.name || ""}
-									       onChange={handleChange} placeholder='Enter you name' required/>
+									       onChange={handleChange} placeholder='أدخل اسمك الكامل ' required/>
 								</div>
 								<div className="input-wrapper">
-									<label for="first">EMAIL</label>
+									<label for="first">البريد الالكتروني</label>
 									<input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
-									       placeholder='Enter you Email' required/>
+									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
-									label="PHONE NUMBER"
+                                specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
-									onChange={setPhone} required/>
-								<div className="input-wrapper">
-									<input type='checkbox' required/>
-									<span id="terms-label">I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
+									onChange={setPhone}/>
+                                    <div className="input-wrapper">
+									<label for="first">كود الخصم </label>
+									<input type="text" name='code'  onChange={handleChange}
+									       placeholder='أدخل كود الخصم ' required/>
 								</div>
 								<div className="input-wrapper">
-									<input type='submit' value="Pay Now!" ref={submitBtn}/>
+									<input type='checkbox' required/>
+										<span>أنا أوافق على   
+                                            <Link to='/terms'> الشروط و الأحكام </Link> </span>
+								</div>
+								<div className="input-wrapper">
+									<input type='submit' ref={submitBtn} value="متابعة"/>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
-				<div className='guidebook'>
-					<div className='guidebook-container'>
-						<div className='desc'>
-							<h1 className='secondary-heading light-heading2'>
-								Get your free copy of
-							</h1>
-							<h1 className='secondary-heading strong-heading'>
-								The Visual Resume Guidebook! </h1>
-							<p>
-								Discover the secrets to crafting captivating video CVs that can change the game in your
-								job hunt! "The Visual Resume Guidebook" is your gateway to creating resumes that
-								resonate.
-							</p>
-							<div className='get-guidebook'>
-								<form onSubmit={sendGuideBook}>
-									<input type='email' placeholder='Enter your email address' className='email-input'
-									       value={guideEmail}
-									       onChange={(e) => setGuideEmail(e.target.value)} required/>
-									<input type='submit' value="Get Free Guidebook" className='submit-button'
-									       ref={submitGuidBtn}/>
-								</form>
-							</div>
-						</div>
-						<div className='avatar'>
-							<img className='' src={Avatar}/>
-						</div>
-					</div>
-				</div>
+				<ArabicAdvertise />
 			</div>
+            
 			<Footer/>
+        
 			<Modal show={modal} handleClose={() => setModal(!modal)}
 			       children={<> <img src={TickIcon}/> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
@@ -340,8 +377,7 @@ const MagicTouchStudio = () => {
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
 			       children={<> <img src={TickIcon}/> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
-		</div>
-	)
+		</div>  )
 }
 
-export default MagicTouchStudio
+export default BeAPresenter

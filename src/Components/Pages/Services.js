@@ -75,16 +75,17 @@ const Services = () => {
             </div>
             <div className='sevice-more-icon'><Link to="/our-services/own-your-story"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            {/*<div className='service-card'>
+              
+            <div className='service-card'>
               <img src={BeAPresenterIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Be a Presenter         </h2>
               <div className='service-desc'>
               <p className='third-text'>
               Begin your media career journey with skilled specialized experts.</p>
-              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              <div className='sevice-more-icon'><Link to="/our-services/be-a-presenter"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>*/}
+            </div>
             </div>
           
            </div>

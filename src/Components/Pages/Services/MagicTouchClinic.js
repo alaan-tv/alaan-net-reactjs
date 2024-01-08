@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
+import { Link } from "react-router-dom";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -265,8 +266,7 @@ const MagicTouchClinic = () => {
 								</div>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
-										<span>I agree with <a
-											href='https://www.alaan.net/terms/'>Terms & Conditions</a> </span>
+										<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' ref={submitBtn} value="Pay Now!"/>
