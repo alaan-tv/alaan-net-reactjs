@@ -53,7 +53,7 @@ const MagicTouchClinic = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
@@ -85,7 +85,7 @@ const MagicTouchClinic = () => {
 	const sendGuideBook = (event) => {
 		event.preventDefault();
 		submitGuidBtn.current.value = 'Please wait...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
 			})
@@ -204,7 +204,7 @@ const MagicTouchClinic = () => {
 					<h1 className='primary-heading'> Our Expert </h1>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
-							<img src={TrainerImage} alt='trainer photo'/>
+							<img src={TrainerImage} alt='trainer'/>
 							<h4>Christine Maurice</h4>
 							<a href='https://www.linkedin.com/in/christine-maurice-seif'><p><LinkedInIcon/></p></a>
 						</div>

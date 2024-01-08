@@ -30,7 +30,7 @@ const Media = () => {
 	const submitBtn = useRef(null);
 
 	useEffect(() => {
-		if (getQs('status') == 'captured') {
+		if (getQs('status') === 'captured') {
 			setModal(true);
 			window.history.pushState({}, document.title, window.location.pathname);
 		}
@@ -45,7 +45,7 @@ const Media = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
@@ -117,7 +117,7 @@ const Media = () => {
 							<a href='#contact-form'><button className='cta-button'>احجز الآن</button></a>
 						</div>
 						<div className='workshop-image'>
-							<img src={WorkshopImage}/>
+							<img src={WorkshopImage} alt=''/>
 						</div>
 					</div>
 				</div>
@@ -156,7 +156,7 @@ const Media = () => {
 						عنها لتميز نفسك</p>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
-							<img src={TrainerImage} alt='trainer photo'/>
+							<img src={TrainerImage} alt='trainer'/>
 							<h4>رانيا صياح</h4>
 							<a href='https://www.linkedin.com/in/christine-maurice-seif'><p><LinkedInIcon/></p></a>
 						</div>
@@ -216,7 +216,7 @@ const Media = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<> <img src={TickIcon} alt=''/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }
