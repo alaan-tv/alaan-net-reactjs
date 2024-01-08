@@ -98,7 +98,7 @@ box-shadow: 0px 5px 60px #817a9924;}
     color: #817a99;
 font-size: 20px;
 font-weight: 500;
-height: 176px;
+height: 185px;
 line-height: 33px;
 
 
@@ -451,7 +451,9 @@ padding-left: 20px;
             }
             .arabic-service .features .feature{
                 background-image:url(http://localhost:3000/static/media/workshop-features-background.ec0276b0e2fcc1002c70.png);
-                width: 356px;
+                width: 325px;
+                background-size: cover;
+                margin: auto !important;
             }
             .arabic-service .workshops-trainers{
                 padding: 60px 0px 60px 0px;
@@ -491,7 +493,7 @@ padding-left: 20px;
     .feature{
         background-image: url(../../../Assets/how-it-work-image.png);
          min-height: 207px;
-        width: 350px;
+       width:  331px;
         min-height: 207px;
     }
     .video-section{
@@ -514,7 +516,7 @@ padding-left: 20px;
         width: auto;
     }
     input , .react-tel-input .form-control{
-        width: 306px !important;
+        width: 290px !important;
     }
     .form-section form{
         padding: 40px 25px;
@@ -547,16 +549,23 @@ padding-left: 20px;
     .testimonail{
         box-shadow: none;
         padding: 20px;
+        width: 305px;
     }
     .trainers-container{
         padding: 60px 0px 30px 0px;
     }
     .trainer-desc{
-        padding: 20px 30px 0px 30px ;
+        padding: 30px 30px 0px 30px ;
         text-align: center;
     }
     .light-heading , .light-heading2{
         font-size: 40px;
+    }
+    .arabic-service .feature-icon{
+        padding: 16px 10px;
+    }
+    .package{
+        width: 325px;
     }
 }
 

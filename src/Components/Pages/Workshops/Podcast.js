@@ -179,7 +179,7 @@ const Podcast = () => {
 					</div>
 				</div>
 				<div className='video-section'>
-					<video height={480} style={{background: '#000'}} src={video} autoPlay muted loop controls/>
+					<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
 				</div>
 				<div className='workshop-features-section'>
 					<h1 className='light-heading'>
