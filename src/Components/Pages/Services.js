@@ -37,13 +37,13 @@ const Services = () => {
         <div className='home-bannerImageLeft-container' >
             <img src={BannerBackgroundLeft} alt="background" />
           </div>
-           < div className='our-services2'>
+           <div className='our-services2'>
            <div className='our-services-container2'>
             <div className='service-card'>
               <img className='service-card-icon' src={MagicTouchIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Studio           </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Convert your resume into a video CV to showcase your skills and personality, making job hunting more effective.
 </p>
@@ -55,7 +55,7 @@ const Services = () => {
               <img className='service-card-icon' src={MagicTouchClinicIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Clinic           </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Enhance Your Digital Persona at Magic Touch Clinic and Accelerate Your Job Search by Highlighting Your Greatest Qualities!
 </p>
@@ -67,7 +67,7 @@ const Services = () => {
               <img className='service-card-icon' src={OwnYourStoryIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Own your Story        </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Al Aan shapes your story and manages your media presence, ensuring you stand out and control your narrative in the digital age.
 </p>
@@ -75,16 +75,17 @@ const Services = () => {
             </div>
             <div className='sevice-more-icon'><Link to="/our-services/own-your-story"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            {/*<div className='service-card'>
+              
+            <div className='service-card'>
               <img src={BeAPresenterIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Be a Presenter         </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Begin your media career journey with skilled specialized experts.</p>
-              <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
+              <div className='sevice-more-icon'><Link to="/our-services/be-a-presenter"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>*/}
+            </div>
             </div>
           
            </div>

@@ -481,6 +481,10 @@ font-weight: 600;
   flex-direction: row;
   gap: 34px;
 }
+.our-services-container2{
+  flex-wrap: wrap;
+
+}
 
 .brand-card, .service-card{
   background-color: #fff;
@@ -499,6 +503,9 @@ font-weight: 600;
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+.workshops-services{
+  flex-wrap: nowrap;
 }
 .workshops-services .service-card{
   width: 50%;
@@ -660,10 +667,13 @@ font-weight: 600;
     margin-bottom: 0.8rem !important;
     text-align: center;
   }
-  .our-brands{
+  .our-brands {
     padding: 20px;
     text-align: center;
     margin-top: 70px;
+  }
+  .arabic-brands{
+    text-align: center !important;
   }
   .our-brands-container , .our-services-container2{
     flex-direction: column;

@@ -124,7 +124,7 @@ const AR = () => {
               </div>
             </div>
             </div>  
-            < div className='our-features'>
+            <div className='our-features'>
              
               
               <div className='our-services'>

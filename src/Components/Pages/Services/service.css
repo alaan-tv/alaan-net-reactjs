@@ -41,16 +41,16 @@ position: relative;
     padding-top: 150px;
 }
 
-.features h1, .testimonails h1 , .trainers h1{
+.features h1, .testimonials h1 , .trainers h1{
     font-size:  48px !important;
     
 }
-.features-container , .testimonails-container{
+.features-container , .testimonials-container{
     display: flex;
     gap: 32px;
     width: 100%;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 60px !important;
 }
 
 .feature{
@@ -84,7 +84,7 @@ position: relative;
 .video-section video{
     width: 100%;
 border-radius: 20px;}
-.testimonails{
+.testimonials{
     padding: 100px 0px;
 }
 .testimonail{
@@ -440,13 +440,36 @@ padding-left: 20px;
             .react-tel-input .flag-dropdown.open .selected-flag{
                 background-color: transparent !important;
             }
+            .arabic-service .features-container{
+                flex-wrap: wrap;
+                width: 80%;
+                margin: auto;
+            }
+            .arabic-service .features{
+                direction: rtl;
+                text-align: right;
+            }
+            .arabic-service .features .feature{
+                background-image:url(http://localhost:3000/static/media/workshop-features-background.ec0276b0e2fcc1002c70.png);
+                width: 356px;
+            }
+            .arabic-service .workshops-trainers{
+                padding: 60px 0px 60px 0px;
+            }
+            .arabic-service  .trainers-container{
+                flex-direction: column;
+            }
+            .trainers-presenter{
+                display: flex;
+                gap: 30px;
+            }
         @media (min-width: 1290px){
             .banner-service{
                 padding-top: 7%;
             }
         }
 @media (max-width: 760px) {
-    .features-container, .testimonails-container, .booking , .guidebook-container, .packages-container, .trainers-container{
+    .features-container, .testimonials-container, .booking , .guidebook-container, .packages-container, .trainers-container{
         flex-direction: column;
         align-items: center;
     }
@@ -462,7 +485,7 @@ padding-left: 20px;
     .features{
         margin-top: 30px;
     }
-    .features h1 , .testimonails h1, .trainers h1{
+    .features h1 , .testimonials h1, .trainers h1{
         font-size: 40px !important;
     }
     .feature{
@@ -484,7 +507,7 @@ padding-left: 20px;
     .left-section-container .secondary-heading{
         text-align: center !important;
     }
-    .booking, .testimonails{
+    .booking, .testimonials{
         padding: 100px 0px 40px 0px;
     }
     .booking .right-section{
@@ -518,7 +541,7 @@ padding-left: 20px;
     .react-multi-carousel-list{
         display: block !important;
     }
-    .testimonails-container{
+    .testimonials-container{
         display: none;
     }
     .testimonail{

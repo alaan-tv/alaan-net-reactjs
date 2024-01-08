@@ -33,13 +33,13 @@ const Workshops = () => {
         <div className='home-bannerImageLeft-container' >
             <img src={BannerBackgroundLeft} alt="background" />
           </div>
-           < div className='our-services2'>
+           <div className='our-services2'>
            <div className='our-services-container2 workshops-services'>
             {/*<div className='service-card'>
               <img src={MagicTouchClinicIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Clinic           </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit aenean commodo</p>
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
@@ -49,7 +49,7 @@ const Workshops = () => {
               <img src={PodcastIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Podcast Workshop      </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Our Podcast Workshop offers essential skills for successful podcasting, from creating your concept to production and distribution.
 </p>
@@ -60,7 +60,7 @@ const Workshops = () => {
               <img src={MediaWorkshopIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Media Workshop         </h2>
-              < div className='service-desc'>
+              <div className='service-desc'>
               <p className='third-text'>
               Our Media Workshop is tailored to enhance your media presence and develop your skills as a presenter.
 </p>
