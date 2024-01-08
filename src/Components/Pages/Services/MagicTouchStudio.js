@@ -52,7 +52,7 @@ const MagicTouchStudio = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
@@ -82,7 +82,7 @@ const MagicTouchStudio = () => {
 	const sendGuideBook = (event) => {
 		event.preventDefault();
 		submitGuidBtn.current.value = 'Please wait...';
-		fetch(ajax_url("/wp-api/v2/alaan-net/store-form-data.php"), {
+		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
 			})
@@ -171,7 +171,7 @@ const MagicTouchStudio = () => {
 					<p className='testi-desc'>{item.desc}</p>
 					<div className='divider2'></div>
 					<div className='testi-info'>
-						<img className='testi-image' src={item.image} alt="customer photo"/>
+						<img className='testi-image' src={item.image} alt="customer"/>
 						<div className='testi-name'>
 							<p className='name'><b>{item.name}</b></p>
 							<p>{item.title}</p>
