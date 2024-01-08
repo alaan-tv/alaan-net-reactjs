@@ -229,7 +229,7 @@ const MagicTouchStudio = () => {
 					</div>
 				</div>
 				<div className='video-section'>
-					<video src={video} autoPlay muted loop controls/>
+					<video src={video} muted loop controls/>
 				</div>
 				<div className='features'>
 					<h1 className='primary-heading'> How it works </h1>
