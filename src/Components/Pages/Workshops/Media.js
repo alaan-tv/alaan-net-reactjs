@@ -140,7 +140,7 @@ const Media = () => {
 					</div>
 				</div>
 				<div className='video-section'>
-					<video src={video} autoPlay muted loop controls/>
+					<video src={video} muted loop controls/>
 				</div>
 				<div className='workshop-features-section'>
 					<h1 className='light-heading'>

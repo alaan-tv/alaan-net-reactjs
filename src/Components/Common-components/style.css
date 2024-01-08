@@ -258,6 +258,15 @@
       .break-mobile{
         display: block;
       }
+      .arabic-service .features-container{ width: 100% !important}
+      .arabic-service .trainers-container {width: 100% ; margin-top: 5px !important ; padding: 20px 0px !important;}
+
+      .trainers-presenter{
+        flex-direction: column;
+      }
+      .terms-section{
+        padding: 50px 0px 0px 0px;
+      }
     }
 
 

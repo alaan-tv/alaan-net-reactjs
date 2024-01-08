@@ -108,10 +108,8 @@ const OwnYourStory = () => {
 							</h1>
 							<p className='primary-text light-text'>
 								What do people know about you, your product or service, your success story, what sets
-								you apart, and how you excel? Al Aan can craft and distribute compelling content,
-								ensuring you control your narrative. Don't worry about the media; we've got you covered.
-								In today's digital age, with AI, social media, ratings, and reviews, it's crucial to
-								control your story, and we empower you to do so.
+								you apart, and how you excel? Al Aan can craft and distribute compelling content.
+								
 							</p>
 							<a className='service-cta primary-button' href="#contact-form">Contact Us!</a>
 							{/*<div className='home-image-container banner-service-image'>
