@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useRef, useState} from 'react'
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -12,7 +12,7 @@ import FeatureIcon4 from '../../../Assets/feature-icon4.png'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import TickIcon from '../../../Assets/tick.png'
-import {ajax_url, formData, getQs} from "../../../custom-functions";
+import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 
 const OwnYourStory = () => {

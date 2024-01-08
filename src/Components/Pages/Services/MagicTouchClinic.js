@@ -204,7 +204,7 @@ const MagicTouchClinic = () => {
 					<h1 className='primary-heading'> Our Expert </h1>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
-							<img src={TrainerImage} alt='trainer photo'/>
+							<img src={TrainerImage} alt='trainer'/>
 							<h4>Christine Maurice</h4>
 							<a href='https://www.linkedin.com/in/christine-maurice-seif'><p><LinkedInIcon/></p></a>
 						</div>

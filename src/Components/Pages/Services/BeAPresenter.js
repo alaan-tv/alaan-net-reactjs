@@ -8,31 +8,20 @@ import 'react-phone-input-2/lib/style.css'
 import TrainerImage1 from '../../../Assets/Muna.svg'
 import TrainerImage2 from '../../../Assets/Kareem.svg'
 import TrainerImage3 from '../../../Assets/Rasha.svg'
-
 import TrainerImage4 from '../../../Assets/Sajad.png'
-
 import InstagramIcon from '@mui/icons-material/Instagram'
-import YoutubeIcon from '@mui/icons-material/YouTube'
+//import YoutubeIcon from '@mui/icons-material/YouTube'
 import TwitterIcon from '@mui/icons-material/Twitter'
-
 import Header from '../../Common-components/ArabicLightHeader'
 import Footer from '../../Common-components/Footer'
-import FeatureIcon1 from '../../../Assets/feature-icon1.svg'
-import FeatureIcon2 from '../../../Assets/feature-icon2.svg'
-import FeatureIcon3 from '../../../Assets/feature-icon3.svg'
-import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
 import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import Feature5 from '../../../Assets/f5.svg'
 import Feature6 from '../../../Assets/f6.svg'
-import video from '../../../Assets/promo.mp4'
-import TistiImage1 from '../../../Assets/testi-image1.svg'
-import TistiImage2 from '../../../Assets/testi-image2.svg'
-import TistiImage3 from '../../../Assets/testi-image3.svg'
+//import video from '../../../Assets/promo.mp4'
 import BookingIcon from '../../../Assets/booking2.svg'
-import Avatar from '../../../Assets/avatar.svg'
 import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
@@ -45,7 +34,7 @@ const BeAPresenter = () => {
 	const submitBtn = useRef(null);
 
 	useEffect(() => {
-		if (getQs('status') == 'captured') {
+		if (getQs('status') === 'captured') {
 			setModal(true);
 			window.history.pushState({}, document.title, window.location.pathname);
 		}
@@ -184,7 +173,7 @@ const BeAPresenter = () => {
 		return (
 			<div className='trainers-container'>
 				<div className='trainer-image'>
-					<img src={item.image} alt='trainer photo'/>
+					<img src={item.image} alt='trainer'/>
 					<h4>{item.name}</h4>
 					{item.social && <div className='social-icon'>{item.social.map(s => <a
 						href={s.link}><span>{s.icon}</span></a>)}</div>}

@@ -171,7 +171,7 @@ const MagicTouchStudio = () => {
 					<p className='testi-desc'>{item.desc}</p>
 					<div className='divider2'></div>
 					<div className='testi-info'>
-						<img className='testi-image' src={item.image} alt="customer photo"/>
+						<img className='testi-image' src={item.image} alt="customer"/>
 						<div className='testi-name'>
 							<p className='name'><b>{item.name}</b></p>
 							<p>{item.title}</p>
