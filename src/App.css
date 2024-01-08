@@ -87,7 +87,7 @@ body {
 
 
 .home-container{
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 .home-banner-container {
@@ -718,7 +718,7 @@ font-weight: 600;
     margin: 1rem 0rem;
   }
   .App {
-    width: 90%;  }
+    /*width: 90%; */ }
   .service-card{
     max-width: 350px;
     width: auto !important;
@@ -749,8 +749,8 @@ body{
 .clear{
   clear: both ;
 }
-.close-EV .css-h4y409-MuiList-root{
-  position: static;
+.css-h4y409-MuiList-root{
+  position: static !important;
 }
 /*Arabic version */
 /*Homepage*/
