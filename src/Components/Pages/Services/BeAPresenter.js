@@ -13,7 +13,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 //import YoutubeIcon from '@mui/icons-material/YouTube'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import Header from '../../Common-components/ArabicLightHeader'
-import Footer from '../../Common-components/Footer'
+import Footer from '../../Common-components/ArabicFooter'
 import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
@@ -47,7 +47,7 @@ const BeAPresenter = () => {
 	}
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		submitBtn.current.value = 'Sending...';
+		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,

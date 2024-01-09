@@ -51,7 +51,7 @@ const Podcast = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		submitBtn.current.value = 'Sending...';
+		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,

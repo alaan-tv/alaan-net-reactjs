@@ -579,7 +579,10 @@ font-weight: 600;
   }
 }
 @media (max-width: 760px) {
-  
+  .home-container{
+    overflow: hidden;
+    width: 95%;
+  }
   
   .home-bannerImage-container {
     max-width: 450px;

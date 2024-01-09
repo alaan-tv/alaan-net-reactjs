@@ -66,10 +66,10 @@ English</a></li></li>
           <List className='arabic-menu'>
            
               <ListItem className='list-item'>
-                <ListItemButton><NavHashLink to='/#about-us' className='link'>من نحن</NavHashLink></ListItemButton>
+                <ListItemButton><NavHashLink to='/ar/#about-us' className='link'>من نحن</NavHashLink></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
-                <ListItemButton><NavHashLink to='/#our-brands' className='link'>قنواتنا </NavHashLink></ListItemButton>
+                <ListItemButton><NavHashLink to='/ar/#our-brands' className='link'>قنواتنا </NavHashLink></ListItemButton>
               </ListItem>
               
               <ListItem className='list-item'>

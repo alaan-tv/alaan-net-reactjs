@@ -147,12 +147,12 @@
     border: none;
     float: right;
     position: absolute;
-    right: 0;
+    right: 0 !important;
     z-index: 999999;
   }
   .close-AV{
     position: absolute;
-    left: 0;
+    left: 0 !important;
     z-index: 999999;
     background: none;
     border: none;
