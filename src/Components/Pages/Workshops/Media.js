@@ -17,6 +17,8 @@ import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import TickIcon from "../../../Assets/tick.png";
 import Modal from "../../Common-components/Modal";
+import {Feature} from "../../Common-components/Card";
+
 
 const Media = () => {
 	/**
@@ -64,8 +66,11 @@ const Media = () => {
 			}).catch(error => console.error(error));
 
 	}
-
-
+	/**
+	 *
+	 *  Content Object
+	 *
+	 */
 	const youWillGetList = [
 		{
 			icon: WorkshopFeatureImageIcon,
@@ -89,19 +94,7 @@ const Media = () => {
 		{desc: "شهادة معتمدة من أكاديمية الآن"},
 		{desc: " ملحقات إعلامية للتدريب"},
 		{desc: " فيديو مسجل للمتدرب"},
-
 	];
-
-	const Feature = ({item}) => {
-		return (
-			<div className='feature'>
-				{item.icon && <img src={item.icon} alt="Feature Icon" className='feature-icon'/>}
-				{item.title && <p className='feature-heading'>{item.title}</p>}
-				{item.desc &&
-					<p className='feature-desc third-text'> {item.subtitle && <b>{item.subtitle}</b>} {item.desc}</p>}
-			</div>
-		);
-	}
 
 	return (
 		<div>
@@ -135,7 +128,7 @@ const Media = () => {
 					<div className='workshop-features'>
 						<h1 className='light-heading'>ماذا سوف تستفيد من ورشات العمل الإعلامية معنا؟</h1>
 						<div className='features'>
-							{youWillGetList.map((item) => <Feature item={item}/>)}
+							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 						</div>
 					</div>
 				</div>
@@ -147,7 +140,7 @@ const Media = () => {
 						مقابل 3,500 درهم فقط،
 						سوف تحصل على التالي: </h1>
 					<div className='features'>
-						{howItWorkList.map((item) => <Feature item={item}/>)}
+						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>

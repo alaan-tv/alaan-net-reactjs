@@ -26,6 +26,8 @@ import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
+import {Feature,Trainer} from "../../Common-components/Card";
+
 
 const BeAPresenter = () => {
     const [inputs, setInputs] = useState({name:'',email:'',promo_code:''});
@@ -87,6 +89,11 @@ const BeAPresenter = () => {
 		}
 	}
 
+	/**
+	 *
+	 *  Content Object
+	 *
+	 */
 	const howItWorkList = [
 		{
 			icon: Feature1,
@@ -121,15 +128,6 @@ const BeAPresenter = () => {
 	];
 
 
-	const Feature = ({item}) => {
-		return (
-			<div className='feature'>
-				<img src={item.icon} alt="Feature Icon" className='feature-icon'/>
-				{item.title && <p className='feature-heading'>{item.title}</p>}
-				{item.desc && <p className='feature-desc third-text'>{item.desc}</p>}
-			</div>
-		);
-	}
     const trainerList = [
 		{
 			image: TrainerImage1,
@@ -169,24 +167,9 @@ const BeAPresenter = () => {
 		},
 	];
 
-	const Trainer = ({item}) => {
-		return (
-			<div className='trainers-container'>
-				<div className='trainer-image'>
-					<img src={item.image} alt='trainer'/>
-					<h4>{item.name}</h4>
-					{item.social && <div className='social-icon'>{item.social.map(s => <a
-						href={s.link}><span>{s.icon}</span></a>)}</div>}
-				</div>
-				<div className='trainer-desc'>
-					<p>{item.desc}</p>
-				</div>
-			</div>
-		);
-	}
 
   return (
-<div>
+		<div>
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
@@ -209,22 +192,19 @@ const BeAPresenter = () => {
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div className='home-container arabic-service'>
 				<div className='features'>
 					<h1 className='primary-heading'> 
                     مقابل 9,500 درهم فقط ، إليك ما ستحصل عليه  في هذا اليوم
-
                      </h1>
 					<div className='features-container'>
-                    {howItWorkList.map((item) => <Feature item={item}/>)}
+                    {howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='video-section'>
 					<video src="https://cdn.alaan.tv/2023/08/10/20230810-1691665028311-original.mp4" muted loop controls/>
 				</div>
-				
 				<div className='trainers workshops-trainers '>
 					<h1 className='primary-heading'>
 						المدربين
@@ -232,10 +212,9 @@ const BeAPresenter = () => {
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className='trainers-presenter'>
-						{trainerList.map((item) => <Trainer item={item}/>)}
+						{trainerList.map((item,i) => <Trainer key={i} item={item}/>)}
 					</div>
 				</div>
-				
 				<div className='booking workshops-booking' id="contact-form">
 					<div className='left-section'>
 						<div className='left-section-container'>
@@ -291,13 +270,11 @@ const BeAPresenter = () => {
 				</div>
 				<ArabicAdvertise />
 			</div>
-            
 			<Footer/>
-        
 			<Modal show={modal} handleClose={() => setModal(!modal)}
 			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
-
-		</div>  )
+		</div>
+  );
 }
 
 export default BeAPresenter

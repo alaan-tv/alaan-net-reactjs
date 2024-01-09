@@ -22,7 +22,7 @@ import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import TickIcon from "../../../Assets/tick.png";
 import Modal from "../../Common-components/Modal";
-
+import {Feature,Trainer} from "../../Common-components/Card";
 
 const Podcast = () => {
 
@@ -72,7 +72,11 @@ const Podcast = () => {
 
 	}
 
-
+	/**
+	 *
+	 *  Content Object
+	 *
+	 */
 	const youWillGetList = [
 		{desc: 'فهم أهمية وطريقة تصميم الهوية البصرية، وتصميم غلاف البودكاست والحلقات'},
 		{desc: 'تحرير وتحسين جودة الصوت وتعزيز السرد القصصي من خلال التصميم الصوتي، مع تجربة عملية.'},
@@ -91,16 +95,6 @@ const Podcast = () => {
 		},
 	];
 
-	const Feature = ({item}) => {
-		return (
-			<div className='feature'>
-				{item.icon && <img src={item.icon} alt="Feature Icon" className='feature-icon'/>}
-				{item.title && <p className='feature-heading'>{item.title}</p>}
-				{item.desc &&
-					<p className='feature-desc third-text'> {item.subtitle && <b>{item.subtitle}:</b>} {item.desc}</p>}
-			</div>
-		);
-	}
 
 	const trainerList = [
 		{
@@ -122,22 +116,6 @@ const Podcast = () => {
 			desc: "صحفية ومقدمة برامج حاصلة على بكالوريوس في الصحافة والإعلام من جامعة دمشق انضمت لفريق العمل في تلفزيون الآن عام 2018 قدمت العديد من البرامج الإذاعية المباشرة أبرزها برنامج \"ساعة عالهوا\" كما تعد وتقدم برامج اجتماعية منها: بودكاست صارت معي - البرنامج التلفزيوني \"أنا موجود\" وشاركت في تقديم البرامج التلفزيوني المباشر \"تلي تيرابي. لديها اهتمام بالتعرف على تجارب الناس في شتى نواحي الحياة بمختلف جنسياتهم وخلفياتهم الثقافية والاجتماعية وتقديمها كقصص إيماناً منها بأن للقصة أثراً كبيراً في تغيير طريقة تفكيرنا نحو الأفضل وجعلنا منفتحين على الآخرين وقادرين على التضامن والتعاطف معهم."
 		},
 	];
-
-	const Trainer = ({item}) => {
-		return (
-			<div className='trainers-container'>
-				<div className='trainer-image'>
-					<img src={item.image} alt='trainer'/>
-					<h4>{item.name}</h4>
-					{item.social && <div className='social-icon'>{item.social.map(s => <a
-						href={s.link}><span>{s.icon}</span></a>)}</div>}
-				</div>
-				<div className='trainer-desc'>
-					<p>{item.desc}</p>
-				</div>
-			</div>
-		);
-	}
 
 	return (
 		<div style={{overflow_x :'hidden'}}>
@@ -172,7 +150,7 @@ const Podcast = () => {
 						<h1 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
 						</h1>
 						<div className='features features-wrap'>
-							{youWillGetList.map((item) => <Feature item={item}/>)}
+							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 						</div>
 					</div>
 				</div>
@@ -184,7 +162,7 @@ const Podcast = () => {
 						مقابل 4,000 درهم فقط ، إليك ما ستتعلمه في أيام الورشة
 					</h1>
 					<div className='features'>
-						{howItWorkList.map((item) => <Feature item={item}/>)}
+						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>
@@ -194,7 +172,7 @@ const Podcast = () => {
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className=''>
-						{trainerList.map((item) => <Trainer item={item}/>)}
+						{trainerList.map((item,i) => <Trainer key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='booking workshops-booking' id="contact-form">
