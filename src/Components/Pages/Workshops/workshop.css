@@ -88,7 +88,7 @@ width: 356px;
 }
 .workshop-features-section .feature{
     background-image: url(../../../Assets/worshop-feature-background2.png);
-    width: 320px;
+    width: 320px !important;
     height: 138px;
 }
 .workshop-features-section .light-heading{
@@ -245,6 +245,10 @@ padding: 0px
     .workshop-features .features {
         flex-direction: column;
         align-items: center;
+}
+.workshop-features .feature{
+    width: 320px !important;
+    background-size: 100% 100%;
 }
 .workshop-features-section{
     padding: 0px

@@ -146,11 +146,23 @@
     background: none;
     border: none;
     float: right;
+    position: absolute;
+    right: 0;
+    z-index: 999999;
   }
   .close-AV{
+    position: absolute;
+    left: 0;
+    z-index: 999999;
     background: none;
     border: none;
     float: left;
+  }
+  .css-1ontqvh{
+    position: static !important;
+  }
+  .css-h4y409-MuiList-root{
+    position: static !important;
   }
   .right-section{
     margin-top: 10px;
