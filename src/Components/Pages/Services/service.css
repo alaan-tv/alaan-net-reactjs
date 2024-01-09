@@ -83,6 +83,7 @@ position: relative;
 }
 .video-section video{
     width: 100%;
+    background-color: #000;
 border-radius: 20px;}
 .testimonials{
     padding: 100px 0px;
@@ -220,7 +221,7 @@ padding: 0px 24px;
 input[type=checkbox] {
     
     height: 18px;
-    position: absolute;
+    /*position: absolute;*/
     top: 3px;
     display: inline-block;
     width: 18px !important;

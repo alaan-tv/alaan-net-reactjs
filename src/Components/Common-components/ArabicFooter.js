@@ -31,7 +31,7 @@ const ArabicFooter = () => {
         <Link to='/our-services' className='link'>خدماتنا</Link>
 
         <br className='break-mobile' />
-        <Link to='/our-workshops' className='link'>ورشاتنا</Link>
+        <Link to='/our-workshops/ar' className='link'>ورشاتنا</Link>
         <a href="#contact-us" className="link">تواصل معنا </a>
 
         
