@@ -38,7 +38,7 @@ const MagicTouchStudio = () => {
 	const submitBtn = useRef(null);
 
 	useEffect(() => {
-		if (getQs('status') == 'captured') {
+		if (getQs('status') === 'captured') {
 			setModal(true);
 			window.history.pushState({}, document.title, window.location.pathname);
 		}
@@ -164,10 +164,10 @@ const MagicTouchStudio = () => {
 
 	];
 
-	const Testimonial = ({item})=>{
+	const Testimonial = ({item,key})=>{
 		return (
 			<>
-				<div className='testimonail'>
+				<div key={key} className='testimonail'>
 					<p className='testi-desc'>{item.desc}</p>
 					<div className='divider2'></div>
 					<div className='testi-info'>
@@ -182,9 +182,9 @@ const MagicTouchStudio = () => {
 		);
 	}
 
-	const Feature = ({item}) => {
+	const Feature = ({item,key}) => {
 		return (
-			<div className='feature'>
+			<div key={key} className='feature'>
 				<img src={item.icon} alt="Feature Icon" className='feature-icon'/>
 				{item.title && <p className='feature-heading'>{item.title}</p>}
 				{item.desc && <p className='feature-desc third-text'>{item.desc}</p>}
@@ -225,7 +225,7 @@ const MagicTouchStudio = () => {
 				<div className='features'>
 					<h1 className='primary-heading'> With only AED 895 you'll get </h1>
 					<div className='features-container'>
-						{youWillGetList.map((item) => <Feature item={item}/>)}
+						{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='video-section'>
@@ -234,13 +234,13 @@ const MagicTouchStudio = () => {
 				<div className='features'>
 					<h1 className='primary-heading'> How it works </h1>
 					<div className='features-container'>
-						{howItWorkList.map((item) => <Feature item={item}/>)}
+						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='testimonials'>
 					<h1 className='primary-heading'> Success seekers love Magic Touch </h1>
 					<div className='testimonials-container'>
-						{testimonialList.map((item) => <Testimonial item={item}/>)}
+						{testimonialList.map((item,i) => <Testimonial key={i} item={item}/>)}
 					</div>
 				</div>
 				<Carousel
@@ -260,7 +260,7 @@ const MagicTouchStudio = () => {
 					dotListClass="custom-dot-list-style"
 					itemClass="carousel-item-padding-40-px"
 				>
-					{testimonialList.map((item) => <Testimonial item={item}/>)}
+					{testimonialList.map((item,i) => <Testimonial key={i} item={item}/>)}
 				</Carousel>
 				<div className='booking' id="contact-form">
 					<div className='left-section'>
@@ -287,11 +287,12 @@ const MagicTouchStudio = () => {
 									       placeholder='Enter you Email' required/>
 								</div>
 								<PhoneInput
+									inputProps={{pattern:".{12,25}",}}
 									label="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
-									onChange={setPhone} required/>
+									onChange={setPhone}/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
 									<span id="terms-label">I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
@@ -327,18 +328,18 @@ const MagicTouchStudio = () => {
 							</div>
 						</div>
 						<div className='avatar'>
-							<img className='' src={Avatar}/>
+							<img className='' src={Avatar} alt='Avatar'/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<> <img src={TickIcon} alt='Tick'/> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <img src={TickIcon}/> <p>Thank you for sharing your email with us. Your requested file
+			       children={<> <img src={TickIcon} alt='Tick'/> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)

@@ -251,6 +251,7 @@ const MagicTouchClinic = () => {
 									       placeholder='Enter you Email' required />
 								</div>
 								<PhoneInput
+									inputProps={{pattern:".{12,25}",}}
 									label="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}

@@ -265,7 +265,8 @@ const BeAPresenter = () => {
 									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
-                                specialLabel="رقم الهاتف"
+									inputProps={{pattern:".{12,25}",}}
+									specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
@@ -294,7 +295,7 @@ const BeAPresenter = () => {
 			<Footer/>
         
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=''/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 
 		</div>  )
 }

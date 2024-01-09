@@ -307,6 +307,7 @@ const OwnYourStory = () => {
 									       required placeholder='Enter you Email'/>
 								</div>
 								<PhoneInput
+									inputProps={{pattern:".{12,25}",}}
 									label="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
@@ -333,7 +334,7 @@ const OwnYourStory = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>Thank you</h3> <p> You will be contacted to schedule an
+			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3> <p> You will be contacted to schedule an
 				       appointment.</p> </>} />
 		</div>
 	)

@@ -153,7 +153,7 @@ const Podcast = () => {
 							<a href='#contact-form'><button className='cta-button'>احجز الآن</button></a>
 						</div>
 						<div className='workshop-image'>
-							<img src={WorkshopImage} alt=''/>
+							<img src={WorkshopImage} alt='Workshop'/>
 						</div>
 					</div>
 				</div>
@@ -227,7 +227,8 @@ const Podcast = () => {
 									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
-									  specialLabel="رقم الهاتف"
+									inputProps={{pattern:".{12,25}",}}
+									specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
@@ -247,7 +248,7 @@ const Podcast = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=''/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }
