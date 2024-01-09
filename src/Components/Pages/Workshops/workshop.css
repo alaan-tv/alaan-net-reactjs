@@ -192,7 +192,7 @@ padding: 0px
     text-align: center; 
 }
 .trainers-podcasts .trainers-container .trainer-desc p{
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 .social-icon{
     text-align: center; 
@@ -219,9 +219,17 @@ padding: 0px
     .workshop-features-section .feature{
        max-width: 290px;
     }
+    .service-card{
+        width: 355px;
+    }
     .features-wrap{
         padding: 0px;
     }
+    .features-container{
+        flex-wrap: wrap;
+    }
+    .trainer-desc p {
+        font-size: 16px;}
     .trainers-podcasts .trainers-container .trainer-desc{
         padding: 0px 20px;
     }
