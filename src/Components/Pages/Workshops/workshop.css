@@ -227,6 +227,10 @@ padding: 0px
     }
 }
 @media (max-width: 760px) {
+    .home-container{
+        overflow-x: hidden;
+    }
+    
     .hero-workshop-section{
         flex-direction: column;
         align-items: center;
