@@ -580,7 +580,7 @@ font-weight: 600;
 }
 @media (max-width: 760px) {
   body{
-    overflow-x: hidden;
+    /*overflow-x: hidden !important;*/
   }
   
   .home-bannerImage-container {
