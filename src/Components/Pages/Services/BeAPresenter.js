@@ -273,7 +273,7 @@ const BeAPresenter = () => {
                                     <div className="input-wrapper">
 									<label for="first">كود الخصم </label>
 									<input type="text" name='promo_code' value={inputs.promo_code} onChange={handleChange}
-									   onInput={validatePromoCode} onKeyUp={validatePromoCode}   placeholder='أدخل كود الخصم ' required/>
+									   onInput={validatePromoCode} onKeyUp={validatePromoCode}   placeholder='أدخل كود الخصم ' />
 	                                    <div className="invalid-code" ref={promoMsg}></div>
 								</div>
 								<div className="input-wrapper">
@@ -294,7 +294,7 @@ const BeAPresenter = () => {
 			<Footer/>
         
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<> <img src={TickIcon} alt=''/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 
 		</div>  )
 }
