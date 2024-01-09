@@ -582,7 +582,8 @@ font-weight: 600;
   body{
    overflow-x: hidden !important;
    position: relative;
-   z-index: -2;
+   z-index: -10;
+   width: 100%;
   }
   
   .home-bannerImage-container {
