@@ -140,7 +140,7 @@ const Podcast = () => {
 	}
 
 	return (
-		<div>
+		<div style={{overflow_x :'hidden'}}>
 			<div className='home-container'>
 				<Header/>
 				<div className="home-banner-container">
