@@ -249,7 +249,7 @@ Personal Branding sessions
                                placeholder='Enter you Email' required />
                     </div>
                     <PhoneInput
-                        label="PHONE NUMBER"
+                        specialLabel="PHONE NUMBER"
                         placeholder="Enter phone number"
                         value={phone}
                         country={'ae'}
