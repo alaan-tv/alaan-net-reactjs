@@ -18,9 +18,19 @@ import {ajax_url, formData, getQs} from "../../../custom-functions";
 import TickIcon from "../../../Assets/tick.png";
 import Modal from "../../Common-components/Modal";
 import {Feature} from "../../Common-components/Card";
-
+import DocumentMeta from 'react-document-meta';
 
 const Media = () => {
+	const meta = {
+		title: 'ورشات الميديا',
+		description: 'I am a description, and I can create multiple tags',
+		meta: {
+		  charset: 'utf-8',
+		  name: {
+			keywords: 'react,meta,document,html,tags'
+		  }
+		}
+	  }
 	/**
 	 *
 	 *  Send From Data
@@ -98,6 +108,7 @@ const Media = () => {
 
 	return (
 		<div>
+			 <DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
 				<div className="home-banner-container">

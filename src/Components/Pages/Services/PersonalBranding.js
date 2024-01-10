@@ -23,7 +23,20 @@ import Modal from "../../Common-components/Modal";
 import TickIcon from "../../../Assets/tick.png";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Advertise from '../../Common-components/Advertise';
+import DocumentMeta from 'react-document-meta';
+
 const PersonalBranding = () => {
+    const meta = {
+        title: 'Personal Branding',
+        description: 'I am a description, and I can create multiple tags',
+        meta: {
+          charset: 'utf-8',
+          name: {
+            keywords: 'react,meta,document,html,tags'
+          }
+        }
+      }
+    
     const [inputs, setInputs] = useState({});
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
@@ -149,7 +162,7 @@ const PersonalBranding = () => {
 	}
   return (
 <div>
-
+<DocumentMeta {...meta} />
 <div className='hero-section'>
 
     <div className='home-container'>

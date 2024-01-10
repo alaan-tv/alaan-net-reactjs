@@ -27,9 +27,20 @@ import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
 import {Feature,Trainer} from "../../Common-components/Card";
+import DocumentMeta from 'react-document-meta';
 
 
 const BeAPresenter = () => {
+	const meta = {
+		title: 'Be a presenter',
+		description: 'I am a description, and I can create multiple tags',
+		meta: {
+		  charset: 'utf-8',
+		  name: {
+			keywords: 'react,meta,document,html,tags'
+		  }
+		}
+	  }
     const [inputs, setInputs] = useState({name:'',email:'',promo_code:''});
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
@@ -170,6 +181,7 @@ const BeAPresenter = () => {
 
   return (
 		<div>
+			 <DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>

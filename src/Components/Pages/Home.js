@@ -17,12 +17,23 @@ import YoutubeIcon from '@mui/icons-material/YouTube';
 import LinkIcon from '@mui/icons-material/Link';
 import OurServices from '../../Assets/our-services.svg'
 import OurWorkshops from '../../Assets/Our-workshops.svg'
+import DocumentMeta from 'react-document-meta';
 
 
 const Home = () => {
+  const meta = {
+    title: 'Al Aan',
+    description: 'I am a description, and I can create multiple tags',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'react,meta,document,html,tags'
+      }
+    }
+  }
   return (
     <div>
-       
+          <DocumentMeta {...meta} />
         <div className='home-container'>
         <Header/>
         <div className='home-banner-container'>
