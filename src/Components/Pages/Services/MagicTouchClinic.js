@@ -23,8 +23,19 @@ import Modal from "../../Common-components/Modal";
 import TickIcon from "../../../Assets/tick.png";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
+import DocumentMeta from 'react-document-meta';
 
 const MagicTouchClinic = () => {
+	const meta = {
+		title: 'Magic Touch Clinic',
+		description: 'I am a description, and I can create multiple tags',
+		meta: {
+		  charset: 'utf-8',
+		  name: {
+			keywords: 'react,meta,document,html,tags'
+		  }
+		}
+	  }
 
 	/**
 	 *
@@ -154,6 +165,7 @@ const MagicTouchClinic = () => {
 
 	return (
 		<div>
+			 <DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
