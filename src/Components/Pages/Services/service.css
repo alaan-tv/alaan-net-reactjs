@@ -247,6 +247,9 @@ input[type=submit] {
     font-weight: 600;
     color: #fff
 }
+input[type=submit]:disabled {
+    background-color: #df1995b8;
+}
 
 .guidebook{
     

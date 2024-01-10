@@ -14,6 +14,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
+import {Feature} from "../../Common-components/Card";
 
 const OwnYourStory = () => {
 
@@ -63,6 +64,11 @@ const OwnYourStory = () => {
 			}).catch(error => console.error(error));
 	}
 
+	/**
+	 *
+	 *  Content Object
+	 *
+	 */
 	const youWillGetList = [
 		{
 			icon: FeatureIcon1,
@@ -82,26 +88,12 @@ const OwnYourStory = () => {
 			desc: "Regardless of experience, our experts offer support and training to prepare you for your on-camera appearances."},
 	];
 
-	const Feature = ({item}) => {
-		return (
-			<div className='feature'>
-				<img src={item.icon} alt="Feature Icon" className='feature-icon'/>
-				{item.title && <p className='feature-heading'>{item.title}</p>}
-				{item.desc && <p className='feature-desc third-text'>{item.desc}</p>}
-			</div>
-		);
-	}
-
-
 	return (
-
-
 		<div>
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
 					<div className='home-banner-container banner-service'>
-
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
 								Master Your Story our expert content and media
@@ -123,12 +115,10 @@ const OwnYourStory = () => {
         </div>*/}
 
 						</div>
-
 					</div>
 				</div>
 			</div>
 			<div className='home-container'>
-
 				<div className='features'>
 					<h1 className='primary-heading'>
 						With this service You'll get </h1>
@@ -136,7 +126,6 @@ const OwnYourStory = () => {
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
-
 				<div className='packages'>
 					<h1 className='secondary-heading'>
 						Select your package below now! </h1>
@@ -307,6 +296,7 @@ const OwnYourStory = () => {
 									       required placeholder='Enter you Email'/>
 								</div>
 								<PhoneInput
+									inputProps={{pattern:".{12,25}",}}
 									label="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
@@ -333,7 +323,7 @@ const OwnYourStory = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>Thank you</h3> <p> You will be contacted to schedule an
+			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3> <p> You will be contacted to schedule an
 				       appointment.</p> </>} />
 		</div>
 	)

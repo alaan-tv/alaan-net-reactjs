@@ -22,8 +22,9 @@ import TistiImage3 from '../../../Assets/testi-image3.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import TickIcon from '../../../Assets/tick.png'
-import {ajax_url, formData, getQs} from "../../../custom-functions";
+import {ajax_url, formData, getQs,responsive} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
+import {Feature,Testimonial} from "../../Common-components/Card";
 
 const MagicTouchStudio = () => {
 
@@ -38,7 +39,7 @@ const MagicTouchStudio = () => {
 	const submitBtn = useRef(null);
 
 	useEffect(() => {
-		if (getQs('status') == 'captured') {
+		if (getQs('status') === 'captured') {
 			setModal(true);
 			window.history.pushState({}, document.title, window.location.pathname);
 		}
@@ -96,24 +97,6 @@ const MagicTouchStudio = () => {
 			}).catch(error => console.error(error));
 	}
 
-
-	const responsive = {
-		desktop: {
-			breakpoint: {max: 3000, min: 1024},
-			items: 3,
-			slidesToSlide: 3 // optional, default to 1.
-		},
-		tablet: {
-			breakpoint: {max: 1024, min: 464},
-			items: 2,
-			slidesToSlide: 2 // optional, default to 1.
-		},
-		mobile: {
-			breakpoint: {max: 464, min: 0},
-			items: 1,
-			slidesToSlide: 1 // optional, default to 1.
-		}
-	};
 	const youWillGetList = [
 		{icon: FeatureIcon1, desc: 'Tailored Interview Questions Highlighting Your Strengths'},
 		{icon: FeatureIcon2, desc: 'Professional Video Shooting and great pictures for an Outstanding Presentation'},
@@ -147,50 +130,19 @@ const MagicTouchStudio = () => {
 	const testimonialList = [
 		{
 			image: TistiImage1,
-			title: '',
 			name: 'Omar Bin Ashoor',
 			desc: '"I decided to give Magic Touch a try. They transformed my plain CV into an engaging video that truly showcased my skills."'
 		},{
 			image: TistiImage2,
-			title: '',
 			name: 'Mohannad Al Wadi',
 			desc: '"Magic Touch proved to be a great investment. The video CV they crafted not only highlighted my qualifications but also showcased my personality."'
 		},{
 			image: TistiImage3,
-			title: '',
 			name: 'Nada Ahmed',
 			desc: '"Choosing Magic touch studio was a game-changer for me. The personalized touch they brought to my video CV exceeded my expectations."'
 		},
-
 	];
 
-	const Testimonial = ({item})=>{
-		return (
-			<>
-				<div className='testimonail'>
-					<p className='testi-desc'>{item.desc}</p>
-					<div className='divider2'></div>
-					<div className='testi-info'>
-						<img className='testi-image' src={item.image} alt="customer"/>
-						<div className='testi-name'>
-							<p className='name'><b>{item.name}</b></p>
-							<p>{item.title}</p>
-						</div>
-					</div>
-				</div>
-			</>
-		);
-	}
-
-	const Feature = ({item}) => {
-		return (
-			<div className='feature'>
-				<img src={item.icon} alt="Feature Icon" className='feature-icon'/>
-				{item.title && <p className='feature-heading'>{item.title}</p>}
-				{item.desc && <p className='feature-desc third-text'>{item.desc}</p>}
-			</div>
-		);
-	}
 
 	return (
 
@@ -225,7 +177,7 @@ const MagicTouchStudio = () => {
 				<div className='features'>
 					<h1 className='primary-heading'> With only AED 895 you'll get </h1>
 					<div className='features-container'>
-						{youWillGetList.map((item) => <Feature item={item}/>)}
+						{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='video-section'>
@@ -234,13 +186,13 @@ const MagicTouchStudio = () => {
 				<div className='features'>
 					<h1 className='primary-heading'> How it works </h1>
 					<div className='features-container'>
-						{howItWorkList.map((item) => <Feature item={item}/>)}
+						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='testimonials'>
 					<h1 className='primary-heading'> Success seekers love Magic Touch </h1>
 					<div className='testimonials-container'>
-						{testimonialList.map((item) => <Testimonial item={item}/>)}
+						{testimonialList.map((item,i) => <Testimonial key={i} item={item}/>)}
 					</div>
 				</div>
 				<Carousel
@@ -260,7 +212,7 @@ const MagicTouchStudio = () => {
 					dotListClass="custom-dot-list-style"
 					itemClass="carousel-item-padding-40-px"
 				>
-					{testimonialList.map((item) => <Testimonial item={item}/>)}
+					{testimonialList.map((item,i) => <Testimonial key={i} item={item}/>)}
 				</Carousel>
 				<div className='booking' id="contact-form">
 					<div className='left-section'>
@@ -287,11 +239,12 @@ const MagicTouchStudio = () => {
 									       placeholder='Enter you Email' required/>
 								</div>
 								<PhoneInput
+									inputProps={{pattern:".{12,25}",}}
 									label="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
-									onChange={setPhone} required/>
+									onChange={setPhone}/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
 									<span id="terms-label">I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
@@ -327,18 +280,18 @@ const MagicTouchStudio = () => {
 							</div>
 						</div>
 						<div className='avatar'>
-							<img className='' src={Avatar}/>
+							<img className='' src={Avatar} alt='Avatar'/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon}/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<> <img src={TickIcon} alt='Tick'/> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <img src={TickIcon}/> <p>Thank you for sharing your email with us. Your requested file
+			       children={<> <img src={TickIcon} alt='Tick'/> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)
