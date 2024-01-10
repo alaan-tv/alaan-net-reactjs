@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://cdn.alaan.tv/assets/images/favicon-alaannet-192.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
     <meta name="theme-color" content="#000000" />
     <meta
@@ -17,11 +20,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
    
-    <title>Alaan</title>
+    <title>Al Aan</title>
+    <script>
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+  </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
    
   </body>
+  
 </html>

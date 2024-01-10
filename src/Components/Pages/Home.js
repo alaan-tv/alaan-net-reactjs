@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link ,NavLink } from "react-router-dom";
 import Header from '../Common-components/Header'
 import Footer from '../Common-components/Footer'
+import Advertise from '../Common-components/Advertise'
 import BannerBackground from '../../Assets/background.png'
-import BannerImage from '../../Assets/banner-image.png'
-import BannerImageMobile from '../../Assets/banner-image-mobile.png'
+import BannerImage from '../../Assets/3.webp'
+import BannerImageMobile from '../../Assets/3mobile.webp'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import AlaanTvLogo from '../../Assets/alaan-tv-logo.svg'
 import AkhbarAlaanLogo from '../../Assets/akhbar-aalan-logo.svg'
@@ -13,21 +15,32 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YoutubeIcon from '@mui/icons-material/YouTube';
 import LinkIcon from '@mui/icons-material/Link';
-import OurServices from '../../Assets/our-services.png'
-import OurWorkshops from '../../Assets/our-workshops.png'
-import AdvertiseImage from '../../Assets/advertise-image.png'
+import OurServices from '../../Assets/our-services.svg'
+import OurWorkshops from '../../Assets/Our-workshops.svg'
+import DocumentMeta from 'react-document-meta';
+
 
 const Home = () => {
+  const meta = {
+    title: 'Al Aan',
+    description: 'I am a description, and I can create multiple tags',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'react,meta,document,html,tags'
+      }
+    }
+  }
   return (
     <div>
-        
+          <DocumentMeta {...meta} />
         <div className='home-container'>
         <Header/>
         <div className='home-banner-container'>
           <div className='home-bannerImage-container' >
             <img src={BannerBackground} alt="background" />
           </div>
-          <div id="about-us"  className='home-text-section'>
+          <div id="about-us"  className='home-text-section home-text-main-section'>
             <h1 className='primary-heading' >
             Your dedicated partner for comprehensive digital services
             </h1>
@@ -43,11 +56,11 @@ const Home = () => {
             <picture>
      <source media='(max-width: 768px)' srcSet={BannerImageMobile} />
      <source media='(min-width: 768px)' srcSet={BannerImage} />
-     <img src={BannerImage} alt='hero' />
+     <img src={BannerImage} className='banner-image' alt='hero' />
  </picture>
 
           </div>
-          <div className='home-text-section'>
+          <div className='home-text-section home-text-main-section'>
             <h2 className='secondary-heading' >
             Toolkit built for empowering futures            </h2>
             <p className='secondary-text' >
@@ -107,35 +120,21 @@ const Home = () => {
               </div>
             </div>
             </div>  
-            < div className='our-features'>
+            <div className='our-features'>
               <div className='our-services'>
               <div className='our-services-container'>
-               <a href=""> <img src={OurServices} /></a>
+               <Link to='/our-services'> <img src={OurServices} alt="" /></Link>
               </div>
   
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
-               <a href=""> <img src={OurWorkshops} /></a>
+               <Link to="/our-workshops"> <img src={OurWorkshops} alt="" /></Link>
               </div>
   
               </div>
             </div>
-            <div className='advertise-section'>
-              <div className='advertise-section-container'>
-                <div className='advertise-image'>
-                 <img src={AdvertiseImage} alt='Advertise Icon' />
-                </div>
-                <div className='advertise-text'>
-                  <h1 className='banner-heading'>Advertise With Al Aan</h1>
-                  <p className='banner-text'>Interested in learning more about our advertising opportunities?<br></br>
-Reach out to start working with us today.</p>
-                </div>
-                <div className='advertise button'>
-              <button className='banner-button'>Contact us now!</button>
-                </div>
-              </div>
-            </div>
+            <Advertise />
             </div>
         <Footer />
     </div>

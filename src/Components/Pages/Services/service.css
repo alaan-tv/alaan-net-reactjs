@@ -1,0 +1,636 @@
+/*Style magic touch Studio */
+.hero-section{
+    background-image: url('../../../Assets/banner-service-background2.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+}
+
+.banner-service{
+    padding-top: 5%;
+}
+.light-heading{
+    color: #fff;
+    font-size: 48px;
+}
+.light-text{
+    color: #fff;
+    margin : 55px auto 42px;
+}
+.light-heading2{
+    font-weight: normal !important;
+}
+.primary-button{
+    color: #DF1995;
+text-align: center;justify-content: center;
+display: flex;
+background-color: #ffffff;
+border-radius: 50px;
+box-sizing: border-box;
+align-items: center;
+text-decoration: none;
+margin: auto;
+padding: 11px 28px;
+position: relative;
+
+}
+.banner-service-image{
+    margin: auto;
+    padding: 20px;
+    padding-top: 150px;
+}
+
+.features h1, .testimonials h1 , .trainers h1{
+    font-size:  48px !important;
+    
+}
+.features-container , .testimonials-container{
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 60px !important;
+}
+
+.feature{
+    background-image: url(../../../Assets/feature-image2.svg);
+    background-repeat: no-repeat;
+    width: 258px;
+    /*min-height: 255px;*/
+    border-radius: 20px;
+}
+.feature-icon{
+    padding: 20px;
+}
+.feature-desc{
+    color: #000 !important;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.feature-heading{
+    padding: 10px 20px 0px 20px;
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.video-section{
+    padding : 100px 30px;
+    margin: auto;
+    max-width: 1200px;
+}
+.video-section video{
+    width: 100%;
+    background-color: #000;
+border-radius: 20px;}
+.testimonials{
+    padding: 100px 0px;
+}
+.testimonail{
+    background-color: #fff;
+    width: 355px;
+    height: 364px;
+    padding: 30px;
+    border-radius: 20px;
+box-shadow: 0px 5px 60px #817a9924;}
+.testi-desc{
+    color: #817a99;
+font-size: 20px;
+font-weight: 500;
+height: 185px;
+line-height: 33px;
+
+
+}
+.testi-info{
+    padding: 30px 0px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.name{
+  font-size: 18px; 
+}
+.booking{
+    padding-top: 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+}
+.clinic{
+    padding-top: 80px;
+}
+.booking .left-section{
+    width: 570px;
+}
+.booking .right-section{
+    width: 500px;
+}
+.left-section-container .secondary-heading{
+    text-align: left;
+}
+
+.left-section-container .third-heading{
+    font-weight: 500 !important;
+    color: #817a99 !important;
+    line-height: 126%;
+    margin: 20px 0px ;
+}
+.input-wrapper {
+    position: relative;
+  }
+  
+  input  {
+    border: 1px solid;
+border-color: #e7e7e7;
+border-radius: 12px;
+padding: 0px 24px;
+    position: relative;
+    height: 58px;
+    width: 407px;
+    font-size: 16px;
+    color: #000;
+    line-height: 6px;
+  }
+  
+  label {
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+    left: 20px;
+    background-color: white;
+    padding: 0 5px;
+    color: #848D94;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .form-section form{
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px #E9EAEA solid;
+    box-shadow: 0px 3px 60px #817a992b;
+    padding: 46px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .react-tel-input .special-label{
+    white-space: nowrap;
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+    left: 20px !important;
+    background-color: white;
+    padding: 0 5px;
+    color: #848D94;
+    display: block !important;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+
+  .react-tel-input .form-control{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 48px;
+    margin-left: 0;
+    background: #FFFFFF;
+    outline: none;
+    border: 1px solid !important;
+border-color: #e7e7e7 !important;
+border-radius: 12px !important;
+padding: 0px 24px;
+    position: relative;
+    height: 58px !important;
+    width: 407px !important;
+    font-size: 16px;
+    color: #000;
+    line-height: 6px;
+}
+.react-tel-input .flag-dropdown{
+    background-color: transparent !important; 
+     border: none !important;
+}
+input[type=checkbox] {
+    
+    height: 18px;
+    /*position: absolute;*/
+    top: 3px;
+    display: inline-block;
+    width: 18px !important;
+    accent-color: #df1995;
+    border-radius: 10px !important;
+}
+input[type="file" i] {
+    padding-top: 20px;
+}
+form{
+    text-align:left !important;
+}
+.input-wrapper span{
+    padding-left: 5px;
+}
+.input-wrapper a{ 
+    color: #000;
+    font-weight: 600;
+}
+input[type=submit] {
+    border-radius: 50px;
+    background-color: #DF1995;
+    font-weight: 600;
+    color: #fff
+}
+input[type=submit]:disabled {
+    background-color: #df1995b8;
+}
+
+.guidebook{
+    
+    padding: 40px 0px 100px 0px ;
+   
+    margin: 30px auto -100px auto;
+}
+.guidebook-container{
+    display: flex;
+    
+    align-items: flex-end;
+    background-image: url(../../../Assets/guidebook-background.png);
+    background-size: 100% 100%;
+    border-radius: 20px;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1240px;
+}
+.guidebook .secondary-heading{
+    text-align: left;
+    color: #fff !important;
+    max-width: initial;
+    padding-top: 8px;
+}
+/*.light-heading{
+    font-weight: normal !important;
+}*/
+.guidebook-container .avatar{
+    padding: 20px 20px 0px 20px;
+}
+.avatar img{     margin-bottom: -8px;}
+.guidebook-container .desc{
+    padding: 65px 0px 65px 56px;
+    color: #fff !important;
+}
+.desc p{ 
+    margin: 15px 0px;
+    width: 680px;
+}
+.get-guidebook{
+    margin-top:40px
+}
+.get-guidebook .email-input{
+    border-radius: 50px;
+    position: relative;
+    height: 64px;
+    width: 539px;
+}
+.get-guidebook .submit-button{
+   height: 54px;
+    width: 205px;
+    margin-left: -210px;
+    border: none;
+}
+
+.packages{
+    padding: 100px 0px 40px 0px   }
+        .packages-container {
+            display: flex;
+            grid-template-columns: auto auto auto;
+            justify-content: center;
+          width: 100%;
+            margin: auto;
+            margin-top: 60px ;
+        }
+        .package{
+            position: relative;
+            margin: 15px;
+            background-color: #fff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 20px;
+box-shadow: 0px 5px 60px #817a9924;
+        }
+        .package-title , .package-price{
+            text-align: center;
+        }
+        .package-title {
+            font-size: 36px;
+        }
+        .package-price{
+            font-size: 40px;
+            color: #df1995
+
+        }
+        .package-decription{
+            color:#000;
+            font-size: 16px;
+            padding: 20px 0px
+        }
+        .package-decription .css-vubbuv{
+            color: #df1995 !important;
+        }
+        .desc-item{
+            display: flex;
+            gap: 15px;
+        }
+        .desc-item span{
+            color: #817a99;
+        }
+        .desc-item-title{
+        }
+        .desc-item .css-i4bv87-MuiSvgIcon-root{
+            color: #df1995 !important
+        }
+        .collaps{
+            padding: 20px 0px 0px 0px;
+        }
+        .collaps .sub-title{  font-size: 14px;
+            line-height: 1;
+            padding-left: 20px;
+
+        }
+        .collaps-button{
+            background-color: transparent;
+            color: #DF1995;
+            border: none;
+            font-size: 12px;
+            text-decoration: underline;
+            padding-left: 20px;
+
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .collaps h4{
+            background-color: transparent;
+            color: #DF1995;
+            font-size: 18px;
+padding-left: 20px;
+            font-weight: 700;
+        }
+        .toggle , .toggle1{
+            width: 100%;
+    left: 0;
+    position: absolute;
+    background: #fff; 
+    z-index: 99999;
+    padding: 20px 40px;
+    border-radius: 20px;
+   
+        }
+        .trainers{
+            padding: 60px 0px;
+            display: block;
+           
+
+        }
+        .trainers-container{
+            display: flex;
+            flex: 2 1;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 60px !important;
+            padding: 40px 0px 40px 0px;
+            box-shadow: 0px 5px 60px #817a9924;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            margin: auto;
+            max-width: 1128px;
+            
+        }
+        .trainers-services .trainers-container{
+            padding: 40px 0px 60px 0px;
+        }
+        .trainer-image{
+            padding: 10px;
+            background-image: url(../../../Assets/trainer-background.svg);
+            background-repeat: no-repeat;
+            background-size: contain ;
+            width: 250px;
+            height: 250px;
+        }
+        .trainer-image img{
+            border-radius: 50%;
+
+        }
+        .trainer-image h4 , .trainer-image p{
+            color: #DF1995 !important;
+            text-align: center;
+        }
+        .trainer-desc{
+            max-width: 680px;
+        }
+        .trainer-desc p{
+            margin-bottom: 20px;
+        }
+        .react-tel-input .country-list .country:hover {
+            background-color: #f1f1f1 !important;
+        }
+        .right-section li:hover {
+            background: gray;
+            cursor: pointer;
+            color: #000;}
+            .react-tel-input .flag-dropdown.open .selected-flag{
+                background-color: transparent !important;
+            }
+            .arabic-service .features-container{
+                flex-wrap: wrap;
+                width: 80%;
+                margin: auto;
+            }
+            .arabic-service .features{
+                direction: rtl;
+                text-align: right;
+            }
+            .arabic-service .features .feature{
+                background-image:url(../../../Assets/workshop-features-background.png);
+                width: 350px;
+                /*background-size: cover;*/
+                margin: auto !important;
+            }
+            .arabic-service .workshops-trainers{
+                padding: 60px 0px 60px 0px;
+            }
+            .arabic-service  .trainers-container{
+                flex-direction: column;
+            }
+            .trainers-presenter{
+                display: flex;
+                gap: 30px;
+            }
+            .trainers-presenter .trainers-container{
+                padding: 20px 0px ;
+            }
+            .trainers-presenter .trainer-desc p{
+                margin: 10px;
+            }
+        @media (min-width: 1290px){
+            .banner-service{
+                padding-top: 7%;
+            }
+        }
+@media (max-width: 760px) {
+    .features-container, .testimonials-container, .booking , .guidebook-container, .packages-container, .trainers-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner-service{
+        padding-top: 10px;
+    }
+    .hero-section{
+        background-image: url('../../../Assets/banner-service-background-mobile.webp');
+    }
+    .banner-service-image{
+        padding: 38px 0px;
+    }
+    .features{
+        margin-top: 30px;
+    }
+    .features h1 , .testimonials h1, .trainers h1{
+        font-size: 40px !important;
+    }
+    .feature{
+        background-image: url(../../../Assets/how-it-work-image.png);
+         min-height: 207px;
+       width:  331px;
+        min-height: 207px;
+    }
+    .video-section{
+        padding: 30px 0px;
+    }
+    .booking .left-section{
+        width: auto;
+        text-align: center;
+    }
+    .left-section-container .third-heading{
+        font-size: 23px;
+    }
+    .left-section-container .secondary-heading{
+        text-align: center !important;
+    }
+    .booking, .testimonials{
+        padding: 100px 0px 40px 0px;
+    }
+    .booking .right-section{
+        width: auto;
+    }
+    input , .react-tel-input .form-control{
+        width: 290px !important;
+    }
+    .form-section form{
+        padding: 40px 25px;
+    }
+    .guidebook-container .desc{
+        width: 100%;
+        padding: 35px 20px 30px 20px;
+    }
+    .guidebook .secondary-heading{
+        text-align: center;
+        font-size: 34px;
+    }
+    .desc p{
+        width: auto;
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .get-guidebook .submit-button { 
+        margin-left: 0px;
+        height: 64px;
+        margin: 10px 0px;
+    }
+    .react-multi-carousel-list{
+        display: block !important;
+    }
+    .testimonials-container{
+        display: none;
+    }
+    .testimonail{
+        box-shadow: none;
+        padding: 20px;
+        width: 350px;
+    }
+    .trainers-container{
+        padding: 60px 0px 30px 0px;
+    }
+    .trainer-desc{
+        padding: 20px 10px 0px 10px ;
+        text-align: center;
+    }
+    .trainers-presenter .trainers-container{
+        gap: 20px !important;
+    }
+    .trainers-presenter .trainer-desc{
+        padding: 10px 30px 0px 30px ;
+        text-align: center;
+    }
+    .light-heading , .light-heading2{
+        font-size: 40px;
+    }
+    .arabic-service .feature-icon{
+        padding: 16px 10px;
+    }
+    .package{
+        width: 325px;
+    }
+    .arabic-service .features .feature{
+        width: 325px;
+    }
+    .trainers-services .trainers-container{
+        padding: 25px 0px 15px 0px;
+    }
+    .trainers-services  .trainer-desc{
+        padding: 40px 10px 0px 10px;
+    }
+}
+@media (max-width: 362px){
+    .testimonail{
+        
+        width: 330px;
+    }
+}
+
+/*carousel*/
+.react-multi-carousel-list{
+    display: none;
+    padding: 0px 0px 50px 0px;
+}
+.react-multi-carousel-item{
+    border-radius: 20px;
+}
+.react-multi-carousel-item--active{
+    z-index: 9999;
+    background-color: #fff !important;
+}
+.react-multi-carousel-dot-list{
+    top: 370px;
+    z-index: 9999999999;
+    
+}
+.react-multi-carousel-dot--active button {
+    width: 15px !important;
+    background: #080808;
+    border-color: black;}
+    .react-multi-carousel-dot button {
+       width: 6px;
+       height: auto; 
+        border-radius: 30px;
+        margin-right: 3px;
+        
+    }
+
+   

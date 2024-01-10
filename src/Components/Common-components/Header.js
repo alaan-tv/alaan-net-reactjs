@@ -1,33 +1,62 @@
-import React, {useState} from 'react'
+import React, {useEffect,useState} from 'react';
+
+import { Link ,NavLink } from "react-router-dom";
+import { NavHashLink } from 'react-router-hash-link';
 import "./style.css";
 import {Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material"
 import  Language  from '@mui/icons-material/LanguageRounded';
 import { HiMiniBars3 } from "react-icons/hi2";
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
+import USFlag from '../../Assets/us.png';
+import LogoImg from '../../Assets/newlogo.png';
+
 
  const Header = () => {
-  const [openMenu, setOpenMenu] =useState(false);
-  const menuOptions =[
-    {text: "About us"},
-    {text: "Our Brands"},
-    {text: "Our Services"},
-    {text: "Our Workshops"},
-    {text: "Contact Us"}
-  ]
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
 
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
+  };
+  const [openMenu, setOpenMenu] =useState(false);
+  
   return (
-    <nav>
+    <nav className='mynav'>
       <div className='nav-logo-container'>
-        <img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/alaan/images/newlogo.png" alt="logo" className="logo-img"/>
+      <NavHashLink to='/'><img loading="lazy" src={LogoImg} alt="logo" className="logo-img"/></NavHashLink>
 </div>
       <div className="navbar-links-container">
-        <a href="#about-us" className="link">About us</a>
-       <a href="#our-brands" className="link">Our Brands</a>
-        <a href="#" className="link">Our Services</a>
-        <a href="#" className="link">Our Workshops</a>
+        <NavHashLink to='/#about-us' className='link not-active' >About us</NavHashLink>
+        <NavHashLink to='/#our-brands' className='link not-active'>Our Brands</NavHashLink>
+        <NavLink to='/our-services' className='link' exact activeClassName="active" >Our Services</NavLink>
+        
+       
+        
+        <NavLink exact  to='/our-workshops' className='link' activeClassName="active" >Our Workshops</NavLink>
         <a href="#contact-us" className="link">Contact Us</a>
-       <a className=''><div className="divider"/></a>
-        <a href="#" className="link right-section"><Language/></a>
+     <div className="divider"/>
+        <a href="#" className="link right-section">
+        <div
+          className="menu"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+         <Language/>
+          {/* <DropdownMenu /> */}
+          {isDropdownVisible && <div className="dropdown-menu">
+      <ul>
+        <li><a href="./"> 
+English</a></li>
+        <li><a href="./ar">العربية</a></li>
+        
+      </ul>
+    </div>}
+        </div>
+      
+         </a>
       </div>
       <div className="navbar-menu-container">
         <HiMiniBars3 className='menu-icon' onClick={() => setOpenMenu(true)} />
@@ -35,16 +64,46 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
       <Drawer open={openMenu} onClose={() => (false)} anchor='right'>
         <Box sx={{ width: 250}}
         role="presentation"
-        onClick={() => setOpenMenu(false)}
+        
         onKeyDown={() => setOpenMenu(false)}
         >
-          <HighlightOffRoundedIcon className='close-menu' onClick={() => setOpenMenu(false)} />
+          <button className="close-EV" onClick={() => setOpenMenu(false)}><HighlightOffRoundedIcon className='close-menu'  /></button>
           <List>
-            {menuOptions.map((item) => (
-              <ListItem key={item.text} >
-                <ListItemButton><ListItemText primary={item.text} /></ListItemButton>
+           
+              <ListItem className='list-item'>
+                <ListItemButton><NavHashLink to='/#about-us' className='link not-active'>About us</NavHashLink></ListItemButton>
               </ListItem>
-            ))}
+              <ListItem className='list-item'>
+                <ListItemButton><NavHashLink to='/#our-brands' className='link not-active'>Our Brands</NavHashLink></ListItemButton>
+              </ListItem>
+              
+              <ListItem className='list-item'>
+                <ListItemButton><Link to='/our-services' className='link'>Our Services</Link></ListItemButton>
+              </ListItem>
+              <ListItem className='list-item'>
+                <ListItemButton>        <Link to='/our-workshops' className='link'>Our Workshops</Link></ListItemButton>
+                </ListItem>
+              <ListItem className='list-item'>
+                <ListItemButton>  <a href="#contact-us" className="link">Contact Us</a></ListItemButton>
+              </ListItem>
+              <ListItem className='list-item'>
+                <ListItemButton>  <a href="#" className="link right-section"> <div
+          className="menu"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+         <Language/>
+          {/* <DropdownMenu /> */}
+          {isDropdownVisible && <div className="dropdown-menu">
+      <ul>
+        <li><a className='link' href="/"> 
+English</a></li>
+        <li><a className='link' href="/ar">العربية</a></li>
+        
+      </ul>
+    </div>}
+        </div></a></ListItemButton>
+              </ListItem>
           </List>
 
         </Box>

@@ -1,0 +1,313 @@
+.hero-workshop-section{
+    display: flex;
+    margin: auto;
+    padding: 50px 0px;
+    gap: 40px;
+    text-align: right;
+    direction: rtl;
+}
+.hero-workshop-section .light-heading{
+    color: #000 !important;
+    text-align: right;
+    max-width: 489px;
+}
+.hero-workshop-section .cta-button{
+    border-radius: 50px;
+    background-color: #DF1995;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid;
+    border-color: #e7e7e7;
+    padding: 0px 24px;
+    position: relative;
+    height: 64px;
+    width: 165px;
+    font-size: 20px;
+    line-height: 6px;
+    margin: 45px 0px;
+}
+.hero-workshop-section p{
+font-size: 24px;
+color: #817A99;
+max-width: 450px;
+}
+.workshop-date{
+    display: flex;
+    margin-top: 22px;
+    gap: 10px;
+    align-items: center;
+}
+.workshop-date .css-i4bv87-MuiSvgIcon-root{
+    color: #df1995 !important;
+}
+.workshop-intro{
+    background-image: url(../../../Assets/workshop-background.png);
+    background-repeat: no-repeat;
+    max-width: 1128px;
+    padding:60px 130px;
+    margin: auto;
+    border-radius: 20px;
+}
+.workshop-intro h1, .workshop-intro p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 22px;
+    direction: rtl;
+}
+.workshop-details-section { 
+    direction: rtl;
+}
+.workshop-details-section .light-heading{
+    color: #000;
+    text-align: center;
+    padding: 120px 0px 53px 0px;
+    /*max-width: 613px;*/
+    margin: auto;
+
+}
+.workshop-features .features{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.workshop-features .feature{
+background-image: url(../../../Assets/workshop-features-background.png);
+width: 356px;
+/*height: 298px;*/
+}
+.workshop-features .feature-heading{
+    padding: 30px 35px 0px 35px;
+}
+.workshop-features .feature-desc{
+    padding: 15px 35px 20px 35px;
+}
+.workshop-features-section {
+    direction: rtl;
+    text-align: center;
+    padding: 0px 100px;
+}
+.workshop-features-section .feature{
+    background-image: url(../../../Assets/worshop-feature-background2.png);
+    width: 320px !important;
+    height: 138px;
+}
+.workshop-features-section .light-heading{
+    color: #000;
+    text-align: center;
+    padding: 70px 0px 40px 0px;
+    /*max-width: 613px;*/
+    margin: auto;
+
+}
+.workshop-features-section .features{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.workshop-features-section .feature{
+    display: grid;
+    align-items: center;
+    width: 356px;
+    vertical-align: middle;
+    padding: 15px;
+
+
+}
+.workshops-trainers{
+    direction: rtl;
+    padding: 140px 0px 60px 0px;
+}
+.workshops-trainers img{
+    width: 100%;
+}
+.workshops-trainers .trainer-image{
+    width: 215px;
+}
+.workshops-trainers .trainers-container{
+    align-items: center;
+}
+.trainer-desc{
+    color: #817A99
+}
+.workshop-features-section .feature-desc{
+padding: 0px
+   }
+   .workshops-booking{
+    direction: rtl;
+    padding-top: 80px;
+   }
+   .workshops-booking .third-heading{
+    font-size: 28px;
+   }
+   .workshops-booking .secondary-heading{
+    font-size: 46px;
+    text-align: right;
+   }
+   .workshops-booking label{
+    left: 310px !important;
+    text-align: right;
+   }
+   .workshops-booking .special-label{
+    left: 340px !important;
+   }
+   .workshops-booking .react-tel-input .form-control{
+    text-align: right;
+    padding-right: 60px;
+   }
+   .workshops-booking .react-tel-input .flag-dropdown {
+    right: 35px;
+   }
+   .workshops-booking  .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+    background-color: transparent !important;
+}
+.workshops-booking .input-wrapper span{
+    padding-right: 5px !important ;
+}
+.workshops-booking .input-wrapper{
+    text-align: right;
+}
+.workshops-booking input[type=checkbox] {
+    right: 0 !important;
+}
+/*Podcast workshop*/
+.features-wrap{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px 115px;
+
+}
+.trainers-podcasts{
+    display: flex;
+    gap: 30px;
+}
+.trainers-podcasts .trainers-container{
+    flex-direction: column;
+    margin: 0px;
+    padding: 40px 0px;
+}
+.trainer-image span {
+    color: #DF1995 !important;
+    text-align: center; 
+}
+.trainers-podcasts .trainers-container .trainer-desc p{
+    /*margin-top: 20px;*/
+}
+.social-icon{
+    text-align: center; 
+
+}
+.podcast-hero .workshop-image{
+    max-width: 720px;
+}
+.podcast-hero .workshop-image img{
+    border-radius: 20px;
+
+}
+.podcast-heading{ 
+    max-width: 798px !important;
+}
+.features-wrap .feature{
+    /*height: 200px;*/
+}
+.podcast-video{
+    padding: 100px 30px 50px 30px;
+
+}
+   @media (max-width: 1290px){
+    .trainers-services .trainer-desc p{
+        font-size: 20px;
+    }
+    .workshop-features-section .feature{
+       max-width: 290px;
+    }
+    .service-card{
+        width: 355px;
+    }
+    .features-wrap{
+        padding: 0px;
+    }
+    .features-container{
+        flex-wrap: wrap;
+    }
+    .trainer-desc p {
+        font-size: 16px;}
+    .trainers-podcasts .trainers-container .trainer-desc{
+        padding: 0px 20px;
+    }
+}
+@media (max-width: 760px) {
+
+    .hero-workshop-section{
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+    .workshop-intro{
+        padding: 20px;
+        background-size: 100% 100%;
+    }
+    .workshop-intro .third-heading{
+        font-size: 24px;
+    }
+    .workshop-intro p{
+        font-size: 16px;
+    }
+    .workshop-features .features {
+        flex-direction: column;
+        align-items: center;
+}
+.workshop-features .feature{
+    width: 320px !important;
+    background-size: 100% 100%;
+}
+.workshop-features-section{
+    padding: 0px
+}
+.workshop-features-section .feature{
+    max-width: 100% !important;
+   
+        min-height: 50px;
+   
+}
+.workshop-features-section .feature{
+    background-size: 100% 100%;
+}
+.workshops-booking label{
+    left: 190px !important;
+}
+.workshops-booking .special-label{
+    left: 218px !important;
+}
+.workshops-booking .secondary-heading{
+    font-size: 40px;}
+    .workshops-booking .third-heading{
+        font-size: 23px;
+       }
+       .workshop-date{
+        justify-content: center;
+       }
+       .hero-workshop-section .hero-text{
+        text-align: center;
+       }
+       .hero-workshop-section .light-heading {
+        text-align: center;
+    }
+    .workshop-features-section .light-heading{
+        padding: 50px 0px 10px 0px;
+    }
+    .workshops-trainers{
+        padding: 100px 0px 60px 0px;
+    }
+    .trainers-podcasts{
+        flex-direction: column;
+        gap: 0px;
+    }
+    .trainers-podcasts .trainers-container .trainer-desc{
+       font-size: 16px;
+    }
+    .workshops-trainers .trainers-container{
+        padding: 30px 0px 15px 0px 
+    }
+}

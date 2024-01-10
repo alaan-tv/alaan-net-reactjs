@@ -1,52 +1,72 @@
-
+@font-face {
+  font-family: baloo;
+  font-style: bold;
+  font-display: swap;
+  src: url('https://cdn.alaan.tv/nuz/fonts/baloo-bhaijaan-2-arabic.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: baloo;
+  font-style: bold;
+  font-display: swap;
+  src: url('https://cdn.alaan.tv/nuz/fonts/baloo-bhaijaan-2-arabic.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: baloo;
+  font-style: bold;
+  font-display: swap;
+  src: url('https://cdn.alaan.tv/nuz/fonts/baloo-bhaijaan-2-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: baloo;
+  font-style: bold;
+  font-display: swap;
+  src: url('https://cdn.alaan.tv/nuz/fonts/baloo-bhaijaan-2-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 @import "~@flaticon/flaticon-uicons/css/all/all";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Baloo 2', sans-serif;}
+  font-family: baloo, sans-serif;}
+  html{
+    overflow-x: hidden;
+  }
+  a {text-decoration: none !important;
+    cursor: pointer !important ;
+   }
+   button{
+    cursor:  pointer !important;
+   }
 img {
   max-width: 100%;
   height: auto;
 }
 html {
   scroll-behavior: smooth;
+
+
 }
 .App {
-  min-height: 100vh;
   
-  max-width: 1900px;
+
   margin: 0rem auto;
 }
+
 body {
-  max-width: 100%;
-  overflow-x: hidden;
+  width: 100%;
+  
 }
 
 body {
   background-color: #f6f6f6;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 90px;
-}
-.navbar-menu-container {
-  display: none;
-}
-.navbar-links-container{
- position: absolute;
- right: 30px;
-}
-.navbar-links-container a {
-  margin-right: 24px;
-  text-decoration: none;
-  color: #292D34;
-  font-size: 17.5px;
-  font-weight: 500;
-}
+
+
 .primary-button {
   padding: 0.9rem 1.75rem;
   background-color: white;
@@ -64,21 +84,20 @@ nav {
 .primary-button:hover {
   background-color: rgb(234, 234, 234);
 }
-.navbar-menu-container svg {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+
+
 .home-container{
-  width: 90vw;
+  width: 90%;
   margin: auto;
 }
 .home-banner-container {
   position: relative;
   display: flex;
-  padding-top: 80px;
+  /*padding-top: 80px;*/
 }
 .home-image-container{
   text-align: center;
+  /*padding: 20px 0px;*/
 }
 .home-bannerImage-container {
   position: absolute;
@@ -86,6 +105,9 @@ nav {
   right: -170px;
   z-index: -2;
   max-width: 700px;
+}
+.banner-image{
+  border-radius: 20px;
 }
 .home-bannerImageLeft-container{
   position: absolute;
@@ -104,6 +126,15 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 8% 0px 18% 0px;
+}
+.home-text-main-section{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8% 0px;
 }
 .advertise-section{
   max-width: 1240px;
@@ -122,7 +153,7 @@ nav {
   align-items: center;
 }
 .advertise-image img{
-  max-width: none !important;
+  max-width: 250px;
   margin-bottom: -20px;
 }
 .advertise-text{
@@ -226,7 +257,7 @@ height: 64px;
 justify-content: center;
 padding: 21.5px;
 position: relative;
-width: 185px;
+width: 220px;
 font-size: 20px;
 font-weight: 600;
 }
@@ -420,35 +451,74 @@ font-weight: 600;
   font-weight: 600;
 }
 /*Our Brands Section */
-.our-brands{
+.our-brands, .our-services2{
   background-image: url(Assets/brands-background.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   max-width: 1242px;
   margin: auto;
   padding : 50px;
-  margin-top: 140px;
   border-radius: 20px;
  }
-.our-brands h1{
+ .our-services2{
+  background: transparent !important;
+  padding : 0px;
+  margin: auto;
+  /*margin-top: 98px;*/
+
+ }
+ 
+ .service-desc p{
+ margin-right: 100px;
+   
+ }
+ .service-desc img{
+  float: right;
+  margin-top: -25px;
+  
+ }
+.our-brands h1 , .our-services h1{
   padding: 26px 0px;
 }
-.our-brands-container{
+.our-brands-container, .our-services-container2{
  
   display: flex;
   flex-direction: row;
   gap: 34px;
 }
-.brand-card{
+.our-services-container2{
+  flex-wrap: wrap;
+
+}
+
+.brand-card, .service-card{
   background-color: #fff;
   width: auto;
   border-radius: 22px;
   padding: 28px 24px;
 }
-.brand-card h2{
+.service-card{
+  width: 390px;
+  position: relative;
+}
+.service-card-icon{
+  height: 140px;
+}
+.sevice-more-icon{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.workshops-services{
+  flex-wrap: nowrap;
+}
+.workshops-services .service-card{
+  width: 50%;
+}
+.brand-card h2 ,.service-card h2{
   margin: 26px 0px 7px 0px;
 }
-.brand-card p{
+.brand-card p, .service-card p{
   height: 40%;
 }
 .brand-links{
@@ -500,10 +570,7 @@ font-weight: 600;
  
 }
 @media (max-width: 1000px) {
-  .navbar-links-container a {
-    margin-right: 1rem;
-    font-size: 1rem;
-  }
+ 
   .primary-button {
     font-size: 1rem;
   }
@@ -512,15 +579,11 @@ font-weight: 600;
   }
 }
 @media (max-width: 760px) {
-  .nav-logo-container {
-    max-width: 140px;
+  .home-container{
+    overflow: hidden;
+    width: 95%;
   }
-  .navbar-links-container {
-    display: none;
-  }
-  .navbar-menu-container {
-    display: flex;
-  }
+  
   .home-bannerImage-container {
     max-width: 450px;
   }
@@ -543,7 +606,8 @@ font-weight: 600;
     padding-top: 30px;
 
   }
-  
+  .home-text-section{
+  }
   .primary-heading {
     text-align: center;
     font-size: 40px;
@@ -564,7 +628,7 @@ font-weight: 600;
   .about-section-text-container {
     justify-content: center;
     align-items: center;
-    margin-top: 47px;
+    /*margin-top: 47px;*/
   }
   .secondary-button {
     font-size: 1rem;
@@ -612,12 +676,15 @@ font-weight: 600;
     margin-bottom: 0.8rem !important;
     text-align: center;
   }
-  .our-brands{
+  .our-brands {
     padding: 20px;
     text-align: center;
     margin-top: 70px;
   }
-  .our-brands-container{
+  .arabic-brands{
+    text-align: center !important;
+  }
+  .our-brands-container , .our-services-container2{
     flex-direction: column;
   }
   .our-features{
@@ -641,6 +708,9 @@ font-weight: 600;
     padding: 0px;
 
   }
+  .workshops-services .service-card{
+    width: 100%;
+  }
   .footer-wrapper {
     flex-direction: column;
   }
@@ -652,7 +722,17 @@ font-weight: 600;
     margin: 1rem 0rem;
   }
   .App {
-    max-width: 100vw;
+    /*width: 90%; */ }
+  .service-card{
+    max-width: 350px;
+    width: auto !important;
+    margin: auto;
+  }
+  .service-desc p{
+    margin-right: 50px;
+  }
+  .brand-card h2, .service-card h2{
+    margin: 8px 0px 7px 0px ;
   }
 }
 @media (max-width: 600px) {
@@ -661,6 +741,38 @@ font-weight: 600;
     display: none;
   }
 }
+@media (max-width: 300px) {
+
+body{
+  overflow-x: hidden;
+}
 
 
 
+}
+.clear{
+  clear: both ;
+}
+
+/*Arabic version */
+/*Homepage*/
+.arabic-home-text-section .primary-heading{
+  line-height: 140%;
+}
+.arabic-brands{
+  text-align: right;
+}
+
+
+/*Workshops Arabic Page*/
+.workshops-arabic{direction: rtl;}
+
+.workshops-arabic .sevice-more-icon{
+  left: 20px !important;
+  right: auto;
+  transform: rotate(180deg);
+}
+.workshops-arabic .service-desc p{
+  margin-left: 100px;
+  margin-right: auto;
+}
