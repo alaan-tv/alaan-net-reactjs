@@ -10,6 +10,7 @@ import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
 import OwnYourStoryIcon from '../../Assets/own-your-story-icon.svg'
 import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
 import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.svg'
+import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
 
 
 
@@ -84,6 +85,16 @@ const Services = () => {
               <p className='third-text'>
               Begin your media career journey with skilled specialized experts.</p>
               <div className='sevice-more-icon'><Link to="/our-services/be-a-presenter"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
+            <div className='service-card'>
+              <img src={PersonalBrandingIcon} alt='magic touch icon'/>
+              <h2 className='third-heading' >
+              Personal Branding        </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Unlocking your authentic executive influence</p>
+              <div className='sevice-more-icon'><Link to="/our-services/personal-branding"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>

@@ -22,6 +22,7 @@ import Avatar from '../../../Assets/avatar.svg'
 import Modal from "../../Common-components/Modal";
 import TickIcon from "../../../Assets/tick.png";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
+import {Feature} from "../../Common-components/Card";
 
 const MagicTouchClinic = () => {
 
@@ -33,7 +34,6 @@ const MagicTouchClinic = () => {
 	const [inputs, setInputs] = useState({});
 	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
-	//const [file, setFile] = useState<File | null>(null);
 	const inputFile = useRef(null);
 	const submitBtn = useRef(null);
 
@@ -99,14 +99,15 @@ const MagicTouchClinic = () => {
 			}).catch(error => console.error(error));
 	}
 
-
-
-
+	/**
+	 *
+	 * Content Object
+	 */
 	const youWillGetList = [
 		{
 			icon: FeatureIcon1,
 			title: "Personal Career Boost",
-			desc: "RGet a 30-minute one on one session with our expert to supercharge your career."
+			desc: "Get a 30-minute one on one session with our expert to supercharge your career."
 		},
 		{
 			icon: FeatureIcon2,
@@ -150,28 +151,13 @@ const MagicTouchClinic = () => {
 		},
 	];
 
-	const Feature = ({item}) => {
-		return (
-			<div className='feature'>
-				<img src={item.icon} alt="Feature Icon" className='feature-icon' />
-				{item.title && <p className='feature-heading'>{item.title}</p>}
-				{item.desc && <p className='feature-desc third-text'>{item.desc}</p>}
-			</div>
-		);
-	}
 
 	return (
 		<div>
-
 			<div className='hero-section'>
-
 				<div className='home-container'>
-
 					<Header/>
-
-
 					<div className='home-banner-container banner-service'>
-
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
 								Transform Your Online Image with Magic Touch Clinic
@@ -200,7 +186,7 @@ const MagicTouchClinic = () => {
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
-				<div className='trainers'>
+				<div className='trainers-services trainers'>
 					<h1 className='primary-heading'> Our Expert </h1>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
@@ -225,7 +211,6 @@ const MagicTouchClinic = () => {
 						{howItWorkList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
-
 				<div className='booking clinic' id='contact-form'>
 					<div className='left-section'>
 						<div className='left-section-container'>
@@ -251,6 +236,7 @@ const MagicTouchClinic = () => {
 									       placeholder='Enter you Email' required />
 								</div>
 								<PhoneInput
+									inputProps={{pattern:".{12,25}",}}
 									label="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
