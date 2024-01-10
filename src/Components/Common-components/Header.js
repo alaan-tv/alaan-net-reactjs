@@ -7,7 +7,8 @@ import {Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText}
 import  Language  from '@mui/icons-material/LanguageRounded';
 import { HiMiniBars3 } from "react-icons/hi2";
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
-import USFlag from '../../Assets/us.png'
+import USFlag from '../../Assets/us.png';
+import LogoImg from '../../Assets/newlogo.png';
 
 
  const Header = () => {
@@ -25,7 +26,7 @@ import USFlag from '../../Assets/us.png'
   return (
     <nav className='mynav'>
       <div className='nav-logo-container'>
-      <NavHashLink to='/'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/alaan/images/newlogo.png" alt="logo" className="logo-img"/></NavHashLink> 
+      <NavHashLink to='/'><img loading="lazy" src={LogoImg} alt="logo" className="logo-img"/></NavHashLink>
 </div>
       <div className="navbar-links-container">
         <NavHashLink to='/#about-us' className='link not-active' >About us</NavHashLink>
