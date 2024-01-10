@@ -216,6 +216,9 @@ padding: 0px
 
 }
    @media (max-width: 1290px){
+    .trainers-services .trainer-desc p{
+        font-size: 20px;
+    }
     .workshop-features-section .feature{
        max-width: 290px;
     }
