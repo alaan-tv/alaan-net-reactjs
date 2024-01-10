@@ -217,8 +217,7 @@ Personal Branding sessions
             <div className='left-section-container'>
                 <img src={BookingIcon} alt="Booking Icon"/>
                 <p className='third-heading'>
-                    Ready to make a lasting impression and accelerate your career with a compelling video
-                    CV?
+                Unlocking your authentic executive influence
                 </p>
                 <h1 className='secondary-heading'> Book Now! </h1>
             </div>
