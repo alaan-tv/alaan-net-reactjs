@@ -179,56 +179,6 @@ const PersonalBranding = () => {
 								and advises top Middle Eastern brands. She is committed to creating impactful narratives
 								and driving positive change.</p>
 
-<<<<<<< HEAD
-    <div className='booking clinic' id='contact-form'>
-        <div className='left-section'>
-            <div className='left-section-container'>
-                <img src={BookingIcon} alt="Booking Icon"/>
-                <p className='third-heading'>
-                Unlocking your authentic executive influence
-                </p>
-                <h1 className='secondary-heading'> Book Now! </h1>
-            </div>
-        </div>
-        <div className='right-section'>
-            <div className='form-section' id='contact-form'>
-                <form action='' onSubmit={handleSubmit} encType="multipart/form-data">
-                    <div className="input-wrapper">
-                        <label for="first">FULL NAME</label>
-                        <input type="text" name='name' value={inputs.name || ""}
-                               onChange={handleChange} placeholder='Enter you name' required />
-                    </div>
-                    <div className="input-wrapper">
-                        <label for="first">EMAIL</label>
-                        <input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
-                               placeholder='Enter you Email' required />
-                    </div>
-                    <PhoneInput
-                        specialLabel="PHONE NUMBER"
-                        placeholder="Enter phone number"
-                        value={phone}
-                        country={'ae'}
-                        onChange={setPhone} />
-                   
-                    
-                    <div className="input-wrapper">
-                        <input type='checkbox' required/>
-                            <span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
-                    </div>
-                    <div className="input-wrapper">
-                        <input type='submit' ref={submitBtn} value="Pay Now!"/>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <Advertise />
-</div>
-<Footer/>
-<Modal show={modal} handleClose={() => setModal(!modal)}
-       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3><p> You will be contacted to schedule an
-           appointment.</p> </>}/>
-=======
 						</div>
 					</div>
 				</div>
@@ -238,7 +188,6 @@ const PersonalBranding = () => {
 						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
->>>>>>> 48680bd78a1825b5d7d47e815b388518d9f69939
 
 				<div className='booking clinic' id='contact-form'>
 					<div className='left-section'>
