@@ -123,13 +123,13 @@ const Home = () => {
             <div className='our-features'>
               <div className='our-services'>
               <div className='our-services-container'>
-               <Link to='/our-services'> <img src={OurServices} /></Link>
+               <Link to='/our-services'> <img src={OurServices} alt="" /></Link>
               </div>
   
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
-               <Link to="/our-workshops"> <img src={OurWorkshops} /></Link>
+               <Link to="/our-workshops"> <img src={OurWorkshops} alt="" /></Link>
               </div>
   
               </div>
