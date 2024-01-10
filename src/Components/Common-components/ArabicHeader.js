@@ -6,6 +6,8 @@ import {Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText}
 import  Language  from '@mui/icons-material/LanguageRounded';
 import { HiMiniBars3 } from "react-icons/hi2";
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
+import LogoImg from '../../Assets/newlogo.png';
+
  const ArabicHeader = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -22,7 +24,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
   return (
     <nav className='mynav arabic-nav'>
       <div className='nav-logo-container'>
-      <NavHashLink to='/ar'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/alaan/images/newlogo.png" alt="logo" className="logo-img"/></NavHashLink> 
+      <NavHashLink to='/ar'><img loading="lazy" src={LogoImg} alt="logo" className="logo-img"/></NavHashLink>
 </div>
       <div className="navbar-links-container">
         <NavHashLink to='/ar/#about-us' className='link' >من نحن</NavHashLink>
