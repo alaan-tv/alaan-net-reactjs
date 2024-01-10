@@ -2,10 +2,21 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Advertise from './Advertise'
-
+import DocumentMeta from 'react-document-meta';
 const Terms = () => {
+    const meta = {
+        title: 'Terms & Conditions',
+        description: 'I am a description, and I can create multiple tags',
+        meta: {
+          charset: 'utf-8',
+          name: {
+            keywords: 'react,meta,document,html,tags'
+          }
+        }
+      }
   return (
     <div>
+         <DocumentMeta {...meta} />
     <div className='home-container'>
         <Header />
         <div className='terms-section'>

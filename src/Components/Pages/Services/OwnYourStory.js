@@ -15,8 +15,19 @@ import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
+import DocumentMeta from 'react-document-meta';
 
 const OwnYourStory = () => {
+	const meta = {
+		title: 'Own Your Story',
+		description: 'I am a description, and I can create multiple tags',
+		meta: {
+		  charset: 'utf-8',
+		  name: {
+			keywords: 'react,meta,document,html,tags'
+		  }
+		}
+	  }
 
 	const [open, setOPen] = useState(false);
 	const [open1, setOPen1] = useState(false);
@@ -90,6 +101,7 @@ const OwnYourStory = () => {
 
 	return (
 		<div>
+			 <DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>

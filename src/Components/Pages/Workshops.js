@@ -9,10 +9,22 @@ import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
 import PodcastIcon from '../../Assets/podcast-icon.svg'
 import MediaWorkshopIcon from '../../Assets/media-workshop-icon.svg'
+import DocumentMeta from 'react-document-meta';
+
 const Workshops = () => {
+  const meta = {
+    title: 'Our Workshops',
+    description: 'I am a description, and I can create multiple tags',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'react,meta,document,html,tags'
+      }
+    }
+  }
   return (
     <div>
-      
+       <DocumentMeta {...meta} />
     <div className='home-container'>
     <Header />
         <div className='home-banner-container'>

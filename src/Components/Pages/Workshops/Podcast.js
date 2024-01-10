@@ -23,8 +23,18 @@ import {ajax_url, formData, getQs} from "../../../custom-functions";
 import TickIcon from "../../../Assets/tick.png";
 import Modal from "../../Common-components/Modal";
 import {Feature,Trainer} from "../../Common-components/Card";
-
+import DocumentMeta from 'react-document-meta';
 const Podcast = () => {
+	const meta = {
+		title: 'ورشات البودكاست',
+		description: 'I am a description, and I can create multiple tags',
+		meta: {
+		  charset: 'utf-8',
+		  name: {
+			keywords: 'react,meta,document,html,tags'
+		  }
+		}
+	  }
 
 	/**
 	 *
@@ -119,6 +129,7 @@ const Podcast = () => {
 
 	return (
 		<div style={{overflow_x :'hidden'}}>
+			 <DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
 				<div className="home-banner-container">

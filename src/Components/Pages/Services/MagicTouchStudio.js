@@ -25,8 +25,19 @@ import TickIcon from '../../../Assets/tick.png'
 import {ajax_url, formData, getQs,responsive} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature,Testimonial} from "../../Common-components/Card";
+import DocumentMeta from 'react-document-meta';
 
 const MagicTouchStudio = () => {
+	const meta = {
+		title: 'Magic Touch Studio',
+		description: 'I am a description, and I can create multiple tags',
+		meta: {
+		  charset: 'utf-8',
+		  name: {
+			keywords: 'react,meta,document,html,tags'
+		  }
+		}
+	  }
 
 	/**
 	 *
@@ -147,6 +158,7 @@ const MagicTouchStudio = () => {
 	return (
 
 		<div>
+			 <DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>

@@ -11,13 +11,24 @@ import OwnYourStoryIcon from '../../Assets/own-your-story-icon.svg'
 import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
 import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.svg'
 import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
+import DocumentMeta from 'react-document-meta';
 
 
 
 const Services = () => {
+  const meta = {
+    title: 'Our Services',
+    description: 'I am a description, and I can create multiple tags',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'react,meta,document,html,tags'
+      }
+    }
+  }
   return (
     <div>
-      
+       <DocumentMeta {...meta} />
     <div className='home-container'>
     <Header />
         <div className='home-banner-container'>
