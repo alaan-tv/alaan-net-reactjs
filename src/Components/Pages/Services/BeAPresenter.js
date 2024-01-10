@@ -225,7 +225,7 @@ const BeAPresenter = () => {
 					<video src="https://cdn.alaan.tv/2023/08/10/20230810-1691665028311-original.mp4" muted loop controls/>
 				</div>
 				
-				<div className='trainers workshops-trainers '>
+				<div className='trainers workshops-trainers'>
 					<h1 className='primary-heading'>
 						المدربين
 					</h1>

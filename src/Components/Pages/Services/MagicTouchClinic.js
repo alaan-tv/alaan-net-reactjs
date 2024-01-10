@@ -106,7 +106,7 @@ const MagicTouchClinic = () => {
 		{
 			icon: FeatureIcon1,
 			title: "Personal Career Boost",
-			desc: "RGet a 30-minute one on one session with our expert to supercharge your career."
+			desc: "Get a 30-minute one on one session with our expert to supercharge your career."
 		},
 		{
 			icon: FeatureIcon2,
@@ -200,7 +200,7 @@ const MagicTouchClinic = () => {
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
-				<div className='trainers'>
+				<div className='trainers-services trainers'>
 					<h1 className='primary-heading'> Our Expert </h1>
 					<div className='trainers-container'>
 						<div className='trainer-image'>

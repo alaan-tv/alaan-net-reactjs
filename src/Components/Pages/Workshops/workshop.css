@@ -304,4 +304,7 @@ padding: 0px
     .trainers-podcasts .trainers-container .trainer-desc{
        font-size: 16px;
     }
+    .workshops-trainers .trainers-container{
+        padding: 30px 0px 15px 0px 
+    }
 }

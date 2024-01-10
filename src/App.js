@@ -13,6 +13,7 @@ import ScrollToTop from './Components/Pages/ScrollToTop';
 import WorkshopsArabic from './Components/Pages/WorkshopsArabic'
 import BeAPresenter from './Components/Pages/Services/BeAPresenter';
 import Terms from './Components/Common-components/Terms';
+import PersonalBranding from './Components/Pages/Services/PersonalBranding';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
     <Route path="/our-workshops/media" element={<Media />}  />
     <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
     <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
+    <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
     <Route path="/terms" element={<Terms />}  />
 
 
