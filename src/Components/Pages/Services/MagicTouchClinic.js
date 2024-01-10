@@ -249,7 +249,7 @@ const MagicTouchClinic = () => {
 								</div>
 								<PhoneInput
 									inputProps={{pattern:".{12,25}",}}
-									label="PHONE NUMBER"
+									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
