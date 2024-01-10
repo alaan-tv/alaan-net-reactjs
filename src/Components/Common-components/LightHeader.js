@@ -6,6 +6,8 @@ import {Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText}
 import  Language  from '@mui/icons-material/LanguageRounded';
 import { HiMiniBars3 } from "react-icons/hi2";
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
+import WhiteLogo from '../../Assets/whitelogo.png';
+
 const LightHeader = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -23,7 +25,7 @@ const LightHeader = () => {
   return (
     <nav >
     <div className='nav-logo-container'>
-    <NavHashLink to='/'><img loading="lazy" src="https://www.alaan.net/wp-content/themes/alaan/landing-pages/magic-touch/assets/img/whitelogo.png" alt="logo" className="logo-img"/></NavHashLink>
+    <NavHashLink to='/'><img loading="lazy" src={WhiteLogo} alt="logo" className="logo-img"/></NavHashLink>
 </div>
     <div className="navbar-links-container light-header">
       <NavHashLink to='/#about-us' className='link'>About us</NavHashLink>
