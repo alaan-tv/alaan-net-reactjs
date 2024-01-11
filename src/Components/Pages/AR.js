@@ -80,9 +80,9 @@ const AR = () => {
 </p>         
             </div>
           <div id="our-brands" className='our-brands'>
-          <h1 className='secondary-heading' >
+          <h2 className='secondary-heading' >
             قنواتنا
-            </h1>
+            </h2>
              <div className='our-brands-container arabic-brands'>
               <div className='brand-card'>
                <img src={AlaanTvLogo} alt='Alaan Tv'/>
@@ -146,7 +146,7 @@ const AR = () => {
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
-               <Link to="/our-workshops"> <img src={OurWorkshops} /></Link>
+               <Link to="/our-workshops/ar"> <img src={OurWorkshops} /></Link>
               </div>
   
               </div>

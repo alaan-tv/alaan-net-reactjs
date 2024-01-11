@@ -180,7 +180,7 @@ const BeAPresenter = () => {
 
 
   return (
-		<div>
+		<div className='arabic-page'>
 			 <DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
@@ -207,9 +207,9 @@ const BeAPresenter = () => {
 			</div>
 			<div className='home-container arabic-service'>
 				<div className='features'>
-					<h1 className='primary-heading'> 
+					<h2 className='primary-heading'> 
                     مقابل 9,500 درهم فقط ، إليك ما ستحصل عليه  في هذا اليوم
-                     </h1>
+                     </h2>
 					<div className='features-container'>
                     {howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
@@ -218,9 +218,9 @@ const BeAPresenter = () => {
 					<video src="https://cdn.alaan.tv/2023/08/10/20230810-1691665028311-original.mp4" muted loop controls/>
 				</div>
 				<div className='trainers workshops-trainers '>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						المدربين
-					</h1>
+					</h2>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className='trainers-presenter'>
@@ -237,9 +237,9 @@ const BeAPresenter = () => {
 							<p className='third-heading'>
                             سجّل الآن ليرتقي مستقبلك مع
 الآن مقابل 9,500 درهم							</p>
-							<h1 className='secondary-heading'>
+							<h2 className='secondary-heading'>
 								احجز مقعدك الآن !
-							</h1>
+							</h2>
 						</div>
 					</div>
 					<div className='right-section'>

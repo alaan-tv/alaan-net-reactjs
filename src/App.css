@@ -477,7 +477,7 @@ font-weight: 600;
   margin-top: -25px;
   
  }
-.our-brands h1 , .our-services h1{
+.our-brands h2 , .our-services h1{
   padding: 26px 0px;
 }
 .our-brands-container, .our-services-container2{
@@ -611,6 +611,19 @@ font-weight: 600;
   .primary-heading {
     text-align: center;
     font-size: 40px;
+  }
+  .arabic-page .primary-heading {
+    text-align: center;
+    font-size: 34px !important;
+    line-height: 150%;
+  }
+  .arabic-page .secondary-heading{
+    font-size: 34px !important;
+    line-height: 150%;
+  }
+  .arabic-page .light-heading{
+    font-size: 34px !important;
+    line-height: 150%;
   }
   .primary-text {
     text-align: center;

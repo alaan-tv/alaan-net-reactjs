@@ -191,15 +191,15 @@ const MagicTouchClinic = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						With only AED 1,200 You'll Get
-					</h1>
+					</h2>
 					<div className='features-container'>
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers-services trainers'>
-					<h1 className='primary-heading'> Our Expert </h1>
+					<h2 className='primary-heading'> Our Expert </h2>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
 							<img src={TrainerImage} alt='trainer'/>
@@ -218,7 +218,7 @@ const MagicTouchClinic = () => {
 					</div>
 				</div>
 				<div className='features'>
-					<h1 className='primary-heading'> How it works </h1>
+					<h2 className='primary-heading'> How it works </h2>
 					<div className='features-container'>
 						{howItWorkList.map((item) => <Feature item={item}/>)}
 					</div>
@@ -231,7 +231,7 @@ const MagicTouchClinic = () => {
 								Ready to make a lasting impression and accelerate your career with a compelling video
 								CV?
 							</p>
-							<h1 className='secondary-heading'> Book Now! </h1>
+							<h2 className='secondary-heading'> Book Now! </h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -276,8 +276,8 @@ const MagicTouchClinic = () => {
 				<div className='guidebook'>
 					<div className='guidebook-container'>
 						<div className='desc'>
-							<h1 className='secondary-heading light-heading2'> Get your free copy of </h1>
-							<h1 className='secondary-heading strong-heading'> The Visual Resume Guidebook! </h1>
+							<h2 className='secondary-heading light-heading2'> Get your free copy of </h2>
+							<h2 className='secondary-heading strong-heading'> The Visual Resume Guidebook! </h2>
 							<p>
 								Discover the secrets to crafting captivating video CVs that can change the game in your
 								job hunt! "The Visual Resume Guidebook" is your gateway to creating resumes that
