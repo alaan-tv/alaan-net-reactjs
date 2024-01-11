@@ -67,9 +67,9 @@ const Home = () => {
             Our commitment is clear: to provide the tools and resources that enable young individuals to find jobs, enhance their careers, and achieve their aspirations in an ever-evolving digital landscape.</p>         
             </div>
           <div id="our-brands" className='our-brands'>
-          <h1 className='secondary-heading' >
+          <h2 className='secondary-heading' >
             Our Brands
-            </h1>
+            </h2>
              <div className='our-brands-container'>
               <div className='brand-card'>
                <img src={AlaanTvLogo} alt='Alaan Tv'/>

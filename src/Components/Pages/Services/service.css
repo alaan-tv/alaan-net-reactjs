@@ -41,9 +41,12 @@ position: relative;
     padding-top: 150px;
 }
 
-.features h1, .testimonials h1 , .trainers h1{
-    font-size:  48px !important;
+.features h2, .testimonials h2 , .trainers h2{
+    font-size:  52px !important;
     
+}
+.features h2{
+    padding: 50px 0px 10px 0px;
 }
 .features-container , .testimonials-container{
     display: flex;
@@ -110,6 +113,7 @@ line-height: 33px;
     gap: 32px;
     align-items: center;
 }
+
 .name{
   font-size: 18px; 
 }
@@ -235,7 +239,7 @@ form{
     text-align:left !important;
 }
 .input-wrapper span{
-    padding-left: 5px;
+    padding-left: 5px !important;
 }
 .input-wrapper a{ 
     color: #000;
@@ -280,6 +284,7 @@ input[type=submit]:disabled {
 .guidebook-container .avatar{
     padding: 20px 20px 0px 20px;
 }
+
 .avatar img{     margin-bottom: -8px;}
 .guidebook-container .desc{
     padding: 65px 0px 65px 56px;
@@ -500,7 +505,7 @@ padding-left: 20px;
     .features{
         margin-top: 30px;
     }
-    .features h1 , .testimonials h1, .trainers h1{
+    h1, .features h2 , .testimonials h2, .trainers h2{
         font-size: 40px !important;
     }
     .feature{
@@ -596,6 +601,9 @@ padding-left: 20px;
     .trainers-services  .trainer-desc{
         padding: 40px 10px 0px 10px;
     }
+    .get-guidebook input{
+        width: 100% !important;
+    }
 }
 @media (max-width: 362px){
     .testimonail{
@@ -617,7 +625,7 @@ padding-left: 20px;
     background-color: #fff !important;
 }
 .react-multi-carousel-dot-list{
-    top: 370px;
+    top: 380px;
     z-index: 9999999999;
     
 }

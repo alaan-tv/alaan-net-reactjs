@@ -132,15 +132,15 @@ const OwnYourStory = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h1 className='primary-heading'>
-						With this service You'll get </h1>
+					<h2 className='primary-heading'>
+						With this service You'll get </h2>
 					<div className='features-container'>
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
 				<div className='packages'>
-					<h1 className='secondary-heading'>
-						Select your package below now! </h1>
+					<h2 className='secondary-heading'>
+						Select your package below now! </h2>
 					<div className='packages-container'>
 						<div className='package'>
 							<h4 className='package-title'>Basic</h4>
@@ -289,9 +289,9 @@ const OwnYourStory = () => {
 							<img src={BookingIcon} alt="Booking Icon"/>
 							<p className='third-heading'>
 								Get Your Tailored Quote Now and Elevate Your Advertising Game with Alaan</p>
-							<h1 className='secondary-heading'>
+							<h2 className='secondary-heading'>
 								Contact Now!
-							</h1>
+							</h2>
 						</div>
 					</div>
 					<div className='right-section'>

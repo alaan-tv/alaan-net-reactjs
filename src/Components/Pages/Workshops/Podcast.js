@@ -128,7 +128,7 @@ const Podcast = () => {
 	];
 
 	return (
-		<div style={{overflow_x :'hidden'}}>
+		<div style={{overflow_x :'hidden'}} className='arabic-page'>
 			 <DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
@@ -148,18 +148,18 @@ const Podcast = () => {
 				</div>
 				<div className='workshop-details-section'>
 					<div className='workshop-intro'>
-						<h1 className='third-heading'>
+						<h2 className='third-heading'>
 							هل تفكر في بدء بودكاست خاص بك ولكنك لست متأكداً من أين تبدأ؟ أو كيف تصل إلى جمهورك؟ أو حتى
 							كيف تستطيع إنشاء محتوى يتردد صداه ويتفاعل مع المستمعين؟ لا تقلق، فلست الوحيد!
-						</h1>
+						</h2>
 						<p>لهذا السبب قمنا بتصميم ورشة عمل مكثفة لمدة 4 أيام لتحويل محبي البودكاست إلى مبدعين! نحن هنا
 							لنزودك بالمعرفة، والمهارات، والثقة التي تحتاجها لاكتشاف تخصصك، وصياغة محتوى رائع له، وإطلاق
 							البودكاست الخاص بك بنجاح!
 						</p>
 					</div>
 					<div className='workshop-features-section'>
-						<h1 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
-						</h1>
+						<h2 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
+						</h2>
 						<div className='features features-wrap'>
 							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 						</div>
@@ -169,17 +169,17 @@ const Podcast = () => {
 					<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
 				</div>
 				<div className='workshop-features-section'>
-					<h1 className='light-heading'>
+					<h2 className='light-heading'>
 						مقابل 4,000 درهم فقط ، إليك ما ستتعلمه في أيام الورشة
-					</h1>
+					</h2>
 					<div className='features'>
 						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						المدربين
-					</h1>
+					</h2>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className=''>
@@ -197,9 +197,9 @@ const Podcast = () => {
 								كن معنا من 4 إلى 6 ديسمبر 2023 لمدة ثلاث أيام
 								(4 ساعات في اليوم) مقابل 3,500 درهم إماراتي فقط
 							</p>
-							<h1 className='secondary-heading'>
+							<h2 className='secondary-heading'>
 								احجز مقعدك الآن !
-							</h1>
+							</h2>
 						</div>
 					</div>
 					<div className='right-section'>

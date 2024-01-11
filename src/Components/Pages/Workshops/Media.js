@@ -107,7 +107,7 @@ const Media = () => {
 	];
 
 	return (
-		<div>
+		<div className='arabic-page'>
 			 <DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
@@ -125,19 +125,19 @@ const Media = () => {
 						</div>
 					</div>
 				</div>
-				<div className='workshop-details-section'>
+				<div className='workshop-details-section media-workshop'>
 					<div className='workshop-intro'>
-						<h1 className='third-heading'>
+						<h2 className='third-heading'>
 							تقدم الأكاديمية نهجًا إعلاميًا متطورًا من خلال ورش عمل في مجال الإعلام، حيث يتم توفير تدريب
 							نظري وعملي متكامل.
-						</h1>
+						</h2>
 						<p>نحن نقدم فرصة للصحافيين والإعلاميين للاستفادة من خبراتنا المهنية التي استغرق بناؤها سنوات
 							عديدة في مجال الأخبار والإعلام. تم تصميم ورش العمل بعناية فائقة من قبل خبراء في هذا المجال
 							لتوفير التدريب المثلى لكافة الأشخاص الذين يسعون إلى استكشاف عالم الإعلام ودخوله. انضم إلى
 							فرقنا وسوف تحظى بفرصة رائعة لتطوير مهاراتك في هذا المجال المثير وتحقيق نجاح كبير.</p>
 					</div>
 					<div className='workshop-features'>
-						<h1 className='light-heading'>ماذا سوف تستفيد من ورشات العمل الإعلامية معنا؟</h1>
+						<h2 className='light-heading'>ماذا سوف تستفيد من ورشات العمل الإعلامية معنا؟</h2>
 						<div className='features'>
 							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 						</div>
@@ -147,15 +147,15 @@ const Media = () => {
 					<video src={video} muted loop controls/>
 				</div>
 				<div className='workshop-features-section'>
-					<h1 className='light-heading'>
+					<h2 className='light-heading'>
 						مقابل 3,500 درهم فقط،
-						سوف تحصل على التالي: </h1>
+						سوف تحصل على التالي: </h2>
 					<div className='features'>
 						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>
-					<h1 className='primary-heading'> المدربين </h1>
+					<h2 className='primary-heading'> المدربين </h2>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className='trainers-container'>
@@ -183,7 +183,7 @@ const Media = () => {
 								كن معنا من 4 إلى 6 ديسمبر 2023 لمدة ثلاث أيام
 								(4 ساعات في اليوم) مقابل 3,500 درهم إماراتي فقط
 							</p>
-							<h1 className='secondary-heading'> احجز مقعدك الآن ! </h1>
+							<h2 className='secondary-heading'> احجز مقعدك الآن ! </h2>
 						</div>
 					</div>
 					<div className='right-section'>
