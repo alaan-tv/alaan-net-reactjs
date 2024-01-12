@@ -18,10 +18,10 @@ export const responsive = {
 
 export const ajax_url = (url=null) => {
 	let page_url = window.location.href;
-	if (page_url.includes('www.')) {
-		return 'https://www.alaan.tv/'+url;
-	} else if (page_url.includes('stg.')) {
+	if (page_url.includes('stg.')) {
 		return 'https://stg.alaan.tv/'+url;
+	} else if (page_url.includes('alaan.net')) {
+		return 'https://www.alaan.tv/'+url;
 	} else {
 		return 'http://alaan.local/'+url;
 	}
