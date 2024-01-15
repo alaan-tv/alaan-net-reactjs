@@ -299,7 +299,7 @@ const MagicTouchStudio = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<> <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
