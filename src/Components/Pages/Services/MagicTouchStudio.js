@@ -215,10 +215,10 @@ const MagicTouchStudio = () => {
 					ssr={true} // means to render carousel on server-side.
 					infinite={true}
 					autoPlay={true}
-					autoPlaySpeed={2000}
+					autoPlaySpeed={4000}
 					keyBoardControl={true}
 					customTransition="all .5"
-					transitionDuration={500}
+					transitionDuration={2000}
 					containerClass="carousel-container"
 					removeArrowOnDeviceType={["tablet", "mobile"]}
 					dotListClass="custom-dot-list-style"
