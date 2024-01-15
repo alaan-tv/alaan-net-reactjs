@@ -477,8 +477,11 @@ font-weight: 600;
   margin-top: -25px;
   
  }
-.our-brands h2 , .our-services h1{
+ .our-services h1{
   padding: 26px 0px;
+}
+.our-brands h2{
+  padding: 15px 0px;
 }
 .our-brands-container, .our-services-container2{
  
@@ -491,11 +494,17 @@ font-weight: 600;
 
 }
 
-.brand-card, .service-card{
+.service-card{
   background-color: #fff;
   width: auto;
   border-radius: 22px;
   padding: 28px 24px;
+}
+.brand-card{
+  background-color: #fff;
+  width: auto;
+  border-radius: 22px;
+  padding: 28px 24px 15px 24px;
 }
 .service-card{
   width: 390px;
@@ -694,6 +703,9 @@ font-weight: 600;
     text-align: center;
     margin-top: 30px;
   }
+  .brand-card{
+    padding: 24px 24px 5px 24px !important
+  }
   .arabic-brands{
     text-align: center !important;
   }
@@ -776,7 +788,7 @@ body{
   text-align: right;
 }
 .arabic-brands .brand-card{
-  padding-bottom: 50px;
+  padding-bottom: 35px;
 }
 input[type=submit]{
   cursor: pointer !important;
