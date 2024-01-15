@@ -22,7 +22,7 @@ import Feature5 from '../../../Assets/f5.svg'
 import Feature6 from '../../../Assets/f6.svg'
 //import video from '../../../Assets/promo.mp4'
 import BookingIcon from '../../../Assets/booking2.svg'
-import TickIcon from '../../../Assets/tick.png'
+import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
@@ -284,7 +284,7 @@ const BeAPresenter = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<>  <TickIcon /> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
   );
 }
