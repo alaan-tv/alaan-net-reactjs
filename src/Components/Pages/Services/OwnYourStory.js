@@ -11,7 +11,7 @@ import FeatureIcon3 from '../../../Assets/feature-icon3.png'
 import FeatureIcon4 from '../../../Assets/feature-icon4.png'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import TickIcon from '../../../Assets/tick.png'
+import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
@@ -335,7 +335,7 @@ const OwnYourStory = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3> <p> You will be contacted to schedule an
+			       children={<>  <TickIcon /> <h3>Thank you</h3> <p> You will be contacted to schedule an
 				       appointment.</p> </>} />
 		</div>
 	)

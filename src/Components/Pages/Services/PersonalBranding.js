@@ -19,7 +19,7 @@ import Feature5 from '../../../Assets/f5.svg'
 import TrainerImage from '../../../Assets/solang.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Modal from "../../Common-components/Modal";
-import TickIcon from "../../../Assets/tick.png";
+import TickIcon from "../../Common-components/TickIcon";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Advertise from '../../Common-components/Advertise';
 import DocumentMeta from 'react-document-meta';
@@ -238,7 +238,7 @@ const PersonalBranding = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<>  <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 		</div>
 	)

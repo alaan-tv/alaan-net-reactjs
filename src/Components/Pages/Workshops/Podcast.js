@@ -20,7 +20,7 @@ import BookingIcon from '../../../Assets/booking2.svg'
 import Footer from '../../Common-components/ArabicFooter'
 import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
-import TickIcon from "../../../Assets/tick.png";
+import TickIcon from "../../Common-components/TickIcon";
 import Modal from "../../Common-components/Modal";
 import {Feature,Trainer} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
@@ -237,7 +237,7 @@ const Podcast = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<>  <TickIcon /> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }
