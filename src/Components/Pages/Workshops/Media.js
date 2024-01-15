@@ -89,11 +89,11 @@ const Media = () => {
 		},{
 			icon: WorkshopFeatureImageIcon,
 			title:"الخبرة الإعلامية",
-			desc: "استفد من تجارب التغطية الميدانية و حكاياتها بينما يقودك صحفيون ذوو خبرة من تلفزيون الآن في رحلتك."
+			desc: "استفد من تجارب التغطية الميدانية و حكاياتها بينما يقودك صحفيون ذو خبرة من تلفزيون الآن في رحلتك."
 		},{
 			icon: WorkshopFeatureImageIcon,
 			title:"الشهادة",
-			desc: "احصل على شهادة معتمدة من KDHA وهي أكثر من مجرد شهادة ورقية؛ إنها هويتك المهنية الجديدة."
+			desc: "احصل على شهادة معتمدة من KDHA وهي أكثر من مجرد شهادة ورقية، إنها هويتك المهنية الجديدة."
 		},
 
 	];
@@ -143,9 +143,9 @@ const Media = () => {
 						</div>
 					</div>
 				</div>
-				<div className='video-section'>
+				{/*<div className='video-section'>
 					<video src={video} muted loop controls/>
-				</div>
+				</div>*/}
 				<div className='workshop-features-section'>
 					<h2 className='light-heading'>
 						مقابل 3,500 درهم فقط،

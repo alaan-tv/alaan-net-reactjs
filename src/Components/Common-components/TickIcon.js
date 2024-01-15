@@ -1,10 +1,9 @@
 import React from 'react'
 
 const TickIcon = () => {
-    let path = document.querySelector(".tick");
-let length = path.getTotalLength();
 
-console.log(length); 
+var path = document.querySelector(".tick");
+
   return (
     <div>
         <div class="svg-container">    
