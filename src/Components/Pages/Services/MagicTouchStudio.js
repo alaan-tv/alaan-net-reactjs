@@ -21,7 +21,7 @@ import TistiImage2 from '../../../Assets/testi-image2.svg'
 import TistiImage3 from '../../../Assets/testi-image3.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
-import TickIcon from '../../../Assets/tick.png'
+import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData, getQs,responsive} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature,Testimonial} from "../../Common-components/Card";
@@ -303,7 +303,7 @@ const MagicTouchStudio = () => {
 				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <p>Thank you for sharing your email with us. Your requested file
+			       children={<> <TickIcon /> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)

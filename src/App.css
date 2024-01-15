@@ -775,8 +775,12 @@ body{
 .arabic-brands{
   text-align: right;
 }
-
-
+.arabic-brands .brand-card{
+  padding-bottom: 50px;
+}
+input[type=submit]{
+  cursor: pointer !important;
+}
 /*Workshops Arabic Page*/
 .workshops-arabic{direction: rtl;}
 
