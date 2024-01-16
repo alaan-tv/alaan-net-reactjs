@@ -262,10 +262,10 @@ const MagicTouchClinic = () => {
 								</div>
 								<div className="input-wrapper">
 									<label for="first">UPLOUD CV</label>
-									<input type="file" placeholder='Uploud your CV' ref={inputFile} name="cv" accept="application/msword,application/pdf" required/>
+									<input type="file" name="cv" value={inputs.cv || ""} onChange={handleChange} placeholder='Uploud your CV' ref={inputFile} name="cv" accept="application/msword,application/pdf" required/>
 								</div>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 										<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">

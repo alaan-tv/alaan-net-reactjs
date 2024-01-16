@@ -260,7 +260,7 @@ const MagicTouchStudio = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 									<span id="terms-label">I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
