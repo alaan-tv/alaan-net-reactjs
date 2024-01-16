@@ -71,7 +71,7 @@ const OwnYourStory = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location = data.payment_link;
+					setModal(true);
 				}else if (data.payment=='captured') {
 					setModal(true);
 				}

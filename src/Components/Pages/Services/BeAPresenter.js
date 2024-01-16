@@ -271,7 +271,7 @@ const BeAPresenter = () => {
 	                                    <div className="invalid-code" ref={promoMsg}></div>
 								</div>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 										<span>أنا أوافق على   
                                             <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
