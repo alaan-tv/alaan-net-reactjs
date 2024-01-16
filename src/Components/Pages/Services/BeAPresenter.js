@@ -22,7 +22,7 @@ import Feature5 from '../../../Assets/f5.svg'
 import Feature6 from '../../../Assets/f6.svg'
 //import video from '../../../Assets/promo.mp4'
 import BookingIcon from '../../../Assets/booking2.svg'
-import TickIcon from '../../../Assets/tick.png'
+import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
@@ -73,10 +73,12 @@ const BeAPresenter = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
-					setPhone('971');
 					window.location = data.payment_link;
+				}else if (data.payment=='captured') {
+					setModal(true);
 				}
 			}).catch(error => console.error(error));
 	}
@@ -180,7 +182,7 @@ const BeAPresenter = () => {
 
 
   return (
-		<div>
+		<div className='arabic-page'>
 			 <DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
@@ -191,7 +193,7 @@ const BeAPresenter = () => {
 								يوم مع الآن يجعلك نجم الإعلام
 							</h1>
 							<p className='primary-text light-text'>
-                            ما رأيك لو أعطيناك فرصة إعداد وتقديم فقرة إخبارية بنفسك ضمن نشرة حقيقية يراها المشاهدون من كافة أنحاء العالم؟ فرصة العمر قد لا تأتي إلا مرة واحدة في العمر! لذا، اضمن مستقبلك الإعلامي.. بيوم واحد استثنائي، مع الآن
+                            ما رأيك لو أعطيناك فرصة إعداد وتقديم فقرة إخبارية بنفسك ضمن نشرة حقيقية يراها المشاهدون من كافة أنحاء العالم؟ فرصة العمر قد لا تأتي إلا مرة واحدة في العمر!<br /> لذا، اضمن مستقبلك الإعلامي.. بيوم واحد استثنائي، مع الآن
                             </p>
 							<a className='service-cta primary-button' href="#contact-form">احجز الآن</a>
 							{/*<div className='home-image-container banner-service-image'>
@@ -207,9 +209,9 @@ const BeAPresenter = () => {
 			</div>
 			<div className='home-container arabic-service'>
 				<div className='features'>
-					<h1 className='primary-heading'> 
+					<h2 className='primary-heading'> 
                     مقابل 9,500 درهم فقط ، إليك ما ستحصل عليه  في هذا اليوم
-                     </h1>
+                     </h2>
 					<div className='features-container'>
                     {howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
@@ -218,9 +220,9 @@ const BeAPresenter = () => {
 					<video src="https://cdn.alaan.tv/2023/08/10/20230810-1691665028311-original.mp4" muted loop controls/>
 				</div>
 				<div className='trainers workshops-trainers '>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						المدربين
-					</h1>
+					</h2>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className='trainers-presenter'>
@@ -237,9 +239,9 @@ const BeAPresenter = () => {
 							<p className='third-heading'>
                             سجّل الآن ليرتقي مستقبلك مع
 الآن مقابل 9,500 درهم							</p>
-							<h1 className='secondary-heading'>
+							<h2 className='secondary-heading'>
 								احجز مقعدك الآن !
-							</h1>
+							</h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -269,7 +271,7 @@ const BeAPresenter = () => {
 	                                    <div className="invalid-code" ref={promoMsg}></div>
 								</div>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 										<span>أنا أوافق على   
                                             <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
@@ -284,7 +286,7 @@ const BeAPresenter = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<>  <TickIcon /> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
   );
 }

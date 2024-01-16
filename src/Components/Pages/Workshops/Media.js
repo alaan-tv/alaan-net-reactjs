@@ -15,7 +15,7 @@ import BookingIcon from '../../../Assets/booking2.svg'
 import Footer from '../../Common-components/ArabicFooter'
 import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
-import TickIcon from "../../../Assets/tick.png";
+import TickIcon from "../../Common-components/TickIcon";
 import Modal from "../../Common-components/Modal";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
@@ -69,9 +69,12 @@ const Media = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
 					window.location = data.payment_link;
+				}else if (data.payment=='captured') {
+					setModal(true);
 				}
 			}).catch(error => console.error(error));
 
@@ -89,11 +92,11 @@ const Media = () => {
 		},{
 			icon: WorkshopFeatureImageIcon,
 			title:"الخبرة الإعلامية",
-			desc: "استفد من تجارب التغطية الميدانية و حكاياتها بينما يقودك صحفيون ذوو خبرة من تلفزيون الآن في رحلتك."
+			desc: "استفد من تجارب التغطية الميدانية و حكاياتها بينما يقودك صحفيون ذو خبرة من تلفزيون الآن في رحلتك."
 		},{
 			icon: WorkshopFeatureImageIcon,
 			title:"الشهادة",
-			desc: "احصل على شهادة معتمدة من KDHA وهي أكثر من مجرد شهادة ورقية؛ إنها هويتك المهنية الجديدة."
+			desc: "احصل على شهادة معتمدة من KDHA وهي أكثر من مجرد شهادة ورقية، إنها هويتك المهنية الجديدة."
 		},
 
 	];
@@ -107,7 +110,7 @@ const Media = () => {
 	];
 
 	return (
-		<div>
+		<div className='arabic-page'>
 			 <DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
@@ -125,37 +128,37 @@ const Media = () => {
 						</div>
 					</div>
 				</div>
-				<div className='workshop-details-section'>
+				<div className='workshop-details-section media-workshop'>
 					<div className='workshop-intro'>
-						<h1 className='third-heading'>
+						<h2 className='third-heading'>
 							تقدم الأكاديمية نهجًا إعلاميًا متطورًا من خلال ورش عمل في مجال الإعلام، حيث يتم توفير تدريب
 							نظري وعملي متكامل.
-						</h1>
+						</h2>
 						<p>نحن نقدم فرصة للصحافيين والإعلاميين للاستفادة من خبراتنا المهنية التي استغرق بناؤها سنوات
 							عديدة في مجال الأخبار والإعلام. تم تصميم ورش العمل بعناية فائقة من قبل خبراء في هذا المجال
 							لتوفير التدريب المثلى لكافة الأشخاص الذين يسعون إلى استكشاف عالم الإعلام ودخوله. انضم إلى
 							فرقنا وسوف تحظى بفرصة رائعة لتطوير مهاراتك في هذا المجال المثير وتحقيق نجاح كبير.</p>
 					</div>
 					<div className='workshop-features'>
-						<h1 className='light-heading'>ماذا سوف تستفيد من ورشات العمل الإعلامية معنا؟</h1>
+						<h2 className='light-heading'>ماذا سوف تستفيد من ورشات العمل الإعلامية معنا؟</h2>
 						<div className='features'>
 							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 						</div>
 					</div>
 				</div>
-				<div className='video-section'>
+				{/*<div className='video-section'>
 					<video src={video} muted loop controls/>
-				</div>
+				</div>*/}
 				<div className='workshop-features-section'>
-					<h1 className='light-heading'>
+					<h2 className='light-heading'>
 						مقابل 3,500 درهم فقط،
-						سوف تحصل على التالي: </h1>
+						سوف تحصل على التالي: </h2>
 					<div className='features'>
 						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>
-					<h1 className='primary-heading'> المدربين </h1>
+					<h2 className='primary-heading'> المدربين </h2>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className='trainers-container'>
@@ -183,7 +186,7 @@ const Media = () => {
 								كن معنا من 4 إلى 6 ديسمبر 2023 لمدة ثلاث أيام
 								(4 ساعات في اليوم) مقابل 3,500 درهم إماراتي فقط
 							</p>
-							<h1 className='secondary-heading'> احجز مقعدك الآن ! </h1>
+							<h2 className='secondary-heading'> احجز مقعدك الآن ! </h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -207,7 +210,7 @@ const Media = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 										<span>أنا أوافق على   <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
 								<div className="input-wrapper">
@@ -221,7 +224,7 @@ const Media = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<>  <TickIcon /> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }

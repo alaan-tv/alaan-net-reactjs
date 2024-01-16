@@ -19,11 +19,12 @@ import Feature5 from '../../../Assets/f5.svg'
 import TrainerImage from '../../../Assets/solang.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Modal from "../../Common-components/Modal";
-import TickIcon from "../../../Assets/tick.png";
+import TickIcon from "../../Common-components/TickIcon";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import Advertise from '../../Common-components/Advertise';
 import DocumentMeta from 'react-document-meta';
 import {Feature} from "../../Common-components/Card";
+import video from '../../../Assets/personal-branding.mp4'
 
 const PersonalBranding = () => {
 	const meta = {
@@ -70,10 +71,12 @@ const PersonalBranding = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
-					setPhone('971');
 					window.location = data.payment_link;
+				}else if (data.payment=='captured') {
+					setModal(true);
 				}
 			}).catch(error => console.error(error));
 
@@ -156,15 +159,18 @@ const PersonalBranding = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						With ONLY AED 4,995 what to expect
-					</h1>
+					</h2>
 					<div className='features-container'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
+				<div className='video-section'>
+					<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
+				</div>
 				<div className='trainers-services trainers'>
-					<h1 className='primary-heading'> Our Expert </h1>
+					<h2 className='primary-heading'> Our Expert </h2>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
 							<img src={TrainerImage} alt='trainer'/>
@@ -183,7 +189,7 @@ const PersonalBranding = () => {
 					</div>
 				</div>
 				<div className='features'>
-					<h1 className='primary-heading'> How it works </h1>
+					<h2 className='primary-heading'> How it works </h2>
 					<div className='features-container'>
 						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
@@ -196,7 +202,7 @@ const PersonalBranding = () => {
 							<p className='third-heading'>
 								Unlocking your authentic executive influence
 							</p>
-							<h1 className='secondary-heading'> Book Now! </h1>
+							<h2 className='secondary-heading'> Book Now! </h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -214,13 +220,13 @@ const PersonalBranding = () => {
 								</div>
 								<PhoneInput
 									inputProps={{pattern: ".{12,25}",}}
-									specialLabel="رقم الهاتف"
+									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 									<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
@@ -234,7 +240,7 @@ const PersonalBranding = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<>  <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 		</div>
 	)

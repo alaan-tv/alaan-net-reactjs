@@ -20,7 +20,7 @@ import TrainerImage from '../../../Assets/christin.webp'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import Modal from "../../Common-components/Modal";
-import TickIcon from "../../../Assets/tick.png";
+import TickIcon from "../../Common-components/TickIcon";
 import {ajax_url, formData, getQs} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
@@ -77,10 +77,12 @@ const MagicTouchClinic = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
-					setPhone('971');
 					window.location = data.payment_link;
+				}else if (data.payment=='captured') {
+					setModal(true);
 				}
 			}).catch(error => console.error(error));
 
@@ -191,15 +193,15 @@ const MagicTouchClinic = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						With only AED 1,200 You'll Get
-					</h1>
+					</h2>
 					<div className='features-container'>
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers-services trainers'>
-					<h1 className='primary-heading'> Our Expert </h1>
+					<h2 className='primary-heading'> Our Expert </h2>
 					<div className='trainers-container'>
 						<div className='trainer-image'>
 							<img src={TrainerImage} alt='trainer'/>
@@ -218,7 +220,7 @@ const MagicTouchClinic = () => {
 					</div>
 				</div>
 				<div className='features'>
-					<h1 className='primary-heading'> How it works </h1>
+					<h2 className='primary-heading'> How it works </h2>
 					<div className='features-container'>
 						{howItWorkList.map((item) => <Feature item={item}/>)}
 					</div>
@@ -231,7 +233,7 @@ const MagicTouchClinic = () => {
 								Ready to make a lasting impression and accelerate your career with a compelling video
 								CV?
 							</p>
-							<h1 className='secondary-heading'> Book Now! </h1>
+							<h2 className='secondary-heading'> Book Now! </h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -249,7 +251,7 @@ const MagicTouchClinic = () => {
 								</div>
 								<PhoneInput
 									inputProps={{pattern:".{12,25}",}}
-									label="PHONE NUMBER"
+									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
@@ -260,10 +262,10 @@ const MagicTouchClinic = () => {
 								</div>
 								<div className="input-wrapper">
 									<label for="first">UPLOUD CV</label>
-									<input type="file" placeholder='Uploud your CV' ref={inputFile} name="cv" accept="application/msword,application/pdf" required/>
+									<input type="file" name="cv" value={inputs.cv || ""} onChange={handleChange} placeholder='Uploud your CV' ref={inputFile} name="cv" accept="application/msword,application/pdf" required/>
 								</div>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 										<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
@@ -276,8 +278,8 @@ const MagicTouchClinic = () => {
 				<div className='guidebook'>
 					<div className='guidebook-container'>
 						<div className='desc'>
-							<h1 className='secondary-heading light-heading2'> Get your free copy of </h1>
-							<h1 className='secondary-heading strong-heading'> The Visual Resume Guidebook! </h1>
+							<h2 className='secondary-heading light-heading2'> Get your free copy of </h2>
+							<h2 className='secondary-heading strong-heading'> The Visual Resume Guidebook! </h2>
 							<p>
 								Discover the secrets to crafting captivating video CVs that can change the game in your
 								job hunt! "The Visual Resume Guidebook" is your gateway to creating resumes that
@@ -301,11 +303,11 @@ const MagicTouchClinic = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<>  <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <img src={TickIcon} alt=""/> <p>Thank you for sharing your email with us. Your requested file
+			       children={<>  <TickIcon /> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)

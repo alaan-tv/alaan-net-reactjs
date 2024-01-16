@@ -11,7 +11,7 @@ import FeatureIcon3 from '../../../Assets/feature-icon3.png'
 import FeatureIcon4 from '../../../Assets/feature-icon4.png'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import TickIcon from '../../../Assets/tick.png'
+import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
@@ -68,8 +68,11 @@ const OwnYourStory = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
+					setModal(true);
+				}else if (data.payment=='captured') {
 					setModal(true);
 				}
 			}).catch(error => console.error(error));
@@ -132,15 +135,15 @@ const OwnYourStory = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h1 className='primary-heading'>
-						With this service You'll get </h1>
+					<h2 className='primary-heading'>
+						With this service You'll get </h2>
 					<div className='features-container'>
 						{youWillGetList.map((item) => <Feature item={item}/>)}
 					</div>
 				</div>
 				<div className='packages'>
-					<h1 className='secondary-heading'>
-						Select your package below now! </h1>
+					<h2 className='secondary-heading'>
+						Select your package below now! </h2>
 					<div className='packages-container'>
 						<div className='package'>
 							<h4 className='package-title'>Basic</h4>
@@ -289,9 +292,9 @@ const OwnYourStory = () => {
 							<img src={BookingIcon} alt="Booking Icon"/>
 							<p className='third-heading'>
 								Get Your Tailored Quote Now and Elevate Your Advertising Game with Alaan</p>
-							<h1 className='secondary-heading'>
+							<h2 className='secondary-heading'>
 								Contact Now!
-							</h1>
+							</h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -309,7 +312,7 @@ const OwnYourStory = () => {
 								</div>
 								<PhoneInput
 									inputProps={{pattern:".{12,25}",}}
-									label="PHONE NUMBER"
+									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
@@ -335,7 +338,7 @@ const OwnYourStory = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt=""/> <h3>Thank you</h3> <p> You will be contacted to schedule an
+			       children={<>  <TickIcon /> <h3>Thank you</h3> <p> You will be contacted to schedule an
 				       appointment.</p> </>} />
 		</div>
 	)

@@ -42,14 +42,10 @@ const AR = () => {
           </div>
           <div id="about-us"  className='home-text-section home-text-main-section arabic-home-text-section'>
             <h1 className='primary-heading' >
-            شريكك المُفضل في عالم الخدمات الرقمية الشاملة والمتطورة
+            خيارك الأفضل في عالم الخدمات الإعلانية و الورشات التدريبية  الشاملة و المتطورة
             </h1>
             <p className='primary-text' >
-            نحن نفخر بشكل كبير بأعمالنا التجارية الشركاتية، التي تشمل الترفيه المثير، والأخبار المفيدة، والأهم من ذلك، مجموعة من الخدمات الرقمية المصممة لتمكين الشباب.
-
-
-
-
+            في عالمنا المليء بالتنوع، نتميز بتقديم باقة استثنائية من البرامج الترفيهية والأخبارية، بالإضافة إلى حلولنا المُبتكرة، المصممة بعناية لتوفير إلهام للشباب وتعزيز قدراتهم
 
 </p>
           </div>
@@ -68,10 +64,10 @@ const AR = () => {
           </div>
           <div className='home-text-section home-text-main-section'>
             <h2 className='secondary-heading' >
-            عدة أدوات مصممة لتمكين المستقبل
+            منتجات متنوعة مصممة لك 
            </h2>
             <p className='secondary-text' >
-            التزامنا واضح: توفير الأدوات والموارد التي تمكّن الشبان من العثور على وظائف، وتعزيز مساراتهم المهنية، وتحقيق طموحاتهم في منظر رقمي يتطور باستمرار.
+             نحن هنا لنوفر للشباب الأدوات والموارد الضرورية التي تمكّنهم من اكتشاف فرص العمل، تطوير مسارهم المهني، وتحقيق تطلعاتهم في عالم رقمي يتغير بسرعة
 
 
 
@@ -80,9 +76,9 @@ const AR = () => {
 </p>         
             </div>
           <div id="our-brands" className='our-brands'>
-          <h1 className='secondary-heading' >
+          <h2 className='secondary-heading' >
             قنواتنا
-            </h1>
+            </h2>
              <div className='our-brands-container arabic-brands'>
               <div className='brand-card'>
                <img src={AlaanTvLogo} alt='Alaan Tv'/>
@@ -146,7 +142,7 @@ const AR = () => {
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
-               <Link to="/our-workshops"> <img src={OurWorkshops} /></Link>
+               <Link to="/our-workshops/ar"> <img src={OurWorkshops} /></Link>
               </div>
   
               </div>

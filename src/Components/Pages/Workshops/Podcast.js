@@ -20,7 +20,7 @@ import BookingIcon from '../../../Assets/booking2.svg'
 import Footer from '../../Common-components/ArabicFooter'
 import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData, getQs} from "../../../custom-functions";
-import TickIcon from "../../../Assets/tick.png";
+import TickIcon from "../../Common-components/TickIcon";
 import Modal from "../../Common-components/Modal";
 import {Feature,Trainer} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
@@ -74,9 +74,12 @@ const Podcast = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
 					window.location = data.payment_link;
+				}else if (data.payment=='captured') {
+					setModal(true);
 				}
 			}).catch(error => console.error(error));
 
@@ -123,12 +126,12 @@ const Podcast = () => {
 				{icon: <InstagramIcon/>, link: "https://www.instagram.com/maha.fattoum/"},
 				{icon: <TwitterIcon/>, link: "https://twitter.com/mahafattoum"},
 			],
-			desc: "صحفية ومقدمة برامج حاصلة على بكالوريوس في الصحافة والإعلام من جامعة دمشق انضمت لفريق العمل في تلفزيون الآن عام 2018 قدمت العديد من البرامج الإذاعية المباشرة أبرزها برنامج \"ساعة عالهوا\" كما تعد وتقدم برامج اجتماعية منها: بودكاست صارت معي - البرنامج التلفزيوني \"أنا موجود\" وشاركت في تقديم البرامج التلفزيوني المباشر \"تلي تيرابي. لديها اهتمام بالتعرف على تجارب الناس في شتى نواحي الحياة بمختلف جنسياتهم وخلفياتهم الثقافية والاجتماعية وتقديمها كقصص إيماناً منها بأن للقصة أثراً كبيراً في تغيير طريقة تفكيرنا نحو الأفضل وجعلنا منفتحين على الآخرين وقادرين على التضامن والتعاطف معهم."
+			desc: "صحفية ومقدمة برامج حاصلة على بكالوريوس في الصحافة والإعلام من جامعة دمشق انضمت لفريق العمل في تلفزيون الآن عام 2018 قدمت العديد من البرامج الإذاعية المباشرة أبرزها برنامج \"ساعة عالهوا\" كما تعد وتقدم برامج اجتماعية منها: بودكاست صارت معي - البرنامج التلفزيوني \"أنا موجود\" وشاركت في تقديم البرامج التلفزيوني المباشر \"تلي تيرابي\". لديها اهتمام بالتعرف على تجارب الناس في شتى نواحي الحياة بمختلف جنسياتهم وخلفياتهم الثقافية والاجتماعية وتقديمها كقصص إيماناً منها بأن للقصة أثراً كبيراً في تغيير طريقة تفكيرنا نحو الأفضل وجعلنا منفتحين على الآخرين وقادرين على التضامن والتعاطف معهم."
 		},
 	];
 
 	return (
-		<div style={{overflow_x :'hidden'}}>
+		<div style={{overflow_x :'hidden'}} className='arabic-page'>
 			 <DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
@@ -138,7 +141,7 @@ const Podcast = () => {
 							<h1 className='light-heading podcast-heading'>أطلق العنان لصوتك! </h1>
 							<p> طور مهاراتك في مجال البودكاست الذي سيترك بصمتك</p>
 							<p>اكتشف وطور وأطلق البودكاست الخاص بك مع ورش عمل بودكاست أخبار الآن!</p>
-							<div className='workshop-date'><EventIcon/> <p>تاريخ الورشة: 4-6 ديسمبر </p></div>
+							<div className='workshop-date'><EventIcon/> <p>تاريخ الورشة: 4-7 ديسمبر </p></div>
 							<a href='#contact-form'><button className='cta-button'>احجز الآن</button></a>
 						</div>
 						<div className='workshop-image'>
@@ -148,18 +151,18 @@ const Podcast = () => {
 				</div>
 				<div className='workshop-details-section'>
 					<div className='workshop-intro'>
-						<h1 className='third-heading'>
+						<h2 className='third-heading'>
 							هل تفكر في بدء بودكاست خاص بك ولكنك لست متأكداً من أين تبدأ؟ أو كيف تصل إلى جمهورك؟ أو حتى
 							كيف تستطيع إنشاء محتوى يتردد صداه ويتفاعل مع المستمعين؟ لا تقلق، فلست الوحيد!
-						</h1>
+						</h2>
 						<p>لهذا السبب قمنا بتصميم ورشة عمل مكثفة لمدة 4 أيام لتحويل محبي البودكاست إلى مبدعين! نحن هنا
 							لنزودك بالمعرفة، والمهارات، والثقة التي تحتاجها لاكتشاف تخصصك، وصياغة محتوى رائع له، وإطلاق
 							البودكاست الخاص بك بنجاح!
 						</p>
 					</div>
 					<div className='workshop-features-section'>
-						<h1 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
-						</h1>
+						<h2 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
+						</h2>
 						<div className='features features-wrap'>
 							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 						</div>
@@ -169,17 +172,17 @@ const Podcast = () => {
 					<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
 				</div>
 				<div className='workshop-features-section'>
-					<h1 className='light-heading'>
+					<h2 className='light-heading'>
 						مقابل 4,000 درهم فقط ، إليك ما ستتعلمه في أيام الورشة
-					</h1>
+					</h2>
 					<div className='features'>
 						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>
-					<h1 className='primary-heading'>
+					<h2 className='primary-heading'>
 						المدربين
-					</h1>
+					</h2>
 					<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 						عنها لتميز نفسك</p>
 					<div className=''>
@@ -194,12 +197,12 @@ const Podcast = () => {
 								هل أنت مستعد لإظهار مهاراتك أمام الجمهور؟
 							</p>
 							<p className='third-heading'>
-								كن معنا من 4 إلى 6 ديسمبر 2023 لمدة ثلاث أيام
-								(4 ساعات في اليوم) مقابل 3,500 درهم إماراتي فقط
+								كن معنا من 4 إلى 7 ديسمبر 2023 لمدة أربع أيام
+								 مقابل 4,000 درهم إماراتي فقط
 							</p>
-							<h1 className='secondary-heading'>
+							<h2 className='secondary-heading'>
 								احجز مقعدك الآن !
-							</h1>
+							</h2>
 						</div>
 					</div>
 					<div className='right-section'>
@@ -223,7 +226,7 @@ const Podcast = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 									<span>أنا أوافق على   <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
 								<div className="input-wrapper">
@@ -237,7 +240,7 @@ const Podcast = () => {
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <img src={TickIcon} alt='Tick'/> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+			       children={<>  <TickIcon /> <h3>شكرا لك</h3><p> سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
 		</div>
 	)
 }
