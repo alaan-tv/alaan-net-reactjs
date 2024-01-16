@@ -76,10 +76,12 @@ const MagicTouchStudio = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
+				setInputs({});
+				setPhone('971');
 				if (data.id) {
-					setInputs({});
-					setPhone('971');
 					window.location = data.payment_link;
+				}else if (data.payment=='captured') {
+					setModal(true);
 				}
 			}).catch(error => console.error(error));
 	}
@@ -187,7 +189,7 @@ const MagicTouchStudio = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> With only AED 895 you'll get </h2>
+					<h2 className='primary-heading'> With only AED 450 you'll get </h2>
 					<div className='features-container'>
 						{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
