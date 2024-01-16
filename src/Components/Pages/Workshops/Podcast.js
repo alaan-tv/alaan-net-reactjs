@@ -138,7 +138,7 @@ const Podcast = () => {
 							<h1 className='light-heading podcast-heading'>أطلق العنان لصوتك! </h1>
 							<p> طور مهاراتك في مجال البودكاست الذي سيترك بصمتك</p>
 							<p>اكتشف وطور وأطلق البودكاست الخاص بك مع ورش عمل بودكاست أخبار الآن!</p>
-							<div className='workshop-date'><EventIcon/> <p>تاريخ الورشة: 4-6 ديسمبر </p></div>
+							<div className='workshop-date'><EventIcon/> <p>تاريخ الورشة: 4-7 ديسمبر </p></div>
 							<a href='#contact-form'><button className='cta-button'>احجز الآن</button></a>
 						</div>
 						<div className='workshop-image'>

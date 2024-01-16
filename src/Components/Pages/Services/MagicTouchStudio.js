@@ -187,7 +187,7 @@ const MagicTouchStudio = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> With only AED 895 you'll get </h2>
+					<h2 className='primary-heading'> With only AED 450 you'll get </h2>
 					<div className='features-container'>
 						{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
 					</div>
