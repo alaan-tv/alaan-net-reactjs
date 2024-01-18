@@ -11,6 +11,7 @@ import OwnYourStoryIcon from '../../Assets/own-your-story-icon.svg'
 import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
 import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.svg'
 import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
+import LivingIcon from '../../Assets/living-by-design-icon.svg'
 import DocumentMeta from 'react-document-meta';
 
 
@@ -106,6 +107,16 @@ const Services = () => {
               <p className='third-text'>
               Unlocking your authentic executive influence</p>
               <div className='sevice-more-icon'><Link to="/our-services/personal-branding"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
+            <div className='service-card'>
+              <img src={LivingIcon} alt='Living by design icon'/>
+              <h2 className='third-heading' >
+              Living By Design         </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Begin your media career journey with skilled specialized experts.</p>
+              <div className='sevice-more-icon'><Link to="/our-services/living-by-design"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>
