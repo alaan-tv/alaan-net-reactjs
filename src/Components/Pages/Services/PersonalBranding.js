@@ -99,7 +99,7 @@ const PersonalBranding = () => {
 		},
 		{
 			icon: FeatureIcon4,
-			desc: "Build thought leadership with the top 5 trends for the last quarter of 2024"
+			desc: "Build thought leadership with the top 5 trends for the last quarter of 2023"
 		},
 	];
 
@@ -226,7 +226,7 @@ const PersonalBranding = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input type='checkbox' required/>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
 									<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
