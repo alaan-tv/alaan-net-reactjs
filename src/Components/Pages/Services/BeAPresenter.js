@@ -65,7 +65,7 @@ const BeAPresenter = () => {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
-				lp_type: 'presenter',
+				lp_type: 'be-a-presenter',
 				title: 'Be A Presenter - Service',
 				email_subject: 'Be A Presenter',
 				page_url: window.location.origin+window.location.pathname,
