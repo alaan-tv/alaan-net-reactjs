@@ -14,6 +14,7 @@ import WorkshopsArabic from './Components/Pages/WorkshopsArabic'
 import BeAPresenter from './Components/Pages/Services/BeAPresenter';
 import Terms from './Components/Common-components/Terms';
 import PersonalBranding from './Components/Pages/Services/PersonalBranding';
+import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
     <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
     <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
     <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
+    <Route path="/our-services/living-by-design" element={<LivingByDesign />}  />
     <Route path="/terms" element={<Terms />}  />
 
 
