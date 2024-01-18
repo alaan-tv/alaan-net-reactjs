@@ -99,7 +99,7 @@ const PersonalBranding = () => {
 		},
 		{
 			icon: FeatureIcon4,
-			desc: "Build thought leadership with the top 5 trends for the last quarter of 2024"
+			desc: "Build thought leadership with the top 5 trends for the last quarter of 2023"
 		},
 	];
 
