@@ -15,8 +15,11 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YoutubeIcon from '@mui/icons-material/YouTube';
 import LinkIcon from '@mui/icons-material/Link';
-import OurServices from '../../Assets/our-services.svg'
-import OurWorkshops from '../../Assets/Our-workshops.svg'
+import OurServices from '../../Assets/our-services-image.svg'
+import OurWorkshops from '../../Assets/our-workshop-image.svg'
+import ArrowIcon from '../../Assets/E-arrow.svg'
+import ArrowIconMobile from '../../Assets/e-arrow-mobile.svg'
+
 import DocumentMeta from 'react-document-meta';
 
 
@@ -124,12 +127,28 @@ const Home = () => {
               <div className='our-services'>
               <div className='our-services-container'>
                <Link to='/our-services'> <img src={OurServices} alt="" /></Link>
+               <div className='features-desc'>
+                <h2 className='services-heading'>Our Services</h2>
+                <picture>
+     <source media='(max-width: 768px)' srcSet={ArrowIconMobile} />
+     <source media='(min-width: 768px)' srcSet={ArrowIcon} />
+     <Link to='/our-services'><img src={ArrowIcon} className='banner-image' alt='hero' /></Link>
+ </picture>
+               </div>
               </div>
   
               </div>
               <div className='our-workshops'>
               <div className='our-services-container'>
                <Link to="/our-workshops"> <img src={OurWorkshops} alt="" /></Link>
+               <div className='features-desc'>
+                <h2 className='services-heading'>Our Workshops</h2>
+                <picture>
+     <source media='(max-width: 768px)' srcSet={ArrowIconMobile} />
+     <source media='(min-width: 768px)' srcSet={ArrowIcon} />
+     <Link to="/our-workshops"> <img src={ArrowIcon} className='banner-image' alt='hero' /> </Link>
+ </picture>
+               </div>
               </div>
   
               </div>
