@@ -69,7 +69,7 @@ const MagicTouchClinic = () => {
 				...inputs,
 				phone: phone,
 				cv: inputFile.current.files[0],
-				lp_type: 'clinic',
+				lp_type: 'magic-touch-clinic',
 				title: 'Magic Touch Clinic - Service',
 				email_subject: 'Magic Touch Clinic',
 				page_url: window.location.origin+window.location.pathname,

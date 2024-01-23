@@ -47,13 +47,6 @@ const LivingByDesign = () => {
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
 
-	useEffect(() => {
-		if (getQs('status') === 'captured') {
-			setModal(true);
-			window.history.pushState({}, document.title, window.location.pathname);
-		}
-	}, []);
-
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
@@ -66,10 +59,9 @@ const LivingByDesign = () => {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
-				lp_type: 'studio',
-				title: 'Magic Touch Studio - Service',
-				email_subject: 'Magic Touch Studio',
-				page_url: window.location.origin+window.location.pathname,
+				lp_type: 'living-by-design',
+				title: 'Living By Design - Service',
+				email_subject: 'Living By Design',
 			})
 		})
 			.then(response => response.json())
@@ -77,8 +69,6 @@ const LivingByDesign = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
 					setModal(true);
 				}
 			}).catch(error => console.error(error));
