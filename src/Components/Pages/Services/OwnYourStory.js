@@ -63,7 +63,7 @@ const OwnYourStory = () => {
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'own-story', title: 'Own Story - Service', email_subject: 'Own Story',
+				...inputs, phone: phone, lp_type: 'own-your-story', title: 'Own Your Story - Service', email_subject: 'Own Your Story',
 			})
 		})
 			.then(response => response.json())
@@ -71,8 +71,6 @@ const OwnYourStory = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					setModal(true);
-				}else if (data.payment=='captured') {
 					setModal(true);
 				}
 			}).catch(error => console.error(error));
