@@ -261,6 +261,9 @@ width: 220px;
 font-size: 20px;
 font-weight: 600;
 }
+.banner-button:hover{
+  background-color: rgb(234, 234, 234);
+}
 .about-section-container {
   margin-top: 20rem;
   position: relative;
@@ -517,6 +520,9 @@ font-weight: 600;
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+.service-card:hover .sevice-more-icon{
+  opacity: 0.7;
 }
 .workshops-services{
   flex-wrap: nowrap;
@@ -849,6 +855,10 @@ body{
 }
 input[type=submit]{
   cursor: pointer !important;
+}
+input[type=submit]:hover{
+  background-color: #cb198a;
+  
 }
 /*Workshops Arabic Page*/
 .workshops-arabic{direction: rtl;}
