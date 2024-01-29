@@ -26,6 +26,9 @@
     line-height: 6px;
     margin: 45px 0px;
 }
+.hero-workshop-section .cta-button:hover{
+    background-color: #cb198a;
+}
 .hero-workshop-section p{
 font-size: 24px;
 color: #817A99;

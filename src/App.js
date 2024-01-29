@@ -15,6 +15,7 @@ import BeAPresenter from './Components/Pages/Services/BeAPresenter';
 import Terms from './Components/Common-components/Terms';
 import PersonalBranding from './Components/Pages/Services/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
+import ContentByDesign from './Components/Pages/Services/ContectByDesign';
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
     <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
     <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
     <Route path="/our-services/living-by-design" element={<LivingByDesign />}  />
+    <Route path="/our-services/content-by-design" element={<ContentByDesign />}  />
+
     <Route path="/terms" element={<Terms />}  />
 
 

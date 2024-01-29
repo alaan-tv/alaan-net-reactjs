@@ -12,6 +12,7 @@ import BeAPresenterIcon from '../../Assets/be-a-presenter.png'
 import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.svg'
 import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
 import LivingIcon from '../../Assets/living-by-design-icon.svg'
+import ContentIcon from '../../Assets/content-logo.svg'
 import DocumentMeta from 'react-document-meta';
 
 
@@ -117,6 +118,16 @@ const Services = () => {
               <p className='third-text'>
               Begin your media career journey with skilled specialized experts.</p>
               <div className='sevice-more-icon'><Link to="/our-services/living-by-design"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
+            <div className='service-card'>
+              <img src={ContentIcon} alt='Living by design icon'/>
+              <h2 className='third-heading' >
+              Content By Design         </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Your content, with a lot more of You in it.</p>
+              <div className='sevice-more-icon'><Link to="/our-services/content-by-design"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>
