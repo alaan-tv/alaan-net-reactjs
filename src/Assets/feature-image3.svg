@@ -1,5 +1,5 @@
-<svg width="340" height="320" viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.2" width="340" height="320" rx="20" fill="url(#paint0_linear_353_114)"/>
+<svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.2" width="340" height="340" rx="20" fill="url(#paint0_linear_353_114)"/>
 <mask id="mask0_353_114" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="258" height="255">
 <rect width="258" height="255" rx="20" fill="#D9D9D9"/>
 </mask>
@@ -8,7 +8,7 @@
 <circle opacity="0.8" cx="67.1615" cy="67.1615" r="67.1615" transform="matrix(1 0 0 -1 -27.5107 105.688)" fill="url(#paint2_linear_353_114)"/>
 </g>
 <defs>
-<linearGradient id="paint0_linear_353_114" x1="9.49475" y1="320" x2="1082.53" y2="131.177" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_353_114" x1="9.49475" y1="340" x2="1086.22" y2="161.673" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFCD01"/>
 <stop offset="0.28125" stop-color="#F87F39"/>
 <stop offset="0.53125" stop-color="#F05A5A"/>

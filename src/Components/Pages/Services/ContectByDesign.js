@@ -100,13 +100,13 @@ const ContentByDesign = () => {
 	const youWillGetList = [
 		{icon: FeatureIcon1,title: "Branding & Design Consultation", desc: 'Our branding experts will work with you to craft an entirely unique design theme that tells your viewers everything they need to know about your channel at a single glance.        '},
 		{icon: FeatureIcon2,title: "Comprehensive Shopping List", desc: 'Everything you need in a single document, plain & simple- to build a set that’s far from either.'},
-		{icon: FeatureIcon3,title: "Organizational CG Render", desc: 'A CG render of your new set so you can: (A) Arrange everything \n (B) Fantasize about your future content more accurately.'},
+		{icon: FeatureIcon3,title: "Organizational CG Render", desc: 'A CG render of your new set so you can: \r\n(A) Arrange everything \r\n(B) Fantasize about your future content more accurately.'},
 	];
 
 	const howItWorkList = [
 		{
 			icon: Feature1,
-			title: "Application & Deposit            ",
+			title: "Application & Deposit",
 			desc: "Complete our brand & style quiz, fill out our application form, & pay a 50% deposit to take the first step towards the best content you’ve made yet.      "
 		},
 		{
@@ -162,7 +162,7 @@ const ContentByDesign = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole other level by giving you:
+					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole other <br />level by giving you:
 
  </h2>
 					<div className='features-container'>
@@ -181,7 +181,7 @@ const ContentByDesign = () => {
 						</div>
 						<div className='trainer-desc'>
 							<p>
-                            First impressions matter. Visuals matter.<br /> Your set is the first thing that speaks for your channel before you do- No matter how excellent your content is, if a viewer doesn't immediately think you're able to deliver it, they're not going to stick around long enough to find out.<br /> We don't want that to ever happen to you. <br />It takes 7 seconds to make a first impression; we want to help you nail it in 1.
+                            First impressions matter. Visuals matter.</p> <p>Your set is the first thing that speaks for your channel before you do</p> <p> No matter how excellent your content is, if a viewer doesn't immediately think you're able to deliver it, they're not going to stick around long enough to find out.</p> <p> We don't want that to ever happen to you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br></br>you nail it in 1.</b>
 
 </p>
 							

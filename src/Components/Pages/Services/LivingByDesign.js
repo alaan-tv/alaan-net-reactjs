@@ -180,8 +180,7 @@ we’ll transform your space by giving you
 							
 						</div>
 						<div className='trainer-desc'>
-							<p>Things change, people change, rooms change. While we can’t do much about the first two, we can make sure your rooms only change for the better. There were reasons why you couldn’t design your space how you wanted the first time around- Now there’s no reason to choose not to.
-                            Things change, people change, rooms change. While we can’t do much about the first two, we can make sure your rooms only change for the better. There were reasons why you couldn’t design your space how you wanted the first time around- Now there’s no reason to choose not to.
+							<p>Things change, people change, rooms change.</p><p> While we can’t do much about the first two, we can make sure your rooms only change for the better.</p> <p>There were reasons why you couldn’t design your space how you wanted the first time around- </p> <p>Now there’s no reason to choose not to.
 </p>
 							
 						</div>
