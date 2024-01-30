@@ -67,8 +67,6 @@ const Podcast = () => {
 				...inputs,
 				phone: phone,
 				lp_type: 'podcast-workshop',
-				title: 'Podcast Workshop - Service',
-				email_subject: 'Podcast Workshop',
 				page_url: window.location.origin + window.location.pathname,
 			})
 		})

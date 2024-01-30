@@ -66,8 +66,6 @@ const BeAPresenter = () => {
 				...inputs,
 				phone: phone,
 				lp_type: 'be-a-presenter',
-				title: 'Be A Presenter - Service',
-				email_subject: 'Be A Presenter',
 				page_url: window.location.origin+window.location.pathname,
 			})
 		})

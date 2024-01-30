@@ -62,9 +62,7 @@ const OwnYourStory = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'own-your-story', title: 'Own Your Story - Service', email_subject: 'Own Your Story',
-			})
+			method: 'Post', body: formData({ ...inputs, phone: phone, lp_type: 'own-your-story' })
 		})
 			.then(response => response.json())
 			.then(data => {

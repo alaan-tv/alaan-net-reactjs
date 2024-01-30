@@ -62,8 +62,6 @@ const Media = () => {
 				...inputs,
 				phone: phone,
 				lp_type: 'media-workshop',
-				title: 'Media Workshop - Service',
-				email_subject: 'Media Workshop',
 				page_url: window.location.origin + window.location.pathname,
 			})
 		})
