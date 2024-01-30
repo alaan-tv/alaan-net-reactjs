@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react'
-import Carousel from 'react-multi-carousel';
-import { Link } from "react-router-dom";
+import React, {useRef, useState} from 'react'
+import {Link} from "react-router-dom";
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
@@ -18,23 +17,23 @@ import ContentLogo from '../../../Assets/content-by-design-logo.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import AboutImage from '../../../Assets/content-about-image.png'
 import TickIcon from '../../Common-components/TickIcon'
-import {ajax_url, formData, getQs,responsive} from "../../../custom-functions";
+import {ajax_url, formData, handleSubmitFn} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
-import {Feature,Testimonial} from "../../Common-components/Card";
+import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
 
 const ContentByDesign = () => {
-    const meta = {
+	const meta = {
 		title: 'Content By Design',
 		description: 'I am a description, and I can create multiple tags',
 		meta: {
-		  charset: 'utf-8',
-		  name: {
-			keywords: 'react,meta,document,html,tags'
-		  }
+			charset: 'utf-8',
+			name: {
+				keywords: 'react,meta,document,html,tags'
+			}
 		}
-	  }
+	}
 
 	/**
 	 *
@@ -55,13 +54,7 @@ const ContentByDesign = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({
-				...inputs,
-				phone: phone,
-				lp_type: 'living-by-design',
-				title: 'Living By Design - Service',
-				email_subject: 'Living By Design',
-			})
+			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'content-by-design'})
 		})
 			.then(response => response.json())
 			.then(data => {
@@ -72,35 +65,24 @@ const ContentByDesign = () => {
 				}
 			}).catch(error => console.error(error));
 	}
-	/**
-	 *
-	 *  Send Guidebook Email
-	 *
-	 */
-	const [guideEmail, setGuideEmail] = useState('');
-	const submitGuidBtn = useRef();
-	const [guideModal, setGuideModal] = useState(false);
-	const sendGuideBook = (event) => {
-		event.preventDefault();
-		submitGuidBtn.current.value = 'Please wait...';
-		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({
-				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
-			})
-		})
-			.then(response => response.json())
-			.then(data => {
-				if (data.id) {
-					setGuideEmail('');
-					setGuideModal(true);
-				}
-			}).catch(error => console.error(error));
-	}
+
 
 	const youWillGetList = [
-		{icon: FeatureIcon1,title: "Branding & Design Consultation", desc: 'Our branding experts will work with you to craft an entirely unique design theme that tells your viewers everything they need to know about your channel at a single glance.        '},
-		{icon: FeatureIcon2,title: "Comprehensive Shopping List", desc: 'Everything you need in a single document, plain & simple- to build a set that’s far from either.'},
-		{icon: FeatureIcon3,title: "Organizational CG Render", desc: 'A CG render of your new set so you can: (A) Arrange everything \n (B) Fantasize about your future content more accurately.'},
+		{
+			icon: FeatureIcon1,
+			title: "Branding & Design Consultation",
+			desc: 'Our branding experts will work with you to craft an entirely unique design theme that tells your viewers everything they need to know about your channel at a single glance.        '
+		},
+		{
+			icon: FeatureIcon2,
+			title: "Comprehensive Shopping List",
+			desc: 'Everything you need in a single document, plain & simple- to build a set that’s far from either.'
+		},
+		{
+			icon: FeatureIcon3,
+			title: "Organizational CG Render",
+			desc: 'A CG render of your new set so you can: (A) Arrange everything \n (B) Fantasize about your future content more accurately.'
+		},
 	];
 
 	const howItWorkList = [
@@ -127,25 +109,19 @@ const ContentByDesign = () => {
 	];
 
 
-
-
-  return (
-<div className='content-page'>
-			 <DocumentMeta {...meta} />
+	return (
+		<div className='content-page'>
+			<DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
 					<div className='home-banner-container banner-service'>
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
-                            Build the Set you’ve been waiting for with
-                            							</h1>
-                                                        <img className='service-logo' src={ContentLogo} />
+								Build the Set you’ve been waiting for with</h1>
+							<img className='service-logo' src={ContentLogo}/>
 							<p className='primary-text light-text'>
-                            Your content, with a lot more of You in it.
-
-
-
+								Your content, with a lot more of You in it.
 							</p>
 							<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
 							{/*<div className='home-image-container banner-service-image'>
@@ -158,56 +134,53 @@ const ContentByDesign = () => {
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole other level by giving you:
-
- </h2>
+					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole other
+						level by giving you:</h2>
 					<div className='features-container'>
-						{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
+						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='about-section'>
-					<h2 className='primary-heading'>  Same great content, <br /> just unbelievably better packaged.
-</h2>
+					<h2 className='primary-heading'> Same great content, <br/> just unbelievably better packaged.</h2>
 					<div className='about-container'>
-                    <div className='trainers-container'>
-						<div className='trainer-image'>
-							<img src={AboutImage} alt='about-image'/>
-							
-							
-						</div>
-						<div className='trainer-desc'>
-							<p>
-                            First impressions matter. Visuals matter.<br /> Your set is the first thing that speaks for your channel before you do- No matter how excellent your content is, if a viewer doesn't immediately think you're able to deliver it, they're not going to stick around long enough to find out.<br /> We don't want that to ever happen to you. <br />It takes 7 seconds to make a first impression; we want to help you nail it in 1.
+						<div className='trainers-container'>
+							<div className='trainer-image'>
+								<img src={AboutImage} alt='about-image'/>
+							</div>
+							<div className='trainer-desc'>
+								<p>
+									First impressions matter. Visuals matter.<br/> Your set is the first thing that
+									speaks for your channel before you do- No matter how excellent your content is, if a
+									viewer doesn't immediately think you're able to deliver it, they're not going to
+									stick around long enough to find out.<br/> We don't want that to ever happen to
+									you. <br/>It takes 7 seconds to make a first impression; we want to help you nail it
+									in 1.
+								</p>
 
-</p>
-							
+							</div>
 						</div>
-					</div>
 					</div>
 				</div>
-               
+
 				<div className='features second-features'>
 					<h2 className='primary-heading'> How it works </h2>
 					<div className='features-container'>
-						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
+						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
-				
+
 				<div className='booking' id="contact-form">
 					<div className='left-section'>
 						<div className='left-section-container'>
 							<img src={BookingIcon} alt="Booking Icon"/>
 							<p className='third-heading'>
-                            It takes years of experience to build the perfect set, we're using 20 of ours to give you a headstart on yours.
+								It takes years of experience to build the perfect set, we're using 20 of ours to give
+								you a headstart on yours.
 							</p>
-                            <p className='third-heading'>Everything that makes you great. everywhere around you
-
-
-</p>
+							<p className='third-heading'>Everything that makes you great. everywhere around you</p>
 							<h2 className='secondary-heading'> Book Now! </h2>
 						</div>
 					</div>
@@ -225,7 +198,7 @@ const ContentByDesign = () => {
 									       placeholder='Enter you Email' required/>
 								</div>
 								<PhoneInput
-									inputProps={{pattern:".{12,25}",}}
+									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
@@ -233,7 +206,8 @@ const ContentByDesign = () => {
 									onChange={setPhone}/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
-									<span id="terms-label">I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
+									<span id="terms-label">I agree with <Link
+										to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' value="Send" ref={submitBtn}/>
@@ -242,17 +216,13 @@ const ContentByDesign = () => {
 						</div>
 					</div>
 				</div>
-				<Advertise />
+				<Advertise/>
 			</div>
 			<Footer/>
 			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
+			       children={<> <TickIcon/> <h3>Thank you</h3><p> You will be contacted to schedule an
 				       appointment.</p> </>}/>
-
-			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <TickIcon /> <p>Thank you for sharing your email with us. Your requested file
-				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
-		</div>  )
+		</div>)
 }
 
 export default ContentByDesign

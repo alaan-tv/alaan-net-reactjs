@@ -69,8 +69,6 @@ const MagicTouchStudio = () => {
 				...inputs,
 				phone: phone,
 				lp_type: 'magic-touch-studio',
-				title: 'Magic Touch Studio - Service',
-				email_subject: 'Magic Touch Studio',
 				page_url: window.location.origin+window.location.pathname,
 			})
 		})

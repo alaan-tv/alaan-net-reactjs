@@ -64,8 +64,6 @@ const PersonalBranding = () => {
 				...inputs,
 				phone: phone,
 				lp_type: 'personal-branding',
-				title: 'Personal Branding - Service',
-				email_subject: 'Personal Branding',
 				page_url: window.location.origin + window.location.pathname,
 			})
 		})
