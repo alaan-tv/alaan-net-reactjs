@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 import {Link} from "react-router-dom";
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
@@ -22,6 +23,8 @@ import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
+import BeforeContent from '../../../Assets/before bedroom.jpg'
+import AfterContent from '../../../Assets/after bedroom.png'
 
 const ContentByDesign = () => {
 	const meta = {
@@ -137,7 +140,14 @@ const ContentByDesign = () => {
 					<div className='about-container'>
                     <div className='trainers-container'>
 						<div className='trainer-image'>
-							<img src={AboutImage} alt='about-image'/>
+						{ /*<img src={AboutImage} alt='about-image'/> */}
+								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5" transition='.5s ease-in-out'
+      itemOne={<ReactCompareSliderImage  src={BeforeContent} srcSet={BeforeContent} alt="Image one" />}
+      itemTwo={<ReactCompareSliderImage  src={AfterContent} srcSet={AfterContent} alt="Image two" />}
+    />
+	<div className='before-state'> Before</div>
+		<div className='after-state'> After</div>
+	
 							
 							
 						</div>
