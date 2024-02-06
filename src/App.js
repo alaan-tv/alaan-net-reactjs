@@ -17,7 +17,6 @@ import PersonalBranding from './Components/Pages/Services/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import ContentByDesign from './Components/Pages/Services/ContectByDesign';
 
-
 function App() {
   
   return (
@@ -41,8 +40,8 @@ function App() {
     <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
     <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
     <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
-    <Route path="/our-services/living-by-design" element={<LivingByDesign />}  />
-    <Route path="/our-services/content-by-design" element={<ContentByDesign />}  />
+    <Route path="/our-services/LBD" element={<LivingByDesign />}  />
+    <Route path="/our-services/CBD" element={<ContentByDesign />}  />
 
     <Route path="/terms" element={<Terms />}  />
 

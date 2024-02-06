@@ -427,7 +427,16 @@ padding-left: 20px;
             
         }
         .living-page .trainers-container {
-            height: 375px;
+            
+        }
+        .living-page .about-section .trainer-image, .content-page .about-section .trainer-image{
+            height: 100% !important; 
+            width: 100% !important;
+            position: relative;
+        }
+        .living-page .trainer-image > div:nth-of-type(1),  .content-page .trainer-image > div:nth-of-type(1){
+
+            height: 100% !important;
         }
         .trainers-services .trainers-container{
             padding: 40px 0px 60px 0px;
@@ -674,18 +683,18 @@ padding-left: 20px;
     font-size: 52px !important;
    }
    .about-section .trainer-image img{
-    border-radius: 0px;
+    border-radius: 20px 0px 0px 20px;
     height: 375px;
    }
    .about-section .trainer-image{
     background-image: none;
     width: 500px !important;
-    height: 300px !important;
+    height: 300px;
     padding: 0px;
    }
    .living-page .trainers-container{
     padding: 0px;
-    max-width: fit-content;
+    max-width: 1330px;
     justify-content: space-between;
    }
    .living-page .trainer-desc{
@@ -721,7 +730,7 @@ padding-left: 20px;
    }
    .about-section .trainer-image img{
     height: 300px;
-    border-radius: 20px;
+    border-radius: 20px !important;
    }
    .service-logo{
     width: 200px;
@@ -732,7 +741,9 @@ padding-left: 20px;
    .second-features .features-container{
     margin: 80px 0px 0px 0px 
    }
-  
+   .about-section h2{
+    font-size: 40px !important;
+   }
 }
 /*content by design page*/
 .content-page .hero-section{
@@ -746,7 +757,7 @@ height:  460px;
 border-radius: 20px 0px 0px 20px;
 }
  .content-page .trainers-container{
-max-width: 1010px;
+max-width: 1330px;
 justify-content: space-around;
 padding: 0px;
 align-items: center;
@@ -756,10 +767,50 @@ align-items: center;
     width: auto !important;
  }
  .content-page .trainer-desc{
-    padding: 40px 20px 40px 0px;
+    padding: 20px 20px 0px 0px;
+    font-size: 17px !important;
+ }
+ .content-page .trainer-desc p {
+    margin-bottom: 15px;
  }
  @media (max-width: 767px) {
  .content-page .hero-section{
     background-image: url(../../../Assets/banner-content-mobile-background.png);
    }
+}
+
+
+
+.before-state , .after-state{
+    position: absolute;
+    top: 10px;
+    background-color: rgba(223, 25, 149, 0.7);
+    color: #fff !important;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 50px;
+}
+
+.before-state{
+    left: 10px;
+}
+.after-state{
+    right: 10px;
+}
+
+/* The Modal (background) */
+.modal-button{
+    padding-top: 0.5rem;
+padding-bottom: 0.5rem; 
+padding-left: 1rem;
+padding-right: 1rem; 
+color: #ffffff; 
+font-size: 0.875rem;
+line-height: 1.25rem; 
+font-weight: 500; 
+border-radius: 0.375rem; 
+}
+.dialog-container{
+position: relative; 
+z-index: 10; 
 }

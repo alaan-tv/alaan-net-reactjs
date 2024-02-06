@@ -15,8 +15,10 @@
     "flag-icons-svg": "^0.0.3",
     "react": "^18.2.0",
     "react-collapsed": "^4.1.2",
+    "react-compare-slider": "^3.0.1",
     "react-document-meta": "^3.0.0-beta.2",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.50.0",
     "react-icons": "^4.12.0",
     "react-js-dropdavn": "^1.0.4",
     "react-multi-carousel": "^2.8.4",
@@ -25,6 +27,7 @@
     "react-router-dom": "^6.21.0",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "^5.0.1",
+    "react-stepper-horizontal": "^1.0.11",
     "react-touch-carousel": "^0.10.2",
     "styled-components": "^6.1.6",
     "web-vitals": "^2.1.4"

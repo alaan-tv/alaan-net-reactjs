@@ -1,4 +1,5 @@
-import React, {useRef, useState} from 'react'
+import React, {useState, useRef,Fragment} from 'react'
+import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 import {Link} from "react-router-dom";
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
@@ -22,7 +23,13 @@ import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
-
+import BeforeLiving from '../../../Assets/before living.png';
+import AfterLiving from '../../../Assets/after living.png';
+import LivingIcon from '../../../Assets/living-by-design-icon-orginal.svg';
+import QuizModal from '../../Common-components/QuizModal'
+import FormModal from '../../Common-components/FormModal'
+import Quiz from '../../Common-components/Quiz'
+import FormQuiz from '../../Common-components/FormQuiz'
 const LivingByDesign = () => {
 	const meta = {
 		title: 'Living By Design',
@@ -40,11 +47,21 @@ const LivingByDesign = () => {
 	 *  Send From Data
 	 *
 	 */
+	
+
+	const [isOpen, setIsOpen] = useState(true)
+	const [form, setForm] = useState(false);
+
 	const [inputs, setInputs] = useState({});
 	const [modal, setModal] = useState(false);
+	const [quiz, setQuiz] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
+const handlaChangeForm = () =>{
+	setQuiz(!quiz);
+setForm(true);
 
+}
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
@@ -107,7 +124,7 @@ const LivingByDesign = () => {
 			desc: "Your consultant will meet you at the property to discuss the complete list of all the furniture, furnishings, decor, & fixtures, for you to purchase that'll transform your space; as well as a top-view floor plan which'll highlight how everything will fit and be arranged!            ."
 		},
 	];
-
+	
 
 	return (
 		<div className='living-page'>
@@ -154,28 +171,26 @@ const LivingByDesign = () => {
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								<img src={AboutImage} alt='about-image'/>
+								{ /*<img src={AboutImage} alt='about-image'/> */}
+								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5" transition='.5s ease-in-out'
+      itemOne={<ReactCompareSliderImage  src={BeforeLiving} srcSet={BeforeLiving} alt="Image one" />}
+      itemTwo={<ReactCompareSliderImage  src={AfterLiving} srcSet={AfterLiving} alt="Image two" />}
+    />
+	<div className='before-state'> Before</div>
+		<div className='after-state'> After</div>
+	
+		
+	
 
 
 							</div>
 							<div className='trainer-desc'>
-								<p>Things change, people change, rooms change. While we can’t do much about the first
-									two, we can make sure your rooms only change for the better. There were reasons why
-									you couldn’t design your space how you wanted the first time around- Now there’s no
-									reason to choose not to.
-									Things change, people change, rooms change. While we can’t do much about the first
-									two, we can make sure your rooms only change for the better. There were reasons why
-									you couldn’t design your space how you wanted the first time around- Now there’s no
-									reason to choose not to.
-								</p>
+							<p>Things change, people change, rooms change.</p><p> While we can’t do much about the first two, we can make sure your rooms only change for the better.</p> <p>There were reasons why you couldn’t design your space how you wanted the first time around- </p> <p>Now there’s no reason to choose not to.
+</p>
 
 							</div>
 						</div>
-						<div className='trainer-desc'>
-							<p>Things change, people change, rooms change.</p><p> While we can’t do much about the first two, we can make sure your rooms only change for the better.</p> <p>There were reasons why you couldn’t design your space how you wanted the first time around- </p> <p>Now there’s no reason to choose not to.
-</p>
-							
-						</div>
+						
 					</div>
 					</div>
 				</div>
@@ -190,16 +205,23 @@ const LivingByDesign = () => {
 				<div className='booking' id="contact-form">
 					<div className='left-section'>
 						<div className='left-section-container'>
-							<img src={BookingIcon} alt="Booking Icon"/>
+							<img src={LivingIcon} alt="LivingIcon"/>
 							<p className='third-heading'>
-								The home you never knew you needed is a click away- Why wait any longer to live the way
-								you were always meant to?
+								The home you never knew you needed is a click away
+								 
 
 							</p>
-							<p className='third-heading'>Unlimited potential, unbelievably inspired, unequivocally
-								You.</p>
-							<h2 className='secondary-heading'> Book Now! </h2>
-						</div>
+							<p className='third-heading'> Why wait any longer to live the way
+								you were always meant to?</p>
+
+								{/*modal quiz*/}
+								<button className='take-quiz' onClick={() => setQuiz(true)}> Take a quiz</button>
+								<QuizModal  showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
+			       children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
+				   <FormModal  showForm={form} handleClose1={() => setForm(!form)}
+			       children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
+								
+					</div>
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">

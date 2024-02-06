@@ -117,7 +117,7 @@ const Services = () => {
               <div className='service-desc'>
               <p className='third-text'>
               Begin your media career journey with skilled specialized experts.</p>
-              <div className='sevice-more-icon'><Link to="/our-services/living-by-design"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              <div className='sevice-more-icon'><Link to="/our-services/LBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             <div className='service-card'>
@@ -127,7 +127,7 @@ const Services = () => {
               <div className='service-desc'>
               <p className='third-text'>
               Your content, with a lot more of You in it.</p>
-              <div className='sevice-more-icon'><Link to="/our-services/content-by-design"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              <div className='sevice-more-icon'><Link to="/our-services/CBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>
