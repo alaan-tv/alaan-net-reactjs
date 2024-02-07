@@ -1,21 +1,24 @@
 import React, { useState }  from 'react'
 import Stepper from 'react-stepper-horizontal';
-import Unique from '../../../src/Assets/unique.jpg'
-import Cool from '../../../src/Assets/cool.jpg'
-import Stream from '../../../src/Assets/stream.jpg'
-import Regal from '../../../src/Assets/regal.jpg'
-import LaidBack from '../../../src/Assets/laid-back.jpg'
-import Space1 from '../../../src/Assets/1-5.jpg'
-import Space2 from '../../../src/Assets/2-5.png'
-import Space3 from '../../../src/Assets/3-5.png'
-import Space4 from '../../../src/Assets/4-5.jpg'
-import FormModal from './FormModal';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import Modal from './Modal';
+
+
+ 
 
 const FormQuiz = ({handleClose}) => {
+    const timeSlots = [
+        '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM',
+        '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
+        '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM',
+        '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM',
+        '05:00 PM', '05:30 PM', '06:00 PM', '06:30 PM',
+      ];
   
+    const [selectedTime, setSelectedTime] = useState('');
 
+    const handleTimeChange = (e) => {
+      setSelectedTime(e.target.value);
+    };
   const [currentPage, setCurrentPage] = useState(1);
 
   const [checkboxStates, setCheckboxStates] = useState({});
@@ -26,7 +29,7 @@ const FormQuiz = ({handleClose}) => {
     3,
     4,
     5,
-    6, 7, 8, 9, 10
+    6, 7, 8, 9, 10,11,12
   ];
  
 
@@ -76,23 +79,64 @@ const FormQuiz = ({handleClose}) => {
 
         {currentPage === 1 && (
           <>
-            <h1 className='step-title'>First things first- let’s get to know you!</h1>
-            <form className='introduction-quiz-form'>
-              <input type="text" placeholder='name'></input>
-              <input type="email" placeholder='E-mail'></input>
-              <input type="text" placeholder='phone'></input>
-            </form>
+            <h1 className='step-title'>Firstly, tell us the story of how we're designing your home! Which memory/ movie/ T.V show/ book cover/ song is inspiring our creativity? Feel free to add any references in the box below!
+</h1>
+<form className='introduction-quiz-form multi-check-text'>
+            <input type="file" />
+      
+  </form>
             <button className="next-button" onClick={next}>Next</button>
           </>
         )}
 
         {currentPage === 2 && (
           <>
-             <h1 className='step-title'>Now, let's discover a little bit about what
-home means to you </h1>
-<form className='introduction-quiz-form'>
+             <h1 className='step-title'>What room are we designing and how many of them?
 
-            </form>
+ </h1>
+ <form className='introduction-quiz-form multi-check-text'>
+            <div class={getContainerClassName('checkbox1')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
+          onChange={() => handleCheckboxChange('checkbox1') }/>
+      <div className='option-desc'>
+      Bedroom [-/+] - AED 3,499
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox2')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
+          onChange={() => handleCheckboxChange('checkbox2') }/>
+      <div className='option-desc'>
+      Living room [-/+] - AED 4,299
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox3')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
+          onChange={() => handleCheckboxChange('checkbox3') }/>
+      <div className='option-desc'>
+      Office [-/+] - AED 3,899
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox4')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
+          onChange={() => handleCheckboxChange('checkbox4') }/>
+      <div className='option-desc'>
+      Kitchen [-/+] - AED 5,299
+
+
+
+      </div>
+  </div>
+      
+  </form>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button className='back-button' onClick={prev}>Back</button>
               <button className='next-button' onClick={next}>Next</button>
@@ -101,59 +145,44 @@ home means to you </h1>
         )}
          {currentPage === 3 && (
           <>
-          <h1 className='step-title step-title-light'>How do you want your home to feel? </h1>
-          <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
+          <h1 className='step-title step-title-light'>What kind of property is it?
+ </h1>
+ <form className='introduction-quiz-form multi-check-text'>
+            <div class={getContainerClassName('checkbox5')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
           onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
-    
-</form>
+      <div className='option-desc'>
+      Apartment 
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox6')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox6'] || false}
+          onChange={() => handleCheckboxChange('checkbox6') }/>
+      <div className='option-desc'>
+      Villa
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox7')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox7'] || false}
+          onChange={() => handleCheckboxChange('checkbox7') }/>
+      <div className='option-desc'>
+      Townhouse
+
+
+
+      </div>
+  </div>
+  
+      
+  </form>
              
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button className='back-button' onClick={prev}>Back</button>
@@ -163,34 +192,31 @@ what it's supposed to do
         )}
          {currentPage === 4 && (
             <>
-            <h1 className='step-title step-title-light'>What is your relationship to stuff? </h1>
+            <h1 className='step-title step-title-light'>Are there any restrictions on your property?
+ </h1>
             <form className='introduction-quiz-form multi-check-text'>
-            <div class={getContainerClassName('checkbox6')}>
+            <div class={getContainerClassName('checkbox8')}>
      
-      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox6'] || false}
-          onChange={() => handleCheckboxChange('checkbox6') }/>
-      <div className='option-desc'>
-      What is your relationship to stuff?
-I love stuff! I love collecting stuff that I'm drawn to, & I love being
-surrounded by it.
-      </div>
-  </div>
-  <div class={getContainerClassName('checkbox7')}>
-     
-      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox7'] || false}
-          onChange={() => handleCheckboxChange('checkbox7') }/>
-      <div className='option-desc'>
-      I like *some* stuff. I'm choosy about what I allow into my home, and I
-curate stuff that I think is beautiful
-      </div>
-  </div>
-  <div class={getContainerClassName('checkbox8')}>
       <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox8'] || false}
           onChange={() => handleCheckboxChange('checkbox8') }/>
       <div className='option-desc'>
-      I try to minimise my stuff. I want my home to feel uncluttered & relaxing.
+      Yes
+
       </div>
   </div>
+  <div class={getContainerClassName('checkbox9')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox9'] || false}
+          onChange={() => handleCheckboxChange('checkbox9') }/>
+      <div className='option-desc'>
+      No
+
+      </div>
+  </div>
+
+      
+      
+      <input type="text" placeholder='If yes, please provide details'/>
   
       
   </form>
@@ -203,51 +229,45 @@ curate stuff that I think is beautiful
         )}
          {currentPage === 5 && (
            <>
-           <h1 className='step-title step-title-light'>How much colour do you like in your space? </h1>
-           <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox9')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox9'] || false}
-          onChange={() => handleCheckboxChange('checkbox9') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox10')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox10'] || false}
-          onChange={() => handleCheckboxChange('checkbox10') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox11')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox11'] || false}
+           <h1 className='step-title step-title-light'>How much do you want to furnish/remodel?
+ </h1>
+           <form className='introduction-quiz-form multi-check-text'>
+            <div class={getContainerClassName('checkbox11')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox11'] || false}
           onChange={() => handleCheckboxChange('checkbox11') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox12')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox12'] || false}
-          onChange={() => handleCheckboxChange('checkbox12') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
+      <div className='option-desc'>
+      Light remodel - Just furniture, decor, floor lighting, light wall art 
 
-    
-</form>
-              
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox12')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox12'] || false}
+          onChange={() => handleCheckboxChange('checkbox12') }/>
+      <div className='option-desc'>
+      Medium remodel - Fitted lighting + Smart lighting, wall shelving
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox13')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox13'] || false}
+          onChange={() => handleCheckboxChange('checkbox13') }/>
+      <div className='option-desc'>
+      Full remodel - significant wall work (e.g. painting, paneling, wainscoting, etc.), soundproofing
+
+
+
+      </div>
+  </div>
+  
+      
+  </form>
              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                <button className='back-button' onClick={prev}>Back</button>
                <button className='next-button' onClick={next}>Next</button>
@@ -256,60 +276,66 @@ pieces to give my home an edge.
         )}
          {currentPage === 6 && (
             <>
-            <h1 className='step-title step-title-light'>Which bedroom matches your energy?
-(ignoring specific furniture) </h1>
-<form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
-    
-</form>
+            <h1 className='step-title step-title-light'>What's your total budget for furniture/furnishings & installation?
+ </h1>
+<form className='introduction-quiz-form multi-check-text'>
+            <div class={getContainerClassName('checkbox14')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox14'] || false}
+          onChange={() => handleCheckboxChange('checkbox14') }/>
+      <div className='option-desc'>
+      AED 2,500 - 5,000 
+
+
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox15')}>
+     
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox15'] || false}
+          onChange={() => handleCheckboxChange('checkbox15') }/>
+      <div className='option-desc'>
+      AED 5,000 - 10,000
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox16')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox16'] || false}
+          onChange={() => handleCheckboxChange('checkbox16') }/>
+      <div className='option-desc'>
+      AED 10,000 - 15,000
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox17')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox17'] || false}
+          onChange={() => handleCheckboxChange('checkbox17') }/>
+      <div className='option-desc'>
+      AED 15,000 - 20,000
+
+
+
+      </div>
+  </div>
+  <div class={getContainerClassName('checkbox18')}>
+      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox18'] || false}
+          onChange={() => handleCheckboxChange('checkbox18') }/>
+      <div className='option-desc'>
+      AED 20,000+
+
+
+
+      </div>
+  </div>
+  
+      
+  </form>
                
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <button className='back-button' onClick={prev}>Back</button>
@@ -320,57 +346,9 @@ what it's supposed to do
 
 {currentPage === 7 && (
             <>
-            <h1 className='step-title step-title-light'>Which living room? </h1>
-            <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
+            <h1 className='step-title step-title-light'>Any other references you want us to be inspired by? (e.g. pictures of other homes, visuals from media, etc.) </h1>
+            <form className='introduction-quiz-form'>
+          <input type='file' />
     
 </form>
                
@@ -382,58 +360,11 @@ what it's supposed to do
         )}
          {currentPage === 8 && (
             <>
-            <h1 className='step-title step-title-light'>Which office? </h1>
-            <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
-    
+            <h1 className='step-title step-title-light'>Anything else you want us to know? (e.g. things you really want to see in your space, any design style/vibe you want us to primarily bear in mind, etc.)
+
+ </h1>
+            <form className='introduction-quiz-form'>
+          <input type='text' placeholder='Please write here ' />
 </form>
                
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -444,58 +375,9 @@ what it's supposed to do
         )}
          {currentPage === 9 && (
            <>
-           <h1 className='step-title step-title-light'>Which colour palette do you most like to decorate
-your home with? </h1>
-<form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
+           <h1 className='step-title step-title-light'>Address</h1>
+<form className='introduction-quiz-form'>
+          <input type='text' placeholder='Enter your Address'/>
     
 </form>
               
@@ -507,20 +389,83 @@ what it's supposed to do
         )}
          {currentPage === 10 && (
            <>
-           <h1 className='step-title step-title-light'>Awesome! Let’s jump into the application form
-& get you one page closer to your dream home!</h1>
-       
+           <h1 className='step-title step-title-light'>Floor plan upload</h1>
+<form className='introduction-quiz-form'>
+          <input type='file'/>
+    
+</form>
               
 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                <button className='back-button' onClick={prev}>Back</button>
-              <button type='submit' className='continue-button' onClick={handleCloseModal} ><span>Continue</span> <KeyboardDoubleArrowRightIcon /></button>
+               <button className='next-button' onClick={next}>Next</button>
+             </div>
+            
+           </>
+        )}
+     {currentPage === 11 && (
+           <>
+           <h1 className='step-title step-title-light'>Photos of the space</h1>
+       
+           <form className='introduction-quiz-form multi-check-text'>
+           <div class={getContainerClassName('checkbox20')}>
+     
+     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox20'] || false}
+         onChange={() => handleCheckboxChange('checkbox20') }/>
+     <div className='option-desc'>
+     Do you have the dimensions?
+
+
+
+     </div>
+ </div>
+          <input type='number' placeholder="L" className='dimensions' /> * <input type='number' placeholder="W" className='dimensions' />
+
+    
+</form>
+<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+               <button className='back-button' onClick={prev}>Back</button>
+               <button className='next-button' onClick={next}>Next</button>
+             </div>
+            
+           </>
+        )}
+         {currentPage === 12 && (
+           <>
+           <h1 className='step-title step-title-light'>Preferred day & time of appointment</h1>
+       
+           <form className='introduction-quiz-form multi-check-text'>
+          <input type='date' />
+          <select id="timeSlot" onChange={handleTimeChange} value={selectedTime}>
+        <option value="">Select Time</option>
+        {timeSlots.map((time, index) => (
+          <option key={index} value={time}>
+            {time}
+          </option>
+        ))}
+      </select>
+      <div class="container terms-container">
+     
+     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox21'] || false}
+         onChange={() => handleCheckboxChange('checkbox21') }/>
+     <div className='option-desc'>
+     I agree with <a href='#'>Terms & Conditions</a>
+
+
+
+     </div>
+ </div>
+    
+</form>
+<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+               <button className='back-button' onClick={prev}>Back</button>
+              <button type='submit' className='continue-button' onClick={handleCloseModal} ><span>Submit</span> <KeyboardDoubleArrowRightIcon /></button>
               
              </div>
             
            </>
         )}
-     
-         
+       
+        
       </form>
      
    </>

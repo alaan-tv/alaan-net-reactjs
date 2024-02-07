@@ -574,12 +574,19 @@ text-align: center !important;
 margin: 30px 0px 
 
 }
-.introduction-quiz-form input{
+.introduction-quiz-form input , .introduction-quiz-form select{
   display: block;
   background-color: #fff !important;
 
   width: 100%;
   margin: 30px 0px;
+  border: 1px solid;
+    border-color: #e7e7e7;
+    border-radius: 12px;
+    padding: 0px 24px;
+    position: relative;
+    
+    font-size: 16px;
 }
 .next-button{
   padding: 10px 30px;
@@ -684,4 +691,24 @@ line-height: normal !important;
 }
 .container.white {
   background-color: #fff !important;
+}
+
+@media (max-width: 990px) {
+  .introduction-quiz-form .container{
+    flex:1;
+min-width: 40%
+  }}
+.dimensions{
+  width: 100px !important;
+  display: inline !important;
+}
+input[type=date], .introduction-quiz-form select {
+  line-height: normal !important;
+  margin: 10px;
+  display: inline !important;
+  height: 58px;
+    width: 407px;
+}
+.terms-container{
+  background-color: transparent !important;
 }

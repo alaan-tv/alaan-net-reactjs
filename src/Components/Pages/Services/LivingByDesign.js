@@ -15,8 +15,6 @@ import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import LivingLogo from '../../../Assets/living-logo.svg'
-import BookingIcon from '../../../Assets/book-icon.svg'
-import AboutImage from '../../../Assets/about-image.png'
 import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';

@@ -5,13 +5,29 @@ import Cool from '../../../src/Assets/quiz/LBD/q1/Cool.webp'
 import Stream from '../../../src/Assets/quiz/LBD/q1/Streamlined.webp'
 import Regal from '../../../src/Assets/quiz/LBD/q1/Regal.webp'
 import LaidBack from '../../../src/Assets/quiz/LBD/q1/Laid-back.webp'
-import Space1 from '../../../src/Assets/1-5.jpg'
-import Space2 from '../../../src/Assets/2-5.png'
-import Space3 from '../../../src/Assets/3-5.png'
-import Space4 from '../../../src/Assets/4-5.jpg'
-import FormModal from './FormModal';
+import Qustion2Image1 from '../../../src/Assets/quiz/LBD/q2/1.webp'
+import Qustion2Image2 from '../../../src/Assets/quiz/LBD/q2/2.webp'
+import Qustion2Image3 from '../../../src/Assets/quiz/LBD/q2/3.webp'
+import Qustion2Image4 from '../../../src/Assets/quiz/LBD/q2/4.webp'
+import Qustion3Image1 from '../../../src/Assets/quiz/LBD/q3/Bohemian.webp'
+import Qustion3Image2 from '../../../src/Assets/quiz/LBD/q3/Industrial.webp'
+import Qustion3Image3 from '../../../src/Assets/quiz/LBD/q3/Opulent.webp'
+import Qustion3Image4 from '../../../src/Assets/quiz/LBD/q3/Scandinavian.webp'
+import Qustion4Image1 from '../../../src/Assets/quiz/LBD/q4/1.webp'
+import Qustion4Image2 from '../../../src/Assets/quiz/LBD/q4/2.webp'
+import Qustion4Image3 from '../../../src/Assets/quiz/LBD/q4/3.webp'
+import Qustion4Image4 from '../../../src/Assets/quiz/LBD/q4/4.webp'
+import Qustion5Image1 from '../../../src/Assets/quiz/LBD/q5/1.webp'
+import Qustion5Image2 from '../../../src/Assets/quiz/LBD/q5/2.webp'
+import Qustion5Image3 from '../../../src/Assets/quiz/LBD/q5/3.webp'
+import Qustion5Image4 from '../../../src/Assets/quiz/LBD/q5/4.webp'
+import Qustion6Image1 from '../../../src/Assets/quiz/LBD/q6/Pastels.webp'
+import Qustion6Image2 from '../../../src/Assets/quiz/LBD/q6/Historical.webp'
+import Qustion6Image3 from '../../../src/Assets/quiz/LBD/q6/Earthy.webp'
+import Qustion6Image4 from '../../../src/Assets/quiz/LBD/q6/Moody.webp'
+import Qustion6Image5 from '../../../src/Assets/quiz/LBD/q6/black.webp'
+import Qustion6Image6 from '../../../src/Assets/quiz/LBD/q6/Primary.webp'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import Modal from './Modal';
 const Quiz = ({handleClose}) => {
   
 
@@ -204,8 +220,8 @@ curate stuff that I think is beautiful
            <>
            <h1 className='step-title step-title-light'>How much colour do you like in your space? </h1>
            <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox9')}>
-    <img src={Unique}/> 
+          <div className={getContainerClassName('checkbox9')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion2Image1 }/> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox9'] || false}
           onChange={() => handleCheckboxChange('checkbox9') } />
     <div className='option-desc'>
@@ -214,8 +230,8 @@ my guests to know that my things
 have history and a story.
     </div>
 </div>
-<div class={getContainerClassName('checkbox10')}>
-    <img src={LaidBack} /> 
+<div class={getContainerClassName('checkbox10')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion2Image2 } /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox10'] || false}
           onChange={() => handleCheckboxChange('checkbox10') }/>
     <div className='option-desc'>
@@ -224,8 +240,8 @@ haven, I need it to be comfortable &
 relaxed before anything else.
     </div>
 </div>
-<div class={getContainerClassName('checkbox11')}>
-    <img src={Regal} /> 
+<div class={getContainerClassName('checkbox11')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion2Image3 } /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox11'] || false}
           onChange={() => handleCheckboxChange('checkbox11') }/>
     <div className='option-desc'>
@@ -234,8 +250,8 @@ I want my room to be proud,
 comfortable, & impressive.
     </div>
 </div>
-<div class={getContainerClassName('checkbox12')}>
-    <img src={Cool} /> 
+<div class={getContainerClassName('checkbox12')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion2Image4 } /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox12'] || false}
           onChange={() => handleCheckboxChange('checkbox12') }/>
     <div className='option-desc'>
@@ -258,55 +274,31 @@ pieces to give my home an edge.
             <h1 className='step-title step-title-light'>Which bedroom matches your energy?
 (ignoring specific furniture) </h1>
 <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
+          <div className={getContainerClassName('checkbox13')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion3Image1}/> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox13'] || false}
+          onChange={() => handleCheckboxChange('checkbox13') } />
+    
 </div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
+<div class={getContainerClassName('checkbox14')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion3Image2} /> 
+    <input type="checkbox" class="checkbox" id="check14" checked={checkboxStates['checkbox14'] || false}
+          onChange={() => handleCheckboxChange('checkbox14') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
+<div class={getContainerClassName('checkbox15')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion3Image3} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox15'] || false}
+          onChange={() => handleCheckboxChange('checkbox15') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
+<div class={getContainerClassName('checkbox16')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion3Image4} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox16'] || false}
+          onChange={() => handleCheckboxChange('checkbox16') }/>
+   
 </div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
+
     
 </form>
                
@@ -321,55 +313,31 @@ what it's supposed to do
             <>
             <h1 className='step-title step-title-light'>Which living room? </h1>
             <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
+          <div className={getContainerClassName('checkbox17')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion4Image1}/> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox17'] || false}
+          onChange={() => handleCheckboxChange('checkbox17') } />
+    
 </div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
+<div class={getContainerClassName('checkbox18')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion4Image2} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox18'] || false}
+          onChange={() => handleCheckboxChange('checkbox18') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
+<div class={getContainerClassName('checkbox19')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion4Image3} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox19'] || false}
+          onChange={() => handleCheckboxChange('checkbox19') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
+<div class={getContainerClassName('checkbox20')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion4Image4} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox20'] || false}
+          onChange={() => handleCheckboxChange('checkbox20') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
+
     
 </form>
                
@@ -383,55 +351,31 @@ what it's supposed to do
             <>
             <h1 className='step-title step-title-light'>Which office? </h1>
             <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
+          <div className={getContainerClassName('checkbox21')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion5Image1}/> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox21'] || false}
+          onChange={() => handleCheckboxChange('checkbox21') } />
+    
 </div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
+<div class={getContainerClassName('checkbox22')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion5Image2} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox22'] || false}
+          onChange={() => handleCheckboxChange('checkbox22') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
+<div class={getContainerClassName('checkbox23')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion5Image3} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox23'] || false}
+          onChange={() => handleCheckboxChange('checkbox23') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
+<div class={getContainerClassName('checkbox24')} style={{flex:"1", minWidth: "40%"}}>
+    <img src={Qustion5Image4} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox24'] || false}
+          onChange={() => handleCheckboxChange('checkbox24') }/>
+    
 </div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
+
     
 </form>
                
@@ -446,56 +390,66 @@ what it's supposed to do
            <h1 className='step-title step-title-light'>Which colour palette do you most like to decorate
 your home with? </h1>
 <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
+          <div className={getContainerClassName('checkbox25')}>
+    <img src={Qustion6Image1}/> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox25'] || false}
+          onChange={() => handleCheckboxChange('checkbox25') } />
     <div className='option-desc'>
     <b>Unique</b>- I like having things, and I want
 my guests to know that my things
 have history and a story.
     </div>
 </div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
+<div class={getContainerClassName('checkbox26')}>
+    <img src={Qustion6Image2} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox26'] || false}
+          onChange={() => handleCheckboxChange('checkbox26') }/>
     <div className='option-desc'>
     <b>Laid back</b> - Airy & open; my home is my
 haven, I need it to be comfortable &
 relaxed before anything else.
     </div>
 </div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
+<div class={getContainerClassName('checkbox27')}>
+    <img src={Qustion6Image3} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox27'] || false}
+          onChange={() => handleCheckboxChange('checkbox27') }/>
     <div className='option-desc'>
     <b>Regal</b>- I love old world charm, and
 I want my room to be proud,
 comfortable, & impressive.
     </div>
 </div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
+<div class={getContainerClassName('checkbox28')}>
+    <img src={Qustion6Image4} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox28'] || false}
+          onChange={() => handleCheckboxChange('checkbox28') }/>
     <div className='option-desc'>
     <b>Cool</b>- A good mix of modern & retro
 pieces to give my home an edge.
     </div>
 </div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
+<div class={getContainerClassName('checkbox29')}>
+    <img src={Qustion6Image5} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox29'] || false}
+          onChange={() => handleCheckboxChange('checkbox29') }/>
     <div className='option-desc'>
     <b>Streamlined</b>- Everything is exactly
 where it needs to be, and does exactly
 what it's supposed to do
     </div>
 </div>
-    
+<div class={getContainerClassName('checkbox30')}>
+    <img src={Qustion6Image6} /> 
+    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox30'] || false}
+          onChange={() => handleCheckboxChange('checkbox30') }/>
+    <div className='option-desc'>
+    <b>Streamlined</b>- Everything is exactly
+where it needs to be, and does exactly
+what it's supposed to do
+    </div>
+</div>
+
 </form>
               
              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
