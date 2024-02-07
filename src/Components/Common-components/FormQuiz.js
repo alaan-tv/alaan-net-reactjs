@@ -2,10 +2,11 @@ import React, { useState }  from 'react'
 import Stepper from 'react-stepper-horizontal';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
-
+import Modal from './Modal';
  
-
-const FormQuiz = ({handleClose}) => {
+import TickIcon from './TickIcon';
+const FormQuiz = ({handleClose1}) => {
+    const [modal, setModal] = useState(false);
     const timeSlots = [
         '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM',
         '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
@@ -38,11 +39,10 @@ const FormQuiz = ({handleClose}) => {
     e.preventDefault();
   
   };
-  const handleCloseModal = () => {
-    // Call the closeModal function passed down from the parent
+  const handleCloseModal = () => {    
     
-    handleClose();
- 
+    setModal(false)
+    handleClose1();
   };
 
   const next = () => setCurrentPage((prev) => prev + 1);
@@ -458,14 +458,16 @@ const FormQuiz = ({handleClose}) => {
 </form>
 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                <button className='back-button' onClick={prev}>Back</button>
-              <button type='submit' className='continue-button' onClick={handleCloseModal} ><span>Submit</span> <KeyboardDoubleArrowRightIcon /></button>
+              <button type='submit' className='continue-button' onClick={() => setModal(true)} ><span>Submit</span> <KeyboardDoubleArrowRightIcon /></button>
               
              </div>
-            
+             
            </>
         )}
        
-        
+       <Modal show={modal} handleClose={handleCloseModal}
+			       children={<>  <TickIcon /> <h3>Thank you</h3> <p> You will be contacted to schedule an
+				       appointment.</p> </>} />
       </form>
      
    </>

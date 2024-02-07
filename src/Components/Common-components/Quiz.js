@@ -185,7 +185,7 @@ what it's supposed to do
       <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox6'] || false}
           onChange={() => handleCheckboxChange('checkbox6') }/>
       <div className='option-desc'>
-      What is your relationship to stuff?
+      
 I love stuff! I love collecting stuff that I'm drawn to, & I love being
 surrounded by it.
       </div>
@@ -225,9 +225,7 @@ curate stuff that I think is beautiful
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox9'] || false}
           onChange={() => handleCheckboxChange('checkbox9') } />
     <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
+    None, all white only
     </div>
 </div>
 <div class={getContainerClassName('checkbox10')} style={{flex:"1", minWidth: "40%"}}>
@@ -235,9 +233,8 @@ have history and a story.
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox10'] || false}
           onChange={() => handleCheckboxChange('checkbox10') }/>
     <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
+    I prefer mostly neutral tones
+
     </div>
 </div>
 <div class={getContainerClassName('checkbox11')} style={{flex:"1", minWidth: "40%"}}>
@@ -245,9 +242,8 @@ relaxed before anything else.
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox11'] || false}
           onChange={() => handleCheckboxChange('checkbox11') }/>
     <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
+    I'm into some pops of colour
+
     </div>
 </div>
 <div class={getContainerClassName('checkbox12')} style={{flex:"1", minWidth: "40%"}}>
@@ -255,8 +251,7 @@ comfortable, & impressive.
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox12'] || false}
           onChange={() => handleCheckboxChange('checkbox12') }/>
     <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
+    Tons, I cant get enough
     </div>
 </div>
 
@@ -278,25 +273,34 @@ pieces to give my home an edge.
     <img src={Qustion3Image1}/> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox13'] || false}
           onChange={() => handleCheckboxChange('checkbox13') } />
-    
+    <div className='option-desc'>
+    Scandinavian
+    </div>
 </div>
 <div class={getContainerClassName('checkbox14')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion3Image2} /> 
     <input type="checkbox" class="checkbox" id="check14" checked={checkboxStates['checkbox14'] || false}
           onChange={() => handleCheckboxChange('checkbox14') }/>
-    
+    <div className='option-desc'>
+    Urban industrial
+    </div>
 </div>
 <div class={getContainerClassName('checkbox15')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion3Image3} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox15'] || false}
           onChange={() => handleCheckboxChange('checkbox15') }/>
-    
+    <div className='option-desc'>
+    Bohemian
+    </div>
 </div>
 <div class={getContainerClassName('checkbox16')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion3Image4} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox16'] || false}
           onChange={() => handleCheckboxChange('checkbox16') }/>
-   
+   <div className='option-desc'>
+   Opulent
+
+    </div>
 </div>
 
     
@@ -317,25 +321,40 @@ pieces to give my home an edge.
     <img src={Qustion4Image1}/> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox17'] || false}
           onChange={() => handleCheckboxChange('checkbox17') } />
-    
+    <div className='option-desc'>
+    modern rustic
+
+    </div>
 </div>
 <div class={getContainerClassName('checkbox18')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion4Image2} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox18'] || false}
           onChange={() => handleCheckboxChange('checkbox18') }/>
-    
+    <div className='option-desc'>
+    art deco
+
+
+    </div>
 </div>
 <div class={getContainerClassName('checkbox19')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion4Image3} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox19'] || false}
           onChange={() => handleCheckboxChange('checkbox19') }/>
-    
+    <div className='option-desc'>
+    brutalist industrial minimalism
+
+    </div>
 </div>
 <div class={getContainerClassName('checkbox20')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion4Image4} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox20'] || false}
           onChange={() => handleCheckboxChange('checkbox20') }/>
-    
+    <div className='option-desc'>
+    eclectic industrial restorational
+
+
+
+    </div>
 </div>
 
     
@@ -355,25 +374,33 @@ pieces to give my home an edge.
     <img src={Qustion5Image1}/> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox21'] || false}
           onChange={() => handleCheckboxChange('checkbox21') } />
-    
+    <div className='option-desc'>
+    executive sophistication
+    </div>
 </div>
 <div class={getContainerClassName('checkbox22')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion5Image2} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox22'] || false}
           onChange={() => handleCheckboxChange('checkbox22') }/>
-    
+    <div className='option-desc'>
+    bohemian
+    </div>
 </div>
 <div class={getContainerClassName('checkbox23')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion5Image3} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox23'] || false}
           onChange={() => handleCheckboxChange('checkbox23') }/>
-    
+    <div className='option-desc'>
+    minimalist
+    </div>
 </div>
 <div class={getContainerClassName('checkbox24')} style={{flex:"1", minWidth: "40%"}}>
     <img src={Qustion5Image4} /> 
     <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox24'] || false}
           onChange={() => handleCheckboxChange('checkbox24') }/>
-    
+    <div className='option-desc'>
+    vintage
+    </div>
 </div>
 
     
