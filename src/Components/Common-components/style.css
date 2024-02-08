@@ -712,3 +712,17 @@ input[type=date], .introduction-quiz-form select {
 .terms-container{
   background-color: transparent !important;
 }
+.quantity{
+  font-size: 14px;
+  padding: 10px 0px;
+  text-align: left !important;
+}
+.quantity-tool{
+  padding: 0px 10px;
+  margin: 0px 10px;
+  background-color: #e2e2e2;
+  color: #DF1995;
+  border-radius: 3px;
+  font-size: 18px !important;
+  font-weight: 600;
+}

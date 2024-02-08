@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import Stepper from 'react-stepper-horizontal';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
@@ -33,8 +33,7 @@ const FormQuiz = ({handleClose1}) => {
     6, 7, 8, 9, 10,11,12
   ];
  
-
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
   
@@ -49,14 +48,32 @@ const FormQuiz = ({handleClose1}) => {
   const prev = () => setCurrentPage((prev) => prev - 1);
 
   const handleCheckboxChange = (checkboxName) => {
-    setCheckboxStates((prevStates) => ({
-      ...prevStates,
-      [checkboxName]: !prevStates[checkboxName],
-    }));
+    setCheckboxStates((prevStates) => {
+      const updatedStates = { ...prevStates };
+  
+      // Uncheck all other checkboxes
+      Object.keys(updatedStates).forEach((name) => {
+        if (name !== checkboxName) {
+          updatedStates[name] = false;
+        }
+      });
+  
+      // Toggle the selected checkbox
+      updatedStates[checkboxName] = !prevStates[checkboxName];
+  
+      return updatedStates;
+    });
   };
+  
   const checkedCheckbox = Object.keys(checkboxStates).find(
     (checkboxName) => checkboxStates[checkboxName]
   );
+  const checkCheckbox =(checkboxName ) =>{
+    if (checkboxStates[checkboxName]){
+      return true;
+    }
+    return false
+  }
   const getContainerClassName = (checkboxName) => {
     if (checkboxStates[checkboxName]) {
       // Return the class name based on the checkbox name
@@ -64,7 +81,45 @@ const FormQuiz = ({handleClose1}) => {
     }
     // Default class name if checkbox is not checked
     return 'container white';
-  };  return (
+  };
+  
+  //calculator price
+  
+   
+
+    const [items, setItems] = useState([
+      { id: 'item1', name: 'Bedroom', quantity: 0, price: 3499,price1:'AED 3,499' ,checked: false },
+      { id: 'item2', name: 'Living room ', quantity: 0, price: 4299,price1:'AED 4,299 ' , checked: false },
+      { id: 'item3', name: 'Office', quantity: 0, price: 3899,price1:'AED 3,899' , checked: false },
+      { id: 'item4', name: 'Kitchen', quantity: 0, price: 5299,price1:'AED 5,299' , checked: false },
+
+      // Add more items as needed
+    ]);
+     
+    const calculateTotalPrice = () => {
+      return items.reduce((total, item) => (item.checked ? total + item.quantity * item.price : total), 0);
+    };
+  
+    const handleQuantityChange = (itemId, value) => {
+      setItems(prevItems =>
+        prevItems.map(item =>
+          item.id === itemId ? { ...item, quantity: Math.max(item.quantity + value, 0) } : item
+        )
+      );
+    };
+    
+    const handleCheckboxChange1 = (itemId) => {
+      setItems((prevItems) =>
+        prevItems.map((item) =>
+          item.id === itemId
+            ? { ...item, checked: !item.checked, quantity: !item.checked ? 1 : item.quantity }
+            : { ...item, checked: false, quantity: 0 }
+        )
+      );
+    };
+    
+  
+  return (
     <>
     
     <form className="quiz-form" onSubmit={handleSubmit}>
@@ -95,13 +150,37 @@ const FormQuiz = ({handleClose1}) => {
 
  </h1>
  <form className='introduction-quiz-form multi-check-text'>
-            <div class={getContainerClassName('checkbox1')}>
+ {items.map(item => (
+        <div key={item.id} style={{ backgroundColor: item.checked ? '#df1995' : 'white'}} className='container'>
+          <input
+            type="checkbox"
+            class="checkbox"
+            id={`${item.id}Checkbox`}
+            checked={item.checked}
+            onChange={() => handleCheckboxChange1(item.id)}
+          />
+          <div className='option-desc'>{item.name}: {item.price1}</div>
+          <div className='quantity'> <span>Number of {item.name}: </span>
+          <span className='quantity-tool' onClick={() => item.checked ? handleQuantityChange(item.id, 1): null}>+</span>
+          <span style={{ color: item.checked ? '#fff' : '#000', fontSize: '18px' }}>{item.quantity}</span>
+          <span className='quantity-tool' onClick={() => handleQuantityChange(item.id, -1)}>-</span></div>
+        </div>
+      ))}
+
+
+
+            {/*<div class={getContainerClassName('checkbox1')}>
      
       <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
           onChange={() => handleCheckboxChange('checkbox1') }/>
       <div className='option-desc'>
-      Bedroom [-/+] - AED 3,499
-
+      Bedroom - AED 3,499
+      <div className='quantity'> <span>Number of bedroom: </span>
+      <span className='quantity-tool' onClick={ () =>checkCheckbox('checkbox1') ? handleQuantityChange('item1', 1) : null}>+</span>
+        <span>{item1Quantity}</span>
+        <span className='quantity-tool' onClick={() =>checkCheckbox('checkbox1') ? handleQuantityChange('item1', -1) : null}>-</span>
+      </div>
+     
 
       </div>
   </div>
@@ -134,8 +213,10 @@ const FormQuiz = ({handleClose1}) => {
 
 
       </div>
-  </div>
-      
+  </div>*/}
+  <div>
+        <h3>Total Price: AED {calculateTotalPrice()}</h3>
+      </div>
   </form>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button className='back-button' onClick={prev}>Back</button>
