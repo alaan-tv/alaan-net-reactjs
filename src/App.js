@@ -16,6 +16,7 @@ import Terms from './Components/Common-components/Terms';
 import PersonalBranding from './Components/Pages/Services/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import ContentByDesign from './Components/Pages/Services/ContectByDesign';
+import ThankYou from './Components/Common-components/ThankYou';
 
 function App() {
   
@@ -42,7 +43,7 @@ function App() {
     <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
     <Route path="/our-services/LBD" element={<LivingByDesign />}  />
     <Route path="/our-services/CBD" element={<ContentByDesign />}  />
-
+    <Route path="/thank-you" element={<ThankYou />}  />
     <Route path="/terms" element={<Terms />}  />
 
 
