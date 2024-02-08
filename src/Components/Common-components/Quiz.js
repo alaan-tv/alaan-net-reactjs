@@ -61,14 +61,28 @@ const Quiz = ({handleClose}) => {
   const prev = () => setCurrentPage((prev) => prev - 1);
 
   const handleCheckboxChange = (checkboxName) => {
-    setCheckboxStates((prevStates) => ({
-      ...prevStates,
-      [checkboxName]: !prevStates[checkboxName],
-    }));
+    setCheckboxStates((prevStates) => {
+      const updatedStates = { ...prevStates };
+  
+      // Uncheck all other checkboxes
+      Object.keys(updatedStates).forEach((name) => {
+        if (name !== checkboxName) {
+          updatedStates[name] = false;
+        }
+      });
+  
+      // Toggle the selected checkbox
+      updatedStates[checkboxName] = !prevStates[checkboxName];
+  
+      return updatedStates;
+    });
   };
-  const checkedCheckbox = Object.keys(checkboxStates).find(
-    (checkboxName) => checkboxStates[checkboxName]
+  
+
+  const checkedCheckbox = Object.keys(checkboxStates[currentPage] || {}).find(
+    (checkboxName) => checkboxStates[currentPage][checkboxName]
   );
+
   const getContainerClassName = (checkboxName) => {
     if (checkboxStates[checkboxName]) {
       // Return the class name based on the checkbox name
