@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, {memo, useState} from 'react'
 import Stepper from 'react-stepper-horizontal';
 import Unique from '../../../src/Assets/quiz/LBD/q1/Unique.webp'
 import Cool from '../../../src/Assets/quiz/LBD/q1/Cool.webp'
@@ -28,497 +28,317 @@ import Qustion6Image4 from '../../../src/Assets/quiz/LBD/q6/Moody.webp'
 import Qustion6Image5 from '../../../src/Assets/quiz/LBD/q6/black.webp'
 import Qustion6Image6 from '../../../src/Assets/quiz/LBD/q6/Primary.webp'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+
 const Quiz = ({handleClose}) => {
-  
+	const quizLabel = {
+		position: "unset",
+		backgroundColor: "unset",
+		padding: "unset",
+		color: "unset",
+		fontSize: "unset",
+		fontWeight: "unset",
+	};
 
-  const [currentPage, setCurrentPage] = useState(1);
+	const [currentPage, setCurrentPage] = useState(1);
 
-  const [checkboxStates, setCheckboxStates] = useState({});
-  
-  const sections = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6, 7, 8, 9, 10
-  ];
- 
+	const sections = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+	const [inputs, setInputs] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-  };
-  const handleCloseModal = () => {
-    // Call the closeModal function passed down from the parent
-    
-    handleClose();
- 
-  };
+	const handleChange = (event) => {
+		let name = event.target.name;
+		let value = event.target.value;
+		if (event.target.type == 'checkbox') {
+			document.querySelectorAll('.' + event.target.classList[1]).forEach((el) => {
+				el.parentElement.parentElement.classList.add('white');
+				el.parentElement.parentElement.classList.remove('pink');
+				el.checked = false;
+				el.required = false;
+				if (name != el.name) {
+					delete inputs[el.name];
+					delete inputs[el.name + '_checked'];
+				}
+			});
+			event.target.parentElement.parentElement.classList.add('pink');
+			event.target.parentElement.parentElement.classList.remove('white');
+			inputs[name] = value;
+			inputs[name + '_checked'] = !event.target.checked;
+			setInputs(values => ({...values, [name]: value, [name + '_checked']: !event.target.checked}));
+		} else {
+			setInputs(values => ({...values, [name]: value}));
+		}
+		console.log(inputs);
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(inputs);
+		next();
+		if(currentPage===10){
+			handleClose()
+		}
+	};
 
   const next = () => setCurrentPage((prev) => prev + 1);
   const prev = () => setCurrentPage((prev) => prev - 1);
 
-  const handleCheckboxChange = (checkboxName) => {
-    setCheckboxStates((prevStates) => {
-      const updatedStates = { ...prevStates };
-  
-      // Uncheck all other checkboxes
-      Object.keys(updatedStates).forEach((name) => {
-        if (name !== checkboxName) {
-          updatedStates[name] = false;
-        }
-      });
-  
-      // Toggle the selected checkbox
-      updatedStates[checkboxName] = !prevStates[checkboxName];
-  
-      return updatedStates;
-    });
-  };
-  
+	const pageFields_3 = {
+		question: 'How do you want your home to feel? ',
+		options: [{
+			image: Unique,
+			title: "Unique",
+			desc: `I like having things, and I want my guests to know that my things have history and a story`,
+		}, {
+			image: LaidBack,
+			title: "Laid back",
+			desc: `Airy & open; my home is my haven, I need it to be comfortable & relaxed before anything else`,
+		}, {
+			image: Regal,
+			title: "Regal",
+			desc: `I love old world charm, and I want my room to be proud, comfortable, & impressive`,
+		}, {
+			image: Cool,
+			title: "Cool",
+			desc: `A good mix of modern & retro pieces to give my home an edge`,
+		}, {
+			image: Stream,
+			title: "Streamlined",
+			desc: `Everything is exactly where it needs to be, and does exactly what it's supposed to do`,
+		},]
+	};
 
-  const checkedCheckbox = Object.keys(checkboxStates[currentPage] || {}).find(
-    (checkboxName) => checkboxStates[currentPage][checkboxName]
-  );
+	const pageFields_4 = {
+		question: 'What is your relationship to stuff? ',
+		options: [{
+			desc: `I love stuff! I love collecting stuff that I'm drawn to, & I love being surrounded by it.`,
+		}, {
+			desc: `I like *some* stuff. I'm choosy about what I allow into my home, and I curate stuff that I think is beautiful.`,
+		}, {
+			desc: `I try to minimise my stuff. I want my home to feel uncluttered & relaxing.`,
+		},]
+	};
 
-  const getContainerClassName = (checkboxName) => {
-    if (checkboxStates[checkboxName]) {
-      // Return the class name based on the checkbox name
-      return 'container pink';
-    }
-    // Default class name if checkbox is not checked
-    return 'container white';
-  };  return (
-    <>
-    
-    <form className="quiz-form" onSubmit={handleSubmit}>
-        <Stepper 
-          steps={sections}
-          activeStep={currentPage}
-          activeColor="#e1e1e1"
-          defaultBarColor="#df1995"
-          completeColor="#df1995"
-          completeBarColor="#df1995"
-        />
+	const pageFields_5 = {
+		question: 'How much colour do you like in your space?',
+		options: [{
+			image: Qustion2Image1,
+			desc: "None, all white only",
+		}, {
+			image: Qustion2Image2,
+			desc: "I prefer mostly neutral tones",
+		}, {
+			image: Qustion2Image3,
+			desc: "I'm into some pops of colour",
+		}, {
+			image: Qustion2Image4,
+			desc: "Tons, I cant get enough",
+		},]
+	};
 
-        {currentPage === 1 && (
-          <>
-            <h1 className='step-title'>First things first- let’s get to know you!</h1>
-            <form className='introduction-quiz-form'>
-              <input type="text" placeholder='name'></input>
-              <input type="email" placeholder='E-mail'></input>
-              <input type="text" placeholder='phone'></input>
-            </form>
-            <button className="next-button" onClick={next}>Next</button>
-          </>
-        )}
+	const pageFields_6 = {
+		question: 'Which bedroom matches your energy? (ignoring specific furniture)',
+		options: [{
+			image: Qustion3Image1,
+			desc: "Scandinavian",
+		}, {
+			image: Qustion3Image2,
+			desc: "Urban industrial",
+		}, {
+			image: Qustion3Image3,
+			desc: "Bohemian",
+		}, {
+			image: Qustion3Image4,
+			desc: "Opulent",
+		},]
+	};
+	const pageFields_7 = {
+		question: 'Which living room?',
+		options: [{
+			image: Qustion4Image1,
+			desc: "modern rustic",
+		}, {
+			image: Qustion4Image2,
+			desc: "art deco",
+		}, {
+			image: Qustion4Image3,
+			desc: "brutalist industrial minimalism",
+		}, {
+			image: Qustion4Image4,
+			desc: "eclectic industrial restorational",
+		},]
+	};
+	const pageFields_8 = {
+		question: 'Which office?',
+		options: [{
+			image: Qustion5Image1,
+			desc: "executive sophistication",
+		}, {
+			image: Qustion5Image2,
+			desc: "bohemian",
+		}, {
+			image: Qustion5Image3,
+			desc: "minimalist",
+		}, {
+			image: Qustion5Image4,
+			desc: "vintage",
+		},]
+	};
+	const pageFields_9 = {
+		question: 'Which colour palette do you most like to decorate your home with?',
+		options: [{
+			image: Qustion6Image1,
+			title: "Unique",
+			desc: "I like having things, and I want my guests to know that my things have history and a story",
+		}, {
+			image: Qustion6Image2,
+			title: "Laid back",
+			desc: "Airy & open; my home is my haven, I need it to be comfortable & relaxed before anything else",
+		}, {
+			image: Qustion6Image3,
+			title: "Regal",
+			desc: "I love old world charm, and I want my room to be proud, comfortable, & impressive",
+		}, {
+			image: Qustion6Image4,
+			title: "Cool",
+			desc: "A good mix of modern & retro pieces to give my home an edge",
+		}, {
+			image: Qustion6Image5,
+			title: "Streamlined",
+			desc: "Everything is exactly where it needs to be, and does exactly what it's supposed to do",
+		}, {
+			image: Qustion6Image6,
+			title: "Streamlined",
+			desc: "Everything is exactly where it needs to be, and does exactly what it's supposed to do",
+		},]
+	};
 
-        {currentPage === 2 && (
-          <>
-             <h1 className='step-title'>Now, let's discover a little bit about what
-home means to you </h1>
-<form className='introduction-quiz-form'>
+	const SectionHtml = ({section})=>{
+		return <>
+			<h1 className='step-title step-title-light'>{section.question} </h1>
+			<div className='introduction-quiz-form images-form'>
+				{section.options.map((field, index) => OptionHtml(field,index,section.question))}
+			</div>
+		</>
+	}
 
-            </form>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <button className='back-button' onClick={prev}>Back</button>
-              <button className='next-button' onClick={next}>Next</button>
-            </div>
-          </>
-        )}
-         {currentPage === 3 && (
-          <>
-          <h1 className='step-title step-title-light'>How do you want your home to feel? </h1>
-          <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox1')}>
-    <img src={Unique}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox1'] || false}
-          onChange={() => handleCheckboxChange('checkbox1') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox2')}>
-    <img src={LaidBack} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox2'] || false}
-          onChange={() => handleCheckboxChange('checkbox2') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox3')}>
-    <img src={Regal} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox3'] || false}
-          onChange={() => handleCheckboxChange('checkbox3') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox4')}>
-    <img src={Cool} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox4'] || false}
-          onChange={() => handleCheckboxChange('checkbox4') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox5')}>
-    <img src={Stream} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox5'] || false}
-          onChange={() => handleCheckboxChange('checkbox5') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
-    
-</form>
-             
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <button className='back-button' onClick={prev}>Back</button>
-              <button className='next-button' onClick={next}>Next</button>
-            </div>
-          </>
-        )}
-         {currentPage === 4 && (
-            <>
-            <h1 className='step-title step-title-light'>What is your relationship to stuff? </h1>
-            <form className='introduction-quiz-form multi-check-text'>
-            <div class={getContainerClassName('checkbox6')}>
-     
-      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox6'] || false}
-          onChange={() => handleCheckboxChange('checkbox6') }/>
-      <div className='option-desc'>
-      
-I love stuff! I love collecting stuff that I'm drawn to, & I love being
-surrounded by it.
-      </div>
-  </div>
-  <div class={getContainerClassName('checkbox7')}>
-     
-      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox7'] || false}
-          onChange={() => handleCheckboxChange('checkbox7') }/>
-      <div className='option-desc'>
-      I like *some* stuff. I'm choosy about what I allow into my home, and I
-curate stuff that I think is beautiful
-      </div>
-  </div>
-  <div class={getContainerClassName('checkbox8')}>
-      <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox8'] || false}
-          onChange={() => handleCheckboxChange('checkbox8') }/>
-      <div className='option-desc'>
-      I try to minimise my stuff. I want my home to feel uncluttered & relaxing.
-      </div>
-  </div>
-  
-      
-  </form>
-               
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <button className='back-button' onClick={prev}>Back</button>
-                <button className='next-button' onClick={next}>Next</button>
-              </div>
-            </>
-        )}
-         {currentPage === 5 && (
-           <>
-           <h1 className='step-title step-title-light'>How much colour do you like in your space? </h1>
-           <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox9')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion2Image1 }/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox9'] || false}
-          onChange={() => handleCheckboxChange('checkbox9') } />
-    <div className='option-desc'>
-    None, all white only
-    </div>
-</div>
-<div class={getContainerClassName('checkbox10')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion2Image2 } /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox10'] || false}
-          onChange={() => handleCheckboxChange('checkbox10') }/>
-    <div className='option-desc'>
-    I prefer mostly neutral tones
+	const OptionHtml=(item,index,question,style=null)=>{
+		let option_group = 'question_'+currentPage;
+		let field_name = option_group+'_' + index;
+		let is_checked = field_name + '_checked';
+		return <div
+			className={(inputs[is_checked] || '') ? "container pink" : 'container white'} style={style}>
+			<label style={quizLabel}>
+				{item.image && <img src={item.image}/>}
+				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
+				       value={JSON.stringify({...item, 'ques': question})}
+				       checked={(inputs[is_checked] || '') ? "checked" : false}
+				       onChange={handleChange} required />
+				<div className='option-desc'>
+					{item.title && <><b>{item.title}</b>-</> } {item.desc}
+				</div>
+			</label>
+		</div>
+	}
 
-    </div>
-</div>
-<div class={getContainerClassName('checkbox11')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion2Image3 } /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox11'] || false}
-          onChange={() => handleCheckboxChange('checkbox11') }/>
-    <div className='option-desc'>
-    I'm into some pops of colour
+	return (<>
 
-    </div>
-</div>
-<div class={getContainerClassName('checkbox12')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion2Image4 } /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox12'] || false}
-          onChange={() => handleCheckboxChange('checkbox12') }/>
-    <div className='option-desc'>
-    Tons, I cant get enough
-    </div>
-</div>
+		<form className="quiz-form" onSubmit={handleSubmit}>
+			<Stepper
+				steps={sections}
+				activeStep={currentPage}
+				activeColor="#e1e1e1"
+				defaultBarColor="#df1995"
+				completeColor="#df1995"
+				completeBarColor="#df1995"
+			/>
 
-    
-</form>
-              
-             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-               <button className='back-button' onClick={prev}>Back</button>
-               <button className='next-button' onClick={next}>Next</button>
-             </div>
-           </>
-        )}
-         {currentPage === 6 && (
-            <>
-            <h1 className='step-title step-title-light'>Which bedroom matches your energy?
-(ignoring specific furniture) </h1>
-<form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox13')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion3Image1}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox13'] || false}
-          onChange={() => handleCheckboxChange('checkbox13') } />
-    <div className='option-desc'>
-    Scandinavian
-    </div>
-</div>
-<div class={getContainerClassName('checkbox14')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion3Image2} /> 
-    <input type="checkbox" class="checkbox" id="check14" checked={checkboxStates['checkbox14'] || false}
-          onChange={() => handleCheckboxChange('checkbox14') }/>
-    <div className='option-desc'>
-    Urban industrial
-    </div>
-</div>
-<div class={getContainerClassName('checkbox15')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion3Image3} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox15'] || false}
-          onChange={() => handleCheckboxChange('checkbox15') }/>
-    <div className='option-desc'>
-    Bohemian
-    </div>
-</div>
-<div class={getContainerClassName('checkbox16')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion3Image4} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox16'] || false}
-          onChange={() => handleCheckboxChange('checkbox16') }/>
-   <div className='option-desc'>
-   Opulent
+			{currentPage === 1 && (<>
+				<h1 className='step-title'>First things first- let’s get to know you!</h1>
+				<div className='introduction-quiz-form'>
+					<input type="text" name='name' placeholder='Name' value={inputs.name || ''} onChange={handleChange}
+					       required></input>
+					<input type="email" name='email' placeholder='E-mail' value={inputs.email || ''}
+					       onChange={handleChange} required></input>
+					<input type="text" name='phone' placeholder='Phone' value={inputs.phone || ''}
+					       onChange={handleChange} required></input>
+				</div>
+			</>)}
 
-    </div>
-</div>
+			{currentPage === 2 && (<>
+				<h1 className='step-title'>Now, let's discover a little bit about what home means to you </h1>
+				<form className='introduction-quiz-form'></form>
+			</>)}
 
-    
-</form>
-               
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <button className='back-button' onClick={prev}>Back</button>
-                <button className='next-button' onClick={next}>Next</button>
-              </div>
-            </>
-        )}
+			{currentPage === 3 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_3.question}</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{pageFields_3.options.map((field, index) => OptionHtml(field,index,pageFields_3.question))}
+				</div>
+			</>)}
 
-{currentPage === 7 && (
-            <>
-            <h1 className='step-title step-title-light'>Which living room? </h1>
-            <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox17')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion4Image1}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox17'] || false}
-          onChange={() => handleCheckboxChange('checkbox17') } />
-    <div className='option-desc'>
-    modern rustic
+			{currentPage === 4 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_4.question}</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{pageFields_4.options.map((field, index) => OptionHtml(field,index,pageFields_4.question))}
+				</div>
+			</>)}
 
-    </div>
-</div>
-<div class={getContainerClassName('checkbox18')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion4Image2} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox18'] || false}
-          onChange={() => handleCheckboxChange('checkbox18') }/>
-    <div className='option-desc'>
-    art deco
+			{currentPage === 5 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_5.question}</h1>
+				<div className='introduction-quiz-form images-form'>
+					{pageFields_5.options.map((field, index) => OptionHtml(field,index,pageFields_5.question,{flex: "1", minWidth: "40%"}))}
+				</div>
+			</>)}
+
+			{currentPage === 6 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_6.question}</h1>
+				<div className='introduction-quiz-form images-form'>
+					{pageFields_6.options.map((field, index) => OptionHtml(field,index,pageFields_6.question,{flex: "1", minWidth: "40%"}))}
+				</div>
+			</>)}
+
+			{currentPage === 7 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_7.question}</h1>
+				<div className='introduction-quiz-form images-form'>
+					{pageFields_7.options.map((field, index) => OptionHtml(field,index,pageFields_7.question,{flex: "1", minWidth: "40%"}))}
+
+				</div>
+			</>)}
+
+			{currentPage === 8 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_8.question}</h1>
+				<div className='introduction-quiz-form images-form'>
+					{pageFields_8.options.map((field, index) => OptionHtml(field,index,pageFields_8.question,{flex: "1", minWidth: "40%"}))}
+				</div>
+			</>)}
+
+			{currentPage === 9 && (<>
+				<h1 className='step-title step-title-light'>{pageFields_9.question}</h1>
+				<div className='introduction-quiz-form images-form'>
+					{pageFields_9.options.map((field, index) => OptionHtml(field,index,pageFields_9.question,{flex: "1", minWidth: "40%"}))}
+				</div>
+			</>)}
+
+			{currentPage < 10 && (
+				<div style={{display: 'flex', justifyContent: currentPage > 1 ? 'space-between' : 'end'}}>
+					{currentPage > 1 && <button className='back-button' type='button' onClick={prev}>Back</button>}
+					<button className='next-button' type='submit' >Next</button>
+				</div>)}
+
+			{currentPage === 10 && (<>
+				<h1 className='step-title step-title-light'>Awesome! Let’s jump into the application form
+					& get you one page closer to your dream home!</h1>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
+					<button className='back-button' onClick={prev}>Back</button>
+					<button type='submit' className='continue-button' >
+						<span>Continue</span> <KeyboardDoubleArrowRightIcon/></button>
+				</div>
+			</>)}
 
 
-    </div>
-</div>
-<div class={getContainerClassName('checkbox19')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion4Image3} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox19'] || false}
-          onChange={() => handleCheckboxChange('checkbox19') }/>
-    <div className='option-desc'>
-    brutalist industrial minimalism
+		</form>
 
-    </div>
-</div>
-<div class={getContainerClassName('checkbox20')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion4Image4} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox20'] || false}
-          onChange={() => handleCheckboxChange('checkbox20') }/>
-    <div className='option-desc'>
-    eclectic industrial restorational
-
-
-
-    </div>
-</div>
-
-    
-</form>
-               
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <button className='back-button' onClick={prev}>Back</button>
-                <button className='next-button' onClick={next}>Next</button>
-              </div>
-            </>
-        )}
-         {currentPage === 8 && (
-            <>
-            <h1 className='step-title step-title-light'>Which office? </h1>
-            <form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox21')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion5Image1}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox21'] || false}
-          onChange={() => handleCheckboxChange('checkbox21') } />
-    <div className='option-desc'>
-    executive sophistication
-    </div>
-</div>
-<div class={getContainerClassName('checkbox22')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion5Image2} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox22'] || false}
-          onChange={() => handleCheckboxChange('checkbox22') }/>
-    <div className='option-desc'>
-    bohemian
-    </div>
-</div>
-<div class={getContainerClassName('checkbox23')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion5Image3} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox23'] || false}
-          onChange={() => handleCheckboxChange('checkbox23') }/>
-    <div className='option-desc'>
-    minimalist
-    </div>
-</div>
-<div class={getContainerClassName('checkbox24')} style={{flex:"1", minWidth: "40%"}}>
-    <img src={Qustion5Image4} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox24'] || false}
-          onChange={() => handleCheckboxChange('checkbox24') }/>
-    <div className='option-desc'>
-    vintage
-    </div>
-</div>
-
-    
-</form>
-               
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <button className='back-button' onClick={prev}>Back</button>
-                <button className='next-button' onClick={next}>Next</button>
-              </div>
-            </>
-        )}
-         {currentPage === 9 && (
-           <>
-           <h1 className='step-title step-title-light'>Which colour palette do you most like to decorate
-your home with? </h1>
-<form className='introduction-quiz-form images-form'>
-          <div className={getContainerClassName('checkbox25')}>
-    <img src={Qustion6Image1}/> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox25'] || false}
-          onChange={() => handleCheckboxChange('checkbox25') } />
-    <div className='option-desc'>
-    <b>Unique</b>- I like having things, and I want
-my guests to know that my things
-have history and a story.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox26')}>
-    <img src={Qustion6Image2} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox26'] || false}
-          onChange={() => handleCheckboxChange('checkbox26') }/>
-    <div className='option-desc'>
-    <b>Laid back</b> - Airy & open; my home is my
-haven, I need it to be comfortable &
-relaxed before anything else.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox27')}>
-    <img src={Qustion6Image3} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox27'] || false}
-          onChange={() => handleCheckboxChange('checkbox27') }/>
-    <div className='option-desc'>
-    <b>Regal</b>- I love old world charm, and
-I want my room to be proud,
-comfortable, & impressive.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox28')}>
-    <img src={Qustion6Image4} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox28'] || false}
-          onChange={() => handleCheckboxChange('checkbox28') }/>
-    <div className='option-desc'>
-    <b>Cool</b>- A good mix of modern & retro
-pieces to give my home an edge.
-    </div>
-</div>
-<div class={getContainerClassName('checkbox29')}>
-    <img src={Qustion6Image5} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox29'] || false}
-          onChange={() => handleCheckboxChange('checkbox29') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
-<div class={getContainerClassName('checkbox30')}>
-    <img src={Qustion6Image6} /> 
-    <input type="checkbox" class="checkbox" id="check1" checked={checkboxStates['checkbox30'] || false}
-          onChange={() => handleCheckboxChange('checkbox30') }/>
-    <div className='option-desc'>
-    <b>Streamlined</b>- Everything is exactly
-where it needs to be, and does exactly
-what it's supposed to do
-    </div>
-</div>
-
-</form>
-              
-             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-               <button className='back-button' onClick={prev}>Back</button>
-               <button className='next-button' onClick={next}>Next</button>
-             </div>
-           </>
-        )}
-         {currentPage === 10 && (
-           <>
-           <h1 className='step-title step-title-light'>Awesome! Let’s jump into the application form
-& get you one page closer to your dream home!</h1>
-       
-              
-<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-               <button className='back-button' onClick={prev}>Back</button>
-              <button type='submit' className='continue-button' onClick={handleCloseModal} ><span>Continue</span> <KeyboardDoubleArrowRightIcon /></button>
-              
-             </div>
-            
-           </>
-        )}
-     
-         
-      </form>
-     
-   </>
-  )
+	</>)
 }
 
 export default Quiz
