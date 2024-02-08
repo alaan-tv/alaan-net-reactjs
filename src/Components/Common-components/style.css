@@ -725,4 +725,36 @@ input[type=date], .introduction-quiz-form select {
   border-radius: 3px;
   font-size: 18px !important;
   font-weight: 600;
+  cursor: pointer;
 }
+/*quiz on mobile*/
+@media (max-width: 760px) {
+.quiz-form {
+  width: 100%;
+  text-align: center !important;
+  }
+  .quiz-form > div > div{
+    display: flex !important;
+  }
+  .step-title{
+   padding: 20px 10px;
+    font-size: 18px !important;
+    margin: 44px auto 20px;
+  }
+  .introduction-quiz-form  .dimensions{
+    width: 100px !important;
+      }
+  .introduction-quiz-form input, .introduction-quiz-form select{
+    width: 100% !important
+  }
+  .images-form{
+    flex-direction: column;
+  }
+  .multi-check-text .option-desc{
+    font-size: 14px;
+  }
+  .continue-button{
+    padding: 10px 17px !important;
+  }
+}
+  
