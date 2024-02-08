@@ -756,5 +756,8 @@ input[type=date], .introduction-quiz-form select {
   .continue-button{
     padding: 10px 17px !important;
   }
+  .next-button, .continue-button, .back-button{
+    font-size: 16px !important;
+  }
 }
   
