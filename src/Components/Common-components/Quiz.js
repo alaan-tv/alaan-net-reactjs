@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react'
+import React, {useState} from 'react'
 import Stepper from 'react-stepper-horizontal';
 import Unique from '../../../src/Assets/quiz/LBD/q1/Unique.webp'
 import Cool from '../../../src/Assets/quiz/LBD/q1/Cool.webp'
@@ -67,20 +67,20 @@ const Quiz = ({handleClose}) => {
 		} else {
 			setInputs(values => ({...values, [name]: value}));
 		}
+		localStorage.setItem('quiz_1',JSON.stringify(inputs));
 		console.log(inputs);
 	}
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(inputs);
-		next();
-		if(currentPage===10){
+		if (currentPage === 10) {
 			handleClose()
+		} else {
+			setCurrentPage((page) => page + 1);
 		}
 	};
 
-  const next = () => setCurrentPage((prev) => prev + 1);
-  const prev = () => setCurrentPage((prev) => prev - 1);
 
 	const pageFields_3 = {
 		question: 'How do you want your home to feel? ',
@@ -212,19 +212,11 @@ const Quiz = ({handleClose}) => {
 		},]
 	};
 
-	const SectionHtml = ({section})=>{
-		return <>
-			<h1 className='step-title step-title-light'>{section.question} </h1>
-			<div className='introduction-quiz-form images-form'>
-				{section.options.map((field, index) => OptionHtml(field,index,section.question))}
-			</div>
-		</>
-	}
-
-	const OptionHtml=(item,index,question,style=null)=>{
-		let option_group = 'question_'+currentPage;
-		let field_name = option_group+'_' + index;
+	const OptionHtml = (item, index, question, style = null) => {
+		let option_group = 'question_' + currentPage;
+		let field_name = option_group + '_' + index;
 		let is_checked = field_name + '_checked';
+		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? '' : 'required';
 		return <div
 			className={(inputs[is_checked] || '') ? "container pink" : 'container white'} style={style}>
 			<label style={quizLabel}>
@@ -232,9 +224,9 @@ const Quiz = ({handleClose}) => {
 				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 				       value={JSON.stringify({...item, 'ques': question})}
 				       checked={(inputs[is_checked] || '') ? "checked" : false}
-				       onChange={handleChange} required />
+				       onChange={handleChange} required={is_required}/>
 				<div className='option-desc'>
-					{item.title && <><b>{item.title}</b>-</> } {item.desc}
+					{item.title && <><b>{item.title}</b>-</>} {item.desc}
 				</div>
 			</label>
 		</div>
@@ -255,8 +247,8 @@ const Quiz = ({handleClose}) => {
 			{currentPage === 1 && (<>
 				<h1 className='step-title'>First things first- let’s get to know you!</h1>
 				<div className='introduction-quiz-form'>
-					<input type="text" name='name' placeholder='Name' value={inputs.name || ''} onChange={handleChange}
-					       required></input>
+					<input type="text" name='name' placeholder='Name' value={inputs.name || ''}
+					       onChange={handleChange} required></input>
 					<input type="email" name='email' placeholder='E-mail' value={inputs.email || ''}
 					       onChange={handleChange} required></input>
 					<input type="text" name='phone' placeholder='Phone' value={inputs.phone || ''}
@@ -271,36 +263,45 @@ const Quiz = ({handleClose}) => {
 
 			{currentPage === 3 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_3.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
-					{pageFields_3.options.map((field, index) => OptionHtml(field,index,pageFields_3.question))}
+				<div className='introduction-quiz-form images-form'>
+					{pageFields_3.options.map((item, index) => OptionHtml(item, index, pageFields_3.question))}
 				</div>
 			</>)}
 
 			{currentPage === 4 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_4.question}</h1>
 				<div className='introduction-quiz-form multi-check-text'>
-					{pageFields_4.options.map((field, index) => OptionHtml(field,index,pageFields_4.question))}
+					{pageFields_4.options.map((item, index) => OptionHtml(item, index, pageFields_4.question))}
 				</div>
 			</>)}
 
 			{currentPage === 5 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_5.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{pageFields_5.options.map((field, index) => OptionHtml(field,index,pageFields_5.question,{flex: "1", minWidth: "40%"}))}
+					{pageFields_5.options.map((item, index) => OptionHtml(item, index, pageFields_5.question, {
+						flex: "1",
+						minWidth: "40%"
+					}))}
 				</div>
 			</>)}
 
 			{currentPage === 6 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_6.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{pageFields_6.options.map((field, index) => OptionHtml(field,index,pageFields_6.question,{flex: "1", minWidth: "40%"}))}
+					{pageFields_6.options.map((item, index) => OptionHtml(item, index, pageFields_6.question, {
+						flex: "1",
+						minWidth: "40%"
+					}))}
 				</div>
 			</>)}
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_7.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{pageFields_7.options.map((field, index) => OptionHtml(field,index,pageFields_7.question,{flex: "1", minWidth: "40%"}))}
+					{pageFields_7.options.map((item, index) => OptionHtml(item, index, pageFields_7.question, {
+						flex: "1",
+						minWidth: "40%"
+					}))}
 
 				</div>
 			</>)}
@@ -308,33 +309,36 @@ const Quiz = ({handleClose}) => {
 			{currentPage === 8 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_8.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{pageFields_8.options.map((field, index) => OptionHtml(field,index,pageFields_8.question,{flex: "1", minWidth: "40%"}))}
+					{pageFields_8.options.map((item, index) => OptionHtml(item, index, pageFields_8.question, {
+						flex: "1",
+						minWidth: "40%"
+					}))}
 				</div>
 			</>)}
 
 			{currentPage === 9 && (<>
 				<h1 className='step-title step-title-light'>{pageFields_9.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{pageFields_9.options.map((field, index) => OptionHtml(field,index,pageFields_9.question,{flex: "1", minWidth: "40%"}))}
+					{pageFields_9.options.map((item, index) => OptionHtml(item, index, pageFields_9.question, {
+						flex: "1",
+						minWidth: "40%"
+					}))}
 				</div>
 			</>)}
 
-			{currentPage < 10 && (
-				<div style={{display: 'flex', justifyContent: currentPage > 1 ? 'space-between' : 'end'}}>
-					{currentPage > 1 && <button className='back-button' type='button' onClick={prev}>Back</button>}
-					<button className='next-button' type='submit' >Next</button>
-				</div>)}
 
 			{currentPage === 10 && (<>
 				<h1 className='step-title step-title-light'>Awesome! Let’s jump into the application form
 					& get you one page closer to your dream home!</h1>
-				<div style={{display: 'flex', justifyContent: 'space-between'}}>
-					<button className='back-button' onClick={prev}>Back</button>
-					<button type='submit' className='continue-button' >
-						<span>Continue</span> <KeyboardDoubleArrowRightIcon/></button>
-				</div>
 			</>)}
 
+			<div style={{display: 'flex', justifyContent: currentPage > 1 ? 'space-between' : 'end'}}>
+				{currentPage > 1 && <button className='back-button' type='button'
+				                            onClick={() => setCurrentPage((page) => page - 1)}>Back</button>}
+				{currentPage < 10 && <button className='next-button' type='submit'>Next</button>}
+				{currentPage === 10 && <button type='submit' className='continue-button'>
+					<span>Continue</span> <KeyboardDoubleArrowRightIcon/></button>}
+			</div>
 
 		</form>
 
