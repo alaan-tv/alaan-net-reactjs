@@ -1,7 +1,7 @@
 import './App.css';
-import   Home  from './Components/Pages/Home';
+import Home from './Components/Pages/Home';
 import Services from './Components/Pages/Services';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Workshops from './Components/Pages/Workshops';
 import MagicTouchStudio from './Components/Pages/Services/MagicTouchStudio';
 import MagicTouchClinic from './Components/Pages/Services/MagicTouchClinic';
@@ -18,51 +18,42 @@ import PersonalBranding2 from './Components/Pages/Workshops/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import ContentByDesign from './Components/Pages/Services/ContectByDesign';
 import ThankYou from './Components/Common-components/ThankYou';
+import Page404 from './Components/Common-components/Page404';
 
 function App() {
-  
-  return (
-    <Router>
-         
+	return (<Router>
+			<ScrollToTop/>
+			<div className="App">
+				<Routes>
+					<Route path="/" index element={<Home/>}/>
+					<Route path="/our-services" element={<Services/>}/>
+					<Route path="/our-workshops" element={<Workshops/>}/>
 
-       <ScrollToTop />
-    <div className="App">
-    
-    
-    
-    <Routes>
-    <Route path="/" index element={<Home />}  />
-    <Route path="/our-services" element={<Services />}  />
-    <Route path="/our-workshops" element={<Workshops />}  />
-    <Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio />}  />
-    <Route path="/our-services/magic-touch-clinic" element={<MagicTouchClinic />}  />
-    <Route path="/our-services/own-your-story" element={<OwnYourStory />}  />
-    <Route path="/our-workshops/podcast" element={<Podcast />}  />
-    <Route path="/our-workshops/media" element={<Media />}  />
-    <Route path="/our-workshops/personal-branding" element={<PersonalBranding2 />}  />
+					<Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio/>}/>
+					<Route path="/our-services/magic-touch-clinic" element={<MagicTouchClinic/>}/>
+					<Route path="/our-services/own-your-story" element={<OwnYourStory/>}/>
 
-    <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
-    <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
-    <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
-    <Route path="/our-services/LBD" element={<LivingByDesign />}  />
-    <Route path="/our-services/CBD" element={<ContentByDesign />}  />
-    <Route path="/thank-you" element={<ThankYou />}  />
-    <Route path="/terms" element={<Terms />}  />
+					<Route path="/our-workshops/podcast" element={<Podcast/>}/>
+					<Route path="/our-workshops/media" element={<Media/>}/>
+					<Route path="/our-workshops/personal-branding" element={<PersonalBranding2/>}/>
+					<Route path="/our-workshops/ar" element={<WorkshopsArabic/>}/>
 
+					<Route path="/our-services/be-a-presenter" element={<BeAPresenter/>}/>
+					<Route path="/our-services/personal-branding" element={<PersonalBranding/>}/>
+					<Route path="/our-services/LBD" element={<LivingByDesign/>}/>
+					<Route path="/our-services/CBD" element={<ContentByDesign/>}/>
 
+					<Route path="/:parent/:child/thank-you" element={<ThankYou/>}/>
 
+					<Route path="/terms" element={<Terms/>}/>
+					<Route path="/ar" element={<AR/>}></Route>
 
+					<Route path="*" element={<Page404/>} />
 
-    <Route path="/ar" element={<AR/>}></Route>
-
-    </Routes>
-
-
-    
-    </div>
-    </Router>
-    
-  );
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
