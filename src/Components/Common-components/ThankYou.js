@@ -6,6 +6,7 @@ import Footer from './Footer'
 import Advertise from './Advertise'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import BannerBackground from '../../Assets/background.png'
+import {getQs} from "../../custom-functions";
 
 const ThankYou = () => {
 	const params = useParams();
@@ -19,11 +20,13 @@ const ThankYou = () => {
 	};
 
 	useEffect(() => {
-		if (params.child === 'magic-touch-studio') {
+		let captured = getQs('status') === 'captured';
+		if (params.child === 'magic-touch-studio'  && captured) {
 			window.gtag('event', 'conversion', {
 				'send_to': 'AW-10776634183/rgJWCK71n5AZEMfG2ZIo',
 				'transaction_id': ''
 			});
+			window.history.pushState({}, document.title, window.location.pathname);
 		}
 	}, []);
 
