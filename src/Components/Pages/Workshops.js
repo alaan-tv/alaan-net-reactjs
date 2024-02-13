@@ -9,6 +9,8 @@ import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
 import PodcastIcon from '../../Assets/podcast-icon.svg'
 import MediaWorkshopIcon from '../../Assets/media-workshop-icon.svg'
+import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
+
 import DocumentMeta from 'react-document-meta';
 
 const Workshops = () => {
@@ -77,6 +79,18 @@ const Workshops = () => {
               Our Media Workshop is tailored to enhance your media presence and develop your skills as a presenter.
 </p>
               <div className='sevice-more-icon'><Link to="/our-workshops/media"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
+            <div className='service-card'>
+              <img src={PersonalBrandingIcon} alt='Personal Branding Icon'/>
+              <h2 className='third-heading' >
+              Personal Branding Workshop
+        </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Deadly Mistakes and Golden Opportunities for Your Personal Brand
+</p>
+              <div className='sevice-more-icon'><Link to="/our-workshops/personal-branding"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>

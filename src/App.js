@@ -14,8 +14,10 @@ import WorkshopsArabic from './Components/Pages/WorkshopsArabic'
 import BeAPresenter from './Components/Pages/Services/BeAPresenter';
 import Terms from './Components/Common-components/Terms';
 import PersonalBranding from './Components/Pages/Services/PersonalBranding';
+import PersonalBranding2 from './Components/Pages/Workshops/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import ContentByDesign from './Components/Pages/Services/ContectByDesign';
+import ThankYou from './Components/Common-components/ThankYou';
 
 function App() {
   
@@ -37,12 +39,14 @@ function App() {
     <Route path="/our-services/own-your-story" element={<OwnYourStory />}  />
     <Route path="/our-workshops/podcast" element={<Podcast />}  />
     <Route path="/our-workshops/media" element={<Media />}  />
+    <Route path="/our-workshops/personal-branding" element={<PersonalBranding2 />}  />
+
     <Route path="/our-workshops/ar" element={<WorkshopsArabic />}  />
     <Route path="/our-services/be-a-presenter" element={<BeAPresenter />}  />
     <Route path="/our-services/personal-branding" element={<PersonalBranding />}  />
     <Route path="/our-services/LBD" element={<LivingByDesign />}  />
     <Route path="/our-services/CBD" element={<ContentByDesign />}  />
-
+    <Route path="/thank-you" element={<ThankYou />}  />
     <Route path="/terms" element={<Terms />}  />
 
 

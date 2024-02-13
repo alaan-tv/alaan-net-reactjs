@@ -130,6 +130,7 @@ const FormQuiz = ({handleClose1}) => {
           defaultBarColor="#df1995"
           completeColor="#df1995"
           completeBarColor="#df1995"
+          className="my-strepper"
         />
 
         {currentPage === 1 && (
