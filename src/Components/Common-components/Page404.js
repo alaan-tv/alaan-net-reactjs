@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import TickIcon from './TickIcon'
 import {Link, useParams} from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
@@ -7,26 +6,7 @@ import Advertise from './Advertise'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import BannerBackground from '../../Assets/background.png'
 
-const ThankYou = () => {
-	const params = useParams();
-
-	const get_msg = () => {
-		if (['podcast', 'media', 'be-a-presenter'].includes(params.child)) {
-			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك لتحديد الموعد'};
-		} else {
-			return {title: 'Thank You', content: 'You will be contacted to schedule an appointment.'};
-		}
-	};
-
-	useEffect(() => {
-		if (params.child === 'magic-touch-studio') {
-			window.gtag('event', 'conversion', {
-				'send_to': 'AW-10776634183/rgJWCK71n5AZEMfG2ZIo',
-				'transaction_id': ''
-			});
-		}
-	}, []);
-
+const Page404 = () => {
 	return (
 		<div>
 			<div className='home-container'>
@@ -35,12 +15,10 @@ const ThankYou = () => {
 					<img src={BannerBackground} alt="background"/>
 				</div>
 				<div className='thankyou-page'>
-					<TickIcon/>
 					<div className='home-bannerImageLeft-container'>
 						<img src={BannerBackgroundLeft} alt="background"/>
 					</div>
-					<h1> {get_msg().title}!</h1>
-					<h3> {get_msg().content}</h3>
+					<h1>The requested page does not exist</h1>
 					<Link to="/">Go to Home page </Link>
 				</div>
 				<Advertise/>
@@ -50,4 +28,4 @@ const ThankYou = () => {
 	)
 }
 
-export default ThankYou
+export default Page404
