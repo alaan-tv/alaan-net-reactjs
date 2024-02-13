@@ -463,16 +463,16 @@
   border-radius: 10px;
   background: #f6f6f6;
   position: relative;
-  padding:100px 30px;
+  padding:100px 20px;
   width: 100%;
-  max-width: 80%;
-  height: 95%;
+  max-width: 100%;
+  height: 100%;
   text-align: center;
 }
 .form-modal-close , .quiz-modal-close {
   position: absolute;
-  right: 28px;
-  top: 28px;
+  right: 20px;
+  top: 10px;
   outline: 0;
   appearance: none;
   color: #DF1995;
@@ -574,6 +574,21 @@ text-align: center !important;
 margin: 30px 0px 
 
 }
+.formQuiz .introduction-quiz-form{
+  margin: 0 !important;
+  text-align: left !important;
+}
+.formQuiz textarea{
+  width: 100%;
+  height: 100px;
+  border:  1px solid #e7e7e7; 
+  border-radius: 12px;
+  margin: 10px 0px 0px 0px;
+}
+textarea::placeholder{
+  padding: 10px 20px;
+  font-size: 18px;
+}
 .introduction-quiz-form input , .introduction-quiz-form select{
   display: block;
   background-color: #fff !important;
@@ -651,17 +666,40 @@ margin: 30px 0px;
   transform: scale(1.3);
  
  
-  top:17px;
+  top:19px;
   left: 17px;
   
 }
 .option-desc{
-  line-height: 103%;
+  font-weight: bold;
+  line-height: 90%;
   text-align: left;
 }
 .multi-check-text .container{
   width: 100%;
   margin: 30px 0px
+}
+.formQuiz .introduction-quiz-form input, .formQuiz .introduction-quiz-form select{
+  margin: 1px 0px;
+}
+.formQuiz .multi-check-text .container{
+  margin: 10px 0px !important;
+  border: 1px solid #e7e7e7;
+}
+.terms-container{
+  border: none !important;
+  padding: 40px 20px 20px 2px;
+  text-align: left !important;
+  display: flex;
+}
+.terms-container input[type=checkbox]{
+  bottom: 12px;
+  top: -5px;
+  right: 5px;
+}
+.date-form{
+  display: flex;
+  align-items: center;
 }
 .multi-check-text .option-desc{
 margin-left: 30px;
@@ -691,6 +729,23 @@ line-height: normal !important;
 }
 .container.white {
   background-color: #fff !important;
+  color: #000
+}
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+  
+  right: 5px;
+  top: 12px;
+ 
+  z-index: 1000;
+}
+.quiz-label{
+  background-color: transparent !important;
+  position:static !important;
+    
+   
+    padding: 0px !important; 
+    /* font-size: 12px; */
+    /* font-weight: 500;*/
 }
 
 @media (max-width: 990px) {
@@ -702,10 +757,10 @@ min-width: 40%
   width: 100px !important;
   display: inline !important;
 }
-input[type=date], .introduction-quiz-form select {
+.react-datepicker-wrapper, .introduction-quiz-form select {
   line-height: normal !important;
   margin: 10px;
-  display: inline !important;
+  display: inline-block !important;
   height: 58px;
     width: 407px;
 }
@@ -726,6 +781,9 @@ input[type=date], .introduction-quiz-form select {
   font-size: 18px !important;
   font-weight: 600;
   cursor: pointer;
+}
+.question{
+  padding: 20px 0px;
 }
 /*quiz on mobile*/
 @media (max-width: 760px) {
@@ -748,7 +806,10 @@ input[type=date], .introduction-quiz-form select {
     width: 100% !important
   }
   .images-form{
-    flex-direction: column;
+    gap: 10px;
+  }
+  .images-form .container {
+max-width: 50% !important;
   }
   .multi-check-text .option-desc{
     font-size: 14px;
@@ -759,5 +820,15 @@ input[type=date], .introduction-quiz-form select {
   .next-button, .continue-button, .back-button{
     font-size: 16px !important;
   }
+  .form-step-title{
+    font-size: 18px !important;
+  }
 }
   
+.form-step-title{
+  font-size: 24px ;
+  text-align: left;
+}
+.total-price{
+  text-align: left;
+}
