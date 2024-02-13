@@ -66,6 +66,7 @@ position: relative;
 .living-page .feature, .content-page .feature{
     background-image: url(../../../Assets/feature-image3.svg);
     width: 340px;
+    
 }
 .feature-icon{
     padding: 20px;
@@ -550,7 +551,7 @@ padding-left: 20px;
         text-align: center !important;
     }
     .booking, .testimonials{
-        padding: 100px 0px 40px 0px;
+        padding: 100px 15px 40px 15px;
     }
     .booking .right-section{
         width: auto;
@@ -683,7 +684,7 @@ padding-left: 20px;
     font-size: 52px !important;
    }
    .about-section .trainer-image img{
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 20px;
     height: 375px;
    }
    .about-section .trainer-image{
@@ -696,9 +697,10 @@ padding-left: 20px;
     padding: 0px;
     max-width: 1330px;
     justify-content: space-between;
+    padding: 20px;
    }
    .living-page .trainer-desc{
-    padding: 30px;
+   
    }
    .living-page .trainer-desc p{
     margin-bottom: 18px;
@@ -706,9 +708,14 @@ padding-left: 20px;
    .second-features .feature{
     background-image: url(../../../Assets/about-background.svg);
     width: 350px;
+    height: 400px;
    }
    .living-page .third-heading{
     font-size: 28px;
+   }
+   .living-cta{
+    padding: 15px 30px ;
+    font-size: 22px;
    }
    .second-features .features-container{
     margin: 80px 0px ; 
@@ -719,10 +726,11 @@ padding-left: 20px;
    @media (max-width: 767px) {
     .living-page .trainers-container{
         height: auto !important;
+        padding: 0px;
     }
 
    .living-page .trainer-desc{
-    padding: 60px 20px;
+    /*padding: 60px 20px;*/
    }
    .about-section .trainer-image{
     width: 350px !important;
@@ -820,4 +828,12 @@ z-index: 10;
     margin: auto;
     text-align: center;
     padding: 150px 50px 50px;
+}
+.form-text{
+    padding: 10px;
+}
+@media (max-width: 760px) {
+    .form-text{
+        text-align: center;
+    }
 }

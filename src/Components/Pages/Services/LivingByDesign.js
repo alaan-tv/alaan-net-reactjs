@@ -14,7 +14,7 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
-import LivingLogo from '../../../Assets/living-logo.svg'
+import LivingLogo from '../../../Assets/LBD-white2.svg'
 import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
@@ -142,7 +142,7 @@ setForm(true);
 
 
 							</p>
-							<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
+							<a className='service-cta primary-button living-cta' href="#contact-form">Book Now!</a>
 							{/*<div className='home-image-container banner-service-image'>
     <picture>
 <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
@@ -170,7 +170,7 @@ setForm(true);
 						<div className='trainers-container'>
 							<div className='trainer-image'>
 								{ /*<img src={AboutImage} alt='about-image'/> */}
-								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5" transition='.5s ease-in-out'
+								<ReactCompareSlider  changePositionOnHover={true} keyboardIncrement="5" transition='.5s ease-in-out'
       itemOne={<ReactCompareSliderImage  src={BeforeLiving} srcSet={BeforeLiving} alt="Image one" />}
       itemTwo={<ReactCompareSliderImage  src={AfterLiving} srcSet={AfterLiving} alt="Image two" />}
     />
@@ -178,8 +178,7 @@ setForm(true);
 		<div className='after-state'> After</div>
 	
 		
-	
-
+		
 
 							</div>
 							<div className='trainer-desc'>
@@ -213,7 +212,7 @@ setForm(true);
 								you were always meant to?</p>
 
 								{/*modal quiz*/}
-								<button className='take-quiz' onClick={() => setQuiz(true)}> Take a quiz</button>
+								<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take Quiz</button>
 								<QuizModal  showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 			       children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
 				   <FormModal  showForm={form} handleClose1={() => setForm(!form)}
@@ -222,7 +221,12 @@ setForm(true);
 					</div>
 					</div>
 					<div className='right-section'>
+						
 						<div className='form-section' id="contact-form">
+						<h4 className='form-text'> If you have any questions or
+would like to know more,
+pop in your details and we’ll get
+back to you as soon as we can</h4>
 							<form action='' onSubmit={handleSubmit}>
 								<div className="input-wrapper">
 									<label for="first">FULL NAME</label>
