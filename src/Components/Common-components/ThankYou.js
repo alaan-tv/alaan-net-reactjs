@@ -26,8 +26,8 @@ const ThankYou = () => {
 				'send_to': 'AW-10776634183/rgJWCK71n5AZEMfG2ZIo',
 				'transaction_id': ''
 			});
-			window.history.pushState({}, document.title, window.location.pathname);
 		}
+		window.history.pushState({}, document.title, window.location.pathname);
 	}, []);
 
 	return (
