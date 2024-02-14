@@ -334,14 +334,13 @@ const FormQuiz = ({handleClose1}) => {
 
 			</h1>
 				<div className='introduction-quiz-form'>
-					<input type='text' name='name' placeholder='Name' value={inputs.name || ''}
-					       onChange={handleChange} required maxLength='50' placeholder='Please write here '/>
+					<input type='text' name='name' placeholder='Please write here ' value={inputs.name || ''}
+					       onChange={handleChange} required maxLength='50'/>
 				</div>
 			</div>
 
 
-			<div className='question'><h1 className='form-step-title'>9-Address <small
-				style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
+			<div className='question'><h1 className='form-step-title'>9-Address </h1>
 				<div className='introduction-quiz-form'>
 					<input type='text' placeholder='Enter your Address' name="cv" value={inputs.cv || ""} onChange={handleChange}/>
 
@@ -349,7 +348,8 @@ const FormQuiz = ({handleClose1}) => {
 			</div>
 
 
-			<div className='question'><h1 className='form-step-title'>10-Floor plan upload</h1>
+			<div className='question'><h1 className='form-step-title'>10-Floor plan upload <small
+				style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
 				<div className='introduction-quiz-form'>
 					<input type='file' name="cv" value={inputs.cv || ""} onChange={handleChange}/>
 
@@ -360,6 +360,7 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>11-Photos of the space</h1>
 
 				<div className='introduction-quiz-form multi-check-text'>
+				<input type="file" required/>
 					<label className='quiz-label' htmlFor={"check15"}>
 						<div class={getContainerClassName('checkbox20')}>
 
@@ -373,12 +374,13 @@ const FormQuiz = ({handleClose1}) => {
 							</div>
 						</div>
 					</label>
+					<div className='dimensions-section'>
 					<input type='number' placeholder="L" className='dimensions'/><small> Cm</small> <CloseIcon
 					style={{margin: "10px 20px -5px 20px", fontSize: "18px"}}/> <input type='number' placeholder="W"
 					                                                                   className='dimensions'/>
 					<small>Cm</small>
 
-
+					</div>
 				</div>
 			</div>
 
@@ -423,7 +425,7 @@ const FormQuiz = ({handleClose1}) => {
 			</div>
 
 
-			<Modal show={modal} handleClose={handleCloseModal}
+			<Modal className="thank-quiz" show={modal} handleClose={handleCloseModal}
 			       children={<>  <TickIcon/> <h3>Thank you</h3> <p> We can't wait to get started!<br/> You’ll
 				       receive an email shortly with a link for a 50% down payment- once it’s paid, your consultant
 				       will contact you to confirm your appointment date & you’ll be on your way to your dream home!

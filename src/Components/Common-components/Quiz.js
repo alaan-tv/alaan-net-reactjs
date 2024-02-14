@@ -204,7 +204,7 @@ const Quiz = ({handleClose}) => {
 
 	return (<>
 
-		<form className="quiz-form" onSubmit={handleSubmit}>
+		<form className="quiz-steps quiz-form" onSubmit={handleSubmit}>
 			<Stepper
 				steps={sections}
 				activeStep={currentPage}
