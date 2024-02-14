@@ -62,7 +62,7 @@ const PersonalBranding = () => {
 			method: 'Post', body: formData({
 				...inputs,
 				phone: phone,
-				lp_type: 'personal-branding',
+				lp_type: 'workshop-personal-branding',
 				page_url: window.location.origin + window.location.pathname,
 			})
 		})

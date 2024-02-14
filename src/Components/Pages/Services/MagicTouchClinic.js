@@ -260,7 +260,7 @@ const MagicTouchClinic = () => {
 								</div>
 								<div className="input-wrapper">
 									<label for="first">UPLOUD CV</label>
-									<input type="file" name="cv" value={inputs.cv || ""} onChange={handleChange} placeholder='Uploud your CV' ref={inputFile} name="cv" accept="application/msword,application/pdf" required/>
+									<input type="file" name="cv" value={inputs.cv || ""} onChange={handleChange} placeholder='Uploud your CV' ref={inputFile} accept="application/msword,application/pdf" required/>
 								</div>
 								<div className="input-wrapper">
 									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />

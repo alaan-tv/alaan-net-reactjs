@@ -288,6 +288,17 @@
       .term{
         padding: 15px 0px !important;
       }
+      .quiz-label{
+        flex: 1 1 0%;
+        min-width: 40%;
+        font-size:14px !important
+      }
+      .quiz-label .container{
+        max-width: 100% !important;
+         width: 100% !important;
+      }
+      .thank-quiz .modal-container{
+      flex-direction: column !important;}
     }
 
 
@@ -562,6 +573,7 @@ margin: 100px auto 20px;
    top right,
     center;
   color: #fff;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent !important;
 
@@ -574,6 +586,7 @@ text-align: center !important;
 margin: 30px 0px 
 
 }
+
 .formQuiz .introduction-quiz-form{
   margin: 0 !important;
   text-align: left !important;
@@ -584,6 +597,7 @@ margin: 30px 0px
   border:  1px solid #e7e7e7; 
   border-radius: 12px;
   margin: 10px 0px 0px 0px;
+  padding: 15px;
 }
 textarea::placeholder{
   padding: 10px 20px;
@@ -638,6 +652,9 @@ textarea::placeholder{
   font-weight: 600;
   text-align: center;
 }
+.quiz-steps{
+  width: 90% !important;
+}
 .quiz-form{
   width: 60%;
   text-align: right !important;
@@ -655,7 +672,7 @@ gap: 30px;
 margin: 30px 0px;
 }
 .introduction-quiz-form .container{
-  position: relative; width: 250px;  margin-left: 10px;   border-radius: 20px; padding: 15px; background-color: #fff;
+  position: relative; width: 300px;   border-radius: 20px; padding: 15px; background-color: #fff;
 }
 .introduction-quiz-form .container img{
  
@@ -670,9 +687,15 @@ margin: 30px 0px;
   left: 17px;
   
 }
+.formQuiz .introduction-quiz-form input[type=checkbox]{
+  
+  top:17px;
+  left: 17px;
+  
+}
 .option-desc{
   font-weight: bold;
-  line-height: 90%;
+  line-height: 97%;
   text-align: left;
 }
 .multi-check-text .container{
@@ -691,6 +714,7 @@ margin: 30px 0px;
   padding: 40px 20px 20px 2px;
   text-align: left !important;
   display: flex;
+  flex-direction: row !important;
 }
 .terms-container input[type=checkbox]{
   bottom: 12px;
@@ -739,13 +763,16 @@ line-height: normal !important;
   z-index: 1000;
 }
 .quiz-label{
-  background-color: transparent !important;
+  background-color: white !important;
   position:static !important;
-    
+    border-radius: 20px;
    
     padding: 0px !important; 
-    /* font-size: 12px; */
+    font-size: 16px; 
     /* font-weight: 500;*/
+}
+.formQuiz .quiz-label{
+background-color: transparent !important;
 }
 
 @media (max-width: 990px) {
@@ -785,8 +812,13 @@ min-width: 40%
 .question{
   padding: 20px 0px;
 }
+.dimensions-section{
+}
 /*quiz on mobile*/
 @media (max-width: 760px) {
+  .formQuiz .quiz-form > div > div{
+  flex-direction: column;
+  }
 .quiz-form {
   width: 100%;
   text-align: center !important;
@@ -808,8 +840,12 @@ min-width: 40%
   .images-form{
     gap: 10px;
   }
+  .images-form label:last-child{
+    width: 50% !important;
+    max-width: 50%;
+  }
   .images-form .container {
-max-width: 50% !important;
+max-width: 100% !important;
   }
   .multi-check-text .option-desc{
     font-size: 14px;
@@ -822,6 +858,9 @@ max-width: 50% !important;
   }
   .form-step-title{
     font-size: 18px !important;
+  }
+  .react-datepicker-wrapper, .introduction-quiz-form select{
+    max-width: 350px;
   }
 }
   

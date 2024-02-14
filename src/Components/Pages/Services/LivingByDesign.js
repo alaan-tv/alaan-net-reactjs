@@ -212,7 +212,7 @@ setForm(true);
 								you were always meant to?</p>
 
 								{/*modal quiz*/}
-								<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take Quiz</button>
+								<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take The Quiz</button>
 								<QuizModal  showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 			       children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
 				   <FormModal  showForm={form} handleClose1={() => setForm(!form)}

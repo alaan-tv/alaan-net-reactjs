@@ -64,6 +64,7 @@ const MagicTouchStudio = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
+		window.gtag('event', 'conversion', {'send_to': 'AW-10776634183/wDgKCJiTmZAZEMfG2ZIo'});
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
