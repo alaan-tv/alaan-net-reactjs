@@ -51,9 +51,7 @@ const Quiz = ({handleClose}) => {
 			});
 			event.target.parentElement.classList.add('pink');
 			event.target.parentElement.classList.remove('white');
-			inputs[name] = value;
-			inputs[name + '_checked'] = !event.target.checked;
-			setInputs(values => ({...values, [name]: value, [name + '_checked']: !event.target.checked}));
+			setInputs(values => ({...values, [name]: value}));
 		} else {
 			setInputs(values => ({...values, [name]: value}));
 		}
@@ -77,8 +75,7 @@ const Quiz = ({handleClose}) => {
 	}
 
 	const page_3 = {
-		question: 'How do you want your home to feel? ',
-		options: [{
+		question: 'How do you want your home to feel? ', options: [{
 			image: Unique,
 			title: "Unique",
 			desc: `I like having things, and I want my guests to know that my things have history and a story`
@@ -100,8 +97,7 @@ const Quiz = ({handleClose}) => {
 	};
 
 	const page_4 = {
-		question: 'What is your relationship to stuff? ',
-		options: [{
+		question: 'What is your relationship to stuff? ', options: [{
 			desc: `I love stuff! I love collecting stuff that I'm drawn to, & I love being surrounded by it.`
 		}, {
 			desc: `I like *some* stuff. I'm choosy about what I allow into my home, and I curate stuff that I think is beautiful.`
@@ -111,68 +107,63 @@ const Quiz = ({handleClose}) => {
 	};
 
 	const page_5 = {
-		question: 'How much colour do you like in your space?',
-		options: [{
-			image: Qustion2Image1, desc: "None, all white only"
+		question: 'How much colour do you like in your space?', options: [{
+			desc: "None, all white only",image: Qustion2Image1,
 		}, {
-			image: Qustion2Image2, desc: "I prefer mostly neutral tones"
+			desc: "I prefer mostly neutral tones",image: Qustion2Image2,
 		}, {
-			image: Qustion2Image3, desc: "I'm into some pops of colour"
+			desc: "I'm into some pops of colour", image: Qustion2Image3,
 		}, {
-			image: Qustion2Image4, desc: "Tons, I cant get enough"
+			desc: "Tons, I cant get enough", image: Qustion2Image4,
 		},]
 	};
 
 	const page_6 = {
-		question: 'Which bedroom matches your energy? (ignoring specific furniture)',
-		options: [{
-			image: Qustion3Image1
+		question: 'Which bedroom matches your energy? (ignoring specific furniture)', options: [{
+			name: "Bohemian", image: Qustion3Image1,
 		}, {
-			image: Qustion3Image2
+			name: "Industrial", image: Qustion3Image2,
 		}, {
-			image: Qustion3Image3
+			name: "Opulent", image: Qustion3Image3,
 		}, {
-			image: Qustion3Image4
+			name: "Scandinavian", image: Qustion3Image4,
 		},]
 	};
 	const page_7 = {
-		question: 'Which living room?',
-		options: [{
-			image: Qustion4Image1
+		question: 'Which living room?', options: [{
+			name: "Art Deco", image: Qustion4Image1,
 		}, {
-			image: Qustion4Image2
+			name: "Brutalist Industrial Minimalism", image: Qustion4Image2,
 		}, {
-			image: Qustion4Image3
+			name: "Eclectic Industrial Restorational", image: Qustion4Image3,
 		}, {
-			image: Qustion4Image4
+			name: "Modern Rustic", image: Qustion4Image4,
 		},]
 	};
 	const page_8 = {
-		question: 'Which office?',
-		options: [{
-			image: Qustion5Image1
+		question: 'Which office?', options: [{
+			name: "Bohemian", image: Qustion5Image1,
 		}, {
-			image: Qustion5Image2
+			name: "Executive Sophistication", image: Qustion5Image2,
 		}, {
-			image: Qustion5Image3
+			name: "Minimalist", image: Qustion5Image3,
 		}, {
-			image: Qustion5Image4
+			name: "Vintage", image: Qustion5Image4,
 		},]
 	};
 	const page_9 = {
-		question: 'Which colour palette do you most like to decorate your home with?',
-		options: [{
-			image: Qustion6Image1
+		question: 'Which colour palette do you most like to decorate your home with?', options: [{
+			name: "Pastels", image: Qustion6Image1,
 		}, {
-			image: Qustion6Image2
+			name: "Historical", image: Qustion6Image2
 		}, {
-			image: Qustion6Image3
+			name: "Earthy", image: Qustion6Image3
 		}, {
-			image: Qustion6Image4
+			name: "Moody", image: Qustion6Image4,
 		}, {
-			image: Qustion6Image5
+			name: "Black, White, Green", image: Qustion6Image5,
 		}, {
-			image: Qustion6Image6
+			name: "Primary", image: Qustion6Image6,
 		},]
 	};
 
@@ -180,19 +171,18 @@ const Quiz = ({handleClose}) => {
 		question: `Awesome! Let’s jump into the application form & get you one page closer to your dream home!`,
 	}
 
-	const OptionHtml = (id,item) => {
+	const OptionHtml = (id, item) => {
 		let option_group = 'question_' + currentPage;
 		let field_name = option_group + '_' + id;
-		let is_checked = field_name + '_checked';
 		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? '' : 'required';
 		return (
 			<label className='quiz-label' style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
-				<div className={(inputs[is_checked] || '') ? "container pink" : 'container white'}
+				<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
 				     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
 					{item.image && <img src={item.image}/>}
 					<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 					       value={JSON.stringify(item)}
-					       checked={(inputs[is_checked] || '') ? "checked" : false}
+					       checked={(inputs[field_name] || '') ? "checked" : false}
 					       onChange={handleChange} required={is_required}/>
 					<div className='option-desc'>
 						{item.title && <><b>{item.title}</b>-</>} {item.desc && item.desc}
@@ -218,9 +208,10 @@ const Quiz = ({handleClose}) => {
 				<h1 className='step-title'>{page_1.question}</h1>
 				<div className='introduction-quiz-form'>
 					<input type="text" name='name' placeholder='Name' value={inputs.name || ''}
-					       onChange={handleChange} required maxLength='50' ></input>
+					       onChange={handleChange} required maxLength='50'></input>
 					<input type="email" name='email' placeholder='E-mail' value={inputs.email || ''}
-					       onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" maxLength='50'></input>
+					       onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+					       maxLength='50'></input>
 					<input type="text" name='phone' placeholder='Phone' value={inputs.phone || ''}
 					       onChange={handleChange} required pattern="[+]{0,1}[0-9]{10,15}" maxLength='15'></input>
 				</div>
@@ -231,48 +222,48 @@ const Quiz = ({handleClose}) => {
 			{currentPage === 3 && (<>
 				<h1 className='step-title step-title-light'>{page_3.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_3.options.map((item, i) =>OptionHtml(i,{...item, question: page_3.question}))}
+					{page_3.options.map((item, i) => OptionHtml(i, {...item, question: page_3.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 4 && (<>
 				<h1 className='step-title step-title-light'>{page_4.question}</h1>
 				<div className='introduction-quiz-form multi-check-text'>
-					{page_4.options.map((item, i) =>OptionHtml(i,{...item, question: page_4.question}))}
+					{page_4.options.map((item, i) => OptionHtml(i, {...item, question: page_4.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 5 && (<>
 				<h1 className='step-title step-title-light'>{page_5.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_5.options.map((item, i) =>OptionHtml(i,{...item, question: page_5.question}))}
+					{page_5.options.map((item, i) => OptionHtml(i, {...item, question: page_5.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 6 && (<>
 				<h1 className='step-title step-title-light'>{page_6.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_6.options.map((item, i) =>OptionHtml(i,{...item, question: page_6.question}))}
+					{page_6.options.map((item, i) => OptionHtml(i, {...item, question: page_6.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{page_7.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_7.options.map((item, i) =>OptionHtml(i,{...item, question: page_7.question}))}
+					{page_7.options.map((item, i) => OptionHtml(i, {...item, question: page_7.question}))}
 				</div>
 			</>)}
 			{currentPage === 8 && (<>
 				<h1 className='step-title step-title-light'>{page_8.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_8.options.map((item, i) =>OptionHtml(i,{...item, question: page_8.question}))}
+					{page_8.options.map((item, i) => OptionHtml(i, {...item, question: page_8.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 9 && (<>
 				<h1 className='step-title step-title-light'>{page_9.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_9.options.map((item, i) =>OptionHtml(i,{...item, question: page_9.question}))}
+					{page_9.options.map((item, i) => OptionHtml(i, {...item, question: page_9.question}))}
 				</div>
 			</>)}
 
