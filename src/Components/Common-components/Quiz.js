@@ -28,6 +28,7 @@ import Qustion6Image4 from '../../../src/Assets/quiz/LBD/q6/Moody.png'
 import Qustion6Image5 from '../../../src/Assets/quiz/LBD/q6/Black.png'
 import Qustion6Image6 from '../../../src/Assets/quiz/LBD/q6/Primary.png'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import {ajax_url, formData} from "../../custom-functions";
 
 const Quiz = ({handleClose}) => {
 
@@ -152,15 +153,9 @@ const Quiz = ({handleClose}) => {
 		let name = event.target.name;
 		let value = event.target.value;
 		if (event.target.type == 'checkbox') {
-			document.querySelectorAll('.' + event.target.classList[1])
-				.forEach((el) => {
-					el.parentElement.classList.add('white');
-					el.parentElement.classList.remove('pink');
-					delete inputs[el.name];
-				});
-			event.target.parentElement.classList.add('pink');
-			event.target.parentElement.classList.remove('white');
-			value = JSON.parse(value);
+			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
+			checkInput.forEach((el) => setInputs(values => ({...values, [el.name]: false})));
+			setInputs(values => ({...values, [name]: JSON.parse(value)}));
 		}
 		setInputs(values => ({...values, [name]: value}));
 	}
@@ -172,23 +167,42 @@ const Quiz = ({handleClose}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(inputs);
+		localStorage.setItem('LBD_email', inputs.email);
 		if (currentPage === 10) {
-			let data = {
-				...inputs,
-				['question_1_0']: {
-					name: inputs.name,
-					email: inputs.email,
-					phone: inputs.phone,
-					question: page_1.question
-				},
-				['question_2_0']: {question: page_10.question},
-				['question_10_0']: {question: page_10.question},
+			//copy object in new variable
+			let data = {...inputs}
+			// remove empty element
+			for (const key in data) {
+				if (data[key] == false) {
+					delete data[key];
+				}
 			}
-			localStorage.setItem('quiz_1', JSON.stringify(data));
-			handleClose();
+			// rename keys & remove empty element
+			for (const key in data) {
+				data[key.substring(0, 10).replace('question', 'page')] = data[key];
+				if(key.length>8){
+					delete data[key];
+				}
+
+			}
+			// generate formData object
+			const form_data = formData({
+				...data,
+				['page_1']: JSON.stringify({id: 1, question: page_1.question}),
+				['page_2']: JSON.stringify({id: 2, question: page_2.question}),
+				['page_10']: JSON.stringify({id: 10, question: page_10.question}),
+				lp_type: 'LBD',
+			});
+			// Send data to server
+			fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {method: 'Post', body: form_data})
+				.then(response => response.json())
+				.then(data => handleClose())
+				.catch(error => console.error(error));
+
 		} else {
 			setCurrentPage(p => ++p);
 		}
+
 	};
 
 
@@ -201,28 +215,27 @@ const Quiz = ({handleClose}) => {
 		let option_group = 'question_' + currentPage;
 		let field_name = option_group + '_' + id;
 		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? '' : 'required';
-		return (
-			<label key={id} className='quiz-label'
-			       style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
-				<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
-				     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
-					{item.image && <img src={item.image}/>}
-					<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
-					       value={JSON.stringify(item)}
-					       checked={(inputs[field_name] || '') ? "checked" : false}
-					       onChange={handleChange} required={is_required}
-					/>
-					<div className='option-desc'>
-						{item.title && <><b>{item.title}</b>-</>} {item.desc && item.desc}
-					</div>
+		return (<label key={id} className='quiz-label'
+		               style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
+			<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
+			     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
+				{item.image && <img src={item.image}/>}
+				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
+				       value={JSON.stringify(item)}
+				       checked={(inputs[field_name] || '') ? "checked" : false}
+				       onChange={handleChange} required={is_required}
+				/>
+				<div className='option-desc'>
+					{item.title && <><b>{item.title}</b>-</>} {item.desc && item.desc}
 				</div>
-			</label>);
+			</div>
+		</label>);
 	}
 
 
 	return (<>
 
-		<form className="quiz-steps quiz-form" onSubmit={handleSubmit}>
+		<form method={'post'} className="quiz-steps quiz-form" onSubmit={handleSubmit}>
 			<Stepper
 				steps={sections}
 				activeStep={currentPage}
@@ -250,48 +263,48 @@ const Quiz = ({handleClose}) => {
 			{currentPage === 3 && (<>
 				<h1 className='step-title step-title-light'>{page_3.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_3.options.map((item, i) => OptionHtml(i, {...item, question: page_3.question}))}
+					{page_3.options.map((item, i) => OptionHtml(i, {...item, id: 3, question: page_3.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 4 && (<>
 				<h1 className='step-title step-title-light'>{page_4.question}</h1>
 				<div className='introduction-quiz-form multi-check-text'>
-					{page_4.options.map((item, i) => OptionHtml(i, {...item, question: page_4.question}))}
+					{page_4.options.map((item, i) => OptionHtml(i, {...item, id: 4, question: page_4.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 5 && (<>
 				<h1 className='step-title step-title-light'>{page_5.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_5.options.map((item, i) => OptionHtml(i, {...item, question: page_5.question}))}
+					{page_5.options.map((item, i) => OptionHtml(i, {...item, id: 5, question: page_5.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 6 && (<>
 				<h1 className='step-title step-title-light'>{page_6.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_6.options.map((item, i) => OptionHtml(i, {...item, question: page_6.question}))}
+					{page_6.options.map((item, i) => OptionHtml(i, {...item, id: 6, question: page_6.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{page_7.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_7.options.map((item, i) => OptionHtml(i, {...item, question: page_7.question}))}
+					{page_7.options.map((item, i) => OptionHtml(i, {...item, id: 7, question: page_7.question}))}
 				</div>
 			</>)}
 			{currentPage === 8 && (<>
 				<h1 className='step-title step-title-light'>{page_8.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_8.options.map((item, i) => OptionHtml(i, {...item, question: page_8.question}))}
+					{page_8.options.map((item, i) => OptionHtml(i, {...item, id: 8, question: page_8.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 9 && (<>
 				<h1 className='step-title step-title-light'>{page_9.question}</h1>
 				<div className='introduction-quiz-form images-form'>
-					{page_9.options.map((item, i) => OptionHtml(i, {...item, question: page_9.question}))}
+					{page_9.options.map((item, i) => OptionHtml(i, {...item, id: 9, question: page_9.question}))}
 				</div>
 			</>)}
 
