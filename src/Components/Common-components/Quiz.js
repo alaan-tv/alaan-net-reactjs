@@ -31,42 +31,11 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 
 const Quiz = ({handleClose}) => {
 
-	const [currentPage, setCurrentPage] = useState(1);
-	const sections = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-	const [inputs, setInputs] = useState({});
-
-	const handleChange = (event) => {
-		let name = event.target.name;
-		let value = event.target.value;
-		if (event.target.type == 'checkbox') {
-			document.querySelectorAll('.' + event.target.classList[1]).forEach((el) => {
-				el.parentElement.classList.add('white');
-				el.parentElement.classList.remove('pink');
-				el.checked = false;
-				el.required = false;
-				if (name != el.name) {
-					delete inputs[el.name];
-					delete inputs[el.name + '_checked'];
-				}
-			});
-			event.target.parentElement.classList.add('pink');
-			event.target.parentElement.classList.remove('white');
-			setInputs(values => ({...values, [name]: value}));
-		} else {
-			setInputs(values => ({...values, [name]: value}));
-		}
-	}
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log(inputs);
-		localStorage.setItem('quiz_1', JSON.stringify(inputs));
-		if (currentPage === 10) {
-			handleClose();
-		} else {
-			setCurrentPage(p => ++p);
-		}
-	};
-
+	/*
+	*
+	* Object Contents
+	*
+	*/
 	const page_1 = {
 		question: `First things first- let’s get to know you!`
 	}
@@ -108,9 +77,9 @@ const Quiz = ({handleClose}) => {
 
 	const page_5 = {
 		question: 'How much colour do you like in your space?', options: [{
-			desc: "None, all white only",image: Qustion2Image1,
+			desc: "None, all white only", image: Qustion2Image1,
 		}, {
-			desc: "I prefer mostly neutral tones",image: Qustion2Image2,
+			desc: "I prefer mostly neutral tones", image: Qustion2Image2,
 		}, {
 			desc: "I'm into some pops of colour", image: Qustion2Image3,
 		}, {
@@ -171,19 +140,78 @@ const Quiz = ({handleClose}) => {
 		question: `Awesome! Let’s jump into the application form & get you one page closer to your dream home!`,
 	}
 
+	const [currentPage, setCurrentPage] = useState(1);
+	const sections = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	const [inputs, setInputs] = useState({});
+
+	/**
+	 * This will be call on each input type changed
+	 * @param event
+	 */
+	const handleChange = (event) => {
+		let name = event.target.name;
+		let value = event.target.value;
+		if (event.target.type == 'checkbox') {
+			document.querySelectorAll('.' + event.target.classList[1])
+				.forEach((el) => {
+					el.parentElement.classList.add('white');
+					el.parentElement.classList.remove('pink');
+					delete inputs[el.name];
+				});
+			event.target.parentElement.classList.add('pink');
+			event.target.parentElement.classList.remove('white');
+			value = JSON.parse(value);
+		}
+		setInputs(values => ({...values, [name]: value}));
+	}
+
+	/**
+	 * This will call when we submit form
+	 * @param e
+	 */
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(inputs);
+		if (currentPage === 10) {
+			let data = {
+				...inputs,
+				['question_1_0']: {
+					name: inputs.name,
+					email: inputs.email,
+					phone: inputs.phone,
+					question: page_1.question
+				},
+				['question_2_0']: {question: page_10.question},
+				['question_10_0']: {question: page_10.question},
+			}
+			localStorage.setItem('quiz_1', JSON.stringify(data));
+			handleClose();
+		} else {
+			setCurrentPage(p => ++p);
+		}
+	};
+
+
+	/*
+	*
+	*  Option Component
+	*
+	*/
 	const OptionHtml = (id, item) => {
 		let option_group = 'question_' + currentPage;
 		let field_name = option_group + '_' + id;
 		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? '' : 'required';
 		return (
-			<label className='quiz-label' style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
+			<label key={id} className='quiz-label'
+			       style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
 				<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
 				     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
 					{item.image && <img src={item.image}/>}
 					<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 					       value={JSON.stringify(item)}
 					       checked={(inputs[field_name] || '') ? "checked" : false}
-					       onChange={handleChange} required={is_required}/>
+					       onChange={handleChange} required={is_required}
+					/>
 					<div className='option-desc'>
 						{item.title && <><b>{item.title}</b>-</>} {item.desc && item.desc}
 					</div>
