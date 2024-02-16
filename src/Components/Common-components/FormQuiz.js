@@ -4,9 +4,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Modal from './Modal';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-
-
-import TickIcon from './TickIcon';
 import {ajax_url, formData} from "../../custom-functions";
 
 const FormQuiz = ({handleClose1}) => {
@@ -109,12 +106,16 @@ const FormQuiz = ({handleClose1}) => {
 		if (event.target.type == 'checkbox') {
 			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
 			if (event.target.classList[1] === 'question_2') {
-				let checked = [].filter.call(checkInput, el => el.checked);
+				let checkedInput = [].filter.call(checkInput, el => el.checked);
 				checkInput.forEach(el => {
-					el.required = event.target.checked === false && checked.length < 1 ? true : false
+					el.required = el.checked === false && checkedInput.length < 1 ? true : false;
+					resetQuantity(el.dataset.id);
 				});
+				if (event.target.checked === true) {
+					handleQuantityChange(event.target.dataset.id, 1);
+				}
 				setInputs(values => ({...values, [name]: event.target.checked === true ? value : false}));
-			} else if (name === 'dimensions' || name === 'terms') {
+			} else if (['dimensions', 'terms'].includes(name)) {
 				setInputs(values => ({...values, [name]: event.target.checked === true}));
 			} else {
 				checkInput.forEach((el) => setInputs(values => ({...values, [el.name]: false})));
@@ -144,11 +145,16 @@ const FormQuiz = ({handleClose1}) => {
 			delete data[key];
 		}
 
-		// add multiple images
-		let photos = photosFile.current.files;
-		for (let x = 0; x < photos.length; x++) {
-			data[`photos[${x}]`] = photos[x];
+		// handle multiple images
+		const multipleFile = (fileObject, name) => {
+			for (let x = 0; x < fileObject.length && x < 3; x++) {
+				data[`${name}[${x}]`] = fileObject[x];
+			}
 		}
+		multipleFile(refFile.current.files, 'ref_file');
+		multipleFile(otherRefFile.current.files, 'other_ref');
+		multipleFile(floorPlanFile.current.files, 'floor_plan');
+		multipleFile(photosFile.current.files, 'photos');
 
 		// generate formData object
 		const form_data = formData({
@@ -158,7 +164,7 @@ const FormQuiz = ({handleClose1}) => {
 			}),
 			['question_4']: JSON.stringify({
 				id: 4,
-				answer: inputs.question_4_0?'Yes':'No',
+				answer: inputs.question_4_0 ? 'Yes' : 'No',
 				details: inputs.details,
 				question: question_4.question
 			}),
@@ -176,29 +182,22 @@ const FormQuiz = ({handleClose1}) => {
 				date: selectedDate, time: inputs.time, question: question_12.question
 			}),
 			email: localStorage.getItem('LBD_email'),
-			ref_file: refFile.current.files[0],
-			other_ref: otherRefFile.current.files[0],
-			floor_plan: floorPlanFile.current.files[0],
 			lp_type: 'LBD',
 		});
-
+		setModal(true);
 		// Send data to server
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
-			.then(data => setModal(true))
+			.then(data => {
+				localStorage.removeItem('LBD_email');
+				window.location = '/our-services/LBD/thank-you';
+			})
 			.catch(error => console.error(error));
 
 	};
 
-	const handleCloseModal = () => {
-		setModal(false)
-		handleClose1();
-	};
 
-
-//calculator price
-
-
+	//calculator price
 	const [items, setItems] = useState([{
 		id: 'item1', name: 'Bedroom', quantity: 0, price: 3499, price1: 'AED 3,499', checked: false
 	}, {
@@ -206,7 +205,6 @@ const FormQuiz = ({handleClose1}) => {
 	}, {id: 'item3', name: 'Office', quantity: 0, price: 3899, price1: 'AED 3,899', checked: false}, {
 		id: 'item4', name: 'Kitchen', quantity: 0, price: 5299, price1: 'AED 5,299', checked: false
 	},
-
 		// Add more items as needed
 	]);
 
@@ -217,6 +215,12 @@ const FormQuiz = ({handleClose1}) => {
 	const handleQuantityChange = (itemId, value) => {
 		setItems(prevItems => prevItems.map(item => item.id === itemId ? {
 			...item, quantity: item.quantity + value
+		} : item));
+	};
+
+	const resetQuantity = (itemId) => {
+		setItems(prevItems => prevItems.map(item => item.id === itemId ? {
+			...item, quantity: 0
 		} : item));
 	};
 
@@ -235,6 +239,12 @@ const FormQuiz = ({handleClose1}) => {
 		</div>);
 	}
 
+	function onSelectHandler(event) {
+		if (event.target.files > 3) {
+			alert('A maximum of 3 files are accepted');
+		}
+	}
+
 	return (<div className='formQuiz'>
 
 		<form method={'post'} className="quiz-form" onSubmit={handleSubmit} encType="multipart/form-data">
@@ -242,7 +252,7 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>1-{question_1.question}</h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={refFile} required/>
+					<input type="file" ref={refFile} accept="image/*,.pdf" multiple={true} onChange={onSelectHandler}/>
 					<textarea name='story' value={inputs.story || ''}
 					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
 
@@ -257,7 +267,8 @@ const FormQuiz = ({handleClose1}) => {
 						item.checked = (inputs['question_2_' + i] || '') ? "checked" : false;
 						return (<div key={item.id} className={item.checked ? "container pink" : 'container white'}>
 							<label className='quiz-label'>
-								<input type="checkbox" class={'checkbox  question_2'} name={'question_2_' + i}
+								<input data-id={item.id} type="checkbox" class={'checkbox  question_2'}
+								       name={'question_2_' + i}
 								       value={JSON.stringify(item)}
 								       checked={item.checked} required={true}
 								       onChange={handleChange}/>
@@ -335,7 +346,7 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>7-{question_7.question}
 				<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
 				<div className='introduction-quiz-form'>
-					<input type='file' ref={otherRefFile}/>
+					<input type="file" ref={otherRefFile} accept="image/*,.pdf" multiple={true}/>
 				</div>
 			</div>
 
@@ -368,7 +379,9 @@ const FormQuiz = ({handleClose1}) => {
 					<small style={{fontWeight: 'normal', fontSize: '16px'}}> (Optional)</small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<input type='file' ref={floorPlanFile}/>
+					<input type="file" ref={floorPlanFile} multiple={true} accept="image/*,.pdf"
+					       onSelect={onSelectHandler}
+					/>
 				</div>
 			</div>
 
@@ -376,7 +389,7 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>11-{question_11.question}</h1>
 
 				<div className='introduction-quiz-form multi-check-text'>
-					<input type="file" name='photos[]' ref={photosFile} multiple={true} required/>
+					<input type="file" name='photos[]' ref={photosFile} multiple={true} accept="image/*,.pdf" required/>
 					<label className='quiz-label'>
 						<div class={(inputs.dimensions || '') ? 'container pink' : 'container white'}>
 							<input type="checkbox" class="checkbox" name='dimensions' value="1"
@@ -435,11 +448,8 @@ const FormQuiz = ({handleClose1}) => {
 			</div>
 
 
-			<Modal className="thank-quiz" show={modal} handleClose={handleCloseModal}
-			       children={<>  <TickIcon/> <h3>Thank you</h3> <p> We can't wait to get started!<br/> You’ll
-				       receive an email shortly with a link for a 50% down payment- once it’s paid, your consultant
-				       will contact you to confirm your appointment date & you’ll be on your way to your dream home!
-			       </p> </>}/>
+			<Modal className="thank-quiz" show={modal} readonly={true}
+			       children={<> <h3>Please wait...</h3> <p> We are saving your details.</p> </>}/>
 		</form>
 
 	</div>)
