@@ -108,8 +108,8 @@ const FormQuiz = ({handleClose1}) => {
 			if (event.target.classList[1] === 'question_2') {
 				let checkedInput = [].filter.call(checkInput, el => el.checked);
 				checkInput.forEach(el => {
-					el.required = el.checked === false && checkedInput.length < 1 ? true : false;
-					resetQuantity(el.dataset.id);
+					el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
+					resetQuantity(event.target.dataset.id);
 				});
 				if (event.target.checked === true) {
 					handleQuantityChange(event.target.dataset.id, 1);
@@ -162,6 +162,7 @@ const FormQuiz = ({handleClose1}) => {
 			['question_1']: JSON.stringify({
 				id: 1, story: inputs.story, phone: inputs.phone, question: question_1.question
 			}),
+			['question_2']: JSON.stringify(items),
 			['question_4']: JSON.stringify({
 				id: 4,
 				answer: inputs.question_4_0 ? 'Yes' : 'No',
@@ -175,13 +176,15 @@ const FormQuiz = ({handleClose1}) => {
 			['question_11']: JSON.stringify({
 				id: 11,
 				dimensions: {length: inputs.length, width: inputs.width},
-				question: question_10.question
+				question: question_11.question
 			}),
 			['question_12']: JSON.stringify({
 				id: 12,
 				date: selectedDate, time: inputs.time, question: question_12.question
 			}),
+			name: localStorage.getItem('LBD_name'),
 			email: localStorage.getItem('LBD_email'),
+			phone: localStorage.getItem('LBD_phone'),
 			lp_type: 'LBD',
 		});
 		setModal(true);
@@ -189,7 +192,9 @@ const FormQuiz = ({handleClose1}) => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
+				localStorage.removeItem('LBD_name');
 				localStorage.removeItem('LBD_email');
+				localStorage.removeItem('LBD_phone');
 				window.location = '/our-services/LBD/thank-you';
 			})
 			.catch(error => console.error(error));
@@ -265,6 +270,7 @@ const FormQuiz = ({handleClose1}) => {
 				<div className='introduction-quiz-form multi-check-text'>
 					{items.map((item, i) => {
 						item.checked = (inputs['question_2_' + i] || '') ? "checked" : false;
+						item.question = question_2.question;
 						return (<div key={item.id} className={item.checked ? "container pink" : 'container white'}>
 							<label className='quiz-label'>
 								<input data-id={item.id} type="checkbox" class={'checkbox  question_2'}
