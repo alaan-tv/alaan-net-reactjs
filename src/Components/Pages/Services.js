@@ -13,6 +13,7 @@ import MagicTouchClinicIcon from '../../Assets/magic-touch-clinic.svg'
 import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
 import LivingIcon from '../../Assets/living-by-design-icon.svg'
 import ContentIcon from '../../Assets/content-logo.svg'
+import PersonalCoachingLogo from '../../Assets/personal-coaching-logo.svg'
 import DocumentMeta from 'react-document-meta';
 
 
@@ -130,6 +131,17 @@ const Services = () => {
               <div className='sevice-more-icon'><Link to="/our-services/CBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
+            <div className='service-card'>
+              <img src={PersonalCoachingLogo} alt='Personal Coaching icon'/>
+              <h2 className='third-heading' >
+              Personal Coaching        </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Discover your life purpose and align it with your career goals on this transformative journey.</p>
+              <div className='sevice-more-icon'><Link to="/our-services/personal-coaching"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
+
             </div>
           
            </div>
