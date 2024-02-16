@@ -10,7 +10,6 @@ const FormQuiz = ({handleClose1}) => {
 	const [modal, setModal] = useState(false);
 	const timeSlots = ['09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM', '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM', '08:00 PM'];
 	const [currentPage, setCurrentPage] = useState(1);
-	const [checkboxStates, setCheckboxStates] = useState({});
 
 	/**
 	 * Object Content
@@ -85,9 +84,6 @@ const FormQuiz = ({handleClose1}) => {
 	const question_11 = {
 		question: `Photos of the space`,
 	};
-	const question_11_1 = {
-		question: `Do you have the dimensions?`,
-	};
 
 	const question_12 = {
 		question: `Preferred day & time of appointment`,
@@ -103,7 +99,7 @@ const FormQuiz = ({handleClose1}) => {
 	const handleChange = (event) => {
 		let name = event.target.name;
 		let value = event.target.value;
-		if (event.target.type == 'checkbox') {
+		if (event.target.type === 'checkbox') {
 			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
 			if (event.target.classList[1] === 'question_2') {
 				let checkedInput = [].filter.call(checkInput, el => el.checked);
@@ -134,7 +130,7 @@ const FormQuiz = ({handleClose1}) => {
 
 		// remove empty element
 		for (const key in data) {
-			if (data[key] == false) {
+			if (data[key] === false) {
 				delete data[key];
 			}
 		}
@@ -159,26 +155,26 @@ const FormQuiz = ({handleClose1}) => {
 		// generate formData object
 		const form_data = formData({
 			...data,
-			['question_1']: JSON.stringify({
+			question_1: JSON.stringify({
 				id: 1, story: inputs.story, phone: inputs.phone, question: question_1.question
 			}),
-			['question_2']: JSON.stringify(items),
-			['question_4']: JSON.stringify({
+			question_2: JSON.stringify(items),
+			question_4: JSON.stringify({
 				id: 4,
 				answer: inputs.question_4_0 ? 'Yes' : 'No',
 				details: inputs.details,
 				question: question_4.question
 			}),
-			['question_7']: JSON.stringify({id: 7, question: question_7.question}),
-			['question_8']: JSON.stringify({id: 8, answer: inputs.primary, question: question_8.question}),
-			['question_9']: JSON.stringify({id: 9, answer: inputs.address, question: question_9.question}),
-			['question_10']: JSON.stringify({id: 10, question: question_10.question}),
-			['question_11']: JSON.stringify({
+			question_7: JSON.stringify({id: 7, question: question_7.question}),
+			question_8: JSON.stringify({id: 8, answer: inputs.primary, question: question_8.question}),
+			question_9: JSON.stringify({id: 9, answer: inputs.address, question: question_9.question}),
+			question_10: JSON.stringify({id: 10, question: question_10.question}),
+			question_11: JSON.stringify({
 				id: 11,
 				dimensions: {length: inputs.length, width: inputs.width},
 				question: question_11.question
 			}),
-			['question_12']: JSON.stringify({
+			question_12: JSON.stringify({
 				id: 12,
 				date: selectedDate, time: inputs.time, question: question_12.question
 			}),
@@ -189,7 +185,7 @@ const FormQuiz = ({handleClose1}) => {
 		});
 		setModal(true);
 		// Send data to server
-		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {method: 'Post', body: form_data})
+		fetch(ajax_url("wp-api/v2/alaan-net/store-lbd-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
 				localStorage.removeItem('LBD_name');

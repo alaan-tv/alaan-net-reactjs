@@ -152,7 +152,7 @@ const Quiz = ({handleClose}) => {
 	const handleChange = (event) => {
 		let name = event.target.name;
 		let value = event.target.value;
-		if (event.target.type == 'checkbox') {
+		if (event.target.type === 'checkbox') {
 			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
 			checkInput.forEach((el) => setInputs(values => ({...values, [el.name]: false})));
 			setInputs(values => ({...values, [name]: JSON.parse(value)}));
@@ -175,7 +175,7 @@ const Quiz = ({handleClose}) => {
 			let data = {...inputs}
 			// remove empty element
 			for (const key in data) {
-				if (data[key] == false) {
+				if (data[key] === false) {
 					delete data[key];
 				}
 			}
@@ -190,13 +190,13 @@ const Quiz = ({handleClose}) => {
 			// generate formData object
 			const form_data = formData({
 				...data,
-				['page_1']: JSON.stringify({id: 1, question: page_1.question}),
-				['page_2']: JSON.stringify({id: 2, question: page_2.question}),
-				['page_10']: JSON.stringify({id: 10, question: page_10.question}),
+				page_1: JSON.stringify({id: 1, question: page_1.question}),
+				page_2: JSON.stringify({id: 2, question: page_2.question}),
+				page_10: JSON.stringify({id: 10, question: page_10.question}),
 				lp_type: 'LBD',
 			});
 			// Send data to server
-			fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {method: 'Post', body: form_data})
+			fetch(ajax_url("wp-api/v2/alaan-net/store-lbd-data.php"), {method: 'Post', body: form_data})
 				.then(response => response.json())
 				.then(data => handleClose())
 				.catch(error => console.error(error));
@@ -221,7 +221,7 @@ const Quiz = ({handleClose}) => {
 		               style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
 			<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
 			     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
-				{item.image && <img src={item.image}/>}
+				{item.image && <img src={item.image} alt={''}/>}
 				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 				       value={JSON.stringify(item)}
 				       checked={(inputs[field_name] || '') ? "checked" : false}

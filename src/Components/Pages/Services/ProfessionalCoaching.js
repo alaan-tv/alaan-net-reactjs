@@ -69,7 +69,7 @@ const ProfessionalCoaching = () => {
 				...inputs,
 				phone: phone,
 				cv: inputFile.current.files[0],
-				lp_type: 'magic-touch-clinic',
+				lp_type: 'professional-coaching',
 				page_url: window.location.origin+window.location.pathname,
 			})
 		})
@@ -79,7 +79,7 @@ const ProfessionalCoaching = () => {
 				setPhone('971');
 				if (data.id) {
 					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
+				}else if (data.payment==='captured') {
 					setModal(true);
 				}
 			}).catch(error => console.error(error));
