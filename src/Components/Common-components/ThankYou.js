@@ -14,6 +14,14 @@ const ThankYou = () => {
 	const get_msg = () => {
 		if (['podcast', 'media', 'be-a-presenter'].includes(params.child)) {
 			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك لتحديد الموعد'};
+		} else if (params.child == 'LBD') {
+			return {
+				title: 'Thank You',
+				content: <>We can't wait to get started!<br/> You’ll receive an email shortly with a link for a 50% down
+					payment-once it’s paid,
+					your consultant will contact you to confirm your appointment date & you’ll be on your way to your
+					dream home!</>
+			}
 		} else {
 			return {title: 'Thank You', content: 'You will be contacted to schedule an appointment.'};
 		}
@@ -21,7 +29,7 @@ const ThankYou = () => {
 
 	useEffect(() => {
 		let captured = getQs('status') === 'captured';
-		if (params.child === 'magic-touch-studio'  && captured) {
+		if (params.child === 'magic-touch-studio' && captured) {
 			window.gtag('event', 'conversion', {
 				'send_to': 'AW-10776634183/rgJWCK71n5AZEMfG2ZIo',
 				'transaction_id': ''

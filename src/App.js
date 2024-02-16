@@ -19,7 +19,7 @@ import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import ContentByDesign from './Components/Pages/Services/ContectByDesign';
 import ThankYou from './Components/Common-components/ThankYou';
 import Page404 from './Components/Common-components/Page404';
-
+import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
 function App() {
 	return (<Router>
 			<ScrollToTop/>
@@ -42,6 +42,8 @@ function App() {
 					<Route path="/our-services/personal-branding" element={<PersonalBranding/>}/>
 					<Route path="/our-services/LBD" element={<LivingByDesign/>}/>
 					<Route path="/our-services/CBD" element={<ContentByDesign/>}/>
+					<Route path="/our-services/personal-coaching" element={<ProfessionalCoaching/>}/>
+
 
 					<Route path="/:parent/:child/thank-you" element={<ThankYou/>}/>
 
