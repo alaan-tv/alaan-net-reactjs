@@ -747,13 +747,14 @@ line-height: normal !important;
   font-weight: 600;
 }
 
- .container.pink {
+ .container.pink, .container.pink label {
   background-color: #DF1995 !important;
   color: #fff
 }
-.container.white {
+.container.white, .container.white label {
   background-color: #fff !important;
-  color: #000
+  color: #000;
+  cursor: pointer;
 }
 .react-datepicker__input-container .react-datepicker__calendar-icon {
   

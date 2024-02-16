@@ -2,14 +2,14 @@
 import React from 'react'
 
 
-export const Modal = ({ handleClose, show, children }) => {
+export const Modal = ({ handleClose, show, children, readonly=false }) => {
     const modelClass = show ? 'modal open' : 'modal';
   return (
       <div className={modelClass}  id="modal-one">
           <div className="modal-bg modal-exit"></div>
           <div className="modal-container">
               {children}
-              <button className="modal-close modal-exit" onClick={handleClose}>&times;</button>
+              {!readonly && <button className="modal-close modal-exit" onClick={handleClose}>&times;</button>}
           </div>
       </div>
   );
