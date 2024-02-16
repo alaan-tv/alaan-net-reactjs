@@ -167,7 +167,9 @@ const Quiz = ({handleClose}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(inputs);
+		localStorage.setItem('LBD_name', inputs.name);
 		localStorage.setItem('LBD_email', inputs.email);
+		localStorage.setItem('LBD_phone', inputs.phone);
 		if (currentPage === 10) {
 			//copy object in new variable
 			let data = {...inputs}
