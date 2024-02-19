@@ -23,7 +23,7 @@ const FormQuiz = ({handleClose1}) => {
 	}
 
 	const question_3 = {
-		question: 'Which colour palette do you most like to decorate your home with?', options: [{
+		question: 'What kind of property is it?', options: [{
 			answer: 'Apartment'
 		}, {
 			answer: 'Villa'
@@ -404,13 +404,13 @@ const FormQuiz = ({handleClose1}) => {
 						<input type='number' placeholder="L" className='dimensions' name='length'
 						       value={inputs.length || ''} required={(inputs.dimensions || '') ? true : false}
 						       readonly={(inputs.dimensions || '') ? false : 'readonly'} min={0}
-						       onChange={handleChange}/><small> Cm</small>
+						       onChange={handleChange}/><small> cm</small>
 						<CloseIcon style={{margin: "10px 20px -5px 20px", fontSize: "18px"}}/>
 						<input type='number' placeholder="W" className='dimensions' name='width'
 						       value={inputs.width || ''} required={(inputs.dimensions || '') ? true : false}
 						       readonly={(inputs.dimensions || '') ? false : 'readonly'} min={0}
 						       onChange={handleChange}/>
-						<small>Cm</small>
+						<small>cm</small>
 					</div>
 				</div>
 			</div>

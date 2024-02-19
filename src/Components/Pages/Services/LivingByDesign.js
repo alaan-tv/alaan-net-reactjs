@@ -119,7 +119,7 @@ const LivingByDesign = () => {
 		{
 			icon: Feature4,
 			title: 'Delivery            ',
-			desc: "Your consultant will meet you at the property to discuss the complete list of all the furniture, furnishings, decor, & fixtures, for you to purchase that'll transform your space; as well as a top-view floor plan which'll highlight how everything will fit and be arranged!            ."
+			desc: "Your consultant will meet you at the property to discuss the complete list of all the furniture, furnishings, decor, & fixtures, for you to purchase that'll transform your space; as well as a top-view floor plan which'll highlight how everything will fit and be arranged!"
 		},
 	];
 
@@ -218,7 +218,7 @@ const LivingByDesign = () => {
 							you were always meant to?</p>
 
 						{/*modal quiz*/}
-						<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take The Quiz
+						<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take The Quiz!
 						</button>
 						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>

@@ -278,34 +278,34 @@ const Quiz = ({handleClose}) => {
 
 			{currentPage === 5 && (<>
 				<h1 className='step-title step-title-light'>{page_5.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form four-images'>
 					{page_5.options.map((item, i) => OptionHtml(i, {...item, id: 5, question: page_5.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 6 && (<>
 				<h1 className='step-title step-title-light'>{page_6.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form four-images without-desc'>
 					{page_6.options.map((item, i) => OptionHtml(i, {...item, id: 6, question: page_6.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{page_7.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form four-images without-desc'>
 					{page_7.options.map((item, i) => OptionHtml(i, {...item, id: 7, question: page_7.question}))}
 				</div>
 			</>)}
 			{currentPage === 8 && (<>
 				<h1 className='step-title step-title-light'>{page_8.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form four-images without-desc'>
 					{page_8.options.map((item, i) => OptionHtml(i, {...item, id: 8, question: page_8.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 9 && (<>
 				<h1 className='step-title step-title-light'>{page_9.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form without-desc'>
 					{page_9.options.map((item, i) => OptionHtml(i, {...item, id: 9, question: page_9.question}))}
 				</div>
 			</>)}

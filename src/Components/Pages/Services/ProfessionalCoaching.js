@@ -16,7 +16,7 @@ import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import Feature5 from '../../../Assets/f5.svg'
-import TrainerImage from '../../../Assets/christin.webp'
+import TrainerImage from '../../../Assets/christin4.webp'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import Modal from "../../Common-components/Modal";
@@ -148,17 +148,13 @@ const ProfessionalCoaching = () => {
 			title: "Sessions",
 			desc: "Six one to one sessions. Each session is 60 minutes.             "
 		},
+		
 		{
 			icon: Feature3,
-			title: "In-Depth Analysis",
-			desc: "Our experts find errors and inconsistencies."
-		},
-		{
-			icon: Feature4,
 			title: "Assessment/Homeworks",
 			desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
 		}, {
-			icon: Feature5,
+			icon: Feature4,
 			title: "Additional Coaching Sessions",
 			desc: "Possibility of adding extra two to four coaching sessions on a discounted rate            "
 		},
@@ -178,6 +174,7 @@ const ProfessionalCoaching = () => {
                    <p className='primary-text light-text'>
                    Al Aan TV in partnership with Christine Seif proudly presents Co-active Coaching as part of its purpose to nurture and develop People. A transformational journey to discover your life purpose and align it with your professional aspirations.
                    </p>
+				   <p className='light-text before-cta'> From purpose to profession: your path to fulfillment</p>
                    <a className='service-cta primary-button' href="#contact-form">Book Now!</a>
                    {/*<div className='home-image-container banner-service-image'>
    <picture>
@@ -225,7 +222,9 @@ const ProfessionalCoaching = () => {
                <div className='left-section-container'>
                    <img src={BookingIcon} alt="Booking Icon"/>
                    <p className='third-heading'>
-                   From purpose to profession: your path to fulfillment
+                   
+ The Coach's mission is to support the Coachee with their own goals by self-discovering and reaching for solutions and answers from within as People are naturally Creative, Resourceful and Whole.
+
                    </p>
                    <h2 className='secondary-heading'> Book Now! </h2>
                </div>

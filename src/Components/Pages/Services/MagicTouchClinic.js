@@ -16,7 +16,7 @@ import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import Feature5 from '../../../Assets/f5.svg'
-import TrainerImage from '../../../Assets/christin.webp'
+import TrainerImage from '../../../Assets/christin4.webp'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import Modal from "../../Common-components/Modal";
