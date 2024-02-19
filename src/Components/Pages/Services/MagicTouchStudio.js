@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import Carousel from 'react-multi-carousel';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
@@ -22,9 +22,9 @@ import TistiImage3 from '../../../Assets/testi-image3.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import TickIcon from '../../Common-components/TickIcon'
-import {ajax_url, formData, getQs,responsive} from "../../../custom-functions";
+import {ajax_url, formData, responsive} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
-import {Feature,Testimonial} from "../../Common-components/Card";
+import {Feature, Testimonial} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 
 const MagicTouchStudio = () => {
@@ -32,12 +32,12 @@ const MagicTouchStudio = () => {
 		title: 'Magic Touch Studio',
 		description: 'I am a description, and I can create multiple tags',
 		meta: {
-		  charset: 'utf-8',
-		  name: {
-			keywords: 'react,meta,document,html,tags'
-		  }
+			charset: 'utf-8',
+			name: {
+				keywords: 'react,meta,document,html,tags'
+			}
 		}
-	  }
+	}
 
 	/**
 	 *
@@ -45,45 +45,36 @@ const MagicTouchStudio = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
+	const page_url = window.location.origin + window.location.pathname;
 
-	useEffect(() => {
-		if (getQs('status') === 'captured') {
-			setModal(true);
-			window.history.pushState({}, document.title, window.location.pathname);
-		}
-	}, []);
 
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
-		setInputs(values => ({...values, [name]: value}))
-	}
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
+
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		window.gtag('event', 'conversion', {'send_to': 'AW-10776634183/wDgKCJiTmZAZEMfG2ZIo'});
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs,
-				phone: phone,
-				lp_type: 'magic-touch-studio',
-				page_url: window.location.origin+window.location.pathname,
+				...inputs, phone: phone, lp_type: 'magic-touch-studio', page_url: page_url,
 			})
 		})
 			.then(response => response.json())
 			.then(data => {
-				setInputs({});
-				setPhone('971');
-				if (data.id) {
-					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
-					setModal(true);
-				}
+				if (data.payment_link) window.location = data.payment_link;
 			}).catch(error => console.error(error));
 	}
+
 	/**
 	 *
 	 *  Send Guidebook Email
@@ -92,13 +83,15 @@ const MagicTouchStudio = () => {
 	const [guideEmail, setGuideEmail] = useState('');
 	const submitGuidBtn = useRef();
 	const [guideModal, setGuideModal] = useState(false);
+	/**
+	 * send data to server to send email
+	 * @param event
+	 */
 	const sendGuideBook = (event) => {
 		event.preventDefault();
 		submitGuidBtn.current.value = 'Please wait...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({
-				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
-			})
+			method: 'Post', body: formData({...inputs, email: guideEmail, lp_type: 'guidebook'})
 		})
 			.then(response => response.json())
 			.then(data => {
@@ -144,11 +137,11 @@ const MagicTouchStudio = () => {
 			image: TistiImage1,
 			name: 'Omar Bin Ashoor',
 			desc: '"I decided to give Magic Touch a try. They transformed my plain CV into an engaging video that truly showcased my skills."'
-		},{
+		}, {
 			image: TistiImage2,
 			name: 'Mohannad Al Wadi',
 			desc: '"Magic Touch proved to be a great investment. The video CV they crafted not only highlighted my qualifications but also showcased my personality."'
-		},{
+		}, {
 			image: TistiImage3,
 			name: 'Nada Ahmed',
 			desc: '"Choosing Magic touch studio was a game-changer for me. The personalized touch they brought to my video CV exceeded my expectations."'
@@ -159,7 +152,7 @@ const MagicTouchStudio = () => {
 	return (
 
 		<div>
-			 <DocumentMeta {...meta} />
+			<DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
@@ -190,7 +183,7 @@ const MagicTouchStudio = () => {
 				<div className='features'>
 					<h2 className='primary-heading'> With only AED 450 you'll get </h2>
 					<div className='features-container'>
-						{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
+						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='video-section'>
@@ -199,13 +192,13 @@ const MagicTouchStudio = () => {
 				<div className='features'>
 					<h2 className='primary-heading'> How it works </h2>
 					<div className='features-container'>
-						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
+						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='testimonials'>
 					<h2 className='primary-heading'> Success seekers love Magic Touch </h2>
 					<div className='testimonials-container'>
-						{testimonialList.map((item,i) => <Testimonial key={i} item={item}/>)}
+						{testimonialList.map((item, i) => <Testimonial key={i} item={item}/>)}
 					</div>
 				</div>
 				<Carousel
@@ -225,7 +218,7 @@ const MagicTouchStudio = () => {
 					dotListClass="custom-dot-list-style"
 					itemClass="carousel-item-padding-40-px"
 				>
-					{testimonialList.map((item,i) => <Testimonial key={i} item={item}/>)}
+					{testimonialList.map((item, i) => <Testimonial key={i} item={item}/>)}
 				</Carousel>
 				<div className='booking' id="contact-form">
 					<div className='left-section'>
@@ -252,15 +245,17 @@ const MagicTouchStudio = () => {
 									       placeholder='Enter you Email' required/>
 								</div>
 								<PhoneInput
-									inputProps={{pattern:".{12,25}",}}
+									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
-									<span id="terms-label">I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange}
+									       checked={(inputs.terms || '') ? "checked" : ''}/>
+									<span id="terms-label">I agree with <Link
+										to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' value="Pay Now!" ref={submitBtn}/>
@@ -299,12 +294,9 @@ const MagicTouchStudio = () => {
 				</div>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<> <TickIcon /> <p>Thank you for sharing your email with us. Your requested file
+			       children={<> <TickIcon/> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)

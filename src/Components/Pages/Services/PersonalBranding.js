@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import {Link} from "react-router-dom";
@@ -15,12 +15,9 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
-import Feature5 from '../../../Assets/f5.svg'
 import TrainerImage from '../../../Assets/solang.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
-import Modal from "../../Common-components/Modal";
-import TickIcon from "../../Common-components/TickIcon";
-import {ajax_url, formData, getQs} from "../../../custom-functions";
+import {ajax_url, formData} from "../../../custom-functions";
 import Advertise from '../../Common-components/Advertise';
 import DocumentMeta from 'react-document-meta';
 import {Feature} from "../../Common-components/Card";
@@ -39,43 +36,31 @@ const PersonalBranding = () => {
 	}
 
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
+	const page_url = window.location.origin + window.location.pathname;
 
-	const handleChange = (event) => {
-		const name = event.target.name ?? '';
-		const value = event.target.value ?? '';
-		setInputs(values => ({...values, [name]: value}))
-	}
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
 
-	useEffect(() => {
-		if (getQs('status') === 'captured') {
-			setModal(true);
-			window.history.pushState({}, document.title, window.location.pathname);
-		}
-	}, []);
-
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs,
-				phone: phone,
-				lp_type: 'personal-branding',
-				page_url: window.location.origin + window.location.pathname,
+				...inputs, phone: phone, lp_type: 'personal-branding', page_url: page_url,
 			})
 		})
 			.then(response => response.json())
 			.then(data => {
-				setInputs({});
-				setPhone('971');
-				if (data.id) {
-					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
-					setModal(true);
-				}
+				if (data.payment_link) window.location = data.payment_link;
 			}).catch(error => console.error(error));
 
 	}
@@ -224,7 +209,8 @@ const PersonalBranding = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange}
+									       checked={(inputs.terms || '') ? "checked" : ''}/>
 									<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
@@ -237,9 +223,6 @@ const PersonalBranding = () => {
 				<Advertise/>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<>  <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
 		</div>
 	)
 }

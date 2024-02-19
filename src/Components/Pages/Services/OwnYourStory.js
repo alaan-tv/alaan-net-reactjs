@@ -40,8 +40,6 @@ const OwnYourStory = () => {
 		setOPen1(!open1);
 	};
 
-	const [visible1, setVisible1] = useState(false);
-
 	/**
 	 *
 	 *  Send From Data
@@ -52,12 +50,16 @@ const OwnYourStory = () => {
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
 
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
-		setInputs(values => ({...values, [name]: value}))
-	}
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
 
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
