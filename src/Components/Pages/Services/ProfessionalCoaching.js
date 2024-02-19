@@ -103,48 +103,6 @@ const ProfessionalCoaching = () => {
 	const youWillGetList = [{
 		icon: FeatureIcon1,
 
-<<<<<<< HEAD
-	const howItWorkList = [
-		{
-			icon: Feature1,
-			title: "Register and Pay",
-			desc: "Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time."
-		},
-		{
-			icon: Feature2,
-			title: "Sessions",
-			desc: "Six one to one sessions. Each session is 60 minutes.             "
-		},
-		
-		{
-			icon: Feature3,
-			title: "Assessment/Homeworks",
-			desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
-		}, {
-			icon: Feature4,
-			title: "Additional Coaching Sessions",
-			desc: "Possibility of adding extra two to four coaching sessions on a discounted rate            "
-		},
-	];
-
-
-  return (
-    <div>
-    <DocumentMeta {...meta} />
-   <div className='hero-section'>
-       <div className='home-container'>
-           <Header/>
-           <div className='home-banner-container banner-service'>
-               <div className='home-text-section'>
-                   <h1 className='primary-heading light-heading'>
-                   Discover and align your life purpose with career goals.                      </h1>
-                   <p className='primary-text light-text'>
-                   Al Aan TV in partnership with Christine Seif proudly presents Co-active Coaching as part of its purpose to nurture and develop People. A transformational journey to discover your life purpose and align it with your professional aspirations.
-                   </p>
-				   <p className='light-text before-cta'> From purpose to profession: your path to fulfillment</p>
-                   <a className='service-cta primary-button' href="#contact-form">Book Now!</a>
-                   {/*<div className='home-image-container banner-service-image'>
-=======
 		desc: "6 Coaching sessions online/face-to-face            "
 	}, {
 		icon: FeatureIcon2,
@@ -164,9 +122,9 @@ const ProfessionalCoaching = () => {
 		desc: "Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time."
 	}, {
 		icon: Feature2, title: "Sessions", desc: "Six one to one sessions. Each session is 60 minutes.             "
-	}, {
-		icon: Feature3, title: "In-Depth Analysis", desc: "Our experts find errors and inconsistencies."
-	}, {
+	}, 
+	
+	 {
 		icon: Feature4,
 		title: "Assessment/Homeworks",
 		desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
@@ -193,82 +151,12 @@ const ProfessionalCoaching = () => {
 						</p>
 						<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
 						{/*<div className='home-image-container banner-service-image'>
->>>>>>> 777a1cbf1216ad5a240cf21721e8d9ab531d8e3e
    <picture>
 <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
 <source media='(min-width: 768px)' srcSet={MagicStudioVideo} />
 <img src={MagicStudioVideo} className='banner-image' alt='hero' />
 </picture>
 </div>*/}
-<<<<<<< HEAD
-               </div>
-           </div>
-       </div>
-   </div>
-   <div className='home-container'>
-       <div className='features'>
-           <h2 className='primary-heading'>
-           With ONLY AED 3,500 what to expect
-           </h2>
-           <div className='features-container'>
-               {youWillGetList.map((item) => <Feature item={item}/>)}
-           </div>
-       </div>
-       <div className='trainers-services trainers'>
-           <h2 className='primary-heading'> Our Expert </h2>
-           <div className='trainers-container'>
-               <div className='trainer-image'>
-                   <img src={TrainerImage} alt='trainer'/>
-                   <h4>Christine Maurice</h4>
-                   <a href='https://www.linkedin.com/in/christine-maurice-seif'><p><LinkedInIcon/></p></a>
-               </div>
-               <div className='trainer-desc'>
-                   <p>Christine is a seasoned People and Culture leader with a proven track record of 12 years in talent acquisition, leadership coaching, and stakeholder support. Her expertise goes beyond Human Resources. Passionate about bridging the career gap, She hosts the "Career Fit with Christine" podcast, empowering individuals to find their dream job.</p>
-                   <p>Her strengths are fostering inclusion, developing talent, generating creative ideas, and spreading positivity. Christine holds a BSc in Engineering, a post-graduate executive management diploma, and a certified human resources professional from HRCI. She is in the process of becoming a Certified Co-Active Professional Coach.
-</p>
-               </div>
-           </div>
-       </div>
-       <div className='features'>
-           <h2 className='primary-heading'> How it works </h2>
-           <div className='features-container'>
-               {howItWorkList.map((item) => <Feature item={item}/>)}
-           </div>
-       </div>
-       <div className='booking clinic' id='contact-form'>
-           <div className='left-section'>
-               <div className='left-section-container'>
-                   <img src={BookingIcon} alt="Booking Icon"/>
-                   <p className='third-heading'>
-                   
- The Coach's mission is to support the Coachee with their own goals by self-discovering and reaching for solutions and answers from within as People are naturally Creative, Resourceful and Whole.
-
-                   </p>
-                   <h2 className='secondary-heading'> Book Now! </h2>
-               </div>
-           </div>
-           <div className='right-section'>
-               <div className='form-section' id='contact-form'>
-                   <form action='' onSubmit={handleSubmit} encType="multipart/form-data">
-                       <div className="input-wrapper">
-                           <label for="first">FULL NAME</label>
-                           <input type="text" name='name' value={inputs.name || ""}
-                                  onChange={handleChange} placeholder='Enter you name' required />
-                       </div>
-                       <div className="input-wrapper">
-                           <label for="first">EMAIL</label>
-                           <input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
-                                  placeholder='Enter you Email' required />
-                       </div>
-                       <PhoneInput
-                           inputProps={{pattern:".{12,25}",}}
-                           specialLabel="PHONE NUMBER"
-                           placeholder="Enter phone number"
-                           value={phone}
-                           country={'ae'}
-                           onChange={setPhone} />
-                       
-=======
 					</div>
 				</div>
 			</div>
@@ -339,7 +227,6 @@ const ProfessionalCoaching = () => {
 								value={phone}
 								country={'ae'}
 								onChange={setPhone}/>
->>>>>>> 777a1cbf1216ad5a240cf21721e8d9ab531d8e3e
 
 
 							<div className="input-wrapper">
