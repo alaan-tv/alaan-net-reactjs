@@ -240,10 +240,33 @@ const FormQuiz = ({handleClose1}) => {
 		</div>);
 	}
 
-	function onSelectHandler(event) {
-		if (event.target.files > 3) {
-			alert('A maximum of 3 files are accepted');
+	const inputFileHandler = (event) => {
+		const attachments = event.target.files;
+		const fileBuffer = new DataTransfer();
+		let fileLimit = 16000;
+		// append the file list to an array iteratively
+		for (let i = 0; i < attachments.length; i++) {
+			// Exclude file if more then 3
+			if (i < 3) {
+				let fileSize = attachments[i]['size'];
+				let fileSizeInKB = (fileSize / 1024);
+				if (fileSizeInKB > fileLimit) {
+					alert("File size more than 16MB will be ignored.");
+				} else {
+					fileBuffer.items.add(attachments[i]);
+				}
+			} else {
+				alert('A maximum of 3 files are accepted');
+				break;
+			}
 		}
+		// Assign buffer to file input
+		event.target.files = fileBuffer.files;
+	}
+
+	const invalidInput = (event) => {
+		//alert(event.type.isValid);
+		//event.target.style.outline = event.target.value==''?'1px solid red':'';
 	}
 
 	return (<div className='formQuiz'>
@@ -253,8 +276,8 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>1-{question_1.question}</h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={refFile} accept="image/*,.pdf" multiple={true} onChange={onSelectHandler}/>
-					<textarea name='story' value={inputs.story || ''}
+					<input type="file" ref={refFile} accept="image/*,.pdf" multiple={true} onChange={inputFileHandler}/>
+					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput}
 					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
 
 				</div>
@@ -348,7 +371,7 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>7-{question_7.question}
 				<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={otherRefFile} accept="image/*,.pdf" multiple={true}/>
+					<input type="file" ref={otherRefFile} accept="image/*,.pdf" multiple={true} onChange={inputFileHandler} />
 				</div>
 			</div>
 
@@ -381,8 +404,7 @@ const FormQuiz = ({handleClose1}) => {
 					<small style={{fontWeight: 'normal', fontSize: '16px'}}> (Optional)</small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={floorPlanFile} multiple={true} accept="image/*,.pdf"
-					       onSelect={onSelectHandler}
+					<input type="file" ref={floorPlanFile} multiple={true} accept="image/*,.pdf" onChange={inputFileHandler}
 					/>
 				</div>
 			</div>
@@ -391,7 +413,7 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>11-{question_11.question}</h1>
 
 				<div className='introduction-quiz-form multi-check-text'>
-					<input type="file" name='photos[]' ref={photosFile} multiple={true} accept="image/*,.pdf" required/>
+					<input type="file" name='photos[]' ref={photosFile} multiple={true} accept="image/*,.pdf" onChange={inputFileHandler} required/>
 					<label className='quiz-label'>
 						<div class={(inputs.dimensions || '') ? 'container pink' : 'container white'}>
 							<input type="checkbox" class="checkbox" name='dimensions' value="1"
