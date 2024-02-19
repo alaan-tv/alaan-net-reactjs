@@ -1,12 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react'
-import { Link } from "react-router-dom";
+import React, {useRef, useState} from 'react'
+import {Link} from "react-router-dom";
 
 import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-image.png'
 import EventIcon from '@mui/icons-material/Event'
 import WorkshopFeatureImageIcon from '../../../Assets/workshop-feature-image.svg'
-import video from '../../../Assets/promo.mp4'
 import TrainerImage from '../../../Assets/rania.webp'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import PhoneInput from 'react-phone-input-2'
@@ -14,9 +13,7 @@ import 'react-phone-input-2/lib/style.css'
 import BookingIcon from '../../../Assets/booking2.svg'
 import Footer from '../../Common-components/ArabicFooter'
 import Advertise from '../../Common-components/ArabicAdvertise'
-import {ajax_url, formData, getQs} from "../../../custom-functions";
-import TickIcon from "../../Common-components/TickIcon";
-import Modal from "../../Common-components/Modal";
+import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 
@@ -25,55 +22,45 @@ const Media = () => {
 		title: 'ورشات الميديا',
 		description: 'I am a description, and I can create multiple tags',
 		meta: {
-		  charset: 'utf-8',
-		  name: {
-			keywords: 'react,meta,document,html,tags'
-		  }
+			charset: 'utf-8',
+			name: {
+				keywords: 'react,meta,document,html,tags'
+			}
 		}
-	  }
+	}
+
 	/**
 	 *
 	 *  Send From Data
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
+	const page_url = window.location.origin + window.location.pathname;
 
-	useEffect(() => {
-		if (getQs('status') === 'captured') {
-			setModal(true);
-			window.history.pushState({}, document.title, window.location.pathname);
-		}
-	}, []);
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
 
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
-		setInputs(values => ({...values, [name]: value}))
-	}
 
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs,
-				phone: phone,
-				lp_type: 'media-workshop',
-				page_url: window.location.origin + window.location.pathname,
+				...inputs, phone: phone, lp_type: 'media-workshop', page_url: page_url,
 			})
 		})
 			.then(response => response.json())
 			.then(data => {
-				setInputs({});
-				setPhone('971');
-				if (data.id) {
-					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
-					setModal(true);
-				}
+				if (data.payment_link) window.location = data.payment_link;
 			}).catch(error => console.error(error));
 
 	}
@@ -85,15 +72,15 @@ const Media = () => {
 	const youWillGetList = [
 		{
 			icon: WorkshopFeatureImageIcon,
-			title:"التدريب المرن",
+			title: "التدريب المرن",
 			desc: "دوراتنا التدريبية تتوافق مع نمط حياتك المهنية و الدراسية. دوراتنا الحضورية أو عبر الإنترنت مخصصة لتتلاءم مع جدولك الزمني."
-		},{
+		}, {
 			icon: WorkshopFeatureImageIcon,
-			title:"الخبرة الإعلامية",
+			title: "الخبرة الإعلامية",
 			desc: "استفد من تجارب التغطية الميدانية و حكاياتها بينما يقودك صحفيون ذو خبرة من تلفزيون الآن في رحلتك."
-		},{
+		}, {
 			icon: WorkshopFeatureImageIcon,
-			title:"الشهادة",
+			title: "الشهادة",
 			desc: "احصل على شهادة معتمدة من KDHA وهي أكثر من مجرد شهادة ورقية، إنها هويتك المهنية الجديدة."
 		},
 
@@ -109,7 +96,7 @@ const Media = () => {
 
 	return (
 		<div className='arabic-page'>
-			 <DocumentMeta {...meta} />
+			<DocumentMeta {...meta} />
 			<div className='home-container'>
 				<Header/>
 				<div className="home-banner-container">
@@ -119,7 +106,9 @@ const Media = () => {
 							<p>ورشة تدريب إعلامية تساعدك على صقل موهبتك وتطوير مهارتك في عالم الإعلام والميديا
 								الحديثة.</p>
 							<div className='workshop-date'><EventIcon/> <p>تاريخ الورشة: 4-6 ديسمبر </p></div>
-							<a href='#contact-form'><button className='cta-button'>احجز الآن</button></a>
+							<a href='#contact-form'>
+								<button className='cta-button'>احجز الآن</button>
+							</a>
 						</div>
 						<div className='workshop-image'>
 							<img src={WorkshopImage} alt='Workshop'/>
@@ -140,7 +129,7 @@ const Media = () => {
 					<div className='workshop-features'>
 						<h2 className='light-heading'>ماذا سوف تستفيد من ورشات العمل الإعلامية معنا؟</h2>
 						<div className='features'>
-							{youWillGetList.map((item,i) => <Feature key={i} item={item}/>)}
+							{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 						</div>
 					</div>
 				</div>
@@ -152,7 +141,7 @@ const Media = () => {
 						مقابل 3,500 درهم فقط،
 						سوف تحصل على التالي: </h2>
 					<div className='features'>
-						{howItWorkList.map((item,i) => <Feature key={i} item={item}/>)}
+						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 				</div>
 				<div className='trainers workshops-trainers'>
@@ -201,15 +190,16 @@ const Media = () => {
 									       placeholder='أدخل عنوان بريدك الالكتروني' required/>
 								</div>
 								<PhoneInput
-									inputProps={{pattern:".{12,25}",}}
+									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
-										<span>أنا أوافق على   <Link to='/terms'> الشروط و الأحكام </Link> </span>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange}
+									       checked={(inputs.terms || '') ? "checked" : ''}/>
+									<span>أنا أوافق على   <Link to='/terms'> الشروط و الأحكام </Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' ref={submitBtn} value="متابعة"/>
@@ -221,8 +211,7 @@ const Media = () => {
 				<Advertise/>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<>  <TickIcon /> <h3>شكرا لك</h3><p>سوف يتم التواصل معك لتحديد الموعد</p> </>}/>
+
 		</div>
 	)
 }

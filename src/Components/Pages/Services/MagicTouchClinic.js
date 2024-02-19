@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -21,7 +21,7 @@ import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
 import Modal from "../../Common-components/Modal";
 import TickIcon from "../../Common-components/TickIcon";
-import {ajax_url, formData, getQs} from "../../../custom-functions";
+import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 
@@ -30,12 +30,12 @@ const MagicTouchClinic = () => {
 		title: 'Magic Touch Clinic',
 		description: 'I am a description, and I can create multiple tags',
 		meta: {
-		  charset: 'utf-8',
-		  name: {
-			keywords: 'react,meta,document,html,tags'
-		  }
+			charset: 'utf-8',
+			name: {
+				keywords: 'react,meta,document,html,tags'
+			}
 		}
-	  }
+	}
 
 	/**
 	 *
@@ -43,24 +43,21 @@ const MagicTouchClinic = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const inputFile = useRef(null);
 	const submitBtn = useRef(null);
+	const page_url = window.location.origin + window.location.pathname;
 
-	const handleChange = (event) => {
-		const name = event.target.name??'';
-		const value = event.target.value??'';
-		setInputs(values => ({...values, [name]: value}))
-	}
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
 
-	useEffect(() => {
-		if (getQs('status') === 'captured') {
-			setModal(true);
-			window.history.pushState({}, document.title, window.location.pathname);
-		}
-	}, []);
-
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
@@ -70,18 +67,12 @@ const MagicTouchClinic = () => {
 				phone: phone,
 				cv: inputFile.current.files[0],
 				lp_type: 'magic-touch-clinic',
-				page_url: window.location.origin+window.location.pathname,
+				page_url: page_url,
 			})
 		})
 			.then(response => response.json())
 			.then(data => {
-				setInputs({});
-				setPhone('971');
-				if (data.id) {
-					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
-					setModal(true);
-				}
+				if (data.payment_link) window.location = data.payment_link;
 			}).catch(error => console.error(error));
 
 	}
@@ -93,13 +84,16 @@ const MagicTouchClinic = () => {
 	const [guideEmail, setGuideEmail] = useState('');
 	const submitGuidBtn = useRef();
 	const [guideModal, setGuideModal] = useState(false);
+
+	/**
+	 * send data to server to send email
+	 * @param event
+	 */
 	const sendGuideBook = (event) => {
 		event.preventDefault();
 		submitGuidBtn.current.value = 'Please wait...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({
-				...inputs, email: guideEmail, lp_type: 'guidebook', title: 'Guidebook', email_subject: 'Guidebook',
-			})
+			method: 'Post', body: formData({...inputs, email: guideEmail, lp_type: 'guidebook',}),
 		})
 			.then(response => response.json())
 			.then(data => {
@@ -127,7 +121,8 @@ const MagicTouchClinic = () => {
 		},
 		{
 			icon: FeatureIcon3,
-			title: "Pro Advice", desc: "Benefit from our experts' recommendations and tips."},
+			title: "Pro Advice", desc: "Benefit from our experts' recommendations and tips."
+		},
 		{
 			icon: FeatureIcon4,
 			title: "Guidance Just for You",
@@ -165,7 +160,7 @@ const MagicTouchClinic = () => {
 
 	return (
 		<div>
-			 <DocumentMeta {...meta} />
+			<DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
@@ -240,31 +235,35 @@ const MagicTouchClinic = () => {
 								<div className="input-wrapper">
 									<label for="first">FULL NAME</label>
 									<input type="text" name='name' value={inputs.name || ""}
-									       onChange={handleChange} placeholder='Enter you name' required />
+									       onChange={handleChange} placeholder='Enter you name' required/>
 								</div>
 								<div className="input-wrapper">
 									<label for="first">EMAIL</label>
 									<input type="email" name='email' value={inputs.email || ""} onChange={handleChange}
-									       placeholder='Enter you Email' required />
+									       placeholder='Enter you Email' required/>
 								</div>
 								<PhoneInput
-									inputProps={{pattern:".{12,25}",}}
+									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
 									country={'ae'}
-									onChange={setPhone} />
+									onChange={setPhone}/>
 								<div className="input-wrapper">
 									<label for="first">LINKEDIN PROFILE</label>
-									<input type="text" name="linked_in" value={inputs.linked_in || ""} onChange={handleChange} placeholder='Enter you linkedin profile' required/>
+									<input type="text" name="linked_in" value={inputs.linked_in || ""}
+									       onChange={handleChange} placeholder='Enter you linkedin profile' required/>
 								</div>
 								<div className="input-wrapper">
 									<label for="first">UPLOUD CV</label>
-									<input type="file" name="cv" value={inputs.cv || ""} onChange={handleChange} placeholder='Uploud your CV' ref={inputFile} accept="application/msword,application/pdf" required/>
+									<input type="file" name="cv" value={inputs.cv || ""} onChange={handleChange}
+									       placeholder='Uploud your CV' ref={inputFile}
+									       accept="application/msword,application/pdf" required/>
 								</div>
 								<div className="input-wrapper">
-									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
-										<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange}
+									       checked={(inputs.terms || '') ? "checked" : ''}/>
+									<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
 									<input type='submit' ref={submitBtn} value="Pay Now!"/>
@@ -300,12 +299,9 @@ const MagicTouchClinic = () => {
 				</div>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<>  <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
 
 			<Modal show={guideModal} handleClose={() => setGuideModal(!guideModal)}
-			       children={<>  <TickIcon /> <p>Thank you for sharing your email with us. Your requested file
+			       children={<>  <TickIcon/> <p>Thank you for sharing your email with us. Your requested file
 				       is on its way to your inbox. Please check your email shortly.</p> </>}/>
 		</div>
 	)

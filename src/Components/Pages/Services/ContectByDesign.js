@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
+import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
@@ -16,9 +16,8 @@ import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import ContentLogo from '../../../Assets/CBD-white2.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
-import AboutImage from '../../../Assets/content-about-image.png'
 import TickIcon from '../../Common-components/TickIcon'
-import {ajax_url, formData, handleSubmitFn} from "../../../custom-functions";
+import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
@@ -48,11 +47,16 @@ const ContentByDesign = () => {
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
 
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
-		setInputs(values => ({...values, [name]: value}))
-	}
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
+
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
@@ -71,9 +75,21 @@ const ContentByDesign = () => {
 
 
 	const youWillGetList = [
-		{icon: FeatureIcon1,title: "Branding & Design Consultation", desc: 'Our branding experts will work with you to craft an entirely unique design theme that tells your viewers everything they need to know about your channel at a single glance.        '},
-		{icon: FeatureIcon2,title: "Comprehensive Shopping List", desc: 'Everything you need in a single document, plain & simple- to build a set that’s far from either.'},
-		{icon: FeatureIcon3,title: "Organizational CG Render", desc: 'A CG render of your new set so you can: \r\n(A) Arrange everything \r\n(B) Fantasize about your future content more accurately.'},
+		{
+			icon: FeatureIcon1,
+			title: "Branding & Design Consultation",
+			desc: 'Our branding experts will work with you to craft an entirely unique design theme that tells your viewers everything they need to know about your channel at a single glance.        '
+		},
+		{
+			icon: FeatureIcon2,
+			title: "Comprehensive Shopping List",
+			desc: 'Everything you need in a single document, plain & simple- to build a set that’s far from either.'
+		},
+		{
+			icon: FeatureIcon3,
+			title: "Organizational CG Render",
+			desc: 'A CG render of your new set so you can: \r\n(A) Arrange everything \r\n(B) Fantasize about your future content more accurately.'
+		},
 	];
 
 	const howItWorkList = [
@@ -128,9 +144,10 @@ const ContentByDesign = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole other <br />level by giving you:
+					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole
+						other <br/>level by giving you:
 
- </h2>
+					</h2>
 					<div className='features-container'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
@@ -138,22 +155,31 @@ const ContentByDesign = () => {
 				<div className='about-section'>
 					<h2 className='primary-heading'> Same great content, <br/> just unbelievably better packaged.</h2>
 					<div className='about-container'>
-                    <div className='trainers-container'>
-						<div className='trainer-image'>
-						{ /*<img src={AboutImage} alt='about-image'/> */}
-								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5" transition='.5s ease-in-out'
-      itemOne={<ReactCompareSliderImage  src={BeforeContent} srcSet={BeforeContent} alt="Image one" />}
-      itemTwo={<ReactCompareSliderImage  src={AfterContent} srcSet={AfterContent} alt="Image two" />}
-    />
-	<div className='before-state'> Before</div>
-		<div className='after-state'> After</div>
-	
-							
-							
-						</div>
-						<div className='trainer-desc'>
-							<p>
-                            First impressions matter. Visuals matter.</p> <p>Your set is the first thing that speaks for your channel before you do</p> <p> No matter how excellent your content is, if a viewer doesn't immediately think you're able to deliver it, they're not going to stick around long enough to find out.</p> <p> We don't want that to ever happen to you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br />you nail it in 1.</b></p>
+						<div className='trainers-container'>
+							<div className='trainer-image'>
+								{ /*<img src={AboutImage} alt='about-image'/> */}
+								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5"
+								                    transition='.5s ease-in-out'
+								                    itemOne={<ReactCompareSliderImage src={BeforeContent}
+								                                                      srcSet={BeforeContent}
+								                                                      alt="Image one"/>}
+								                    itemTwo={<ReactCompareSliderImage src={AfterContent}
+								                                                      srcSet={AfterContent}
+								                                                      alt="Image two"/>}
+								/>
+								<div className='before-state'> Before</div>
+								<div className='after-state'> After</div>
+
+
+							</div>
+							<div className='trainer-desc'>
+								<p>
+									First impressions matter. Visuals matter.</p> <p>Your set is the first thing that
+								speaks for your channel before you do</p> <p> No matter how excellent your content is,
+								if a viewer doesn't immediately think you're able to deliver it, they're not going to
+								stick around long enough to find out.</p> <p> We don't want that to ever happen to
+								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br/>you
+								nail it in 1.</b></p>
 
 							</div>
 						</div>

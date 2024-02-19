@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import 'react-multi-carousel/lib/styles.css';
 import {Link} from "react-router-dom";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -13,13 +13,9 @@ import FeatureIcon4 from '../../../Assets/feature-icon4.svg'
 import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
-import Feature4 from '../../../Assets/f4.svg'
-import Feature5 from '../../../Assets/f5.svg'
 import TrainerImage from '../../../Assets/solang.svg'
 import BookingIcon from '../../../Assets/book-icon.svg'
-import Modal from "../../Common-components/Modal";
-import TickIcon from "../../Common-components/TickIcon";
-import {ajax_url, formData, getQs} from "../../../custom-functions";
+import {ajax_url, formData} from "../../../custom-functions";
 import Advertise from '../../Common-components/Advertise';
 import DocumentMeta from 'react-document-meta';
 import {Feature} from "../../Common-components/Card";
@@ -38,43 +34,31 @@ const PersonalBranding = () => {
 	}
 
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
+	const page_url = window.location.origin + window.location.pathname;
 
-	const handleChange = (event) => {
-		const name = event.target.name ?? '';
-		const value = event.target.value ?? '';
-		setInputs(values => ({...values, [name]: value}))
-	}
+	/**
+	 * Get & set input field values
+	 * @param e
+	 */
+	const handleChange = (e) => setInputs(v => ({...v, [e.target.name ?? '']: e.target.value ?? ''}));
 
-	useEffect(() => {
-		if (getQs('status') === 'captured') {
-			setModal(true);
-			window.history.pushState({}, document.title, window.location.pathname);
-		}
-	}, []);
-
+	/**
+	 * send data to store on server
+	 * @param event
+	 */
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs,
-				phone: phone,
-				lp_type: 'workshop-personal-branding',
-				page_url: window.location.origin + window.location.pathname,
-			})
+				...inputs, phone: phone, lp_type: 'workshop-personal-branding', page_url: page_url,
+			}),
 		})
 			.then(response => response.json())
 			.then(data => {
-				setInputs({});
-				setPhone('971');
-				if (data.id) {
-					window.location = data.payment_link;
-				}else if (data.payment=='captured') {
-					setModal(true);
-				}
+				if (data.payment_link) window.location = data.payment_link;
 			}).catch(error => console.error(error));
 
 	}
@@ -84,22 +68,22 @@ const PersonalBranding = () => {
 	const youWillGetList = [
 		{
 			icon: FeatureIcon1,
-            title: "Craft a brief",
+			title: "Craft a brief",
 			desc: "impactful three-minute presentation for introducing yourself professionally to potential employers or in various social settings."
 		},
 		{
 			icon: FeatureIcon2,
-            title: "Help you to",
+			title: "Help you to",
 			desc: "Identify and Articulate what differentiates you from the rest"
 		},
 		{
 			icon: FeatureIcon3,
-            title: "Learn",
+			title: "Learn",
 			desc: "Etiquette & Protocol and how to apply the right behaviour in different situations."
 		},
 		{
 			icon: FeatureIcon4,
-            title: "Focus on your online presence and understand its impact to establish a strong online identity",
+			title: "Focus on your online presence and understand its impact to establish a strong online identity",
 			desc: "your digital footprint."
 		},
 	];
@@ -120,7 +104,7 @@ const PersonalBranding = () => {
 			title: "Public",
 			desc: "Group workshop"
 		},
-		
+
 	];
 
 
@@ -133,11 +117,13 @@ const PersonalBranding = () => {
 					<div className='home-banner-container banner-service'>
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
-                            Deadly Mistakes and Golden Opportunities for Your Personal Brand
+								Deadly Mistakes and Golden Opportunities for Your Personal Brand
 							</h1>
 							<p className='primary-text light-text'>
-                            In an era where people’s attention spans are getting shorter by the minute, the need to make an impression is more important than ever. And the best way to do this is by creating a solid and memorable brand identity.
-<br/><b>BOOK THIS SESSION TODAY TO STAND OUT FROM THE CROW</b>
+								In an era where people’s attention spans are getting shorter by the minute, the need to
+								make an impression is more important than ever. And the best way to do this is by
+								creating a solid and memorable brand identity.
+								<br/><b>BOOK THIS SESSION TODAY TO STAND OUT FROM THE CROW</b>
 
 							</p>
 							<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
@@ -155,7 +141,7 @@ const PersonalBranding = () => {
 			<div className='home-container'>
 				<div className='features'>
 					<h2 className='primary-heading'>
-                    With ONLY AED 1895  you will get 
+						With ONLY AED 1895 you will get
 
 					</h2>
 					<div className='features-container'>
@@ -222,7 +208,8 @@ const PersonalBranding = () => {
 									country={'ae'}
 									onChange={setPhone}/>
 								<div className="input-wrapper">
-									<input name="terms" type='checkbox' required value="1" onChange={handleChange} checked={ (inputs.terms || '') ? "checked" : '' }  />
+									<input name="terms" type='checkbox' required value="1" onChange={handleChange}
+									       checked={(inputs.terms || '') ? "checked" : ''}/>
 									<span>I agree with <Link to='/terms'> Terms & Conditions</Link> </span>
 								</div>
 								<div className="input-wrapper">
@@ -235,9 +222,7 @@ const PersonalBranding = () => {
 				<Advertise/>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<>  <TickIcon /> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
+
 		</div>
 	)
 }
