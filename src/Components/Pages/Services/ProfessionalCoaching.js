@@ -122,9 +122,9 @@ const ProfessionalCoaching = () => {
 		desc: "Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time."
 	}, {
 		icon: Feature2, title: "Sessions", desc: "Six one to one sessions. Each session is 60 minutes.             "
-	}, {
-		icon: Feature3, title: "In-Depth Analysis", desc: "Our experts find errors and inconsistencies."
-	}, {
+	}, 
+	
+	 {
 		icon: Feature4,
 		title: "Assessment/Homeworks",
 		desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
@@ -149,6 +149,7 @@ const ProfessionalCoaching = () => {
 							of its purpose to nurture and develop People. A transformational journey to discover
 							your life purpose and align it with your professional aspirations.
 						</p>
+						<p className='light-text before-cta'>From purpose to profession: your path to fulfillment</p>
 						<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
 						{/*<div className='home-image-container banner-service-image'>
    <picture>
@@ -202,7 +203,7 @@ const ProfessionalCoaching = () => {
 					<div className='left-section-container'>
 						<img src={BookingIcon} alt="Booking Icon"/>
 						<p className='third-heading'>
-							From purpose to profession: your path to fulfillment
+						The Coach's mission is to support the Coachee with their own goals by self-discovering and reaching for solutions and answers from within as People are naturally Creative, Resourceful and Whole.
 						</p>
 						<h2 className='secondary-heading'> Book Now! </h2>
 					</div>
