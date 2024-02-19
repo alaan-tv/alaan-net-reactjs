@@ -446,6 +446,7 @@ const FormQuiz = ({handleClose1}) => {
 						onChange={(date) => setSelectedDate(date)}
 						filterDate={(date) => date.getDay() !== 0}
 						placeholderText="Please select a date"
+						minDate={new Date()}
 						required
 					/>
 					<select id="timeSlot" name='time' value={inputs.time || ''}
