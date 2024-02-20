@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
-import TickIcon from './TickIcon'
+import TickIcon from '../Common-components/TickIcon'
 import {Link, useParams} from 'react-router-dom'
-import Header from './Header'
-import Footer from './Footer'
-import Advertise from './Advertise'
+import Header from '../Common-components/Header'
+import Footer from '../Common-components/Footer'
+import Advertise from '../Common-components/Advertise'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import BannerBackground from '../../Assets/background.png'
 import {getQs} from "../../custom-functions";
