@@ -6,7 +6,6 @@ import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import BannerBackground from '../../Assets/background.png'
-import {getQs} from "../../custom-functions";
 
 const ThankYou = () => {
 	const params = useParams();
@@ -34,10 +33,7 @@ const ThankYou = () => {
 			'be-a-presenter': 'AW-10776634183/v72CCLeT4pMZEMfG2ZIo',
 			'personal-branding': 'AW-10776634183/w1dDCOjh3JMZEMfG2ZIo',
 		};
-		if (getQs('status') === 'captured') {
-			window.gtag('event', 'conversion', {'send_to': conversionID[params.child], 'transaction_id': ''});
-		}
-		window.history.pushState({}, document.title, window.location.pathname);
+		window.gtag('event', 'conversion', {'send_to': conversionID[params.child], 'transaction_id': ''});
 	}, [params.child]);
 
 	return (
