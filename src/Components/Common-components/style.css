@@ -290,7 +290,7 @@
       }
       .quiz-label{
         flex: 1 1 0%;
-        min-width: 40%;
+        min-width: 100% !important;
         font-size:14px !important;
         background-color: transparent !important;
       }
@@ -848,6 +848,12 @@ min-width: 40%
   }
   .images-form .container {
 max-width: 100% !important;
+display: flex;
+align-items: center;
+
+  }
+  .images-form .container img{
+    width: 50%;
   }
   .multi-check-text .option-desc{
     font-size: 14px;
@@ -868,11 +874,11 @@ max-width: 100% !important;
     max-width: 350px;
   }
   .images-form .container.white{
-    padding: 5px 5px 0px 5px;
+    padding: 5px;
     background-color: transparent !important;
   }
   .images-form .container.pink{
-    padding: 5px 5px 0px 5px;  }
+    padding: 5px;  }
   .white img{
     border-radius: 20px;
   }
@@ -882,6 +888,14 @@ max-width: 100% !important;
   }
   .without-desc .option-desc{
     display: none;
+  }
+ 
+  
+  .without-desc .quiz-label{
+    min-width: 40% !important;
+  }
+  .without-desc .container img{
+    width: 100% !important;
   }
   .multi-check-text .option-desc{
     padding: 0px;
