@@ -28,12 +28,14 @@ const ThankYou = () => {
 	};
 
 	useEffect(() => {
-		let captured = getQs('status') === 'captured';
-		if (params.child === 'magic-touch-studio' && captured) {
-			window.gtag('event', 'conversion', {
-				'send_to': 'AW-10776634183/rgJWCK71n5AZEMfG2ZIo',
-				'transaction_id': ''
-			});
+		const conversionID = {
+			['magic-touch-studio']: 'AW-10776634183/rgJWCK71n5AZEMfG2ZIo',
+			['magic-touch-clinic']: 'AW-10776634183/n7d3CKGM4pMZEMfG2ZIo',
+			['be-a-presenter']: 'AW-10776634183/v72CCLeT4pMZEMfG2ZIo',
+			['personal-branding']: 'AW-10776634183/w1dDCOjh3JMZEMfG2ZIo',
+		};
+		if (getQs('status') === 'captured') {
+			window.gtag('event', 'conversion', {'send_to': conversionID[params.child], 'transaction_id': ''});
 		}
 		window.history.pushState({}, document.title, window.location.pathname);
 	}, []);
