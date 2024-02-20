@@ -909,3 +909,6 @@ align-items: center;
 .total-price{
   text-align: left;
 }
+.border-red{
+  outline: 1px solid red;
+}
