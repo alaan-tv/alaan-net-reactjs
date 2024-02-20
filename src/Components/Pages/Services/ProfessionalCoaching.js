@@ -125,11 +125,11 @@ const ProfessionalCoaching = () => {
 	}, 
 	
 	 {
-		icon: Feature4,
+		icon: Feature3,
 		title: "Assessment/Homeworks",
 		desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
 	}, {
-		icon: Feature5,
+		icon: Feature4,
 		title: "Additional Coaching Sessions",
 		desc: "Possibility of adding extra two to four coaching sessions on a discounted rate            "
 	},];
