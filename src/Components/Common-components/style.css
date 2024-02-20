@@ -895,3 +895,6 @@ max-width: 100% !important;
 .total-price{
   text-align: left;
 }
+.border-red{
+  outline: 1px solid red;
+}
