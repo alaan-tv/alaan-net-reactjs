@@ -101,8 +101,8 @@ const FormQuiz = ({handleClose1}) => {
 		let value = event.target.value;
 		if (event.target.type === 'checkbox') {
 			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
+			let checkedInput = [].filter.call(checkInput, el => el.checked);
 			if (event.target.classList[1] === 'question_2') {
-				let checkedInput = [].filter.call(checkInput, el => el.checked);
 				checkInput.forEach(el => {
 					el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
 					resetQuantity(event.target.dataset.id);
@@ -114,7 +114,11 @@ const FormQuiz = ({handleClose1}) => {
 			} else if (['dimensions', 'terms'].includes(name)) {
 				setInputs(values => ({...values, [name]: event.target.checked === true}));
 			} else {
-				checkInput.forEach((el) => setInputs(values => ({...values, [el.name]: false})));
+				checkInput.forEach((el) => {
+						el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
+						setInputs(values => ({...values, [el.name]: false}));
+					}
+				);
 				setInputs(values => ({...values, [name]: value}));
 			}
 		} else {
@@ -228,13 +232,14 @@ const FormQuiz = ({handleClose1}) => {
 	const OptionHtml = (index, id, item) => {
 		let option_group = 'question_' + index;
 		let field_name = option_group + '_' + id;
-		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? '' : 'required';
+		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? false : 'required';
 		return (<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}>
 			<label className='quiz-label'>
 				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 				       value={JSON.stringify(item)}
 				       checked={(inputs[field_name] || '') ? "checked" : false}
-				       onChange={handleChange} required={is_required}/>
+				       onChange={handleChange} required={is_required}
+				       onInvalid={invalidInput} onInput={validInput}/>
 				<div className='option-desc'>{item.answer && item.answer}</div>
 			</label>
 		</div>);
@@ -265,8 +270,26 @@ const FormQuiz = ({handleClose1}) => {
 	}
 
 	const invalidInput = (event) => {
-		//alert(event.type.isValid);
-		//event.target.style.outline = event.target.value==''?'1px solid red':'';
+		if (event.target.type === 'checkbox') {
+			document.querySelectorAll(`.${event.target.classList[1]}`).forEach((el) => {
+				el.parentElement.parentElement.classList.add('border-red');
+			});
+		} else {
+			event.target.classList.add('border-red');
+			document.querySelector('.react-datepicker-wrapper input').classList.add('border-red');
+		}
+
+	}
+
+	const validInput = (event) => {
+		if (event.target.type === 'checkbox') {
+			document.querySelectorAll(`.${event.target.classList[1]}`).forEach((el) => {
+				el.parentElement.parentElement.classList.remove('border-red');
+			});
+		} else {
+			event.target.classList.remove('border-red');
+			document.querySelector('.react-datepicker-wrapper input').classList.remove('border-red');
+		}
 	}
 
 	return (<div className='formQuiz'>
@@ -277,7 +300,7 @@ const FormQuiz = ({handleClose1}) => {
 				<h1 className='form-step-title'>1-{question_1.question}</h1>
 				<div className='introduction-quiz-form'>
 					<input type="file" ref={refFile} accept="image/*,.pdf" multiple={true} onChange={inputFileHandler}/>
-					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput}
+					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput} onInput={validInput}
 					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
 
 				</div>
@@ -296,7 +319,7 @@ const FormQuiz = ({handleClose1}) => {
 								       name={'question_2_' + i}
 								       value={JSON.stringify(item)}
 								       checked={item.checked} required={true}
-								       onChange={handleChange}/>
+								       onChange={handleChange} onInvalid={invalidInput} onInput={validInput}/>
 								<div className='option-desc'>{item.name}: {item.price1}</div>
 							</label>
 							<div className='quantity'><span>Number of {item.name}: </span>
@@ -340,7 +363,8 @@ const FormQuiz = ({handleClose1}) => {
 					<input type="text" name='details' value={inputs.details || ''} onChange={handleChange}
 					       placeholder='If yes, please provide details'
 					       required={inputs['question_4_0'] ? true : false}
-					       readonly={inputs['question_4_0'] ? false : 'readonly'}/>
+					       readonly={inputs['question_4_0'] ? false : 'readonly'}
+					       onInvalid={invalidInput} onInput={validInput}/>
 				</div>
 			</div>
 
@@ -371,7 +395,8 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>7-{question_7.question}
 				<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={otherRefFile} accept="image/*,.pdf" multiple={true} onChange={inputFileHandler} />
+					<input type="file" ref={otherRefFile} accept="image/*,.pdf" multiple={true}
+					       onChange={inputFileHandler}/>
 				</div>
 			</div>
 
@@ -393,7 +418,7 @@ const FormQuiz = ({handleClose1}) => {
 				<div className='introduction-quiz-form'>
 					<input type='text' placeholder='Enter your Address' name="address"
 					       value={inputs.address || ""} maxLength='250'
-					       required onChange={handleChange}/>
+					       required onChange={handleChange} onInvalid={invalidInput} onInput={validInput}/>
 
 				</div>
 			</div>
@@ -404,8 +429,8 @@ const FormQuiz = ({handleClose1}) => {
 					<small style={{fontWeight: 'normal', fontSize: '16px'}}> (Optional)</small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={floorPlanFile} multiple={true} accept="image/*,.pdf" onChange={inputFileHandler}
-					/>
+					<input type="file" ref={floorPlanFile} multiple={true} accept="image/*,.pdf"
+					       onChange={inputFileHandler}/>
 				</div>
 			</div>
 
@@ -413,7 +438,9 @@ const FormQuiz = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>11-{question_11.question}</h1>
 
 				<div className='introduction-quiz-form multi-check-text'>
-					<input type="file" name='photos[]' ref={photosFile} multiple={true} accept="image/*,.pdf" onChange={inputFileHandler} required/>
+					<input type="file" ref={photosFile} multiple={true} accept="image/*,.pdf"
+					       onChange={inputFileHandler} required
+					       onInvalid={invalidInput} onInput={validInput}/>
 					<label className='quiz-label'>
 						<div class={(inputs.dimensions || '') ? 'container pink' : 'container white'}>
 							<input type="checkbox" class="checkbox" name='dimensions' value="1"
@@ -448,9 +475,10 @@ const FormQuiz = ({handleClose1}) => {
 						placeholderText="Please select a date"
 						minDate={new Date()}
 						required
+						onInvalid={invalidInput} onInput={validInput}
 					/>
 					<select id="timeSlot" name='time' value={inputs.time || ''}
-					        onChange={handleChange} required>
+					        onChange={handleChange} required onInvalid={invalidInput} onInput={validInput}>
 						<option value="">Select Time</option>
 						{timeSlots.map((item, index) => (<option key={index} value={item}>
 							{item}

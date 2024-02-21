@@ -17,8 +17,8 @@ import PersonalBranding from './Components/Pages/Services/PersonalBranding';
 import PersonalBranding2 from './Components/Pages/Workshops/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import ContentByDesign from './Components/Pages/Services/ContectByDesign';
-import ThankYou from './Components/Common-components/ThankYou';
-import Page404 from './Components/Common-components/Page404';
+import ThankYou from './Components/Pages/ThankYou';
+import Page404 from './Components/Pages/Page404';
 import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
 function App() {
 	return (<Router>
