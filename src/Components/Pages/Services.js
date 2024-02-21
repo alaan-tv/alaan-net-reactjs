@@ -134,7 +134,7 @@ const Services = () => {
             <div className='service-card'>
               <img src={PersonalCoachingLogo} alt='Personal Coaching icon'/>
               <h2 className='third-heading' >
-              Personal Coaching        </h2>
+              Professional Coaching        </h2>
               <div className='service-desc'>
               <p className='third-text'>
               Discover your life purpose and align it with your career goals on this transformative journey.</p>
