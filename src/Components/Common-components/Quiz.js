@@ -154,7 +154,11 @@ const Quiz = ({handleClose}) => {
 		let value = event.target.value;
 		if (event.target.type === 'checkbox') {
 			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
-			checkInput.forEach((el) => setInputs(values => ({...values, [el.name]: false})));
+			let checkedInput = [].filter.call(checkInput, el => el.checked);
+			checkInput.forEach((el) => {
+				el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
+				setInputs(values => ({...values, [el.name]: false}));
+			});
 			setInputs(values => ({...values, [name]: JSON.parse(value)}));
 		}
 		setInputs(values => ({...values, [name]: value}));
@@ -166,7 +170,7 @@ const Quiz = ({handleClose}) => {
 	 */
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(inputs);
+
 		localStorage.setItem('LBD_name', inputs.name);
 		localStorage.setItem('LBD_email', inputs.email);
 		localStorage.setItem('LBD_phone', inputs.phone);
@@ -181,8 +185,8 @@ const Quiz = ({handleClose}) => {
 			}
 			// rename keys & remove empty element
 			for (const key in data) {
-				data[key.substring(0, 10).replace('question', 'page')] = data[key];
-				if(key.length>8){
+				data[key.substring(0, 6)] = data[key];
+				if (key.length > 7) {
 					delete data[key];
 				}
 
@@ -214,9 +218,9 @@ const Quiz = ({handleClose}) => {
 	*
 	*/
 	const OptionHtml = (id, item) => {
-		let option_group = 'question_' + currentPage;
+		let option_group = 'page_' + currentPage;
 		let field_name = option_group + '_' + id;
-		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? '' : 'required';
+		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? false : 'required';
 		return (<label key={id} className='quiz-label'
 		               style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
 			<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
@@ -226,6 +230,7 @@ const Quiz = ({handleClose}) => {
 				       value={JSON.stringify(item)}
 				       checked={(inputs[field_name] || '') ? "checked" : false}
 				       onChange={handleChange} required={is_required}
+				       onInvalid={invalidInput} onInput={validInput}
 				/>
 				<div className='option-desc'>
 					{item.title && <><b>{item.title}</b>-</>} {item.desc && item.desc}
@@ -234,6 +239,26 @@ const Quiz = ({handleClose}) => {
 		</label>);
 	}
 
+
+	const invalidInput = (event) => {
+		if (event.target.type === 'checkbox') {
+			document.querySelectorAll(`.${event.target.classList[1]}`).forEach((el) => {
+				el.parentElement.classList.add('border-red');
+			});
+		} else {
+			event.target.classList.add('border-red');
+		}
+	}
+
+	const validInput = (event) => {
+		if (event.target.type === 'checkbox') {
+			document.querySelectorAll(`.${event.target.classList[1]}`).forEach((el) => {
+				el.parentElement.classList.remove('border-red');
+			});
+		} else {
+			event.target.classList.remove('border-red');
+		}
+	}
 
 	return (<>
 
@@ -251,12 +276,14 @@ const Quiz = ({handleClose}) => {
 				<h1 className='step-title'>{page_1.question}</h1>
 				<div className='introduction-quiz-form'>
 					<input type="text" name='name' placeholder='Name' value={inputs.name || ''}
-					       onChange={handleChange} required maxLength='50'></input>
+					       onChange={handleChange} required maxLength='50' onInvalid={invalidInput}
+					       onInput={validInput}></input>
 					<input type="email" name='email' placeholder='E-mail' value={inputs.email || ''}
 					       onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-					       maxLength='50'></input>
+					       maxLength='50' onInvalid={invalidInput} onInput={validInput}></input>
 					<input type="text" name='phone' placeholder='Phone' value={inputs.phone || ''}
-					       onChange={handleChange} required pattern="[+]{0,1}[0-9]{10,15}" maxLength='15'></input>
+					       onChange={handleChange} required pattern="[+]{0,1}[0-9]{10,15}" maxLength='15'
+					       onInvalid={invalidInput} onInput={validInput}></input>
 				</div>
 			</>)}
 
