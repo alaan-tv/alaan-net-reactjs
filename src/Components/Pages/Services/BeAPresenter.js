@@ -133,15 +133,7 @@ const BeAPresenter = () => {
 
 
 	const trainerList = [
-		{
-			image: TrainerImage1,
-			name: " منى عواد ",
-			social: [
-				{icon: <InstagramIcon/>, link: "https://www.instagram.com/muna_awwad_/"},
-				{icon: <TwitterIcon/>, link: "https://twitter.com/munaawwad"},
-			],
-			desc: "      إعلامية و مذيعة اخبار"
-		},
+		
 		{
 			image: TrainerImage2,
 			name: "  كريم كوكب ",
