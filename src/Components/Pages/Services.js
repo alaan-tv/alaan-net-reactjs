@@ -117,7 +117,8 @@ const Services = () => {
               Living By Design         </h2>
               <div className='service-desc'>
               <p className='third-text'>
-              Begin your media career journey with skilled specialized experts.</p>
+              Build the Home you’ve been waiting for with Living By Design
+</p>
               <div className='sevice-more-icon'><Link to="/our-services/LBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
