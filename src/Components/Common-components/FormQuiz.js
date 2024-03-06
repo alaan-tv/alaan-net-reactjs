@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import {Link} from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
 import Modal from './Modal';
@@ -490,7 +491,8 @@ const FormQuiz = ({handleClose1}) => {
 					       checked={(inputs.terms || '') ? 'checked' : ''}
 					       onChange={handleChange} required/>
 					<div className='option-desc'>
-						I agree with <a href='#'>Terms & Conditions</a>
+						I agree with <Link
+									to='/lbd-terms'>Terms & Conditions</Link>
 					</div>
 				</div>
 			</div>
