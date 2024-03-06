@@ -491,8 +491,8 @@ const FormQuiz = ({handleClose1}) => {
 					       checked={(inputs.terms || '') ? 'checked' : ''}
 					       onChange={handleChange} required/>
 					<div className='option-desc'>
-						I agree with <Link
-									to='/lbd-terms'>Terms & Conditions</Link>
+						I agree with<Link
+									to='/lbd-terms' target="_blank">Terms & Conditions</Link>
 					</div>
 				</div>
 			</div>
