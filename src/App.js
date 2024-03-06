@@ -20,6 +20,7 @@ import ContentByDesign from './Components/Pages/Services/ContectByDesign';
 import ThankYou from './Components/Pages/ThankYou';
 import Page404 from './Components/Pages/Page404';
 import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
+import LBDTerms from './Components/Common-components/TermsLBD'
 function App() {
 	return (<Router>
 			<ScrollToTop/>
@@ -48,6 +49,7 @@ function App() {
 					<Route path="/:parent/:child/thank-you" element={<ThankYou/>}/>
 
 					<Route path="/terms" element={<Terms/>}/>
+					<Route path="/lbd-terms" element={<LBDTerms/>}/>
 					<Route path="/ar" element={<AR/>}></Route>
 
 					<Route path="*" element={<Page404/>} />

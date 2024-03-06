@@ -260,7 +260,7 @@ const LivingByDesign = () => {
 							<div className="input-wrapper">
 								<input type='checkbox' required/>
 								<span id="terms-label">I agree with <Link
-									to='/terms'> Terms & Conditions</Link> </span>
+									to='/lbd-terms'> Terms & Conditions</Link> </span>
 							</div>
 							<div className="input-wrapper">
 								<input type='submit' value="Send" ref={submitBtn}/>
