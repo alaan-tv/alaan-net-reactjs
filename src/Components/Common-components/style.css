@@ -906,3 +906,6 @@ align-items: center;
 .border-red{
   outline: 1px solid red;
 }
+.terms-section li{
+   padding: 0px !important
+}
