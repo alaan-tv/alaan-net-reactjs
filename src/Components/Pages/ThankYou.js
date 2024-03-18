@@ -32,6 +32,7 @@ const ThankYou = () => {
 			'magic-touch-clinic': 'AW-10776634183/n7d3CKGM4pMZEMfG2ZIo',
 			'be-a-presenter': 'AW-10776634183/v72CCLeT4pMZEMfG2ZIo',
 			'personal-branding': 'AW-10776634183/w1dDCOjh3JMZEMfG2ZIo',
+			'LBD': 'AW-10776634183/2MofCNvNrJ0ZEMfG2ZIo',
 		};
 		window.gtag('event', 'conversion', {'send_to': conversionID[params.child], 'transaction_id': ''});
 	}, [params.child]);
