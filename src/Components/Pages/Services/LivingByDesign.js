@@ -118,7 +118,7 @@ const LivingByDesign = () => {
 		},
 		{
 			icon: Feature3,
-			title: "Concept & Approval            ",
+			title: "Concept & Approval",
 			desc: "We deliver a concept that matches your intended energy, personality & style- once you approve we collect the rest of our design fee & start sourcing everything you need! If you’re not 100% excited by our plan, we’re happy to make adjustments so your space feels truly yours.            "
 		},
 		{
@@ -158,12 +158,11 @@ const LivingByDesign = () => {
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> Starting from just AED 3,499
-						we’ll transform your space by giving you
+					<h2 className='primary-heading'> Everything you need to transform
+your space, in 3 simple steps:
 					</h2>
 					<div className='features-container'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
@@ -186,14 +185,12 @@ const LivingByDesign = () => {
 								/>
 								<div className='before-state'> Before</div>
 								<div className='after-state'> After</div>
-
-
 							</div>
 							<div className='trainer-desc'>
 								<p>Things change, people change, rooms change.</p><p> While we can’t do much about the
 								first two, we can make sure your rooms only change for the better.</p> <p>There were
-								reasons why you couldn’t design your space how you wanted the first time around- </p>
-								<p>Now there’s no reason to choose not to.
+								reasons why you couldn’t design your space how you wanted the first time around- 
+								Now there’s no reason to choose not to.
 								</p>
 
 							</div>
@@ -202,26 +199,21 @@ const LivingByDesign = () => {
 					</div>
 				</div>
 			</div>
-
 			<div className='features second-features'>
 				<h2 className='primary-heading'> How it works </h2>
 				<div className='features-container'>
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 				</div>
 			</div>
-
 			<div className='booking' id="contact-form">
 				<div className='left-section'>
 					<div className='left-section-container'>
 						<img src={LivingIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
 							The home you never knew you needed is a click away
-
-
 						</p>
 						<p className='third-heading'> Why wait any longer to live the way
 							you were always meant to?</p>
-
 						{/*modal quiz*/}
 						<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take The Quiz!
 						</button>
@@ -229,11 +221,9 @@ const LivingByDesign = () => {
 						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
 						<FormModal showForm={form} handleClose1={() => setForm(!form)}
 						           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
-
 					</div>
 				</div>
 				<div className='right-section'>
-
 					<div className='form-section' id="contact-form">
 						<h4 className='form-text'> If you have any questions or
 							would like to know more,
