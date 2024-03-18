@@ -196,6 +196,7 @@ const FormQuiz = ({handleClose1}) => {
 				localStorage.removeItem('LBD_name');
 				localStorage.removeItem('LBD_email');
 				localStorage.removeItem('LBD_phone');
+				localStorage.setItem('LBD_Quiz','1');
 				window.location = '/our-services/LBD/thank-you';
 			})
 			.catch(error => console.error(error));

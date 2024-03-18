@@ -43,7 +43,6 @@ const ContentByDesign = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
 
@@ -68,7 +67,7 @@ const ContentByDesign = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					setModal(true);
+					window.location='/our-services/CBD/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
@@ -240,9 +239,7 @@ const ContentByDesign = () => {
 				<Advertise/>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <TickIcon/> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
+
 		</div>)
 }
 

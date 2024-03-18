@@ -13,7 +13,7 @@ const ThankYou = () => {
 	const get_msg = () => {
 		if (['podcast', 'media', 'be-a-presenter'].includes(params.child)) {
 			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك لتحديد الموعد'};
-		} else if (params.child === 'LBD') {
+		} else if (params.child === 'LBD' && +localStorage.getItem('LBD_Quiz')) {
 			return {
 				title: 'Thank You',
 				content: <>We can't wait to get started!<br/> You’ll receive an email shortly with a link for a 50% down

@@ -51,7 +51,6 @@ const LivingByDesign = () => {
 	const [form, setForm] = useState(false);
 
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [quiz, setQuiz] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
@@ -81,7 +80,7 @@ const LivingByDesign = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					setModal(true);
+					window.location='/our-services/LBD/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
@@ -262,9 +261,7 @@ your space, in 3 simple steps:
 			<Advertise/>
 
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<> <TickIcon/> <h3>Thank you</h3><p> You will be contacted to schedule an
-				       appointment.</p> </>}/>
+
 		</div>)
 }
 

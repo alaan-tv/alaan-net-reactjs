@@ -1,4 +1,4 @@
-import React, { useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -11,9 +11,7 @@ import FeatureIcon3 from '../../../Assets/feature-icon3.png'
 import FeatureIcon4 from '../../../Assets/feature-icon4.png'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
-import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 
@@ -22,19 +20,19 @@ const OwnYourStory = () => {
 		title: 'Own Your Story',
 		description: 'I am a description, and I can create multiple tags',
 		meta: {
-		  charset: 'utf-8',
-		  name: {
-			keywords: 'react,meta,document,html,tags'
-		  }
+			charset: 'utf-8',
+			name: {
+				keywords: 'react,meta,document,html,tags'
+			}
 		}
-	  }
+	}
 
 	const [open, setOPen] = useState(false);
 	const [open1, setOPen1] = useState(false);
 
 	const toggle = () => {
 		setOPen(!open);
-		
+
 	};
 	const toggle1 = () => {
 		setOPen1(!open1);
@@ -46,7 +44,6 @@ const OwnYourStory = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [modal, setModal] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
 
@@ -64,14 +61,14 @@ const OwnYourStory = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({ ...inputs, phone: phone, lp_type: 'own-your-story' })
+			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'own-your-story'})
 		})
 			.then(response => response.json())
 			.then(data => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					setModal(true);
+					window.location = '/our-services/own-your-story/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
@@ -84,25 +81,29 @@ const OwnYourStory = () => {
 	const youWillGetList = [
 		{
 			icon: FeatureIcon1,
-			title:"Custom Messaging",
-			desc: "You provide the key message, we handle the rest, ensuring your story is heard by the right audience through our extensive regional network."},
+			title: "Custom Messaging",
+			desc: "You provide the key message, we handle the rest, ensuring your story is heard by the right audience through our extensive regional network."
+		},
 		{
 			icon: FeatureIcon2,
-			title:"Comprehensive Services",
-			desc: "Benefit from professional photoshoots in our studio for all your PR needs, and receive content tailored for your digital and social platforms."},
+			title: "Comprehensive Services",
+			desc: "Benefit from professional photoshoots in our studio for all your PR needs, and receive content tailored for your digital and social platforms."
+		},
 		{
 			icon: FeatureIcon3,
-			title:"Image Management",
-			desc: "From hair and makeup to dress code advice, we've got you covered, ensuring you look your best on camera."},
+			title: "Image Management",
+			desc: "From hair and makeup to dress code advice, we've got you covered, ensuring you look your best on camera."
+		},
 		{
 			icon: FeatureIcon4,
-			title:"Expert Guidance",
-			desc: "Regardless of experience, our experts offer support and training to prepare you for your on-camera appearances."},
+			title: "Expert Guidance",
+			desc: "Regardless of experience, our experts offer support and training to prepare you for your on-camera appearances."
+		},
 	];
 
 	return (
 		<div>
-			 <DocumentMeta {...meta} />
+			<DocumentMeta {...meta} />
 			<div className='hero-section'>
 				<div className='home-container'>
 					<Header/>
@@ -114,7 +115,7 @@ const OwnYourStory = () => {
 							<p className='primary-text light-text'>
 								What do people know about you, your product or service, your success story, what sets
 								you apart, and how you excel? Al Aan can craft and distribute compelling content.
-								
+
 							</p>
 							<a className='service-cta primary-button' href="#contact-form">Contact Us!</a>
 							{/*<div className='home-image-container banner-service-image'>
@@ -198,7 +199,7 @@ const OwnYourStory = () => {
 									<h4> Add a campaign</h4>
 									<p className='sub-title'>(Adding AED10,000 to the cost)</p>
 									<button className='collaps-button' onClick={toggle}>
-									{open ? 'Show Less' : 'Show More'}
+										{open ? 'Show Less' : 'Show More'}
 
 									</button>
 									{open && (<div className='toggle package-decription'>
@@ -257,7 +258,7 @@ const OwnYourStory = () => {
 									<h4> Add a campaign</h4>
 									<p className='sub-title'>(Adding AED10,000 to the cost)</p>
 									<button className='collaps-button' onClick={toggle1}>
-									{open1 ? 'Show Less' : 'Show More'}
+										{open1 ? 'Show Less' : 'Show More'}
 									</button>
 									{open1 && (<div className='toggle1 package-decription'>
 										<div className='desc-item'><CheckCircleIcon/>
@@ -309,7 +310,7 @@ const OwnYourStory = () => {
 									       required placeholder='Enter you Email'/>
 								</div>
 								<PhoneInput
-									inputProps={{pattern:".{12,25}",}}
+									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
 									value={phone}
@@ -335,9 +336,7 @@ const OwnYourStory = () => {
 				<Advertise/>
 			</div>
 			<Footer/>
-			<Modal show={modal} handleClose={() => setModal(!modal)}
-			       children={<>  <TickIcon /> <h3>Thank you</h3> <p> You will be contacted to schedule an
-				       appointment.</p> </>} />
+
 		</div>
 	)
 }
