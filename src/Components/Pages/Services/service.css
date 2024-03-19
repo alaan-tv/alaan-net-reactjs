@@ -904,8 +904,11 @@ z-index: 10;
     height: 300px;
     position: relative;
 }
+.living-page .second-features .feature{
+    background-image: url(../../../Assets/newFetureBakg.svg);
+}
 .second-features .desktop-v .feature{
-    height: 380px;
+    height: 460px;
 }
 .desktop-v .feature-heading{
     width: 100%;
