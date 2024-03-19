@@ -13,7 +13,7 @@ const ThankYou = () => {
 	const get_msg = () => {
 		if (['podcast', 'media', 'be-a-presenter'].includes(params.child)) {
 			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك لتحديد الموعد'};
-		} else if (params.child === 'LBD') {
+		} else if (params.child === 'LBD' && +localStorage.getItem('LBD_Quiz')) {
 			return {
 				title: 'Thank You',
 				content: <>We can't wait to get started!<br/> You’ll receive an email shortly with a link for a 50% down
@@ -32,6 +32,7 @@ const ThankYou = () => {
 			'magic-touch-clinic': 'AW-10776634183/n7d3CKGM4pMZEMfG2ZIo',
 			'be-a-presenter': 'AW-10776634183/v72CCLeT4pMZEMfG2ZIo',
 			'personal-branding': 'AW-10776634183/w1dDCOjh3JMZEMfG2ZIo',
+			'LBD': 'AW-10776634183/2MofCNvNrJ0ZEMfG2ZIo',
 		};
 		window.gtag('event', 'conversion', {'send_to': conversionID[params.child], 'transaction_id': ''});
 	}, [params.child]);

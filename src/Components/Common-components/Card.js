@@ -9,6 +9,7 @@ export const Feature = ({item, key}) => {
 				<p className='feature-desc third-text'>
 					{item.subtitle && <b>{item.subtitle}</b>}
 					{item.desc}</p>
+					
 			}
 		</div>
 	);

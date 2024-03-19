@@ -909,3 +909,27 @@ align-items: center;
 .terms-section li{
    padding: 0px !important
 }
+
+
+.card-slider-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.card-slider {
+  display: inline-flex; /* Display cards in a row */
+  gap: 10px; /* Adjust gap between cards */
+}
+
+.card1 {
+  flex: 0 0 calc(50% - 5px); /* Display two cards per row */
+  max-width: calc(50% - 5px); /* Set maximum width for each card */
+  /* Add additional styling for your cards */
+}
+
+@media (min-width: 768px) {
+  .card1 {
+    flex: 0 0 calc(33.33% - 10px); /* Display three cards per row on larger screens */
+    max-width: calc(33.33% - 10px);
+  }
+}
