@@ -16,13 +16,10 @@ const ThankYou = () => {
 		} else if (params.child === 'LBD' && +localStorage.getItem('LBD_Quiz')) {
 			return {
 				title: 'Thank You',
-				content: <>We can't wait to get started!<br/> You’ll receive an email shortly with a link for a 50% down
-					payment-once it’s paid,
-					your consultant will contact you to confirm your appointment date & you’ll be on your way to your
-					dream home!</>
+				content: <>We’ve received your inquiry, and we’ll get back to you soon!</>
 			}
 		} else {
-			return {title: 'Thank You', content: 'You will be contacted to schedule an appointment.'};
+			return {title: 'Thank You', content: 'We’ve received your inquiry, and we’ll get back to you soon!'};
 		}
 	};
 
