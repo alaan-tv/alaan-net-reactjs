@@ -256,7 +256,7 @@ your space, in 3 simple steps:
 				</div>
 				<div className='right-section'>
 					<div className='form-section' id="contact-form">
-						<h4 className='form-text'> Book a free 15 minute consultation today to start your journey towards unbelievable living!</h4>
+						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey towards unbelievable living!</h4>
 						<form action='' onSubmit={handleSubmit}>
 							<div className="input-wrapper">
 								<label for="first">FULL NAME</label>
