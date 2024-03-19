@@ -1,6 +1,8 @@
 import React, {Fragment, useRef, useState} from 'react'
 import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
+import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css'; 
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
@@ -91,17 +93,20 @@ const LivingByDesign = () => {
 		{
 			icon: FeatureIcon1,
 			title: "Bespoke Consultation",
-			desc: 'We prioritize understanding who you are, so we can use design to give you everything that you need.        '
+			desc: 'We prioritize understanding who you are, so we can use design to give you everything that you need.',
+			plus: '+'
 		},
 		{
 			icon: FeatureIcon2,
 			title: "Tailored Shopping List",
-			desc: 'We meticulously plan & select every single thing your space needs to become its best self- all you need to do is pay for them.'
+			desc: 'We meticulously plan & select every single thing your space needs to become its best self- all you need to do is pay for them.',
+			plus: '+'
 		},
 		{
 			icon: FeatureIcon3,
 			title: "Top-View Floor Plan",
-			desc: 'A floor-plan of your space with all of the furniture selected, so you know exactly how to arrange everything- no experimenting required.'
+			desc: 'A floor-plan of your space with all of the furniture selected, so you know exactly how to arrange everything- no experimenting required.',
+			plus: '+'
 		},
 	];
 
@@ -127,7 +132,7 @@ const LivingByDesign = () => {
 			desc: "Your consultant will meet you at the property to discuss the complete list of all the furniture, furnishings, decor, & fixtures, for you to purchase that'll transform your space; as well as a top-view floor plan which'll highlight how everything will fit and be arranged!"
 		},
 	];
-
+	
 
 	return (
 		<div className='living-page'>
@@ -164,9 +169,23 @@ const LivingByDesign = () => {
 					<h2 className='primary-heading'> Everything you need to transform
 your space, in 3 simple steps:
 					</h2>
-					<div className='features-container'>
+					<div className='features-container desktop-v'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
+						
 					</div>
+					<CarouselProvider className='mobile-v'
+     naturalSlideWidth={100}
+     naturalSlideHeight={90}
+     totalSlides={3}
+    >
+
+    <Slider>
+	{youWillGetList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
+     
+    </Slider>
+
+    <DotGroup />
+   </CarouselProvider>
 				</div>
 				<div className='about-section'>
 					<h2 className='primary-heading'> Live better, faster.</h2>
@@ -201,9 +220,22 @@ your space, in 3 simple steps:
 			</div>
 			<div className='features second-features'>
 				<h2 className='primary-heading'> How it works </h2>
-				<div className='features-container'>
+				<div className='features-container desktop-v' >
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 				</div>
+				<CarouselProvider className='mobile-v'
+     naturalSlideWidth={100}
+     naturalSlideHeight={100}
+     totalSlides={4}
+    >
+
+    <Slider>
+	{howItWorkList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
+     
+    </Slider>
+
+    <DotGroup />
+   </CarouselProvider>
 			</div>
 			<div className='booking' id="contact-form">
 				<div className='left-section'>

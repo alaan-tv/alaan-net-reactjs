@@ -1,4 +1,5 @@
 /*Style magic touch Studio */
+
 .hero-section{
     background-image: url('../../../Assets/banner-service-background2.webp');
     background-repeat: no-repeat;
@@ -861,4 +862,61 @@ z-index: 10;
 /*Personal coaching services*/
 .before-cta{
     margin: 10px auto !important;
+}
+.mobile-v{
+    display: none;
+}
+@media (max-width: 780px) {
+    .desktop-v{
+        display: none;
+    }
+    .mobile-v{
+        display: block;
+    }
+    .about-section{
+        margin: 50px 0px;
+    }
+}
+.sliderTray___-vHFQ .sliderAnimation___300FY .carousel__slider-tray .carousel__slider-tray--horizontal{
+    width: 280% !important;
+}
+.carousel__dot-group{
+    text-align: center;
+    margin: auto;
+}
+.carousel__dot{
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border: 1px #848D94 solid;
+    border-radius: 100%;
+    margin: 0px 5px
+}
+.carousel__dot--selected{
+    background:#848D94 ;
+}
+.mobile-v .feature{
+    margin: auto;
+}
+.desktop-v .feature{
+    height: auto !important;
+    transition: all linear 0.3s;
+}
+.desktop-v .feature-heading{
+    padding: 20px;
+}
+.desktop-v .feature-desc{
+    display: none;
+    opacity: 0; /* Set initial opacity to 0 */
+    transition: all linear 0.3s;
+}
+.desktop-v .feature:hover .feature-desc{
+    display: block;
+    /* Add your transition styles here */
+    opacity: 1; /* Ensure the description is visible when hovered */
+    transition: all linear 0.3s;
+}
+.living-page .features-container{
+    transition: all linear 0.3s;
+    align-items: flex-start !important
 }
