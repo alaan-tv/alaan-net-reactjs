@@ -1,6 +1,8 @@
 import React, {useRef, useState} from 'react'
 import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
+import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css'; 
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
@@ -15,16 +17,14 @@ import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import ContentLogo from '../../../Assets/CBD-white2.svg'
-import BookingIcon from '../../../Assets/book-icon.svg'
+import CBDIcon from '../../../Assets/CBD-quiz-icon.svg'
 import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
 import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
-import BeforeContent from '../../../Assets/before bedroom.jpg'
-import AfterContent from '../../../Assets/after bedroom.png'
-
+import AboutImage from '../../../Assets/CBDAbout.svg'
 const ContentByDesign = () => {
 	const meta = {
 		title: 'Content By Design',
@@ -143,32 +143,33 @@ const ContentByDesign = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> Starting from just AED 2,999 we’ll take your set to a whole
-						other <br/>level by giving you:
+					<h2 className='primary-heading'> We'll take your set to a whole other level, by giving you the 3 things you need to see it there:
 
 					</h2>
-					<div className='features-container'>
+					<div className='features-container desktop-v'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
+					<CarouselProvider className='mobile-v'
+     naturalSlideWidth={100}
+     naturalSlideHeight={90}
+     totalSlides={3}
+    >
+
+    <Slider>
+	{youWillGetList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
+     
+    </Slider>
+
+    <DotGroup />
+   </CarouselProvider>
 				</div>
 				<div className='about-section'>
 					<h2 className='primary-heading'> Same great content, <br/> just unbelievably better packaged.</h2>
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								{ /*<img src={AboutImage} alt='about-image'/> */}
-								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5"
-								                    transition='.5s ease-in-out'
-								                    itemOne={<ReactCompareSliderImage src={BeforeContent}
-								                                                      srcSet={BeforeContent}
-								                                                      alt="Image one"/>}
-								                    itemTwo={<ReactCompareSliderImage src={AfterContent}
-								                                                      srcSet={AfterContent}
-								                                                      alt="Image two"/>}
-								/>
-								<div className='before-state'> Before</div>
-								<div className='after-state'> After</div>
-
+								<img src={AboutImage} alt='about-image'/>
+								
 
 							</div>
 							<div className='trainer-desc'>
@@ -177,7 +178,7 @@ const ContentByDesign = () => {
 								speaks for your channel before you do</p> <p> No matter how excellent your content is,
 								if a viewer doesn't immediately think you're able to deliver it, they're not going to
 								stick around long enough to find out.</p> <p> We don't want that to ever happen to
-								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br/>you
+								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help you
 								nail it in 1.</b></p>
 
 							</div>
@@ -187,25 +188,39 @@ const ContentByDesign = () => {
 
 				<div className='features second-features'>
 					<h2 className='primary-heading'> How it works </h2>
-					<div className='features-container'>
+					<div className='features-container desktop-v'>
 						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
+					<CarouselProvider className='mobile-v'
+     naturalSlideWidth={100}
+     naturalSlideHeight={100}
+     totalSlides={4}
+    >
+
+    <Slider>
+	{howItWorkList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
+     
+    </Slider>
+
+    <DotGroup />
+   </CarouselProvider>
 				</div>
 
 				<div className='booking' id="contact-form">
 					<div className='left-section'>
 						<div className='left-section-container'>
-							<img src={BookingIcon} alt="Booking Icon"/>
+							<img src={CBDIcon} alt="CBD Icon"/>
 							<p className='third-heading'>
-								It takes years of experience to build the perfect set, we're using 20 of ours to give
-								you a headstart on yours.
+							It takes years of experience to build the perfect set, we're using 2 decades of ours to give you a headstart on yours.
 							</p>
-							<p className='third-heading'>Everything that makes you great. everywhere around you</p>
-							<h2 className='secondary-heading'> Book Now! </h2>
+							<button className='take-quiz'> Get Started & Take The Quiz!
+						</button>
 						</div>
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
+						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey towards unbelievably better content!</h4>
+
 							<form action='' onSubmit={handleSubmit}>
 								<div className="input-wrapper">
 									<label for="first">FULL NAME</label>

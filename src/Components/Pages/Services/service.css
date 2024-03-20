@@ -437,7 +437,7 @@ padding-left: 20px;
         .living-page .trainers-container {
             
         }
-        .living-page .about-section .trainer-image, .content-page .about-section .trainer-image{
+        .living-page .about-section .trainer-image{
             height: 100% !important; 
             width: 100% !important;
             position: relative;
@@ -776,6 +776,8 @@ padding-left: 20px;
 /*content by design page*/
 .content-page .hero-section{
     background-image: url(../../../Assets/banner-content-background.png);
+    
+   
 }
 .content-page .light-text{
     margin:  27px auto 42px;
@@ -785,7 +787,6 @@ height:  460px;
 border-radius: 20px 0px 0px 20px;
 }
  .content-page .trainers-container{
-max-width: 1330px;
 justify-content: space-around;
 padding: 0px;
 align-items: center;
@@ -907,6 +908,7 @@ z-index: 10;
 .living-page .second-features .feature{
     background-image: url(../../../Assets/newFetureBakg.svg);
 }
+
 .second-features .desktop-v .feature{
     height: 460px;
 }
@@ -938,4 +940,23 @@ position: static;
 .living-page .features-container{
     transition: all linear 0.3s;
     /*align-items: flex-start !important*/
+}
+.content-page .feature {
+    background-image: url(../../../Assets/CBDFeatureImage3.svg);
+}
+.content-page .desktop-v .feature{
+    height: 330px;
+}
+.content-page .second-features .desktop-v .feature{
+    height: 460px;
+}
+.content-page .second-features .feature{
+    background-image: url(../../../Assets/newFetureBakg.svg);
+}
+.horizontalSlider___281Ls{
+    overflow: visible !important;
+}
+.content-page .trainers-container{
+    background-color: #fff;
+    gap: 5px;
 }

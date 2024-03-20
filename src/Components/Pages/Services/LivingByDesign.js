@@ -30,7 +30,7 @@ import QuizModal from '../../Common-components/QuizModal'
 import FormModal from '../../Common-components/FormModal'
 import Quiz from '../../Common-components/Quiz'
 import FormQuiz from '../../Common-components/FormQuiz'
-
+import Arrow from '../../../Assets/arrow.png'
 const LivingByDesign = () => {
 	const meta = {
 		title: 'Living By Design',
@@ -246,8 +246,10 @@ your space, in 3 simple steps:
 						<p className='third-heading'> Why wait any longer to live the way
 							you were always meant to?</p>
 						{/*modal quiz*/}
-						<button className='take-quiz' onClick={() => setQuiz(true)}> Get Started & Take The Quiz!
-						</button>
+						<div className='cta-quiz'>
+						<img src={Arrow} width={50} />
+						<button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started & Take The Quiz!</p> 
+						</button> </div>
 						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
 						<FormModal showForm={form} handleClose1={() => setForm(!form)}
