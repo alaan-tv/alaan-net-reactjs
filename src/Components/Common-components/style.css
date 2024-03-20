@@ -741,7 +741,14 @@ line-height: normal !important;
   font-size: 18px;
   font-weight: 600;
 }
+.living-page .take-quiz{
+  background-color: #FFCD00;
 
+  font-size: 24px;
+}
+.cta-quiz{
+  display: flex;
+}
  .container.pink, .container.pink label {
   background-color: #DF1995 !important;
   color: #fff
@@ -812,6 +819,11 @@ min-width: 40%
 }
 /*quiz on mobile*/
 @media (max-width: 760px) {
+  .living-page .take-quiz{
+    
+  
+    font-size: 18px;
+  }
   .formQuiz .quiz-form > div > div{
   flex-direction: column;
   }
