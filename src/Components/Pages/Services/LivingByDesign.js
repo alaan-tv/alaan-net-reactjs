@@ -236,7 +236,9 @@ your space, in 3 simple steps:
     <DotGroup />
    </CarouselProvider>
 			</div>
+			
 			<div className='booking' id="contact-form">
+			<img src={Arrow} width={70}  className='arrow-quiz arrow-desctop-v'/>
 				<div className='left-section'>
 					<div className='left-section-container'>
 						<img src={LivingIcon} alt="LivingIcon"/>
@@ -247,8 +249,8 @@ your space, in 3 simple steps:
 							you were always meant to?</p>
 						{/*modal quiz*/}
 						<div className='cta-quiz'>
-						<img src={Arrow} width={50} />
-						<button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started & Take The Quiz!</p> 
+						
+						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started & Take The Quiz!</p> 
 						</button> </div>
 						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>

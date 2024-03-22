@@ -960,3 +960,20 @@ position: static;
     background-color: #fff;
     gap: 5px;
 }
+.living-page .booking , .content-page .booking{
+    align-items: flex-end;
+    gap: 0px
+}
+.arrow-mobile-v{
+    display: none;
+}
+@media (max-width: 780px) { 
+    .arrow-desctop-v{
+        display: none;
+
+}
+.arrow-mobile-v{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+}}
