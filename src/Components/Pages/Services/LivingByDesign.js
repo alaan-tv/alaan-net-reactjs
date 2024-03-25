@@ -238,15 +238,16 @@ your space, in 3 simple steps:
 			</div>
 			
 			<div className='booking' id="contact-form">
-			<img src={Arrow} width={70}  className='arrow-quiz arrow-desctop-v'/>
+			
 				<div className='left-section'>
+				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
 					<div className='left-section-container'>
 						<img src={LivingIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
-							The home you never knew you needed is a click away
+							The home you never knew you needed <br/>is a click away
 						</p>
 						<p className='third-heading'> Why wait any longer to live the way
-							you were always meant to?</p>
+						<br/>you were always meant to?</p>
 						{/*modal quiz*/}
 						<div className='cta-quiz'>
 						
