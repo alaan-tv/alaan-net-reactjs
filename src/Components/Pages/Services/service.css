@@ -851,9 +851,10 @@ z-index: 10;
     padding: 150px 50px 50px;
 }
 .form-text{
+    text-align: center;
     padding: 10px;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: bold;
 }
 @media (max-width: 760px) {
     .form-text{
@@ -961,8 +962,18 @@ position: static;
     gap: 5px;
 }
 .living-page .booking , .content-page .booking{
+   
+    gap: 40px
+}
+.living-page .booking .left-section{ 
+    display: flex;
     align-items: flex-end;
-    gap: 0px
+}
+.cta-quiz{
+    margin-top: 50px;
+}
+.arrow-quiz{
+    margin-bottom: 10px;
 }
 .arrow-mobile-v{
     display: none;
