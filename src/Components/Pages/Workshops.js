@@ -8,6 +8,7 @@ import BannerBackground from '../../Assets/background.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
 import PodcastIcon from '../../Assets/podcast-icon.svg'
+import PodcastIcon2 from '../../Assets/podcast-icon2.svg'
 import MediaWorkshopIcon from '../../Assets/media-workshop-icon.svg'
 import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
 
@@ -60,7 +61,7 @@ const Workshops = () => {
               </div>
             </div>*/}
             <div className='service-card'>
-              <img src={PodcastIcon} alt='magic touch icon'/>
+              <img src={PodcastIcon2} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Podcast Workshop      </h2>
               <div className='service-desc'>
@@ -91,6 +92,17 @@ const Workshops = () => {
               Deadly Mistakes and Golden Opportunities for Your Personal Brand
 </p>
               <div className='sevice-more-icon'><Link to="/our-workshops/personal-branding"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
+            <div className='service-card'>
+              <img src={PodcastIcon} alt='magic touch icon'/>
+              <h2 className='third-heading' >
+              Voice Over Workshop      </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Unlock the Power of Your Voice: Join our Voice Over Workshop!
+</p>
+              <div className='sevice-more-icon'><Link to="/our-workshops/voice-over"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             </div>

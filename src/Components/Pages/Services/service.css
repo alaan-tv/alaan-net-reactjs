@@ -988,3 +988,9 @@ position: static;
     position: absolute;
     left: 10px;
 }}
+.voice-page .workshop-intro .third-heading{
+    font-size: 24px;
+}
+.voice-page .video-section{
+    padding: 0 !important;
+}

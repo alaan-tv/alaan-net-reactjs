@@ -8,6 +8,7 @@ import BannerBackground from '../../Assets/background.png'
 import BannerBackgroundLeft from '../../Assets/backgrount-left.png'
 import ServiceMoreIcon from '../../Assets/services-more-icon.svg'
 import PodcastIcon from '../../Assets/podcast-icon.svg'
+import PodcastIcon2 from '../../Assets/podcast-icon2.svg'
 import MediaWorkshopIcon from '../../Assets/media-workshop-icon.svg'
 import DocumentMeta from 'react-document-meta';
 
@@ -64,7 +65,7 @@ const WorkshopsArabic = () => {
               </div>
             </div>*/}
             <div className='service-card'>
-              <img src={PodcastIcon} alt='magic touch icon'/>
+              <img src={PodcastIcon2} alt='magic touch icon'/>
               <h2 className='third-heading' >
 ورشات البودكاست
                    </h2>
@@ -93,6 +94,20 @@ const WorkshopsArabic = () => {
               
             </div>
             <div className='sevice-more-icon'><Link to="/our-workshops/media"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+              <div className='service-card'>
+              <img src={PodcastIcon} alt='magic touch icon'/>
+              <h2 className='third-heading' >
+ورشات التعليق الصوتي
+                   </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              طور مهاراتك في مجال التعليق الصوتي الذي سيترك بصمتك
+
+اكتشف وطور مهاراتك الصوتية مع ورشة عمل احتراف التعليق الصوتي مع محمد علي!               </p>
+              
+            </div>
+            <div className='sevice-more-icon'><Link to="/our-workshops/voice-over"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
           
