@@ -21,6 +21,7 @@ import ThankYou from './Components/Pages/ThankYou';
 import Page404 from './Components/Pages/Page404';
 import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
 import LBDTerms from './Components/Common-components/TermsLBD'
+import VoiceOver from './Components/Pages/Workshops/VoiceOver';
 function App() {
 	return (<Router>
 			<ScrollToTop/>
@@ -36,6 +37,7 @@ function App() {
 
 					<Route path="/our-workshops/podcast" element={<Podcast/>}/>
 					<Route path="/our-workshops/media" element={<Media/>}/>
+					<Route path="/our-workshops/voice-over" element={<VoiceOver/>}/>
 					<Route path="/our-workshops/personal-branding" element={<PersonalBranding2/>}/>
 					<Route path="/our-workshops/ar" element={<WorkshopsArabic/>}/>
 
