@@ -5,7 +5,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
@@ -58,6 +59,10 @@ function CustomTabPanel(props) {
 	};
   }
 const VoiceOver = () => {
+	const options = [
+		'4 و 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا', '11 و 12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا', '6 و 7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا ', '13 و 14 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا' , ' 24 و 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا ' , ' 31 اغسطس و 1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا'
+	  ];
+	  const defaultOption = options[0];
 	const [value, setValue] = React.useState(0);
 
 	const handleChange1 = (event, newValue) => {
@@ -157,9 +162,10 @@ const VoiceOver = () => {
 				<div className='hero-workshop-section podcast-hero'>
 					<div className='hero-text'>
 						<h1 className='light-heading podcast-heading'> اكتشف القوة الحقيقية لصوتك!</h1>
-						<p>طور مهاراتك في مجال التعليق الصوتي الذي سيترك بصمتك
-</p>
 						<p>اكتشف وطور مهاراتك الصوتية مع ورشة عمل احتراف التعليق الصوتي مع محمد علي!</p>
+
+						<p>مقابل 3,000 درهم فقط للورشة الحضورية في  <a href='https://maps.app.goo.gl/6WsNgfxpMhQgJ2NL8'> مقر الآن  </a><br/> أو 2,000 درهم أونلاين عبر تطبيق زووم  
+</p>
 						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة:   </p></div>
 						<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 						<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
@@ -217,7 +223,7 @@ const VoiceOver = () => {
 </div>*/}
 			<div className='workshop-features-section'>
 				<h2 className='light-heading'>
-					مقابل 3,000 درهم فقط ، إليك ما ستتعلمه في أيام الورشة
+				مقابل 3,000 درهم فقط للورشة الحضورية في مقر الآن أو 2,000 درهم أونلاين عبر تطبيق زووم ، إليك ما ستتعلمه في أيام الورشة
 				</h2>
 				<div className='features'>
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
@@ -284,6 +290,11 @@ const VoiceOver = () => {
 								</div>
 								</div>
 							</div>
+							<div className="input-wrapper">
+							<p className='question-type'> اختر موعد الورشة    :</p>
+							<Dropdown options={options}  value={defaultOption} placeholder="Select an option" />
+
+</div>
 							<div className="input-wrapper">
 								<input name="terms" type='checkbox' required value="1" onChange={handleChange}
 								       checked={(inputs.terms || '') ? "checked" : ''}/>
