@@ -167,7 +167,7 @@ const VoiceOver = () => {
 			</div>
 			<div className='trainers workshops-trainers'>
 				<h2 className='primary-heading'>
-					المدربين
+					المدربون
 				</h2>
 				<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
 					عنها لتميز نفسك</p>
@@ -183,7 +183,7 @@ const VoiceOver = () => {
                         هل أنت مستعد لإطلاق العنان لإمكانيات صوتك الحقيقية؟
 						</p>
 						<p className='third-heading'>
-                        كن معنا في الورشات القادمة واحجز مقعدك الآن:
+                        كن معنا في الورشات القادمة  :
 
 						</p>
 						<h2 className='secondary-heading'>
@@ -211,6 +211,21 @@ const VoiceOver = () => {
 								value={phone}
 								country={'ae'}
 								onChange={setPhone}/>
+								<div className="input-wrapper ">
+									<p className='question-type'> كيف تريد حضور الورشة :</p>
+									<div className='question-workshop'>
+									<div className='option'>
+								<input name="attend" type='radio'  required value="online" onChange={handleChange}
+								       checked={(inputs.terms || '') ? "checked" : ''}/>
+								<span>أونلاين </span>
+								</div>
+								<div className='option'>
+								<input name="attend" type='radio'  required value="face to face" onChange={handleChange}
+								       checked={(inputs.terms || '') ? "checked" : ''}/>
+								<span>حضور في المكان </span>
+								</div>
+								</div>
+							</div>
 							<div className="input-wrapper">
 								<input name="terms" type='checkbox' required value="1" onChange={handleChange}
 								       checked={(inputs.terms || '') ? "checked" : ''}/>

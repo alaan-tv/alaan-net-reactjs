@@ -239,6 +239,14 @@ padding: 0px 24px;
     background-color: transparent !important; 
      border: none !important;
 }
+.question-workshop{
+   display: flex;
+   gap: 40px;
+   margin-top: 10px;
+}
+.question-type{
+    margin-top: 10px;
+}
 input[type=checkbox] {
     
     height: 18px;
@@ -248,6 +256,10 @@ input[type=checkbox] {
     width: 18px !important;
     accent-color: #df1995;
     border-radius: 10px !important;
+}
+input[type="radio" i]{
+    width: 15px !important;
+    height: 15px;
 }
 input[type="file" i] {
     padding-top: 20px;
