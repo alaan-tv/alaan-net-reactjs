@@ -11,7 +11,7 @@ import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
 import EventIcon from '@mui/icons-material/Event'
-import video from '../../../Assets/voice-video-ver.mp4'
+import video from '../../../Assets/voice-over-video.mp4'
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import TikTokIcon from '@mui/icons-material/Instagram'
@@ -60,7 +60,7 @@ function CustomTabPanel(props) {
   }
 const VoiceOver = () => {
 	const options = [
-		'4 و 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا', '11 و 12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا', '6 و 7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا ', '13 و 14 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا' , ' 24 و 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا ' , ' 31 اغسطس و 1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا'
+		' مايو : الأيام 4, 5, 11, 12 ', ' يوليو : الأيام 6, 7 , 13, 14 ' , ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '
 	  ];
 	  const defaultOption = options[0];
 	const [value, setValue] = React.useState(0);
@@ -175,16 +175,21 @@ const VoiceOver = () => {
   </Tabs>
 </Box>
 <CustomTabPanel value={value} index={0}>
-<p> الموعد الأول : 4 و 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-					   <p> الموعد الثاني :11 و12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الأول :السبت 4 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الثاني :الأحد 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الثالث :السبت 11 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الرابع :الأحد 12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 </CustomTabPanel>
 <CustomTabPanel value={value} index={1}>
-<p> الموعد الأول : 6 و7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-					   <p> الموعد الثاني :13 و14  يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-</CustomTabPanel>
+<p> اليوم الأول :السبت 6 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الثاني :الأحد 7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الثالث :السبت 13 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الرابع :الأحد 14 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p></CustomTabPanel>
 <CustomTabPanel value={value} index={2}>
-<p> الموعد الأول : 24 و 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-					   <p> الموعد الثاني :  31 أغسطس و1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الأول :السبت 24 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الثاني :الأحد 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الثالث :السبت 31 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+<p> اليوم الرابع :الأحد 1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 </CustomTabPanel>
                       
 
@@ -192,10 +197,9 @@ const VoiceOver = () => {
 							<button className='cta-button'>احجز الآن</button>
 						</a>
 					</div>
-					<div className='workshop-image'>
                     <div className='video-section'>
 				<video style={{background: '#000'}} src={video} autoPlay muted loop controls/>
-			</div>					</div>
+			</div>					
 				</div>
 			</div>
 			<div className='workshop-details-section'>

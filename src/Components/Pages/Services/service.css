@@ -1005,17 +1005,19 @@ position: static;
 }
 .voice-page .video-section{
     padding: 0 !important;
+    max-width: 50%;
 }
 .voice-page .video-section video{
-    max-height: 600px;
+    height: 600px;
 
 }
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
     font-family: 'baloo' !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 .voice-page .hero-workshop-section p{
-    font-size: 22px !important;
+    font-size: 18px !important;
+    max-width: 500px;
 }
 .voice-page .hero-workshop-section .cta-button{
     margin-top: 0px !important;
@@ -1025,6 +1027,8 @@ position: static;
 }
 .voice-page .hero-workshop-section{
     gap: 100px !important;
+    max-width: 1400px;
+
 }
 .voice-page .hero-workshop-section a{
     color: #DF1995;
@@ -1039,3 +1043,25 @@ border: 1px solid !important;
     border-color: #e7e7e7 !important;
     border-radius: 12px !important;
    }
+   .voice-page .workshop-date {
+    justify-content: right !important;
+}
+
+@media (max-width: 760px) {
+    .voice-page .css-ahj2mt-MuiTypography-root{
+        text-align: right !important;
+        margin-right: 10px;
+        
+    }
+    .voice-page .css-ahj2mt-MuiTypography-root p{
+        font-size: 16px !important;    }
+    .voice-page .video-section video{
+        height: auto !important;
+    
+    }
+    .voice-page .hero-workshop-section{
+        gap: 10px !important;}
+        .voice-page .video-section{
+            max-width: 100%;
+        }
+}
