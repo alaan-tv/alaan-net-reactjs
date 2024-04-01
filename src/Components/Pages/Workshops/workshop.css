@@ -152,6 +152,13 @@ padding: 0px
    .workshops-booking label{
     left: 310px !important;
     text-align: right;
+
+   }
+   .question-workshop label{
+       position: unset;
+       font-size: 16px;
+       color: #000;
+       font-weight: normal;
    }
    .workshops-booking .special-label{
     left: 340px !important;
