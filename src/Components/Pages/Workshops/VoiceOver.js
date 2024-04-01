@@ -1,11 +1,16 @@
 import React, {useRef, useState} from 'react'
+import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
 import EventIcon from '@mui/icons-material/Event'
-import video from '../../../Assets/voice-over-video.mp4'
+import video from '../../../Assets/voice-video-ver.mp4'
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import TikTokIcon from '@mui/icons-material/Instagram'
@@ -20,8 +25,44 @@ import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData} from "../../../custom-functions";
 import {Feature, Trainer} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
-
+function CustomTabPanel(props) {
+	const { children, value, index, ...other } = props;
+  
+	return (
+	  <div
+		role="tabpanel"
+		hidden={value !== index}
+		id={`simple-tabpanel-${index}`}
+		aria-labelledby={`simple-tab-${index}`}
+		{...other}
+	  >
+		{value === index && (
+		  <Box sx={{ p: 3 }}>
+			<Typography>{children}</Typography>
+		  </Box>
+		)}
+	  </div>
+	);
+  }
+  
+  CustomTabPanel.propTypes = {
+	children: PropTypes.node,
+	index: PropTypes.number.isRequired,
+	value: PropTypes.number.isRequired,
+  };
+  
+  function a11yProps(index) {
+	return {
+	  id: `simple-tab-${index}`,
+	  'aria-controls': `simple-tabpanel-${index}`,
+	};
+  }
 const VoiceOver = () => {
+	const [value, setValue] = React.useState(0);
+
+	const handleChange1 = (event, newValue) => {
+	  setValue(newValue);
+	};
 	const meta = {
 		title: 'ورشات التعليق الصوتي', description: 'I am a description, and I can create multiple tags', meta: {
 			charset: 'utf-8', name: {
@@ -119,10 +160,27 @@ const VoiceOver = () => {
 						<p>طور مهاراتك في مجال التعليق الصوتي الذي سيترك بصمتك
 </p>
 						<p>اكتشف وطور مهاراتك الصوتية مع ورشة عمل احتراف التعليق الصوتي مع محمد علي!</p>
-						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: -  </p></div>
-                       <p> May: 4th / 5th + 11th / 12th : [12pm - 4pm]</p>
-                       <p>July: 6th / 7th + 13th / 14th: [12pm - 4pm]</p>
-                       <p>August: 24th / 25th + 31st / Sept 1st: [12pm - 4pm]</p>
+						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة:   </p></div>
+						<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+						<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
+    <Tab label="مايو" {...a11yProps(0)} />
+    <Tab label="يوليو" {...a11yProps(1)} />
+    <Tab label="أغسطس" {...a11yProps(2)} />
+  </Tabs>
+</Box>
+<CustomTabPanel value={value} index={0}>
+<p> الموعد الأول : 4 و 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+					   <p> الموعد الثاني :11 و12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+</CustomTabPanel>
+<CustomTabPanel value={value} index={1}>
+<p> الموعد الأول : 6 و7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+					   <p> الموعد الثاني :13 و14  يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+</CustomTabPanel>
+<CustomTabPanel value={value} index={2}>
+<p> الموعد الأول : 24 و 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+					   <p> الموعد الثاني :  31 أغسطس و1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+</CustomTabPanel>
+                      
 
 						<a href='#contact-form'>
 							<button className='cta-button'>احجز الآن</button>
@@ -130,7 +188,7 @@ const VoiceOver = () => {
 					</div>
 					<div className='workshop-image'>
                     <div className='video-section'>
-				<video height={480} style={{background: '#000'}} src={video} autoPlay muted loop controls/>
+				<video style={{background: '#000'}} src={video} autoPlay muted loop controls/>
 			</div>					</div>
 				</div>
 			</div>
@@ -183,7 +241,7 @@ const VoiceOver = () => {
                         هل أنت مستعد لإطلاق العنان لإمكانيات صوتك الحقيقية؟
 						</p>
 						<p className='third-heading'>
-                        كن معنا في الورشات القادمة  :
+                        كن معنا في الورشات القادمة 
 
 						</p>
 						<h2 className='secondary-heading'>

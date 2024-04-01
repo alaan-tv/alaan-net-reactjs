@@ -1006,3 +1006,23 @@ position: static;
 .voice-page .video-section{
     padding: 0 !important;
 }
+.voice-page .video-section video{
+    max-height: 600px;
+
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    font-family: 'baloo' !important;
+    font-size: 20px !important;
+}
+.voice-page .hero-workshop-section p{
+    font-size: 22px !important;
+}
+.voice-page .hero-workshop-section .cta-button{
+    margin-top: 0px !important;
+}
+.css-19kzrtu{
+    padding: 24px 0px !important;
+}
+.voice-page .hero-workshop-section{
+    gap: 100px !important;
+}
