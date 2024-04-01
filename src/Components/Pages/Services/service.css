@@ -1026,3 +1026,16 @@ position: static;
 .voice-page .hero-workshop-section{
     gap: 100px !important;
 }
+.voice-page .hero-workshop-section a{
+    color: #DF1995;
+}
+.workshops-booking .input-wrapper span.Dropdown-arrow{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    top: 20px;
+}
+.Dropdown-control{
+border: 1px solid !important;
+    border-color: #e7e7e7 !important;
+    border-radius: 12px !important;
+   }
