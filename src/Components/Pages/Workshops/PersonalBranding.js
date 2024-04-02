@@ -53,7 +53,7 @@ const PersonalBranding = () => {
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'workshop-personal-branding', page_url: page_url,
+				...inputs, phone: phone, lp_type: 'personal-branding-workshop', page_url: page_url,
 			}),
 		})
 			.then(response => response.json())

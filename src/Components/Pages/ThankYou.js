@@ -11,7 +11,7 @@ const ThankYou = () => {
 	const params = useParams();
 
 	const get_msg = () => {
-		if (['podcast', 'media', 'be-a-presenter'].includes(params.child)) {
+		if (['podcast', 'media', 'be-a-presenter','voice-over'].includes(params.child)) {
 			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك لتحديد الموعد'};
 		} else if (params.child === 'LBD' && +localStorage.getItem('LBD_Quiz')) {
 			return {

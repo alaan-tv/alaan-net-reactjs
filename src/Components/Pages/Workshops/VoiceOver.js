@@ -24,47 +24,40 @@ import Advertise from '../../Common-components/ArabicAdvertise'
 import {ajax_url, formData} from "../../../custom-functions";
 import {Feature, Trainer} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
+
 function CustomTabPanel(props) {
-	const { children, value, index, ...other } = props;
-  
-	return (
-	  <div
+	const {children, value, index, ...other} = props;
+
+	return (<div
 		role="tabpanel"
 		hidden={value !== index}
 		id={`simple-tabpanel-${index}`}
 		aria-labelledby={`simple-tab-${index}`}
 		{...other}
-	  >
-		{value === index && (
-		  <Box sx={{ p: 3 }}>
+	>
+		{value === index && (<Box sx={{p: 3}}>
 			<Typography>{children}</Typography>
-		  </Box>
-		)}
-	  </div>
-	);
-  }
-  
-  CustomTabPanel.propTypes = {
-	children: PropTypes.node,
-	index: PropTypes.number.isRequired,
-	value: PropTypes.number.isRequired,
-  };
-  
-  function a11yProps(index) {
+		</Box>)}
+	</div>);
+}
+
+CustomTabPanel.propTypes = {
+	children: PropTypes.node, index: PropTypes.number.isRequired, value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
 	return {
-	  id: `simple-tab-${index}`,
-	  'aria-controls': `simple-tabpanel-${index}`,
+		id: `simple-tab-${index}`, 'aria-controls': `simple-tabpanel-${index}`,
 	};
-  }
+}
+
 const VoiceOver = () => {
-	const options = [
-		' مايو : الأيام 4, 5, 11, 12 ', ' يوليو : الأيام 6, 7 , 13, 14 ' , ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '
-	  ];
-	  const defaultOption = options[0];
+	const options = [' مايو : الأيام 4, 5, 11, 12 ', ' يوليو : الأيام 6, 7 , 13, 14 ', ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
+	const defaultOption = options[0];
 	const [value, setValue] = React.useState(0);
 
 	const handleChange1 = (event, newValue) => {
-	  setValue(newValue);
+		setValue(newValue);
 	};
 	const meta = {
 		title: 'ورشات التعليق الصوتي', description: 'I am a description, and I can create multiple tags', meta: {
@@ -81,6 +74,7 @@ const VoiceOver = () => {
 	 */
 	const [inputs, setInputs] = useState({});
 	const [phone, setPhone] = useState("971");
+	const [workshopDate, setWorkshopDate] = useState(defaultOption);
 	const submitBtn = useRef(null);
 	const page_url = window.location.origin + window.location.pathname;
 
@@ -100,7 +94,7 @@ const VoiceOver = () => {
 		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'podcast-workshop', page_url: page_url,
+				...inputs, phone: phone, lp_type: 'voice-over-workshop', page_url: page_url, ws_date: workshopDate.value
 			}),
 		})
 			.then(response => response.json())
@@ -115,23 +109,17 @@ const VoiceOver = () => {
 	 *  Content Object
 	 *
 	 */
-	const youWillGetList = [{desc: 'فهم مشهد العام لمجال التعليق الصوتي والاستقرار على تخصصك الفريد.'},
-     {desc: 'فهم عناصر التعليق الصوتي الناجح وكيفية التحكم بها بشكل صحيح.     '},
-       {desc: 'التسجيل والتعديل الصوتي باستخدام المعدات الاحترافية.       '},
-        {desc: 'اكتشاف نقاط القوة والضعف في الأداء والعمل على تصحيح الأخطاء.'},
-        {desc: 'معرفة كيف تجهّز الاستوديو المنزلي الاحترافي الخاص بك.'},
-        {desc: 'فهم أساسيات الهندسة الصوتية لصناعة تسجيل متكامل.        '},
-        {desc: 'فهم سوق العمل وكيفية الحصول على أعمال صوتية.'},
-        {desc: 'الاستعداد الجيّد للتسجيل والتعامل الاحترافي داخل الاستوديو.        '},
-        {desc: 'فهم كيفية بناء شبكة علاقات جيّدة مع العملاء والمنتجين والمحافظة عليها.'},
-        {desc: 'فهم طرق التسويق الفعّالة للمعلّق الصوتي.'},
-    ];
+	const youWillGetList = [{desc: 'فهم مشهد العام لمجال التعليق الصوتي والاستقرار على تخصصك الفريد.'}, {desc: 'فهم عناصر التعليق الصوتي الناجح وكيفية التحكم بها بشكل صحيح.     '}, {desc: 'التسجيل والتعديل الصوتي باستخدام المعدات الاحترافية.       '}, {desc: 'اكتشاف نقاط القوة والضعف في الأداء والعمل على تصحيح الأخطاء.'}, {desc: 'معرفة كيف تجهّز الاستوديو المنزلي الاحترافي الخاص بك.'}, {desc: 'فهم أساسيات الهندسة الصوتية لصناعة تسجيل متكامل.        '}, {desc: 'فهم سوق العمل وكيفية الحصول على أعمال صوتية.'}, {desc: 'الاستعداد الجيّد للتسجيل والتعامل الاحترافي داخل الاستوديو.        '}, {desc: 'فهم كيفية بناء شبكة علاقات جيّدة مع العملاء والمنتجين والمحافظة عليها.'}, {desc: 'فهم طرق التسويق الفعّالة للمعلّق الصوتي.'},];
 
 	const howItWorkList = [{
 		subtitle: "اليوم الأول", desc: " فهم أساسيات مجال التعليق الصوتي، مع تدريبات عملية لتطوير الآداء.        "
 	}, {
-		subtitle: "اليوم الثاني", desc: ' تجهيز الاستوديو المنزلي الاحترافي من الألف إلى الياء، مع تدريبات تطبيقية لتطوير الآداء الصوتي.        '
-	}, {subtitle: "اليوم الثالث", desc: ' تعلم أساسيات التسجيل والتعديل الصوتي  وأساسيات الهندسة الصوتية بشكل عملي وإنتاج ملف صوتي عالي الجودة.    '}, {
+		subtitle: "اليوم الثاني",
+		desc: ' تجهيز الاستوديو المنزلي الاحترافي من الألف إلى الياء، مع تدريبات تطبيقية لتطوير الآداء الصوتي.        '
+	}, {
+		subtitle: "اليوم الثالث",
+		desc: ' تعلم أساسيات التسجيل والتعديل الصوتي  وأساسيات الهندسة الصوتية بشكل عملي وإنتاج ملف صوتي عالي الجودة.    '
+	}, {
 		subtitle: "اليوم الرابع",
 		desc: '  تسجيل مشاريع التخرّج واكتساب مهارات ما بعد الإنتاج وتعلم استراتيجيات التسويق الفعّالة لاستكشاف فرص تحقيق الربح.        '
 	},];
@@ -143,14 +131,14 @@ const VoiceOver = () => {
 		social: [{icon: <InstagramIcon/>, link: "https://www.instagram.com/moalivoice/"}, {
 			icon: <YoutubeIcon/>, link: "https://www.youtube.com/@moalivoice"
 		},
-       
-        {icon: <TwitterIcon/>, link: "https://www.youtube.com/@moalivoice"
-		},
-        {icon: <FacebookIcon/>, link: "https://www.youtube.com/@moalivoice"
-		},
-    ],
+
+			{
+				icon: <TwitterIcon/>, link: "https://www.youtube.com/@moalivoice"
+			}, {
+				icon: <FacebookIcon/>, link: "https://www.youtube.com/@moalivoice"
+			},],
 		desc: "مدير المنتجات الصوتية Audio Products Manager في راديو وتلفزيون الآن، يقدم بودكاست \"البودكاست المفضل\" ، مصري الجنسية، ولد في مصر ونشأ في الإمارات. محمد مهندس ومعلق ومدرب صوتي محترف، قرر بعد سنوات من العمل كمهندس برمجيات أن يترك الهندسة ويتبع شغفه في التعليق والتدريب الصوتي وصناعة المحتوى، فترك وظيفته الحكومية وانضم إلى فريق الآن في بداية عام 2022. قام بتدريب أكثر من 800 شخص من بينهم إعلاميين حاليين ، مقدمي بودكاست ومذيعين، صانعي محتوى ومعلقين صوتيين وعمل مع العديد من كبرى الشركات والعلامات التجارية و المؤسسات الحكومية و مراكز التدريب الإعلامي."
-	}, ];
+	},];
 
 	return (<div style={{overflow_x: 'hidden'}} className='arabic-page voice-page'>
 		<DocumentMeta {...meta} />
@@ -162,54 +150,61 @@ const VoiceOver = () => {
 						<h1 className='light-heading podcast-heading'> اكتشف القوة الحقيقية لصوتك!</h1>
 						<p>اكتشف وطور مهاراتك الصوتية مع ورشة عمل احتراف التعليق الصوتي مع محمد علي!</p>
 
-						<p>مقابل 3,000 درهم فقط للورشة الحضورية في  <a href='https://maps.app.goo.gl/6WsNgfxpMhQgJ2NL8'> مقر الآن  </a><br/> أو 2,000 درهم أونلاين عبر تطبيق زووم  
-</p>
-						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة:   </p></div>
-						<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-						<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
-    <Tab label="مايو" {...a11yProps(0)} />
-    <Tab label="يوليو" {...a11yProps(1)} />
-    <Tab label="أغسطس" {...a11yProps(2)} />
-  </Tabs>
-</Box>
-<CustomTabPanel value={value} index={0}>
-<p> اليوم الأول :السبت 4 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الثاني :الأحد 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الثالث :السبت 11 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الرابع :الأحد 12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-</CustomTabPanel>
-<CustomTabPanel value={value} index={1}>
-<p> اليوم الأول :السبت 6 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الثاني :الأحد 7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الثالث :السبت 13 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الرابع :الأحد 14 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p></CustomTabPanel>
-<CustomTabPanel value={value} index={2}>
-<p> اليوم الأول :السبت 24 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الثاني :الأحد 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الثالث :السبت 31 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-<p> اليوم الرابع :الأحد 1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-</CustomTabPanel>
-                      
+						<p>مقابل 3,000 درهم فقط للورشة الحضورية في <a
+							href='https://maps.app.goo.gl/6WsNgfxpMhQgJ2NL8'> مقر الآن </a><br/> أو 2,000 درهم أونلاين
+							عبر تطبيق زووم
+						</p>
+						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: </p></div>
+						<Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
+								<Tab label="مايو" {...a11yProps(0)} />
+								<Tab label="يوليو" {...a11yProps(1)} />
+								<Tab label="أغسطس" {...a11yProps(2)} />
+							</Tabs>
+						</Box>
+						<CustomTabPanel value={value} index={0}>
+							<p> اليوم الأول :السبت 4 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثاني :الأحد 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثالث :السبت 11 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الرابع :الأحد 12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+						</CustomTabPanel>
+						<CustomTabPanel value={value} index={1}>
+							<p> اليوم الأول :السبت 6 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثاني :الأحد 7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثالث :السبت 13 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الرابع :الأحد 14 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p></CustomTabPanel>
+						<CustomTabPanel value={value} index={2}>
+							<p> اليوم الأول :السبت 24 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثاني :الأحد 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثالث :السبت 31 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الرابع :الأحد 1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+						</CustomTabPanel>
+
 
 						<a href='#contact-form'>
 							<button className='cta-button'>احجز الآن</button>
 						</a>
 					</div>
-                    <div className='video-section'>
-				<video style={{background: '#000'}} src={video} autoPlay muted loop controls/>
-			</div>					
+					<div className='video-section'>
+						<video style={{background: '#000'}} src={video} autoPlay muted loop controls/>
+					</div>
 				</div>
 			</div>
 			<div className='workshop-details-section'>
 				<div className='workshop-intro'>
 					<h2 className='third-heading'>
-                    هل تعتقد بأنك تمتلك صوتاً جميلاً؟ ولكنك لست متأكداً إن كنت تصلح لتكون معلقاً صوتياً أو صانع محتوى؟ الخبر الجيد هو أن كل الأصوات جميلة وتصلح للتعليق الصوتي إذا تم تدريبها وتطويرها بشكل صحيح! لكن من أين تبدأ؟ أو كيف تصل إلى الجمهور؟ أو كيف تدخل سوق العمل وتبني مساراً مهنياً ناجحاً من خلال صوتك؟ لا تقلق، نحن هنا لمساعدتك لتضع قدمك على الطريق الصحيح!
+						هل تعتقد بأنك تمتلك صوتاً جميلاً؟ ولكنك لست متأكداً إن كنت تصلح لتكون معلقاً صوتياً أو صانع
+						محتوى؟ الخبر الجيد هو أن كل الأصوات جميلة وتصلح للتعليق الصوتي إذا تم تدريبها وتطويرها بشكل
+						صحيح! لكن من أين تبدأ؟ أو كيف تصل إلى الجمهور؟ أو كيف تدخل سوق العمل وتبني مساراً مهنياً ناجحاً
+						من خلال صوتك؟ لا تقلق، نحن هنا لمساعدتك لتضع قدمك على الطريق الصحيح!
 
 
 					</h2>
-					<p>لهذا السبب قمنا بتصميم ورشة عمل مكثفة لمدة 4 أيام لمساعدة محبي التعليق الصوتي في رحلة التحوّل إلى فنانين ومعلقين صوتيين ناجحين! نحن هنا لنمكنك من الحصول على المعرفة، والمهارات، والأدوات، والثقة التي تحتاجها لاكتشاف القوة الحقيقية لصوتك وكيفية استثمارها بشكل فعّال!
+					<p>لهذا السبب قمنا بتصميم ورشة عمل مكثفة لمدة 4 أيام لمساعدة محبي التعليق الصوتي في رحلة التحوّل إلى
+						فنانين ومعلقين صوتيين ناجحين! نحن هنا لنمكنك من الحصول على المعرفة، والمهارات، والأدوات، والثقة
+						التي تحتاجها لاكتشاف القوة الحقيقية لصوتك وكيفية استثمارها بشكل فعّال!
 
-						
+
 					</p>
 				</div>
 				<div className='workshop-features-section'>
@@ -225,7 +220,8 @@ const VoiceOver = () => {
 </div>*/}
 			<div className='workshop-features-section'>
 				<h2 className='light-heading'>
-				مقابل 3,000 درهم فقط للورشة الحضورية في مقر الآن أو 2,000 درهم أونلاين عبر تطبيق زووم ، إليك ما ستتعلمه في أيام الورشة
+					مقابل 3,000 درهم فقط للورشة الحضورية في مقر الآن أو 2,000 درهم أونلاين عبر تطبيق زووم ، إليك ما
+					ستتعلمه في أيام الورشة
 				</h2>
 				<div className='features'>
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
@@ -246,10 +242,10 @@ const VoiceOver = () => {
 					<div className='left-section-container'>
 						<img src={BookingIcon} alt="Booking Icon"/>
 						<p className='third-heading'>
-                        هل أنت مستعد لإطلاق العنان لإمكانيات صوتك الحقيقية؟
+							هل أنت مستعد لإطلاق العنان لإمكانيات صوتك الحقيقية؟
 						</p>
 						<p className='third-heading'>
-                        كن معنا في الورشات القادمة 
+							كن معنا في الورشات القادمة
 
 						</p>
 						<h2 className='secondary-heading'>
@@ -277,26 +273,32 @@ const VoiceOver = () => {
 								value={phone}
 								country={'ae'}
 								onChange={setPhone}/>
-								<div className="input-wrapper ">
-									<p className='question-type'> كيف تريد حضور الورشة :</p>
-									<div className='question-workshop'>
+							<div className="input-wrapper ">
+								<p className='question-type'> كيف تريد حضور الورشة :</p>
+								<div className='question-workshop'>
 									<div className='option'>
-								<input name="attend" type='radio'  required value="online" onChange={handleChange}
-								       checked={(inputs.terms || '') ? "checked" : ''}/>
-								<span>أونلاين </span>
-								</div>
-								<div className='option'>
-								<input name="attend" type='radio'  required value="face to face" onChange={handleChange}
-								       checked={(inputs.terms || '') ? "checked" : ''}/>
-								<span>حضور في المكان </span>
-								</div>
+										<label>
+											<input name="attend" type='radio' required value="online"
+											       onChange={handleChange}
+											       checked={(inputs.attend || '') == 'online' ? "checked" : ''}/>
+											<span>أونلاين </span>
+										</label>
+									</div>
+									<div className='option'>
+										<label>
+											<input name="attend" type='radio' required value="face to face"
+											       onChange={handleChange}
+											       checked={(inputs.attend || '') == 'face to face' ? "checked" : ''}/>
+											<span>حضور في المكان </span></label>
+									</div>
 								</div>
 							</div>
 							<div className="input-wrapper">
-							<p className='question-type'> اختر موعد الورشة    :</p>
-							<Dropdown options={options}  value={defaultOption} placeholder="Select an option" />
+								<p className='question-type'> اختر موعد الورشة :</p>
+								<Dropdown options={options} value={workshopDate} onChange={setWorkshopDate}
+								          placeholder="Select an option"/>
 
-</div>
+							</div>
 							<div className="input-wrapper">
 								<input name="terms" type='checkbox' required value="1" onChange={handleChange}
 								       checked={(inputs.terms || '') ? "checked" : ''}/>
