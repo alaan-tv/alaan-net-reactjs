@@ -75,6 +75,9 @@ position: relative;
 .living-page .second-features .features-container{
     padding: 0px 50px;
 }
+.living-page .second-features .dot___3c3SI{
+    margin-top: 40px;
+}
 .feature-icon{
     padding: 20px;
 }
@@ -384,8 +387,7 @@ box-shadow: 0px 5px 60px #817a9924;
         .desc-item span{
             color: #817a99;
         }
-        .desc-item-title{
-        }
+       
         .desc-item .css-i4bv87-MuiSvgIcon-root{
             color: #df1995 !important
         }
@@ -446,9 +448,7 @@ padding-left: 20px;
             max-width: 1128px;
             
         }
-        .living-page .trainers-container {
-            
-        }
+      
         .living-page .about-section .trainer-image{
             height: 100% !important; 
             width: 100% !important;
@@ -724,9 +724,7 @@ padding-left: 20px;
     justify-content: space-between;
     padding: 20px;
    }
-   .living-page .trainer-desc{
-   
-   }
+
    .living-page .trainer-desc p{
     margin-bottom: 18px;
    }
@@ -761,9 +759,7 @@ padding-left: 20px;
         width: 100% !important;
     }
 
-   .living-page .trainer-desc{
-    /*padding: 60px 20px;*/
-   }
+  
    .about-section .trainer-image{
     width: 350px !important;
     height: 230px !important;
@@ -998,7 +994,9 @@ position: static;
 .arrow-mobile-v{
     display: inline-block;
     position: absolute;
-    left: 10px;
+    left: 0px;
+    margin-top: -10px;
+    width: 70px;
 }}
 .voice-page .workshop-intro .third-heading{
     font-size: 24px;
