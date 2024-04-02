@@ -812,13 +812,20 @@ min-width: 40%
 .question{
   padding: 20px 0px;
 }
+.mobile-breakline{
+  display: none;
+}
 
 /*quiz on mobile*/
 @media (max-width: 760px) {
   .living-page .take-quiz{
-    
-  
-    font-size: 18px;
+    line-height: 30px;
+    width: 65%;
+    padding: 10px !important;
+    font-size: 24px;
+  }
+  .mobile-breakline{
+   display: inline-block;
   }
   .formQuiz .quiz-form > div > div{
   flex-direction: column;

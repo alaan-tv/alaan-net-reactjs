@@ -244,14 +244,14 @@ your space, in 3 simple steps:
 					<div className='left-section-container'>
 						<img src={LivingIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
-							The home you never knew you needed <br/>is a click away
+							The home you never <br/>knew you needed <br/>is a click away
 						</p>
 						<p className='third-heading'> Why wait any longer to live the way
-						<br/>you were always meant to?</p>
+						you were always meant to?</p>
 						{/*modal quiz*/}
 						<div className='cta-quiz'>
 						
-						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started & Take The Quiz!</p> 
+						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p> 
 						</button> </div>
 						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
@@ -261,7 +261,7 @@ your space, in 3 simple steps:
 				</div>
 				<div className='right-section'>
 					<div className='form-section' id="contact-form">
-						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey towards unbelievable living!</h4>
+						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey <br/>towards unbelievable living!</h4>
 						<form action='' onSubmit={handleSubmit}>
 							<div className="input-wrapper">
 								<label for="first">FULL NAME</label>

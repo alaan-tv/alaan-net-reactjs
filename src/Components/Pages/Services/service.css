@@ -75,6 +75,9 @@ position: relative;
 .living-page .second-features .features-container{
     padding: 0px 50px;
 }
+.living-page .second-features .dot___3c3SI{
+    margin-top: 40px;
+}
 .feature-icon{
     padding: 20px;
 }
@@ -991,7 +994,9 @@ position: static;
 .arrow-mobile-v{
     display: inline-block;
     position: absolute;
-    left: 10px;
+    left: 0px;
+    margin-top: -10px;
+    width: 70px;
 }}
 .voice-page .workshop-intro .third-heading{
     font-size: 24px;

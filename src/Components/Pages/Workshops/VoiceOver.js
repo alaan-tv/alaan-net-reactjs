@@ -289,7 +289,7 @@ const VoiceOver = () => {
 											<input name="attend" type='radio' required value="face to face"
 											       onChange={handleChange}
 											       checked={(inputs.attend || '') == 'face to face' ? "checked" : ''}/>
-											<span>حضور في المكان </span></label>
+											<span>حضوري في مقر الآن </span></label>
 									</div>
 								</div>
 							</div>
