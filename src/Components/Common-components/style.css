@@ -675,8 +675,7 @@ margin: 30px 0px;
 .introduction-quiz-form .container{
   position: relative; width: 300px;   border-radius: 20px; padding: 15px; background-color: #fff;
 }
-.introduction-quiz-form .container img{
-}
+
 .introduction-quiz-form  .checkbox { position: absolute; bottom: 0px; right: 0px; width: 30px; }
 .introduction-quiz-form input[type=checkbox]{
   margin: 0px;
@@ -813,8 +812,7 @@ min-width: 40%
 .question{
   padding: 20px 0px;
 }
-.dimensions-section{
-}
+
 /*quiz on mobile*/
 @media (max-width: 760px) {
   .living-page .take-quiz{

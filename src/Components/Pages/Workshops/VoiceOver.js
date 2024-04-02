@@ -9,12 +9,10 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
-import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
 import EventIcon from '@mui/icons-material/Event'
 import video from '../../../Assets/voice-over-video.mp4'
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import TikTokIcon from '@mui/icons-material/Instagram'
 import YoutubeIcon from '@mui/icons-material/YouTube'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import FacebookIcon from '@mui/icons-material/Facebook'
