@@ -38,6 +38,7 @@ const ThankYou = () => {
 			'be-a-presenter': 'AW-10776634183/v72CCLeT4pMZEMfG2ZIo',
 			'personal-branding': 'AW-10776634183/w1dDCOjh3JMZEMfG2ZIo',
 			'LBD': 'AW-10776634183/2MofCNvNrJ0ZEMfG2ZIo',
+			'voice-over': 'AW-10776634183/HsvYCN-Q2aMZEMfG2ZIo',
 		};
 		window.gtag('event', 'conversion', {'send_to': conversionID[params.child], 'transaction_id': ''});
 	}, [params.child]);
