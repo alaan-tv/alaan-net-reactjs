@@ -977,6 +977,10 @@ position: static;
     display: flex;
     align-items: flex-end;
 }
+.content-page .booking .left-section{ 
+    display: flex;
+    align-items: flex-end;
+}
 .cta-quiz{
     margin-top: 50px;
 }
@@ -1062,4 +1066,8 @@ border: 1px solid !important;
         .voice-page .video-section{
             max-width: 100%;
         }
+}
+.css-1q2h7u5{
+    font-family: 'baloo' !important;
+    font-size: 18px !important;
 }
