@@ -25,6 +25,11 @@ import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
 import AboutImage from '../../../Assets/CBDAbout.svg'
+import Arrow from '../../../Assets/arrow.png'
+import QuizModal from '../../Common-components/QuizModal'
+import FormModal from '../../Common-components/FormModal'
+import Quiz from '../../Common-components/Quiz'
+import FormQuiz from '../../Common-components/FormQuiz'
 const ContentByDesign = () => {
 	const meta = {
 		title: 'Content By Design',
@@ -42,10 +47,17 @@ const ContentByDesign = () => {
 	 *  Send From Data
 	 *
 	 */
+	const [form, setForm] = useState(false);
+
 	const [inputs, setInputs] = useState({});
+	const [quiz, setQuiz] = useState(false);
 	const [phone, setPhone] = useState("971");
 	const submitBtn = useRef(null);
+	const handlaChangeForm = () => {
+		setQuiz(!quiz);
+		setForm(true);
 
+	}
 	/**
 	 * Get & set input field values
 	 * @param e
@@ -60,17 +72,19 @@ const ContentByDesign = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'content-by-design'})
+			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'living-by-design'})
 		})
 			.then(response => response.json())
 			.then(data => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location='/our-services/CBD/thank-you';
+					window.location='/our-services/LBD/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
+
+
 
 
 	const youWillGetList = [
@@ -207,16 +221,26 @@ const ContentByDesign = () => {
 				</div>
 
 				<div className='booking' id="contact-form">
-					<div className='left-section'>
-						<div className='left-section-container'>
-							<img src={CBDIcon} alt="CBD Icon"/>
-							<p className='third-heading'>
-							It takes years of experience to build the perfect set, we're using 2 decades of ours to give you a headstart on yours.
-							</p>
-							<button className='take-quiz'> Get Started & Take The Quiz!
-						</button>
-						</div>
+				<div className='left-section'>
+				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
+					<div className='left-section-container'>
+						<img src={CBDIcon} alt="LivingIcon"/>
+						<p className='third-heading'>
+							The home you never <br/>knew you needed <br/>is a click away
+						</p>
+						<p className='third-heading'> Why wait any longer to live the way
+						you were always meant to?</p>
+						{/*modal quiz*/}
+						<div className='cta-quiz'>
+						
+						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p> 
+						</button> </div>
+						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
+						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
+						<FormModal showForm={form} handleClose1={() => setForm(!form)}
+						           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
+				</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
 						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey towards unbelievably better content!</h4>
