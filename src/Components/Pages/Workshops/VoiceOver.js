@@ -94,7 +94,7 @@ const VoiceOver = () => {
 		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'voice-over-workshop', page_url: page_url, ws_date: workshopDate.value
+				...inputs, phone: phone, lp_type: 'voice-over-workshop', page_url: page_url, ws_date: workshopDate.value?workshopDate.value:workshopDate
 			}),
 		})
 			.then(response => response.json())
