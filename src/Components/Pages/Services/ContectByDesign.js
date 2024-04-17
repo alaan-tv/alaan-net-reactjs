@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react'
 import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
-import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css'; 
+import {CarouselProvider, Slider, Slide, DotGroup} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
@@ -18,9 +18,7 @@ import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import ContentLogo from '../../../Assets/CBD-white2.svg'
 import CBDIcon from '../../../Assets/CBD-quiz-icon.svg'
-import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
-import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
@@ -30,6 +28,7 @@ import QuizModal from '../../Common-components/QuizModal'
 import FormModal from '../../Common-components/FormModal'
 import Quiz from '../../Common-components/Quiz'
 import FormQuiz from '../../Common-components/FormQuiz'
+
 const ContentByDesign = () => {
 	const meta = {
 		title: 'Content By Design',
@@ -51,13 +50,27 @@ const ContentByDesign = () => {
 
 	const [inputs, setInputs] = useState({});
 	const [quiz, setQuiz] = useState(false);
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const submitBtn = useRef(null);
 	const handlaChangeForm = () => {
 		setQuiz(!quiz);
 		setForm(true);
 
 	}
+
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
+
 	/**
 	 * Get & set input field values
 	 * @param e
@@ -72,19 +85,18 @@ const ContentByDesign = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'living-by-design'})
+			method: 'Post',
+			body: formData({...inputs, phone: phone.number, country: phone.country, lp_type: 'living-by-design'})
 		})
 			.then(response => response.json())
 			.then(data => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location='/our-services/LBD/thank-you';
+					window.location = '/our-services/LBD/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
-
-
 
 
 	const youWillGetList = [
@@ -139,7 +151,7 @@ const ContentByDesign = () => {
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
 								Build the Set you’ve been waiting for with</h1>
-							<img className='service-logo' src={ContentLogo}/>
+							<img className='service-logo' src={ContentLogo} alt={''}/>
 							<p className='primary-text light-text'>
 								Your content, with a lot more of You in it.
 							</p>
@@ -157,33 +169,34 @@ const ContentByDesign = () => {
 			</div>
 			<div className='home-container'>
 				<div className='features'>
-					<h2 className='primary-heading'> We'll take your set to a whole other level, by giving you the 3 things you need to see it there:
+					<h2 className='primary-heading'> We'll take your set to a whole other level, by giving you the 3
+						things you need to see it there:
 
 					</h2>
 					<div className='features-container desktop-v'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 					<CarouselProvider className='mobile-v'
-     naturalSlideWidth={100}
-     naturalSlideHeight={90}
-     totalSlides={3}
-    >
+					                  naturalSlideWidth={100}
+					                  naturalSlideHeight={90}
+					                  totalSlides={3}
+					>
 
-    <Slider>
-	{youWillGetList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
-     
-    </Slider>
+						<Slider>
+							{youWillGetList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
 
-    <DotGroup />
-   </CarouselProvider>
+						</Slider>
+
+						<DotGroup/>
+					</CarouselProvider>
 				</div>
 				<div className='about-section'>
 					<h2 className='primary-heading'> Same great content, <br/> just unbelievably better packaged.</h2>
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								<img src={AboutImage} alt='about-image'/>
-								
+								<img src={AboutImage} alt='about'/>
+
 
 							</div>
 							<div className='trainer-desc'>
@@ -206,44 +219,48 @@ const ContentByDesign = () => {
 						{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 					</div>
 					<CarouselProvider className='mobile-v'
-     naturalSlideWidth={100}
-     naturalSlideHeight={100}
-     totalSlides={4}
-    >
+					                  naturalSlideWidth={100}
+					                  naturalSlideHeight={100}
+					                  totalSlides={4}
+					>
 
-    <Slider>
-	{howItWorkList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
-     
-    </Slider>
+						<Slider>
+							{howItWorkList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
 
-    <DotGroup />
-   </CarouselProvider>
+						</Slider>
+
+						<DotGroup/>
+					</CarouselProvider>
 				</div>
 
 				<div className='booking' id="contact-form">
-				<div className='left-section'>
-				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
-					<div className='left-section-container'>
-						<img src={CBDIcon} alt="LivingIcon"/>
-						<p className='third-heading'>
-							The home you never <br/>knew you needed <br/>is a click away
-						</p>
-						<p className='third-heading'> Why wait any longer to live the way
-						you were always meant to?</p>
-						{/*modal quiz*/}
-						<div className='cta-quiz'>
-						
-						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p> 
-						</button> </div>
-						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
-						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
-						<FormModal showForm={form} handleClose1={() => setForm(!form)}
-						           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
+					<div className='left-section'>
+						<img src={Arrow} width={90} className='arrow-quiz arrow-desctop-v' alt={''}/>
+						<div className='left-section-container'>
+							<img src={CBDIcon} alt="LivingIcon"/>
+							<p className='third-heading'>
+								The home you never <br/>knew you needed <br/>is a click away
+							</p>
+							<p className='third-heading'> Why wait any longer to live the way
+								you were always meant to?</p>
+							{/*modal quiz*/}
+							<div className='cta-quiz'>
+
+								<img src={Arrow} width={40} className='arrow-quiz arrow-mobile-v' alt={''}/>
+								<button className='take-quiz' onClick={() => setQuiz(true)}><p>Get Started &<br
+									className='mobile-breakline'/> Take The Quiz!</p>
+								</button>
+							</div>
+							<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
+							           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
+							<FormModal showForm={form} handleClose1={() => setForm(!form)}
+							           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
+						</div>
 					</div>
-				</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
-						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey towards unbelievably better content!</h4>
+							<h4 className='form-text'> Get your free 15-minute consultation right now to start your
+								journey towards unbelievably better content!</h4>
 
 							<form action='' onSubmit={handleSubmit}>
 								<div className="input-wrapper">
@@ -260,9 +277,9 @@ const ContentByDesign = () => {
 									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
-									value={phone}
+									value={phone.number}
 									country={'ae'}
-									onChange={setPhone}/>
+									onChange={handleOnChange}/>
 								<div className="input-wrapper">
 									<input type='checkbox' required/>
 									<span id="terms-label">I agree with <Link

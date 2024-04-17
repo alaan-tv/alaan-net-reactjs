@@ -44,8 +44,21 @@ const OwnYourStory = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const submitBtn = useRef(null);
+
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
 
 	/**
 	 * Get & set input field values
@@ -61,7 +74,7 @@ const OwnYourStory = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'own-your-story'})
+			method: 'Post', body: formData({...inputs, phone: phone.number, country: phone.country, lp_type: 'own-your-story'})
 		})
 			.then(response => response.json())
 			.then(data => {
@@ -313,9 +326,9 @@ const OwnYourStory = () => {
 									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
-									value={phone}
+									value={phone.number}
 									country={'ae'}
-									onChange={setPhone}/>
+									onChange={handleOnChange}/>
 								<div className="input-wrapper">
 									<label for="first">Company name</label>
 									<input type="text" name="company" value={inputs.company || ""}

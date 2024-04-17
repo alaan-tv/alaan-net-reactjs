@@ -43,11 +43,23 @@ const MagicTouchClinic = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const inputFile = useRef(null);
 	const submitBtn = useRef(null);
 	const page_url = window.location.origin + window.location.pathname;
 
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
 	/**
 	 * Get & set input field values
 	 * @param e
@@ -64,7 +76,7 @@ const MagicTouchClinic = () => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
 				...inputs,
-				phone: phone,
+				phone: phone.number, country: phone.country,
 				cv: inputFile.current.files[0],
 				lp_type: 'magic-touch-clinic',
 				page_url: page_url,
@@ -246,9 +258,9 @@ const MagicTouchClinic = () => {
 									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
-									value={phone}
+									value={phone.number}
 									country={'ae'}
-									onChange={setPhone}/>
+									onChange={handleOnChange}/>
 								<div className="input-wrapper">
 									<label for="first">LINKEDIN PROFILE</label>
 									<input type="text" name="linked_in" value={inputs.linked_in || ""}
