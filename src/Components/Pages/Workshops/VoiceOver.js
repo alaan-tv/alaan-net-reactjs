@@ -73,11 +73,23 @@ const VoiceOver = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const [workshopDate, setWorkshopDate] = useState(defaultOption);
 	const submitBtn = useRef(null);
 	const page_url = window.location.origin + window.location.pathname;
 
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
 	/**
 	 * Get & set input field values
 	 * @param e
@@ -94,7 +106,11 @@ const VoiceOver = () => {
 		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'voice-over-workshop', page_url: page_url, ws_date: workshopDate.value?workshopDate.value:workshopDate
+				...inputs,
+				phone: phone.number, country: phone.country,
+				lp_type: 'voice-over-workshop',
+				page_url: page_url,
+				ws_date: workshopDate.value ? workshopDate.value : workshopDate
 			}),
 		})
 			.then(response => response.json())
@@ -270,9 +286,9 @@ const VoiceOver = () => {
 								inputProps={{pattern: ".{12,25}",}}
 								specialLabel="رقم الهاتف"
 								placeholder="Enter phone number"
-								value={phone}
+								value={phone.number}
 								country={'ae'}
-								onChange={setPhone}/>
+								onChange={handleOnChange}/>
 							<div className="input-wrapper ">
 								<p className='question-type'> كيف تريد حضور الورشة :</p>
 								<div className='question-workshop'>
@@ -280,7 +296,7 @@ const VoiceOver = () => {
 										<label>
 											<input name="attend" type='radio' required value="online"
 											       onChange={handleChange}
-											       checked={(inputs.attend || '') == 'online' ? "checked" : ''}/>
+											       checked={(inputs.attend || '') === 'online' ? "checked" : ''}/>
 											<span>أونلاين </span>
 										</label>
 									</div>
@@ -288,7 +304,7 @@ const VoiceOver = () => {
 										<label>
 											<input name="attend" type='radio' required value="face to face"
 											       onChange={handleChange}
-											       checked={(inputs.attend || '') == 'face to face' ? "checked" : ''}/>
+											       checked={(inputs.attend || '') === 'face to face' ? "checked" : ''}/>
 											<span>حضوري في مقر الآن </span></label>
 									</div>
 								</div>
