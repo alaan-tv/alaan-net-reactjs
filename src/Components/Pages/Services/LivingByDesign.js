@@ -1,8 +1,8 @@
 import React, {Fragment, useRef, useState} from 'react'
 import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
-import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css'; 
+import {CarouselProvider, DotGroup, Slide, Slider} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
@@ -17,9 +17,7 @@ import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import LivingLogo from '../../../Assets/LBD-white2.svg'
-import TickIcon from '../../Common-components/TickIcon'
 import {ajax_url, formData} from "../../../custom-functions";
-import Modal from '../../Common-components/Modal';
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
@@ -31,6 +29,7 @@ import FormModal from '../../Common-components/FormModal'
 import Quiz from '../../Common-components/Quiz'
 import FormQuiz from '../../Common-components/FormQuiz'
 import Arrow from '../../../Assets/arrow.png'
+
 const LivingByDesign = () => {
 	const meta = {
 		title: 'Living By Design',
@@ -54,13 +53,27 @@ const LivingByDesign = () => {
 
 	const [inputs, setInputs] = useState({});
 	const [quiz, setQuiz] = useState(false);
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const submitBtn = useRef(null);
 	const handlaChangeForm = () => {
 		setQuiz(!quiz);
 		setForm(true);
 
 	}
+
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
+
 	/**
 	 * Get & set input field values
 	 * @param e
@@ -75,14 +88,15 @@ const LivingByDesign = () => {
 		event.preventDefault();
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
-			method: 'Post', body: formData({...inputs, phone: phone, lp_type: 'living-by-design'})
+			method: 'Post',
+			body: formData({...inputs, phone: phone.number, country: phone.country, lp_type: 'living-by-design'})
 		})
 			.then(response => response.json())
 			.then(data => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location='/our-services/LBD/thank-you';
+					window.location = '/our-services/LBD/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
@@ -131,7 +145,7 @@ const LivingByDesign = () => {
 			desc: "Your consultant will meet you at the property to discuss the complete list of all the furniture, furnishings, decor, & fixtures, for you to purchase that'll transform your space; as well as a top-view floor plan which'll highlight how everything will fit and be arranged!"
 		},
 	];
-	
+
 
 	return (
 		<div className='living-page'>
@@ -156,7 +170,7 @@ const LivingByDesign = () => {
     <picture>
 <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
 <source media='(min-width: 768px)' srcSet={MagicStudioVideo} />
-<img src={MagicStudioVideo} className='banner-image' alt='hero' />
+<img src={MagicStudioVideo} className='banner' alt='hero' />
 </picture>
   </div>*/}
 						</div>
@@ -166,32 +180,32 @@ const LivingByDesign = () => {
 			<div className='home-container'>
 				<div className='features'>
 					<h2 className='primary-heading'> Everything you need to transform
-your space, in 3 simple steps:
+						your space, in 3 simple steps:
 					</h2>
 					<div className='features-container desktop-v'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
-						
+
 					</div>
 					<CarouselProvider className='mobile-v'
-     naturalSlideWidth={100}
-     naturalSlideHeight={90}
-     totalSlides={3}
-    >
+					                  naturalSlideWidth={100}
+					                  naturalSlideHeight={90}
+					                  totalSlides={3}
+					>
 
-    <Slider>
-	{youWillGetList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
-     
-    </Slider>
+						<Slider>
+							{youWillGetList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
 
-    <DotGroup />
-   </CarouselProvider>
+						</Slider>
+
+						<DotGroup/>
+					</CarouselProvider>
 				</div>
 				<div className='about-section'>
 					<h2 className='primary-heading'> Live better, faster.</h2>
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								{ /*<img src={AboutImage} alt='about-image'/> */}
+								{ /*<img src={AboutImage} alt='about'/> */}
 								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5"
 								                    transition='.5s ease-in-out'
 								                    itemOne={<ReactCompareSliderImage src={BeforeLiving}
@@ -207,9 +221,9 @@ your space, in 3 simple steps:
 							<div className='trainer-desc'>
 								<p>Things change, people change, rooms change.</p><p> While we can’t do much about the
 								first two, we can make sure your rooms only change for the better.</p> <p>There were
-								reasons why you couldn’t design your space how you wanted the first time around- 
+								reasons why you couldn’t design your space how you wanted the first time around-
 								Now there’s no reason to choose not to.
-								</p>
+							</p>
 
 							</div>
 						</div>
@@ -219,40 +233,43 @@ your space, in 3 simple steps:
 			</div>
 			<div className='features second-features'>
 				<h2 className='primary-heading'> How it works </h2>
-				<div className='features-container desktop-v' >
+				<div className='features-container desktop-v'>
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 				</div>
 				<CarouselProvider className='mobile-v'
-     naturalSlideWidth={100}
-     naturalSlideHeight={100}
-     totalSlides={4}
-    >
+				                  naturalSlideWidth={100}
+				                  naturalSlideHeight={100}
+				                  totalSlides={4}
+				>
 
-    <Slider>
-	{howItWorkList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
-     
-    </Slider>
+					<Slider>
+						{howItWorkList.map((item, i) => <Slide index={i}><Feature key={i} item={item}/></Slide>)}
 
-    <DotGroup />
-   </CarouselProvider>
+					</Slider>
+
+					<DotGroup/>
+				</CarouselProvider>
 			</div>
-			
+
 			<div className='booking' id="contact-form">
-			
+
 				<div className='left-section'>
-				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
+					<img src={Arrow} width={90} className='arrow-quiz arrow-desctop-v' alt={''}/>
 					<div className='left-section-container'>
 						<img src={LivingIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
 							The home you never <br/>knew you needed <br/>is a click away
 						</p>
 						<p className='third-heading'> Why wait any longer to live the way
-						you were always meant to?</p>
+							you were always meant to?</p>
 						{/*modal quiz*/}
 						<div className='cta-quiz'>
-						
-						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p> 
-						</button> </div>
+
+							<img src={Arrow} width={40} className='arrow-quiz arrow-mobile-v' alt={''}/>
+							<button className='take-quiz' onClick={() => setQuiz(true)}><p>Get Started &<br
+								className='mobile-breakline'/> Take The Quiz!</p>
+							</button>
+						</div>
 						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
 						<FormModal showForm={form} handleClose1={() => setForm(!form)}
@@ -261,7 +278,8 @@ your space, in 3 simple steps:
 				</div>
 				<div className='right-section'>
 					<div className='form-section' id="contact-form">
-						<h4 className='form-text'> Get your free 15-minute consultation right now to start your journey <br/>towards unbelievable living!</h4>
+						<h4 className='form-text'> Get your free 15-minute consultation right now to start your
+							journey <br/>towards unbelievable living!</h4>
 						<form action='' onSubmit={handleSubmit}>
 							<div className="input-wrapper">
 								<label for="first">FULL NAME</label>
@@ -277,9 +295,9 @@ your space, in 3 simple steps:
 								inputProps={{pattern: ".{12,25}",}}
 								specialLabel="PHONE NUMBER"
 								placeholder="Enter phone number"
-								value={phone}
+								value={phone.number}
 								country={'ae'}
-								onChange={setPhone}/>
+								onChange={handleOnChange}/>
 							<div className="input-wrapper">
 								<input type='checkbox' required/>
 								<span id="terms-label">I agree with <Link

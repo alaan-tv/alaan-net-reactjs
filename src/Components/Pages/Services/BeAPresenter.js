@@ -5,7 +5,6 @@ import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import TrainerImage1 from '../../../Assets/Muna.svg'
 import TrainerImage2 from '../../../Assets/Kareem.svg'
 import TrainerImage3 from '../../../Assets/Rasha.svg'
 import TrainerImage4 from '../../../Assets/sajad.svg'
@@ -46,9 +45,22 @@ const BeAPresenter = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({name: '', email: '', promo_code: ''});
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const submitBtn = useRef(null);
 	const page_url = window.location.origin + window.location.pathname;
+
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
 
 	/**
 	 * Get & set input field values
@@ -65,7 +77,7 @@ const BeAPresenter = () => {
 		submitBtn.current.value = 'إرسال...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'be-a-presenter', page_url: page_url,
+				...inputs, phone: phone.number, country: phone.country, lp_type: 'be-a-presenter', page_url: page_url,
 			})
 		})
 			.then(response => response.json())
@@ -133,7 +145,7 @@ const BeAPresenter = () => {
 
 
 	const trainerList = [
-		
+
 		{
 			image: TrainerImage2,
 			name: "  كريم كوكب ",
@@ -247,9 +259,9 @@ const BeAPresenter = () => {
 									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="رقم الهاتف"
 									placeholder="Enter phone number"
-									value={phone}
+									value={phone.number}
 									country={'ae'}
-									onChange={setPhone}/>
+									onChange={handleOnChange}/>
 								<div className="input-wrapper">
 									<label for="first">كود الخصم </label>
 									<input type="text" name='promo_code' value={inputs.promo_code}

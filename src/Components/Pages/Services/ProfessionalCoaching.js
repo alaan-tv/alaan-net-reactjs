@@ -15,7 +15,6 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
-import Feature5 from '../../../Assets/f5.svg'
 import TrainerImage from '../../../Assets/christin4.webp'
 import BookingIcon from '../../../Assets/book-icon.svg'
 import Avatar from '../../../Assets/avatar.svg'
@@ -40,10 +39,22 @@ const ProfessionalCoaching = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const submitBtn = useRef(null);
 	const page_url = window.location.origin + window.location.pathname;
 
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
 	/**
 	 * Get & set input field values
 	 * @param e
@@ -59,7 +70,11 @@ const ProfessionalCoaching = () => {
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'personal-coaching', page_url: page_url,
+				...inputs,
+				phone: phone.number,
+				country: phone.country,
+				lp_type: 'personal-coaching',
+				page_url: page_url,
 			})
 		})
 			.then(response => response.json())
@@ -122,17 +137,17 @@ const ProfessionalCoaching = () => {
 		desc: "Register, make a payment to secure your appointment, and our team will promptly confirm your booking and assist with choosing a convenient date and time."
 	}, {
 		icon: Feature2, title: "Sessions", desc: "Six one to one sessions. Each session is 60 minutes.             "
-	}, 
-	
-	 {
-		icon: Feature3,
-		title: "Assessment/Homeworks",
-		desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
-	}, {
-		icon: Feature4,
-		title: "Additional Coaching Sessions",
-		desc: "Possibility of adding extra two to four coaching sessions on a discounted rate            "
-	},];
+	},
+
+		{
+			icon: Feature3,
+			title: "Assessment/Homeworks",
+			desc: "you will go through the Clifton Strengthsfinder assessment. Accountable to complete homeworks given by the Coach."
+		}, {
+			icon: Feature4,
+			title: "Additional Coaching Sessions",
+			desc: "Possibility of adding extra two to four coaching sessions on a discounted rate            "
+		},];
 
 
 	return (<div>
@@ -203,7 +218,9 @@ const ProfessionalCoaching = () => {
 					<div className='left-section-container'>
 						<img src={BookingIcon} alt="Booking Icon"/>
 						<p className='third-heading'>
-						The Coach's mission is to support the Coachee with their own goals by self-discovering and reaching for solutions and answers from within as People are naturally Creative, Resourceful and Whole.
+							The Coach's mission is to support the Coachee with their own goals by self-discovering and
+							reaching for solutions and answers from within as People are naturally Creative, Resourceful
+							and Whole.
 						</p>
 						<h2 className='secondary-heading'> Book Now! </h2>
 					</div>
@@ -225,9 +242,9 @@ const ProfessionalCoaching = () => {
 								inputProps={{pattern: ".{12,25}",}}
 								specialLabel="PHONE NUMBER"
 								placeholder="Enter phone number"
-								value={phone}
+								value={phone.number}
 								country={'ae'}
-								onChange={setPhone}/>
+								onChange={handleOnChange}/>
 
 
 							<div className="input-wrapper">

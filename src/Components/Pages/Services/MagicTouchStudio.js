@@ -45,10 +45,23 @@ const MagicTouchStudio = () => {
 	 *
 	 */
 	const [inputs, setInputs] = useState({});
-	const [phone, setPhone] = useState("971");
+	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const submitBtn = useRef(null);
 	const page_url = window.location.origin + window.location.pathname;
 
+
+	/**
+	 *
+	 * @param value
+	 * @param data
+	 * @param event
+	 * @param formattedValue
+	 */
+	const handleOnChange = (value, data, event, formattedValue) => {
+		phone.country = data.name;
+		phone.number = '+' + data.dialCode + '-' + value.slice(data.dialCode.length);
+		setPhone(phone);
+	}
 
 	/**
 	 * Get & set input field values
@@ -66,7 +79,7 @@ const MagicTouchStudio = () => {
 		window.gtag('event', 'conversion', {'send_to': 'AW-10776634183/wDgKCJiTmZAZEMfG2ZIo'});
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post', body: formData({
-				...inputs, phone: phone, lp_type: 'magic-touch-studio', page_url: page_url,
+				...inputs, phone: phone.number, country: phone.country, lp_type: 'magic-touch-studio', page_url: page_url,
 			})
 		})
 			.then(response => response.json())
@@ -248,9 +261,9 @@ const MagicTouchStudio = () => {
 									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="PHONE NUMBER"
 									placeholder="Enter phone number"
-									value={phone}
+									value={phone.number}
 									country={'ae'}
-									onChange={setPhone}/>
+									onChange={handleOnChange}/>
 								<div className="input-wrapper">
 									<input name="terms" type='checkbox' required value="1" onChange={handleChange}
 									       checked={(inputs.terms || '') ? "checked" : ''}/>
