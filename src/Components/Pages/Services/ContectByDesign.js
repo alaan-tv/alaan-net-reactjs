@@ -26,9 +26,9 @@ import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
 import AboutImage from '../../../Assets/CBDAbout.svg'
 import Arrow from '../../../Assets/arrow.png'
-import QuizModal from '../../Common-components/QuizModal'
+import QuizModal2 from '../../Common-components/QuizModal2'
 import FormModal from '../../Common-components/FormModal'
-import Quiz from '../../Common-components/Quiz'
+import Quiz2 from '../../Common-components/Quiz2'
 import FormQuiz from '../../Common-components/FormQuiz'
 const ContentByDesign = () => {
 	const meta = {
@@ -235,8 +235,8 @@ const ContentByDesign = () => {
 						
 						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p> 
 						</button> </div>
-						<QuizModal showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
-						           children={<> <Quiz handleClose={handlaChangeForm}/> </>}/>
+						<QuizModal2 showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
+						           children={<> <Quiz2 handleClose={handlaChangeForm}/> </>}/>
 						<FormModal showForm={form} handleClose1={() => setForm(!form)}
 						           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
