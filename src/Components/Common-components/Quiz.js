@@ -200,7 +200,7 @@ const Quiz = ({handleClose}) => {
 				lp_type: 'LBD',
 			});
 			// Send data to server
-			fetch(ajax_url("wp-api/v2/alaan-net/store-lbd-data.php"), {method: 'Post', body: form_data})
+			fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 				.then(response => response.json())
 				.then(data => handleClose())
 				.catch(error => console.error(error));
