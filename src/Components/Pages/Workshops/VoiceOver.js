@@ -77,7 +77,7 @@ const VoiceOver = () => {
 	 *  Send From Data
 	 *
 	 */
-	const [inputs, setInputs] = useState({});
+	const [inputs, setInputs] = useState({name: '', email: '', promo_code: '',attend:'',terms:''});
 	const [phone, setPhone] = useState({country_name: '', number: '+971'});
 	const [workshopDate, setWorkshopDate] = useState(defaultOption);
 	const submitBtn = useRef(null);
@@ -125,6 +125,29 @@ const VoiceOver = () => {
 
 	}
 
+	/**
+	 *
+	 *  Validate Promotion code
+	 *
+	 */
+	const promoMsg = useRef(null);
+	const validatePromoCode = (event) => {
+		event.preventDefault();
+		if (inputs.promo_code.length >= 7) {
+			event.target.disabled=true;
+			fetch(ajax_url("wp-api/v2/alaan-net/validate-promo-code.php"), {
+				method: 'Post', body: formData({promo_code: inputs.promo_code,}),
+			})
+				.then(response => response.json())
+				.then(data => {
+					promoMsg.current.innerText = (data.status !== 'success') ? 'Invalid Promo Code' : '';
+					event.target.disabled=false;
+				})
+				.catch(error => console.error(error));
+		} else {
+			promoMsg.current.innerText = '';
+		}
+	}
 	/**
 	 *
 	 *  Content Object
@@ -214,7 +237,7 @@ const VoiceOver = () => {
 						</a>
 					</div>
 					<div className='video-section'>
-						<video style={{background: '#000'}} src={video} autoPlay muted loop controls/>
+						<video style={{background: '#000'}} src={video} muted loop controls/>
 					</div>
 				</div>
 			</div>
@@ -326,6 +349,14 @@ const VoiceOver = () => {
 								<Dropdown options={options} value={workshopDate} onChange={setWorkshopDate}
 								          placeholder="Select an option"/>
 
+							</div>
+							<div className="input-wrapper">
+								<label htmlFor="first">كود الخصم </label>
+								<input type="text" name='promo_code' value={inputs.promo_code || ''}
+								       onChange={handleChange}
+								       onInput={validatePromoCode} onKeyUp={validatePromoCode}
+								       placeholder='أدخل كود الخصم '/>
+								<div className="invalid-code" ref={promoMsg}></div>
 							</div>
 							<div className="input-wrapper">
 								<input name="terms" type='checkbox' required value="1" onChange={handleChange}
