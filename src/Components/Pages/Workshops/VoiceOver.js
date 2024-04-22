@@ -214,7 +214,7 @@ const VoiceOver = () => {
 						</a>
 					</div>
 					<div className='video-section'>
-						<video style={{background: '#000'}} src={video} autoPlay muted loop controls/>
+						<video style={{background: '#000'}} src={video} muted loop controls/>
 					</div>
 				</div>
 			</div>

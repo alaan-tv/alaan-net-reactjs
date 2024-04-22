@@ -342,8 +342,7 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>1-{question_1.question}</h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={refFile} accept="image/*,.pdf" multiple={true} onChange={inputFileHandler}/>
-					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput} onInput={validInput}
+x					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput} onInput={validInput}
 					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
 
 				</div>
@@ -353,33 +352,9 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>2-{question_2.question}</h1>
 				<div className='introduction-quiz-form multi-check-text'>
-					{items.map((item, i) => {
-						item.checked = (inputs['question_2_' + i] || '') ? "checked" : false;
-						item.question = question_2.question;
-						return (<div key={item.id} className={item.checked ? "container pink" : 'container white'}>
-							<label className='quiz-label'>
-								<input data-id={item.id} type="checkbox" class={'checkbox  question_2'}
-								       name={'question_2_' + i}
-								       value={JSON.stringify(item)}
-								       checked={item.checked} required={true}
-								       onChange={handleChange} onInvalid={invalidInput} onInput={validInput}/>
-								<div className='option-desc'>{item.name}: {item.price1}</div>
-							</label>
-							<div className='quantity'><span>Number of {item.name}: </span>
-								<span className='quantity-tool'
-								      onClick={() => item.checked && item.quantity < 10 ? handleQuantityChange(item.id, 1) : null}>+</span>
-								<span style={{
-									color: item.checked ? '#fff' : '#000', fontSize: '18px'
-								}}>{item.quantity}</span>
-								<span className='quantity-tool'
-								      onClick={() => item.quantity > 0 ? handleQuantityChange(item.id, -1) : null}>-</span>
-							</div>
-						</div>)
-					})}
-
-					<div className='total-price'>
-						<h3>Total Price: AED {calculateTotalPrice()}</h3>
-					</div>
+                <textarea name='story' value={inputs.story || ''} onInvalid={invalidInput} onInput={validInput}
+					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
+					
 				</div>
 			</div>
 
