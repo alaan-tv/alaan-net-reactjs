@@ -253,6 +253,7 @@ const ContentByDesign = () => {
 						<FormModal showForm={form} handleClose1={() => setForm(!form)}
 						           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
+					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
 							<h4 className='form-text'> Get your free 15-minute consultation right now to start your
@@ -293,7 +294,7 @@ const ContentByDesign = () => {
 			<Footer/>
 
 		</div>
-		</div>
+		
 		)
 }
 
