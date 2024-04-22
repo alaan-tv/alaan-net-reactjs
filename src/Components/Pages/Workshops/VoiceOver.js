@@ -177,7 +177,7 @@ const VoiceOver = () => {
 							عبر تطبيق زووم
 						</p>
 						<div className='cta-buttons'>
-						<ReactWhatsapp className='whats-button'  number="00971525060035" message="Hello" > <img src={WhatsIcon} /> </ReactWhatsapp>
+						<ReactWhatsapp className='whats-button'  number="971-525-06-0035" message="Hello" > <img src={WhatsIcon} /> </ReactWhatsapp>
 <br />
         <a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
 		</div>
