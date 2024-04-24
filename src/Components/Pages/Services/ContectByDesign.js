@@ -24,10 +24,14 @@ import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
 import AboutImage from '../../../Assets/CBDAbout.svg'
 import Arrow from '../../../Assets/arrow.png'
-import QuizModal2 from '../../Common-components/QuizModal2'
-import FormModal from '../../Common-components/FormModal'
 import Quiz2 from '../../Common-components/Quiz2'
+import QuizModal2 from '../../Common-components/QuizModal2'
 import FormQuiz from '../../Common-components/FormQuiz'
+import FormQuiz2 from "../../Common-components/FormQuiz2";
+import FormModal2 from "../../Common-components/FormModal2";
+import QuizModal from "../../Common-components/QuizModal";
+import Quiz from "../../Common-components/Quiz";
+import FormModal from "../../Common-components/FormModal";
 
 const ContentByDesign = () => {
 	const meta = {
@@ -86,7 +90,7 @@ const ContentByDesign = () => {
 		submitBtn.current.value = 'Sending...';
 		fetch(ajax_url("wp-api/v2/alaan-net/store-form-data.php"), {
 			method: 'Post',
-			body: formData({...inputs, phone: phone.number, country: phone.country, lp_type: 'living-by-design'})
+			body: formData({...inputs, phone: phone.number, country: phone.country, lp_type: 'content-by-design'})
 		})
 			.then(response => response.json())
 			.then(data => {
@@ -246,12 +250,12 @@ const ContentByDesign = () => {
 						{/*modal quiz*/}
 						<div className='cta-quiz'>
 						
-						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p> 
+						<img src={Arrow} width={40}  className='arrow-quiz arrow-mobile-v'/><button className='take-quiz' onClick={() => setQuiz(true)}> <p>Get Started &<br className='mobile-breakline'/> Take The Quiz!</p>
 						</button> </div>
 						<QuizModal2 showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
 						           children={<> <Quiz2 handleClose={handlaChangeForm}/> </>}/>
-						<FormModal showForm={form} handleClose1={() => setForm(!form)}
-						           children={<> <FormQuiz handleClose1={() => setForm(!form)}/> </>}/>
+						<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
+						           children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
 					</div>
 					<div className='right-section'>
