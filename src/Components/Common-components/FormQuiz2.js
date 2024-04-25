@@ -20,31 +20,34 @@ const FormQuiz2 = ({handleClose1}) => {
 		question: `How would you describe the nature of your content? E.g. Inspirational & thought-provoking, light & entertaining, exciting & cool, fun & informative, etc.)`
 	}
 	const question_2 = {
-		question: `Which content creator's set/visual style do you most admire? (feel free to list more than 1!)
-        `
+		question: `Which content creator's set/visual style do you most admire? (feel free to list more than 1!)`
 	}
 
 	const question_3 = {
-		question: 'What category of content do you produce?', 
+		question: 'What category of content do you produce?'
 	};
 
 	const question_4 = {
-		question: 'Do you have any branding elements that you would like to feature: Logo prominently displayed, Subtle brand colors, or Unique props related to your brand.'
-        
+		question: 'Do you have any branding elements that you\'d like to feature: Logo prominently displayed, Subtle brand colors, or Unique props related to your brand.',
+
+
 	};
 
 	const question_5 = {
-		question: 'Do you have any visual references from TV/ Cinema/ other content creators you want us to take inspiration from?', 
+		question: 'Do you have any visual references from TV/ Cinema/ other content creators you want us to take inspiration from?',
 	};
 
 	const question_6 = {
-		question: `What type of props or set dressing do you frequently use: E.g. Tech gadgets, Plants and greenery, Unique and quirky items, Green-screens?
-        `, 
+		question: `What type of props or set dressing do you frequently use: E.g. Tech gadgets, Plants and greenery, Unique and quirky items, Green-screens?`
 	};
 
 	const question_7 = {
-		question: `Would you like to have a set space to film collabs with other creators?
-        `,
+		question: `Would you like to have a set space to film collabs with other creators?`,
+		options: [{
+			answer: 'Yes'
+		}, {
+			answer: 'No'
+		},]
 	}
 
 	const question_8 = {
@@ -53,90 +56,73 @@ const FormQuiz2 = ({handleClose1}) => {
 	};
 
 	const question_9 = {
-		question: `How big is your set?
-        `,options: [{
+		question: `How big is your set?`, options: [{
 			answer: 'Corner Room- AED 2,999'
 		}, {
 			answer: 'Half Room- AED 3,699'
 		}, {
 			answer: 'Full Room- AED 3,999'
-		}, ]
+		},]
 	};
 
 
 	const question_10 = {
-		question: `Where is your set?`,options: [{
+		question: `Where is your set?`, options: [{
 			answer: 'Private residence'
 		}, {
 			answer: 'Commercial building'
-		},  ]
+		},]
 	};
 
 	const question_11 = {
-		question: `How much do you want to remodel?`,options: [{
+		question: `How much do you want to remodel?`, options: [{
 			answer: 'Light remodel - Just furniture, decor, floor lighting, light wall art'
 		}, {
 			answer: 'Medium remodel - Fitted lighting + Smart lighting, wall shelving'
 		}, {
 			answer: 'Full remodel - significant wall work (e.g. painting, paneling, wainscoting, etc.), soundproofing'
-		},
-     ]
+		},]
 	};
 
 	const question_12 = {
-		question: `What's your total budget for furniture/furnishings & installation?`,options: [{
+		question: `What's your total budget for furniture/furnishings & installation?`, options: [{
 			answer: 'AED 1,500 - 3,000'
 		}, {
 			answer: 'AED 3,000 - 5,000'
 		}, {
 			answer: 'AED 5,000+'
-		},
-     ]
+		},]
 	};
-    const question_13 = {
-		question: `Are there any restrictions on the property?`,options: [{
+	const question_13 = {
+		question: `Are there any restrictions on the property?`, options: [{
 			answer: 'Yes'
 		}, {
 			answer: 'No'
-		}, {
-			answer: 'If yes, please provide details'
-		},
-     ]
+		}, ]
 	};
-    const question_14 = {
+	const question_14 = {
 		question: `Anything else you want us to know? (e.g. things you really want to see in your space, any design style/vibe you want us to primarily bear in mind, etc.)
         `
 	};
-    const question_15 = {
-		question: `Would you like us to source any production equipment (with a 10% discount) for you?
-        `,options: [{
-			answer: 'Yes - AED 350'
-		}, {
-			answer: 'No'
-		}, 
-     ]
-	};
-    const question_16 = {
-		question: `Address`,
-	};
-    const question_17 = {
+	const question_15 = {
+		question: `Address`,};
+	const question_16 = {
 		question: `Floor plan`,
 	};
-    const question_18 = {
-		question: `otos of the space`,options: [{
+	const question_17 = {
+		question: `Photos of the space`, options: [{
 			answer: 'Do you have the dimensions? (LxW) '
-		},
-     ]
+		},]
 	};
-    const question_19 = {
+	const question_18 = {
 		question: `Preferred day & time of appointment`,
 	};
 	const [selectedDate, setSelectedDate] = useState(null);
 	const [inputs, setInputs] = useState({});
-	const refFile = useRef(null);
-	const otherRefFile = useRef(null);
-	const floorPlanFile = useRef(null);
-	const photosFile = useRef(null);
+	const answer4File = useRef(null);
+	const answer5File = useRef(null);
+	const answer16File = useRef(null);
+	const answer17File = useRef(null);
 
 	const handleChange = (event) => {
 		let name = event.target.name;
@@ -157,15 +143,16 @@ const FormQuiz2 = ({handleClose1}) => {
 				setInputs(values => ({...values, [name]: event.target.checked === true}));
 			} else {
 				checkInput.forEach((el) => {
-						el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
-						setInputs(values => ({...values, [el.name]: false}));
-					}
-				);
+					el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
+					setInputs(values => ({...values, [el.name]: false}));
+				});
 				setInputs(values => ({...values, [name]: value}));
 			}
 		} else {
 			setInputs(values => ({...values, [name]: value}));
 		}
+
+		console.log(inputs);
 	}
 
 
@@ -174,17 +161,16 @@ const FormQuiz2 = ({handleClose1}) => {
 		//copy object in new variable
 		let data = {...inputs}
 
-		// remove empty element
+		// rename keys & remove empty element
 		for (const key in data) {
-			if (data[key] === false) {
+			if (data[key] !== false) {
+				data[key.split("__")[0]] = data[key];
+				if (key.length > 10) {
+					delete data[key];
+				}
+			}else{
 				delete data[key];
 			}
-		}
-
-		// rename keys
-		for (const key in data) {
-			data[key.substring(0, 10)] = data[key];
-			delete data[key];
 		}
 
 		// handle multiple images
@@ -193,52 +179,52 @@ const FormQuiz2 = ({handleClose1}) => {
 				data[`${name}[${x}]`] = fileObject[x];
 			}
 		}
-		multipleFile(refFile.current.files, 'ref_file');
-		multipleFile(otherRefFile.current.files, 'other_ref');
-		multipleFile(floorPlanFile.current.files, 'floor_plan');
-		multipleFile(photosFile.current.files, 'photos');
+		multipleFile(answer4File.current.files, 'answer_4');
+		multipleFile(answer5File.current.files, 'answer_5');
+		multipleFile(answer16File.current.files, 'answer_16');
+		multipleFile(answer17File.current.files, 'answer_17');
 
 		// generate formData object
 		const form_data = formData({
 			...data,
-			question_1: JSON.stringify({
-				id: 1, story: inputs.story, phone: inputs.phone, question: question_1.question
-			}),
-			question_2: JSON.stringify(items),
-			question_4: JSON.stringify({
-				id: 4,
-				answer: inputs.question_4_0 ? 'Yes' : 'No',
+			question_1: JSON.stringify({ id: 1, answer: inputs.answer_1, question: question_1.question }),
+			question_2: JSON.stringify({ id: 2, answer: inputs.answer_2, question: question_2.question }),
+			question_3: JSON.stringify({ id: 3, answer: inputs.answer_3, question: question_3.question }),
+			question_4: JSON.stringify({id: 4, question: question_4.question}),
+			question_5: JSON.stringify({id: 5, question: question_5.question}),
+			question_6: JSON.stringify({ id: 6, answer: inputs.answer_6, question: question_6.question }),
+			question_8: JSON.stringify({id: 8, answer: inputs.answer_8, question: question_8.question}),
+			question_13: JSON.stringify({
+				id: 13,
+				answer: inputs.question_13_0 ? 'Yes' : 'No',
 				details: inputs.details,
-				question: question_4.question
+				question: question_13.question
 			}),
-			question_7: JSON.stringify({id: 7, question: question_7.question}),
-			question_8: JSON.stringify({id: 8, answer: inputs.primary, question: question_8.question}),
-			question_9: JSON.stringify({id: 9, answer: inputs.address, question: question_9.question}),
-			question_10: JSON.stringify({id: 10, question: question_10.question}),
-			question_11: JSON.stringify({
-				id: 11,
-				dimensions: {length: inputs.length, width: inputs.width},
-				question: question_11.question
+			question_14: JSON.stringify({id: 14, answer: inputs.answer_14, question: question_14.question}),
+			question_15: JSON.stringify({id: 15, answer: inputs.answer_15, question: question_15.question}),
+			question_16: JSON.stringify({id: 16, question: question_16.question}),
+			question_17: JSON.stringify({
+				id: 17, dimensions: {length: inputs.length, width: inputs.width}, question: question_17.question
 			}),
-			question_12: JSON.stringify({
-				id: 12,
-				date: selectedDate, time: inputs.time, question: question_12.question
+			question_18: JSON.stringify({
+				id: 18, date: selectedDate, time: inputs.time, question: question_18.question
 			}),
-			name: localStorage.getItem('LBD_name'),
-			email: localStorage.getItem('LBD_email'),
-			phone: localStorage.getItem('LBD_phone'),
-			lp_type: 'LBD',
+			name: localStorage.getItem('CBD_name'),
+			email: localStorage.getItem('CBD_email'),
+			phone: localStorage.getItem('CBD_phone'),
+			lp_type: 'CBD',
 		});
+
 		setModal(true);
 		// Send data to server
-		fetch(ajax_url("wp-api/v2/alaan-net/store-lbd-data.php"), {method: 'Post', body: form_data})
+		fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
-				localStorage.removeItem('LBD_name');
-				localStorage.removeItem('LBD_email');
-				localStorage.removeItem('LBD_phone');
-				localStorage.setItem('LBD_Quiz','1');
-				window.location = '/our-services/LBD/thank-you';
+				localStorage.removeItem('CBD_name');
+				localStorage.removeItem('CBD_email');
+				localStorage.removeItem('CBD_phone');
+				localStorage.setItem('CBD_Quiz', '1');
+				window.location = '/our-services/CBD/thank-you';
 			})
 			.catch(error => console.error(error));
 
@@ -252,8 +238,7 @@ const FormQuiz2 = ({handleClose1}) => {
 		id: 'item2', name: 'Living room ', quantity: 0, price: 4299, price1: 'AED 4,299 ', checked: false
 	}, {id: 'item3', name: 'Office', quantity: 0, price: 3899, price1: 'AED 3,899', checked: false}, {
 		id: 'item4', name: 'Kitchen', quantity: 0, price: 5299, price1: 'AED 5,299', checked: false
-	},
-		// Add more items as needed
+	}, // Add more items as needed
 	]);
 
 	const calculateTotalPrice = () => {
@@ -274,7 +259,7 @@ const FormQuiz2 = ({handleClose1}) => {
 
 	const OptionHtml = (index, id, item) => {
 		let option_group = 'question_' + index;
-		let field_name = option_group + '_' + id;
+		let field_name = option_group + '__' + id;
 		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? false : 'required';
 		return (<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}>
 			<label className='quiz-label'>
@@ -342,79 +327,71 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>1-{question_1.question}</h1>
 				<div className='introduction-quiz-form'>
-x					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput} onInput={validInput}
-					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
+					 <textarea name='answer_1' value={inputs.answer_1 || ''} onInvalid={invalidInput} onInput={validInput}
+					           onChange={handleChange} placeholder='Please write here ' required></textarea>
 
 				</div>
 			</div>
 
 
 			<div className='question'>
-				<h1 className='form-step-title'>2-{question_2.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
-                <textarea name='story' value={inputs.story || ''} onInvalid={invalidInput} onInput={validInput}
-					          onChange={handleChange} placeholder='Tell us your story' required></textarea>
-					
+				<h1 className='form-step-title'>2-{question_2.question}<small
+					style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
+				<div className='introduction-quiz-form'>
+                <textarea name='answer_2' value={inputs.answer_2 || ''} onInvalid={invalidInput} onInput={validInput}
+                          onChange={handleChange} placeholder='Please write here ' ></textarea>
+
 				</div>
 			</div>
 
 
 			<div className='question'>
 				<h1 className='form-step-title'>3-{question_3.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
-					{question_3.options.map((item, i) => OptionHtml(3, i, {
-						...item,
-						id: 3,
-						question: question_3.question
-					}))}
+				<div className='introduction-quiz-form'>
+					<textarea name='answer_3' value={inputs.answer_3 || ''} onInvalid={invalidInput} onInput={validInput}
+					          onChange={handleChange} placeholder='Please write here ' required></textarea>
 				</div>
 			</div>
 
 			<div className='question'>
-				<h1 className='form-step-title'>4-{question_4.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
-					{question_4.options.map((item, i) => OptionHtml(4, i, {
-						...item,
-						id: 4,
-						question: question_4.question
-					}))}
-					<input type="text" name='details' value={inputs.details || ''} onChange={handleChange}
-					       placeholder='If yes, please provide details'
-					       required={inputs['question_4_0'] ? true : false}
-					       readonly={inputs['question_4_0'] ? false : 'readonly'}
-					       onInvalid={invalidInput} onInput={validInput}/>
+				<h1 className='form-step-title'>4-{question_4.question}<small
+					style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
+				<div className='introduction-quiz-form'>
+					<input type="file" ref={answer4File} accept="image/*,.pdf" multiple={true}
+					       onChange={inputFileHandler}/>
+
 				</div>
 			</div>
 
 
 			<div className='question'>
-				<h1 className='form-step-title'>5-{question_5.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
-					{question_5.options.map((item, i) => OptionHtml(5, i, {
-						...item,
-						id: 5,
-						question: question_5.question
-					}))}
+				<h1 className='form-step-title'>5-{question_5.question}<small
+					style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
+				<div className='introduction-quiz-form'>
+					<input type="file" ref={answer5File} accept="image/*,.pdf" multiple={true}
+					       onChange={inputFileHandler}/>
 				</div>
 			</div>
 
 
-			<div className='question'><h1 className='form-step-title'>6-{question_6.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
-					{question_6.options.map((item, i) => OptionHtml(6, i, {
-						...item,
-						id: 6,
-						question: question_6.question
-					}))}
+			<div className='question'><h1 className='form-step-title'>6-{question_6.question}<small
+				style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
+				<div className='introduction-quiz-form'>
+					<textarea name='answer_6' value={inputs.answer_6 || ''} onInvalid={invalidInput} onInput={validInput}
+					          onChange={handleChange} placeholder='Please write here' ></textarea>
 				</div>
 			</div>
 
 
 			<div className='question'><h1 className='form-step-title'>7-{question_7.question}
-				<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
-				<div className='introduction-quiz-form'>
-					<input type="file" ref={otherRefFile} accept="image/*,.pdf" multiple={true}
-					       onChange={inputFileHandler}/>
+				<small style={{fontWeight: "normal", fontSize: "16px"}}></small></h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{question_7.options.map((item, i) => OptionHtml(7, i, {
+						...item,
+						id: 7,
+						question: question_7.question
+					}))}
+
 				</div>
 			</div>
 
@@ -424,8 +401,8 @@ x					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput}
 					<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<input type='text' name='primary' value={inputs.primary || ''}
-					       onChange={handleChange} maxLength='500' placeholder='Please write here '/>
+					<textarea name='answer_8' value={inputs.answer_8 || ''} onInvalid={invalidInput} onInput={validInput}
+					          onChange={handleChange} placeholder='Please write here ' required></textarea>
 				</div>
 			</div>
 
@@ -433,57 +410,125 @@ x					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput}
 			<div className='question'><h1 className='form-step-title'>9-{question_9.question}
 				<small style={{fontWeight: "normal", fontSize: "16px"}}></small></h1>
 
-				<div className='introduction-quiz-form'>
-					<input type='text' placeholder='Enter your Address' name="address"
-					       value={inputs.address || ""} maxLength='250'
-					       required onChange={handleChange} onInvalid={invalidInput} onInput={validInput}/>
-
+				<div className='introduction-quiz-form multi-check-text'>
+					{question_9.options.map((item, i) => OptionHtml(9, i, {
+						...item,
+						id: 9,
+						question: question_9.question
+					}))}
 				</div>
 			</div>
 
 
 			<div className='question'>
 				<h1 className='form-step-title'>10-{question_10.question}
+					<small style={{fontWeight: 'normal', fontSize: '16px'}}></small>
+				</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{question_10.options.map((item, i) => OptionHtml(10, i, {
+						...item,
+						id: 10,
+						question: question_10.question
+					}))}
+				</div>
+			</div>
+
+			<div className='question'><h1 className='form-step-title'>11-{question_11.question}</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{question_11.options.map((item, i) => OptionHtml(11, i, {
+						...item,
+						id: 11,
+						question: question_11.question
+					}))}
+				</div>
+			</div>
+
+			<div className='question'><h1 className='form-step-title'>12-{question_12.question}</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{question_12.options.map((item, i) => OptionHtml(12, i, {
+						...item,
+						id: 12,
+						question: question_12.question
+					}))}
+				</div>
+			</div>
+
+			<div className='question'>
+				<h1 className='form-step-title'>13-{question_13.question}</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{question_13.options.map((item, i) => OptionHtml(13, i, {
+						...item,
+						id: 13,
+						question: question_13.question
+					}))}
+					<input type="text" name='details' value={inputs.details || ''} onChange={handleChange}
+					       placeholder='If yes, please provide details'
+					       required={inputs['question_13__0'] ? true : false}
+					       readOnly={inputs['question_13__0'] ? false : 'readonly'}
+					       onInvalid={invalidInput} onInput={validInput}/>
+				</div>
+			</div>
+
+			<div className='question'>
+				<h1 className='form-step-title'>14-{question_14.question}
+					<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small>
+				</h1>
+				<div className='introduction-quiz-form'>
+					<textarea name='answer_14' value={inputs.answer_14 || ''} onInvalid={invalidInput} onInput={validInput}
+					          onChange={handleChange} placeholder='Please write here ' ></textarea>
+				</div>
+			</div>
+
+			<div className='question'>
+				<h1 className='form-step-title'>15-{question_15.question}
+					<small style={{fontWeight: "normal", fontSize: "16px"}}></small>
+				</h1>
+				<div className='introduction-quiz-form'>
+					<textarea name='answer_15' value={inputs.answer_15 || ''} onInvalid={invalidInput} onInput={validInput}
+					          onChange={handleChange} placeholder='Please write Address ' required></textarea>
+				</div>
+			</div>
+
+			<div className='question'>
+				<h1 className='form-step-title'>16-{question_16.question}
 					<small style={{fontWeight: 'normal', fontSize: '16px'}}> (Optional)</small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<input type="file" ref={floorPlanFile} multiple={true} accept="image/*,.pdf"
+					<input type="file" ref={answer16File} multiple={true} accept="image/*,.pdf"
 					       onChange={inputFileHandler}/>
 				</div>
 			</div>
 
-
-			<div className='question'><h1 className='form-step-title'>11-{question_11.question}</h1>
+			<div className='question'><h1 className='form-step-title'>17-{question_17.question}</h1>
 
 				<div className='introduction-quiz-form multi-check-text'>
-					<input type="file" ref={photosFile} multiple={true} accept="image/*,.pdf"
+					<input type="file" ref={answer17File} multiple={true} accept="image/*,.pdf"
 					       onChange={inputFileHandler} required
 					       onInvalid={invalidInput} onInput={validInput}/>
 					<label className='quiz-label'>
-						<div class={(inputs.dimensions || '') ? 'container pink' : 'container white'}>
-							<input type="checkbox" class="checkbox" name='dimensions' value="1"
+						<div className={(inputs.dimensions || '') ? 'container pink' : 'container white'}>
+							<input type="checkbox" className="checkbox" name='dimensions' value="1"
 							       checked={(inputs.dimensions || '') ? 'checked' : false}
 							       onChange={handleChange}/>
 							<div className='option-desc'> Do you have the dimensions?</div>
 						</div>
 					</label>
-					<div class="dimensions-section">
+					<div className="dimensions-section">
 						<input type='number' placeholder="L" className='dimensions' name='length'
 						       value={inputs.length || ''} required={(inputs.dimensions || '') ? true : false}
-						       readonly={(inputs.dimensions || '') ? false : 'readonly'} min={0}
+						       readOnly={(inputs.dimensions || '') ? false : 'readonly'} min={0}
 						       onChange={handleChange}/><small> cm</small>
 						<CloseIcon style={{margin: "10px 20px -5px 20px", fontSize: "18px"}}/>
 						<input type='number' placeholder="W" className='dimensions' name='width'
 						       value={inputs.width || ''} required={(inputs.dimensions || '') ? true : false}
-						       readonly={(inputs.dimensions || '') ? false : 'readonly'} min={0}
+						       readOnly={(inputs.dimensions || '') ? false : 'readonly'} min={0}
 						       onChange={handleChange}/>
 						<small>cm</small>
 					</div>
 				</div>
 			</div>
 
-
-			<div className='question'><h1 className='form-step-title'>12-{question_12.question}</h1>
+			<div className='question'><h1 className='form-step-title'>18-{question_18.question}</h1>
 				<div className='introduction-quiz-form multi-check-text date-form'>
 					<DatePicker
 						showIcon
@@ -503,16 +548,18 @@ x					<textarea name='story' value={inputs.story || ''} onInvalid={invalidInput}
 						</option>))}
 					</select>
 				</div>
-				<div class="container terms-container">
-					<input type="checkbox" class="checkbox" name='terms' value="1"
+				<div className="container terms-container">
+					<input type="checkbox" className="checkbox" name='terms' value="1"
 					       checked={(inputs.terms || '') ? 'checked' : ''}
 					       onChange={handleChange} required/>
 					<div className='option-desc'>
 						I agree with<Link
-									to='/lbd-terms' target="_blank">Terms & Conditions</Link>
+						to='/lbd-terms' target="_blank">Terms & Conditions</Link>
 					</div>
 				</div>
 			</div>
+
+
 			<div style={{display: 'flex', justifyContent: 'space-between'}}>
 				<button className='back-button' onClick={(currentPage) => setCurrentPage(p => --p)}>Back</button>
 				<button type='submit' className='continue-button'><span>Submit</span>

@@ -11,7 +11,7 @@ const ThankYou = () => {
 	const params = useParams();
 
 	const get_msg = () => {
-		if (['podcast', 'media', 'be-a-presenter','voice-over'].includes(params.child)) {
+		if (['podcast', 'media', 'be-a-presenter', 'voice-over'].includes(params.child)) {
 			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك من قبل فريق أخبار الآن قريبا لتحديد الموعد'};
 		} else if (params.child === 'LBD' && +localStorage.getItem('LBD_Quiz')) {
 			return {
@@ -20,12 +20,21 @@ const ThankYou = () => {
 					payment-once it’s paid,
 					your consultant will contact you to confirm your appointment date & you’ll be on your way to your
 					dream home!</>
-			}}
-			else if (params.child === 'LBD' ) {
-				return {
-					title: 'Thank You',
-					content: <>We’ve received your inquiry, and we’ll get back to you soon!</>
-				}
+			};
+		} else if (params.child === 'CBD' && +localStorage.getItem('CBD_Quiz')) {
+			return {
+				title: 'Thank You',
+				content: <>Your content is this 👌 close to the best it's ever been!<br/> You’ll receive an email shortly
+					with a link for a 50% down payment- once it’s paid,
+					your consultant will contact you to confirm your appointment date & you’ll be on your way to your
+					dream set!”
+				</>
+			};
+		} else if (params.child === 'LBD' || params.child === 'CBD') {
+			return {
+				title: 'Thank You',
+				content: <>We’ve received your inquiry, and we’ll get back to you soon!</>
+			}
 		} else {
 			return {title: 'Thank You', content: 'You will be contacted to schedule an appointment.'};
 		}
