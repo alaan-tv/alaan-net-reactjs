@@ -397,9 +397,7 @@ const FormQuiz2 = ({handleClose1}) => {
 
 
 			<div className='question'>
-				<h1 className='form-step-title'>8-{question_8.question}
-					<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small>
-				</h1>
+				<h1 className='form-step-title'>8-{question_8.question}</h1>
 				<div className='introduction-quiz-form'>
 					<textarea name='answer_8' value={inputs.answer_8 || ''} onInvalid={invalidInput} onInput={validInput}
 					          onChange={handleChange} placeholder='Please write here ' required></textarea>
