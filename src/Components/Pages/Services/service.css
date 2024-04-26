@@ -733,9 +733,12 @@ padding-left: 20px;
     width: 350px;
     height: 400px;
    }
-   .living-page .third-heading{
+   .living-page .third-heading, .content-page .third-heading{
     font-size: 28px;
    }
+   .content-page .cta-quiz {
+    margin-top: 30px;
+}
    .living-cta{
     padding: 15px 30px ;
     font-size: 22px;
@@ -750,6 +753,11 @@ padding-left: 20px;
     width: 60% !important;
     margin: 30px auto;
    }
+   .CBD-AboutImage{
+    position: absolute;
+    left: 0px;
+    bottom: -50px;
+}
    @media (max-width: 767px) {
     .living-page .trainers-container{
         height: auto !important;
@@ -758,8 +766,8 @@ padding-left: 20px;
     .four-images{
         width: 100% !important;
     }
-
-  
+   
+   
    .about-section .trainer-image{
     width: 350px !important;
     height: 230px !important;
@@ -783,7 +791,7 @@ padding-left: 20px;
 }
 /*content by design page*/
 .content-page .hero-section{
-    background-image: url(../../../Assets/banner-content-background.png);
+    background-image: url(../../../Assets/CBDBack2.svg);
     
    
 }
@@ -791,16 +799,17 @@ padding-left: 20px;
     margin:  27px auto 42px;
 }
 .content-page .trainer-image img{
-height:  460px;
+height:  420px;
 border-radius: 20px 0px 0px 20px;
 }
  .content-page .trainers-container{
+    position: relative;
 justify-content: space-around;
 padding: 0px;
 align-items: center;
  }
  .content-page .trainer-image{
-    height: 460px !important;
+    height: 420px !important;
     width: auto !important;
  }
  .content-page .trainer-desc{

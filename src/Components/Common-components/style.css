@@ -567,6 +567,7 @@ width: 100%;
 border-radius: 20px;
 margin: 100px auto 20px;
 }
+
 .step-title-light{
   background-image: url(../../Assets/quiz-b-1.png),url(../../Assets/quiz-b-2.png), linear-gradient(272deg, #FFA41B 0%, #FA8732 25%, #F26550 47%, #EA426F 58%, #E01C93 81%, #E11F8F 100%) , linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%);
   background-position:
@@ -578,6 +579,13 @@ margin: 100px auto 20px;
   background-repeat: no-repeat;
   background-color: transparent !important;
 
+}
+.CBD-quiz .step-title-light{
+  background-image: url(../../Assets/cbd-quiz-1.png),url(../../Assets/cbd-quiz-2.png), linear-gradient(272deg, #FFA41B 0%, #FA8732 25%, #F26550 47%, #EA426F 58%, #E01C93 81%, #E11F8F 100%) , linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%);
+  background-position:
+  bottom left,
+ bottom right,
+  center;
 }
 .introduction-quiz-form{
   width: 100%;
@@ -671,6 +679,18 @@ flex-wrap: wrap;
 justify-content: center;
 gap: 30px;
 margin: 30px 0px;
+}
+.images-form .quiz-label{
+  min-width: auto !important;
+}
+.images-form2 img{
+  width: 270px;
+}
+.three-images{
+  flex-wrap:nowrap !important;
+}
+.three-images .quiz-label{
+  min-width: auto !important;
 }
 .introduction-quiz-form .container{
   position: relative; width: 300px;   border-radius: 20px; padding: 15px; background-color: #fff;

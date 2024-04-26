@@ -22,7 +22,7 @@ import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
-import AboutImage from '../../../Assets/CBDAbout.svg'
+import AboutImage from '../../../Assets/CBDAbout2.png'
 import Arrow from '../../../Assets/arrow.png'
 import Quiz2 from '../../Common-components/Quiz2'
 import QuizModal2 from '../../Common-components/QuizModal2'
@@ -159,7 +159,7 @@ const ContentByDesign = () => {
 							<p className='primary-text light-text'>
 								Your content, with a lot more of You in it.
 							</p>
-							<a className='service-cta primary-button' href="#contact-form">Book Now!</a>
+							<a className='service-cta primary-button living-cta' href="#contact-form">Book Now!</a>
 							{/*<div className='home-image-container banner-service-image'>
             <picture>
      <source media='(max-width: 768px)' srcSet={MagicStudioVideoMobile} />
@@ -199,7 +199,7 @@ const ContentByDesign = () => {
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								<img src={AboutImage} alt='about'/>
+								<img className='CBD-AboutImage' src={AboutImage} alt='about'/>
 
 
 							</div>
@@ -243,10 +243,9 @@ const ContentByDesign = () => {
 					<div className='left-section-container'>
 						<img src={CBDIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
-							The home you never <br/>knew you needed <br/>is a click away
+						It takes years of experience to build the perfect set, we're using 2 decades of ours to give you a headstart on yours.
 						</p>
-						<p className='third-heading'> Why wait any longer to live the way
-						you were always meant to?</p>
+						<p className='third-heading'> You can officially stop waiting.</p>
 						{/*modal quiz*/}
 						<div className='cta-quiz'>
 						
