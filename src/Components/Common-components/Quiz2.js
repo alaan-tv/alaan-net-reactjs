@@ -274,7 +274,7 @@ const Quiz2 = ({handleClose}) => {
 
 	return (<>
 
-		<form method={'post'} className="quiz-steps quiz-form" onSubmit={handleSubmit}>
+		<form method={'post'} className="quiz-steps quiz-form CBD-quiz" onSubmit={handleSubmit}>
 			<Stepper
 				steps={sections}
 				activeStep={currentPage}
@@ -303,35 +303,35 @@ const Quiz2 = ({handleClose}) => {
 
 			{currentPage === 3 && (<>
 				<h1 className='step-title step-title-light'>{page_3.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form multi-check-text'>
 					{page_3.options.map((item, i) => OptionHtml(i, {...item, id: 3, question: page_3.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 4 && (<>
 				<h1 className='step-title step-title-light'>{page_4.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
+				<div className='introduction-quiz-form images-form'>
 					{page_4.options.map((item, i) => OptionHtml(i, {...item, id: 4, question: page_4.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 5 && (<>
 				<h1 className='step-title step-title-light'>{page_5.question}</h1>
-				<div className='introduction-quiz-form images-form four-images'>
+				<div className='introduction-quiz-form images-form images-form2'>
 					{page_5.options.map((item, i) => OptionHtml(i, {...item, id: 5, question: page_5.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 6 && (<>
 				<h1 className='step-title step-title-light'>{page_6.question}</h1>
-				<div className='introduction-quiz-form images-form four-images without-desc'>
+				<div className='introduction-quiz-form multi-check-text'>
 					{page_6.options.map((item, i) => OptionHtml(i, {...item, id: 6, question: page_6.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{page_7.question}</h1>
-				<div className='introduction-quiz-form images-form four-images without-desc'>
+				<div className='introduction-quiz-form images-form without-desc three-images'>
 					{page_7.options.map((item, i) => OptionHtml(i, {...item, id: 7, question: page_7.question}))}
 				</div>
 			</>)}
@@ -351,7 +351,7 @@ const Quiz2 = ({handleClose}) => {
 
 			{currentPage === 10 && (<>
 				<h1 className='step-title step-title-light'>{page_10.question}</h1>
-				<div className='introduction-quiz-form images-form without-desc'>
+				<div className='introduction-quiz-form multi-check-text'>
 					{page_10.options.map((item, i) => OptionHtml(i, {...item, id: 10, question: page_10.question}))}
 				</div>
 			</>)}
