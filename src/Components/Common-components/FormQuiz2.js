@@ -151,8 +151,6 @@ const FormQuiz2 = ({handleClose1}) => {
 		} else {
 			setInputs(values => ({...values, [name]: value}));
 		}
-
-		console.log(inputs);
 	}
 
 

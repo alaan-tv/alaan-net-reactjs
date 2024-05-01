@@ -279,8 +279,7 @@ const Quiz = ({handleClose}) => {
 					       onChange={handleChange} required maxLength='50' onInvalid={invalidInput}
 					       onInput={validInput}></input>
 					<input type="email" name='email' placeholder='E-mail' value={inputs.email || ''}
-					       onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-					       maxLength='50' onInvalid={invalidInput} onInput={validInput}></input>
+					       onChange={handleChange} required  maxLength='50' onInvalid={invalidInput} onInput={validInput}></input>
 					<input type="text" name='phone' placeholder='Phone' value={inputs.phone || ''}
 					       onChange={handleChange} required pattern="[+]{0,1}[0-9]{10,15}" maxLength='15'
 					       onInvalid={invalidInput} onInput={validInput}></input>

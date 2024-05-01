@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react'
-import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
-import {CarouselProvider, Slider, Slide, DotGroup} from 'pure-react-carousel';
+import {CarouselProvider, DotGroup, Slide, Slider} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
@@ -16,7 +15,7 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
-import ContentLogo from '../../../Assets/CBD-white2.svg'
+import ContentLogo from '../../../Assets/cbd-logo.svg'
 import CBDIcon from '../../../Assets/CBD-quiz-icon.svg'
 import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
@@ -26,12 +25,8 @@ import AboutImage from '../../../Assets/CBDAbout2.png'
 import Arrow from '../../../Assets/arrow.png'
 import Quiz2 from '../../Common-components/Quiz2'
 import QuizModal2 from '../../Common-components/QuizModal2'
-import FormQuiz from '../../Common-components/FormQuiz'
 import FormQuiz2 from "../../Common-components/FormQuiz2";
 import FormModal2 from "../../Common-components/FormModal2";
-import QuizModal from "../../Common-components/QuizModal";
-import Quiz from "../../Common-components/Quiz";
-import FormModal from "../../Common-components/FormModal";
 
 const ContentByDesign = () => {
 	const meta = {
@@ -157,7 +152,7 @@ const ContentByDesign = () => {
 								Build the Set you’ve been waiting for with</h1>
 							<img className='service-logo' src={ContentLogo} alt={''}/>
 							<p className='primary-text light-text'>
-								Your content, with a lot more of You in it.
+								Your content, <br />with a lot more of You in it.
 							</p>
 							<a className='service-cta primary-button living-cta' href="#contact-form">Book Now!</a>
 							{/*<div className='home-image-container banner-service-image'>
@@ -174,7 +169,7 @@ const ContentByDesign = () => {
 			<div className='home-container'>
 				<div className='features'>
 					<h2 className='primary-heading'> We'll take your set to a whole other level, by giving you the 3
-						things you need to see it there:
+						things you need <br />to see it there:
 
 					</h2>
 					<div className='features-container desktop-v'>
@@ -205,11 +200,11 @@ const ContentByDesign = () => {
 							</div>
 							<div className='trainer-desc'>
 								<p>
-									First impressions matter. Visuals matter.</p> <p>Your set is the first thing that
-								speaks for your channel before you do</p> <p> No matter how excellent your content is,
-								if a viewer doesn't immediately think you're able to deliver it, they're not going to
+									First impressions matter. <br />Visuals matter.</p> <p>Your set is the first thing that
+								speaks for your <br />channel before you do</p> <p> No matter how excellent your content is,
+								if a viewer doesn't <br />immediately think you're able to deliver it, they're not <br />going to
 								stick around long enough to find out.</p> <p> We don't want that to ever happen to
-								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help you
+								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br />you
 								nail it in 1.</b></p>
 
 							</div>
@@ -238,12 +233,13 @@ const ContentByDesign = () => {
 				</div>
 
 				<div className='booking' id="contact-form">
+<<<<<<< HEAD
 				<div className='left-section'>
 				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
 					<div className='left-section-container'>
 						<img src={CBDIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
-						It takes years of experience to build the perfect set, we're using 2 decades of ours to give you a headstart on yours.
+						It takes years of experience to build the perfect set, we're using two decades of ours to give you a headstart on yours.
 						</p>
 						<p className='third-heading'> You can officially stop waiting.</p>
 						{/*modal quiz*/}
@@ -256,6 +252,30 @@ const ContentByDesign = () => {
 						<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
 						           children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
+=======
+					<div className='left-section'>
+						<img src={Arrow} width={90} className='arrow-quiz arrow-desctop-v' alt=''/>
+						<div className='left-section-container'>
+							<img src={CBDIcon} alt="LivingIcon"/>
+							<p className='third-heading'>
+								It takes years of experience to build the perfect set, we're using 2 decades of ours to
+								give you a headstart on yours.
+							</p>
+							<p className='third-heading'> You can officially stop waiting.</p>
+							{/*modal quiz*/}
+							<div className='cta-quiz'>
+
+								<img src={Arrow} width={40} className='arrow-quiz arrow-mobile-v' alt=''/>
+								<button className='take-quiz' onClick={() => setQuiz(true)}><p>Get Started &<br
+									className='mobile-breakline'/> Take The Quiz!</p>
+								</button>
+							</div>
+							<QuizModal2 showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
+							            children={<> <Quiz2 handleClose={handlaChangeForm}/> </>}/>
+							<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
+							            children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
+						</div>
+>>>>>>> aa21aee8d2db68f70be903cfe8468330d0ef3861
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
@@ -297,8 +317,8 @@ const ContentByDesign = () => {
 			<Footer/>
 
 		</div>
-		
-		)
+
+	)
 }
 
 export default ContentByDesign
