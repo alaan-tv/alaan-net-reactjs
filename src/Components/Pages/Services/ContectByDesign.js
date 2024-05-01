@@ -233,7 +233,6 @@ const ContentByDesign = () => {
 				</div>
 
 				<div className='booking' id="contact-form">
-<<<<<<< HEAD
 				<div className='left-section'>
 				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
 					<div className='left-section-container'>
@@ -252,30 +251,6 @@ const ContentByDesign = () => {
 						<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
 						           children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
-=======
-					<div className='left-section'>
-						<img src={Arrow} width={90} className='arrow-quiz arrow-desctop-v' alt=''/>
-						<div className='left-section-container'>
-							<img src={CBDIcon} alt="LivingIcon"/>
-							<p className='third-heading'>
-								It takes years of experience to build the perfect set, we're using 2 decades of ours to
-								give you a headstart on yours.
-							</p>
-							<p className='third-heading'> You can officially stop waiting.</p>
-							{/*modal quiz*/}
-							<div className='cta-quiz'>
-
-								<img src={Arrow} width={40} className='arrow-quiz arrow-mobile-v' alt=''/>
-								<button className='take-quiz' onClick={() => setQuiz(true)}><p>Get Started &<br
-									className='mobile-breakline'/> Take The Quiz!</p>
-								</button>
-							</div>
-							<QuizModal2 showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
-							            children={<> <Quiz2 handleClose={handlaChangeForm}/> </>}/>
-							<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
-							            children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
-						</div>
->>>>>>> aa21aee8d2db68f70be903cfe8468330d0ef3861
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
