@@ -8,7 +8,7 @@
 <ellipse cx="622" cy="-138.5" rx="1409" ry="790.5" fill="url(#paint1_linear_355_234)"/>
 </mask>
 <g mask="url(#mask0_355_234)">
-<rect x="630" y="127.654" width="783.84" height="580.283" transform="rotate(-27.3943 630 127.654)" fill="url(#pattern0_355_234)" fill-opacity="0.25"/>
+<rect x="722" y="35" width="783" height="580" fill="url(#pattern0_355_234)" fill-opacity="0.25"/>
 <rect x="-251" y="171" width="836" height="484" fill="url(#pattern1_355_234)" fill-opacity="0.25"/>
 </g>
 <g style="mix-blend-mode:color">
@@ -26,7 +26,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_355_234" result="shape"/>
 </filter>
 <pattern id="pattern0_355_234" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_355_234" transform="matrix(0.0017331 0 0 0.00234106 0 -0.00683866)"/>
+<use xlink:href="#image0_355_234" transform="matrix(0.0017331 0 0 0.00233969 0 -0.00654246)"/>
 </pattern>
 <pattern id="pattern1_355_234" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image1_355_234" transform="matrix(0.00154386 0 0 0.00266667 -0.0141053 0)"/>

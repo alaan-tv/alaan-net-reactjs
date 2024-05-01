@@ -17,8 +17,8 @@ import Qustion5Image3 from '../../../src/Assets/quiz/CBD/q4/Soft Pastels.png'
 import Qustion5Image4 from '../../../src/Assets/quiz/CBD/q4/Neutral Tones.png'
 import Qustion6Image1 from '../../../src/Assets/quiz/CBD/q5/white marble.png'
 import Qustion6Image2 from '../../../src/Assets/quiz/CBD/q5/red oak.jpg'
-import Qustion6Image3 from '../../../src/Assets/quiz/CBD/q5/cross-weave light grey fabric .jpg'
-import Qustion6Image4 from '../../../src/Assets/quiz/CBD/q5/concrete.jpg'
+import Qustion6Image3 from '../../../src/Assets/quiz/CBD/q5/cross-weave light grey fabric.jpg'
+import Qustion6Image4 from '../../../src/Assets/quiz/CBD/q5/concrete.png'
 import Qustion6Image5 from '../../../src/Assets/quiz/CBD/q5/chrome.jpg'
 import Qustion6Image6 from '../../../src/Assets/quiz/CBD/q5/black acrylic.png'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
@@ -234,9 +234,9 @@ const Quiz2 = ({handleClose}) => {
 		let field_name = option_group + '__' + id;
 		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? false : 'required';
 		return (<label key={id} className='quiz-label'
-		               style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
+		>
 			<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
-			     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
+			     >
 				{item.image && <img src={item.image} alt={''}/>}
 				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 				       value={JSON.stringify(item)}
@@ -245,7 +245,7 @@ const Quiz2 = ({handleClose}) => {
 				       onInvalid={invalidInput} onInput={validInput}
 				/>
 				<div className='option-desc'>
-					{item.title && <><b>{item.title}</b>-</>} {item.desc && item.desc}
+					{item.title && <><b>{item.title}</b></>} {item.desc && item.desc}
 				</div>
 			</div>
 		</label>);
@@ -310,14 +310,14 @@ const Quiz2 = ({handleClose}) => {
 
 			{currentPage === 4 && (<>
 				<h1 className='step-title step-title-light'>{page_4.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form four-images'>
 					{page_4.options.map((item, i) => OptionHtml(i, {...item, id: 4, question: page_4.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 5 && (<>
 				<h1 className='step-title step-title-light'>{page_5.question}</h1>
-				<div className='introduction-quiz-form images-form images-form2'>
+				<div className='introduction-quiz-form images-form four-images'>
 					{page_5.options.map((item, i) => OptionHtml(i, {...item, id: 5, question: page_5.question}))}
 				</div>
 			</>)}
@@ -331,32 +331,32 @@ const Quiz2 = ({handleClose}) => {
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{page_7.question}</h1>
-				<div className='introduction-quiz-form images-form without-desc three-images'>
+				<div className='introduction-quiz-form images-form without-desc'>
 					{page_7.options.map((item, i) => OptionHtml(i, {...item, id: 7, question: page_7.question}))}
 				</div>
 			</>)}
 			{currentPage === 8 && (<>
 				<h1 className='step-title step-title-light'>{page_8.question}</h1>
-				<div className='introduction-quiz-form images-form four-images without-desc'>
+				<div className='introduction-quiz-form images-form four-images'>
 					{page_8.options.map((item, i) => OptionHtml(i, {...item, id: 8, question: page_8.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 9 && (<>
 				<h1 className='step-title step-title-light'>{page_9.question}</h1>
-				<div className='introduction-quiz-form images-form without-desc'>
+				<div className='introduction-quiz-form images-form'>
 					{page_9.options.map((item, i) => OptionHtml(i, {...item, id: 9, question: page_9.question}))}
 				</div>
 			</>)}
 
 			{currentPage === 10 && (<>
 				<h1 className='step-title step-title-light'>{page_10.question}</h1>
-				<div className='introduction-quiz-form multi-check-text'>
+				<div className='introduction-quiz-form multi-check-text images-form multi-check-text2'>
 					{page_10.options.map((item, i) => OptionHtml(i, {...item, id: 10, question: page_10.question}))}
 				</div>
 			</>)}
 
-			{currentPage === 11 && <h1 className='step-title step-title-light'>{page_11.question}</h1>}
+			{currentPage === 11 && <h1 className='step-title'>{page_11.question}</h1>}
 
 			<div style={{display: 'flex', justifyContent: currentPage > 1 ? 'space-between' : 'end'}}>
 				{currentPage > 1 && <button className='back-button' type='button'
@@ -372,3 +372,7 @@ const Quiz2 = ({handleClose}) => {
 }
 
 export default Quiz2
+
+
+
+
