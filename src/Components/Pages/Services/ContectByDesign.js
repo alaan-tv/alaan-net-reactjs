@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react'
-import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
-import {CarouselProvider, Slider, Slide, DotGroup} from 'pure-react-carousel';
+import {CarouselProvider, DotGroup, Slide, Slider} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
@@ -26,12 +25,8 @@ import AboutImage from '../../../Assets/CBDAbout2.png'
 import Arrow from '../../../Assets/arrow.png'
 import Quiz2 from '../../Common-components/Quiz2'
 import QuizModal2 from '../../Common-components/QuizModal2'
-import FormQuiz from '../../Common-components/FormQuiz'
 import FormQuiz2 from "../../Common-components/FormQuiz2";
 import FormModal2 from "../../Common-components/FormModal2";
-import QuizModal from "../../Common-components/QuizModal";
-import Quiz from "../../Common-components/Quiz";
-import FormModal from "../../Common-components/FormModal";
 
 const ContentByDesign = () => {
 	const meta = {
@@ -238,6 +233,7 @@ const ContentByDesign = () => {
 				</div>
 
 				<div className='booking' id="contact-form">
+<<<<<<< HEAD
 				<div className='left-section'>
 				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
 					<div className='left-section-container'>
@@ -256,6 +252,30 @@ const ContentByDesign = () => {
 						<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
 						           children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
 					</div>
+=======
+					<div className='left-section'>
+						<img src={Arrow} width={90} className='arrow-quiz arrow-desctop-v' alt=''/>
+						<div className='left-section-container'>
+							<img src={CBDIcon} alt="LivingIcon"/>
+							<p className='third-heading'>
+								It takes years of experience to build the perfect set, we're using 2 decades of ours to
+								give you a headstart on yours.
+							</p>
+							<p className='third-heading'> You can officially stop waiting.</p>
+							{/*modal quiz*/}
+							<div className='cta-quiz'>
+
+								<img src={Arrow} width={40} className='arrow-quiz arrow-mobile-v' alt=''/>
+								<button className='take-quiz' onClick={() => setQuiz(true)}><p>Get Started &<br
+									className='mobile-breakline'/> Take The Quiz!</p>
+								</button>
+							</div>
+							<QuizModal2 showQuiz={quiz} handleClose={() => setQuiz(!quiz)}
+							            children={<> <Quiz2 handleClose={handlaChangeForm}/> </>}/>
+							<FormModal2 showForm={form} handleClose1={() => setForm(!form)}
+							            children={<> <FormQuiz2 handleClose1={() => setForm(!form)}/> </>}/>
+						</div>
+>>>>>>> aa21aee8d2db68f70be903cfe8468330d0ef3861
 					</div>
 					<div className='right-section'>
 						<div className='form-section' id="contact-form">
@@ -297,8 +317,8 @@ const ContentByDesign = () => {
 			<Footer/>
 
 		</div>
-		
-		)
+
+	)
 }
 
 export default ContentByDesign
