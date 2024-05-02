@@ -98,6 +98,9 @@ position: relative;
     font-weight: bold;
     font-size: 20px;
 }
+.living-page .feature-heading , .content-page .feature-heading{
+    line-height: 25px;
+}
 
 .video-section{
     padding : 100px 30px;
@@ -782,11 +785,11 @@ flex-direction: row;
         width: 100% !important;
     }
     .content-page .trainer-desc {
-        padding: 20px 120px 0px 15px !important;
+        padding: 20px 120px 10px 15px !important;
         text-align: left;
     }
         .textAboutMobile{
-            width: 250px;
+            width: 230px;
         display: block;
         }
         .content-page .trainer-desc p{
