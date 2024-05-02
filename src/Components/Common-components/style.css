@@ -892,8 +892,8 @@ min-width: 40%
     display: flex !important;
   }
   .step-title{
-   padding: 20px 10px;
-    font-size: 18px !important;
+   padding: 20px 40px;
+    font-size: 16px !important;
     margin: 44px auto 20px;
   }
   .introduction-quiz-form  .dimensions{
@@ -912,8 +912,8 @@ min-width: 40%
 .multi-check-text2 .quiz-label{
   min-width: 100px !important;
 }
-.multi-check-text .option-desc {
-  margin-left: 60px;
+.multi-check-text2 .option-desc {
+  margin-left: 50px;
   padding: 10px 0px !important;}
   /*.images-form label:last-child{
     width: 50% !important;
