@@ -569,13 +569,13 @@ margin: 100px auto 20px;
 }
 
 .step-title-light{
-  background-image: url(../../Assets/quiz-b-1.png),url(../../Assets/quiz-b-2.png), linear-gradient(272deg, #FFA41B 0%, #FA8732 25%, #F26550 47%, #EA426F 58%, #E01C93 81%, #E11F8F 100%) , linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%);
+  background-image: url(../../Assets/quiz-b-1.png),url(../../Assets/quiz-b-2.png) ,url(../../Assets/backround-without-element.svg)  , linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%);
   background-position:
     bottom left,
    top right,
     center;
   color: #fff;
-  background-size: contain;
+  background-size: contain ,contaion, cover;
   background-repeat: no-repeat;
   background-color: transparent !important;
 

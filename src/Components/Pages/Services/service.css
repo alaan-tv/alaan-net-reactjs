@@ -756,13 +756,13 @@ padding-left: 20px;
     padding: 30px 0px 10px 0px ;
    }
    .four-images{
-    width: 60% !important;
+    /*width: 60% !important;*/
     margin: 30px auto;
    }
    .CBD-AboutImage{
     position: absolute;
     left: 5%;
-    bottom: -50px;
+    bottom: -5px;
 }
    @media (max-width: 767px) {
     .living-page .trainers-container{
@@ -773,8 +773,8 @@ padding-left: 20px;
 flex-direction: row;
     }
     .CBD-AboutImage{
-        bottom: 0px !important;
-        right: -45px !important;
+        bottom: -20px !important;
+        right: -130px !important;
         
         left: auto !important;
     }
@@ -841,7 +841,7 @@ align-items: center;
     width: auto !important;
  }
  .content-page .trainer-desc{
-    padding: 0px 20px 0px 50px;
+    padding: 30px 20px 10px 50px;
     font-size: 17px !important;
  }
  .content-page .trainer-desc p {
