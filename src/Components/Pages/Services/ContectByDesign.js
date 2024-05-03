@@ -21,8 +21,7 @@ import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
-import AboutImage from '../../../Assets/CBDAbout2.png'
-import AboutImage2 from '../../../Assets/CBDAbout3.png'
+import AboutImage from '../../../Assets/tripod.svg'
 import Arrow from '../../../Assets/arrow.png'
 import Quiz2 from '../../Common-components/Quiz2'
 import QuizModal2 from '../../Common-components/QuizModal2'
@@ -195,21 +194,17 @@ const ContentByDesign = () => {
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								
-								<picture>
-     <source media='(max-width: 768px)' srcSet={AboutImage2} />
-     <source media='(min-width: 768px)' srcSet={AboutImage} />
-     <img className='CBD-AboutImage' src={AboutImage} alt='hero' />
- </picture>
-                                
+								<img className='CBD-AboutImage' src={AboutImage} alt='about'/>
+
+
 							</div>
 							<div className='trainer-desc'>
 								<p>
 									First impressions matter. <br />Visuals matter.</p> <p>Your set is the first thing that
-								speaks for your channel before you do</p> <p> No matter how excellent your content is,
-								if a viewer doesn't immediately think you're able to deliver it, they're not going to
+								speaks for your <br />channel before you do</p> <p> No matter how excellent your content is,
+								if a viewer doesn't <br />immediately think you're able to deliver it, they're not <br />going to
 								stick around long enough to find out.</p> <p> We don't want that to ever happen to
-								you. </p> <p><b className='textAboutMobile'>It takes 7 seconds to make a first impression; we want to help you
+								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br />you
 								nail it in 1.</b></p>
 
 							</div>
