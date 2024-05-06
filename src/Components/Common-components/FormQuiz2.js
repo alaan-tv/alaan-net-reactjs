@@ -130,7 +130,7 @@ const FormQuiz2 = ({handleClose1}) => {
 		if (event.target.type === 'checkbox') {
 			let checkInput = document.querySelectorAll('.' + event.target.classList[1]);
 			let checkedInput = [].filter.call(checkInput, el => el.checked);
-			if (event.target.classList[1] === 'question_2') {
+			if (event.target.classList[1] === 'question_2' && 0) {
 				checkInput.forEach(el => {
 					el.required = event.target.checked === false && checkedInput.length < 1 ? true : false;
 					resetQuantity(event.target.dataset.id);
@@ -230,13 +230,11 @@ const FormQuiz2 = ({handleClose1}) => {
 
 
 	//calculator price
-	const [items, setItems] = useState([{
-		id: 'item1', name: 'Bedroom', quantity: 0, price: 3499, price1: 'AED 3,499', checked: false
-	}, {
-		id: 'item2', name: 'Living room ', quantity: 0, price: 4299, price1: 'AED 4,299 ', checked: false
-	}, {id: 'item3', name: 'Office', quantity: 0, price: 3899, price1: 'AED 3,899', checked: false}, {
-		id: 'item4', name: 'Kitchen', quantity: 0, price: 5299, price1: 'AED 5,299', checked: false
-	}, // Add more items as needed
+	const [items, setItems] = useState([
+		{ id: 'item1', name: 'Corner Room', quantity: 1, price: 2999, price1: 'AED 2,999', checked: false },
+		{ id: 'item2', name: 'Half Room ', quantity: 1, price: 3699, price1: 'AED 3,699 ', checked: false },
+		{ id: 'item3', name: 'Full Room', quantity: 1, price: 3999, price1: 'AED 3,999', checked: false },
+		// Add more items as needed
 	]);
 
 	const calculateTotalPrice = () => {
@@ -402,10 +400,41 @@ const FormQuiz2 = ({handleClose1}) => {
 				</div>
 			</div>
 
+			<div className='question'>
+				<h1 className='form-step-title'>9-{question_9.question}</h1>
+				<div className='introduction-quiz-form multi-check-text'>
+					{items.map((item, i) => {
+						item.checked = (inputs['question_9__' + i] || '') ? "checked" : false;
+						item.question = question_9.question;
+						return (<div key={item.id} className={item.checked ? "container pink" : 'container white'}>
+							<label className='quiz-label'>
+								<input data-id={item.id} type="checkbox" className={'checkbox  question_9'}
+								       name={'question_9__' + i}
+								       value={JSON.stringify(item)}
+								       checked={item.checked} required={true}
+								       onChange={handleChange} onInvalid={invalidInput} onInput={validInput}/>
+								<div className='option-desc'>{item.name}: {item.price1}</div>
+							</label>
+							<div className='quantity' hidden><span>Number of {item.name}: </span>
+								<span className='quantity-tool'
+								      onClick={() => item.checked && item.quantity < 10 ? handleQuantityChange(item.id, 1) : null}>+</span>
+								<span style={{
+									color: item.checked ? '#fff' : '#000', fontSize: '18px'
+								}}>{item.quantity}</span>
+								<span className='quantity-tool'
+								      onClick={() => item.quantity > 0 ? handleQuantityChange(item.id, -1) : null}>-</span>
+							</div>
+						</div>)
+					})}
 
-			<div className='question'><h1 className='form-step-title'>9-{question_9.question}
+					<div className='total-price'>
+						<h3>Total Price: AED {calculateTotalPrice()}</h3>
+					</div>
+				</div>
+			</div>
+
+			{/*<div className='question'><h1 className='form-step-title'>9-{question_9.question}
 				<small style={{fontWeight: "normal", fontSize: "16px"}}></small></h1>
-
 				<div className='introduction-quiz-form multi-check-text'>
 					{question_9.options.map((item, i) => OptionHtml(9, i, {
 						...item,
@@ -413,7 +442,7 @@ const FormQuiz2 = ({handleClose1}) => {
 						question: question_9.question
 					}))}
 				</div>
-			</div>
+			</div>*/}
 
 
 			<div className='question'>
