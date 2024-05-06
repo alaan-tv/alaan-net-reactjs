@@ -201,10 +201,10 @@ const ContentByDesign = () => {
 							<div className='trainer-desc'>
 								<p>
 									First impressions matter. <br />Visuals matter.</p> <p>Your set is the first thing that
-								speaks for your <br />channel before you do</p> <p> No matter how excellent your content is,
+								speaks for your channel before you do</p> <p> No matter how excellent your content is,
 								if a viewer doesn't <br />immediately think you're able to deliver it, they're not <br />going to
-								stick around long enough to find out.</p> <p> We don't want that to ever happen to
-								you. </p> <p><b>It takes 7 seconds to make a first impression; we want to help <br />you
+								stick around long enough to find out.</p> <p className='last-text'> We don't want that to ever happen to
+								you. </p> <p className='last-text'><b>It takes 7 seconds to make a first impression; <br/>we want to help you
 								nail it in 1.</b></p>
 
 							</div>
