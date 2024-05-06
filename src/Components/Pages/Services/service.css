@@ -785,8 +785,11 @@ flex-direction: row;
         width: 100% !important;
     }
     .content-page .trainer-desc {
-        padding: 20px 120px 10px 15px !important;
+        padding: 20px 100px 10px 15px !important;
         text-align: left;
+    }
+    .content-page .trainer-desc p {
+        margin-bottom: 10px !important;
     }
         .textAboutMobile{
             width: 230px;
@@ -794,8 +797,11 @@ flex-direction: row;
         }
         .content-page .trainer-desc p{
             line-height: 20px;
+            font-size: 14px;
         }
-   
+   .last-text{
+    width: 200px;
+   }
    .about-section .trainer-image{
     width: 350px !important;
     height: 230px !important;
@@ -816,6 +822,9 @@ flex-direction: row;
    .about-section h2{
     font-size: 40px !important;
    }
+   .content-page .light-text{
+    margin:  10px auto 20px !important;
+}
 }
 /*content by design page*/
 .content-page .hero-section{
@@ -845,7 +854,7 @@ align-items: center;
     font-size: 17px !important;
  }
  .content-page .trainer-desc p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
  }
  @media (max-width: 767px) {
  .content-page .hero-section{
