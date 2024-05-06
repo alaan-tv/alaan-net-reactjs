@@ -99,7 +99,7 @@ position: relative;
     font-size: 20px;
 }
 .living-page .feature-heading , .content-page .feature-heading{
-    line-height: 25px;
+    line-height: 35px;
 }
 
 .video-section{
@@ -569,6 +569,9 @@ padding-left: 20px;
     .left-section-container .third-heading{
         font-size: 23px;
     }
+    .content-page .third-heading{
+        font-size: 22px !important;
+       }
     .left-section-container .secondary-heading{
         text-align: center !important;
     }
@@ -742,6 +745,12 @@ padding-left: 20px;
    .content-page .third-heading{
     font-size: 26px;
    }
+   .content-page .primary-heading{
+    font-size: 42px;
+   }
+   .content-page .service-logo{
+    width: 500px !important;
+   }
    .content-page .cta-quiz {
     margin-top: 60px;
 }
@@ -761,7 +770,7 @@ padding-left: 20px;
    }
    .CBD-AboutImage{
     position: absolute;
-    left: 5%;
+    left: 8%;
     bottom: -5px;
 }
    @media (max-width: 767px) {
@@ -771,6 +780,12 @@ padding-left: 20px;
     }
     .content-page .trainers-container{
 flex-direction: row;
+    }
+    .content-page .primary-heading , .living-page .primary-heading{ 
+        font-size: 32px !important;
+    }
+    .content-page .features h2{
+        padding: 20px 5px !important;
     }
     .CBD-AboutImage{
         bottom: -20px !important;
@@ -834,6 +849,9 @@ flex-direction: row;
 }
 .content-page .light-text{
     margin:  27px auto 42px;
+    
+        line-height: 30px;
+
 }
 .content-page .trainer-image img{
 height:  380px;
@@ -850,7 +868,7 @@ align-items: center;
     width: auto !important;
  }
  .content-page .trainer-desc{
-    padding: 30px 20px 10px 50px;
+    padding: 30px 20px 10px 80px;
     font-size: 17px !important;
  }
  .content-page .trainer-desc p {
@@ -1000,7 +1018,7 @@ position: static;
     background-image: url(../../../Assets/CBDFeatureImage3.svg);
 }
 .content-page .desktop-v .feature{
-    height: 330px;
+    height: 350px;
 }
 .content-page .second-features .desktop-v .feature{
     height: 460px;

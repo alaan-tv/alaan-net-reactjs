@@ -169,7 +169,7 @@ const ContentByDesign = () => {
 			<div className='home-container'>
 				<div className='features'>
 					<h2 className='primary-heading'> We'll take your set to a whole other level, by giving you the 3
-						things you need <br />to see it there:
+						things you need to see it there:
 
 					</h2>
 					<div className='features-container desktop-v'>

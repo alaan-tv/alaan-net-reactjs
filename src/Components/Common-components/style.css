@@ -726,7 +726,7 @@ margin: 30px 0px;
 }
 .multi-check-text .container{
   width: 100%;
-  margin: 30px 0px
+  margin: 12px 0px
 }
 .formQuiz .introduction-quiz-form input, .formQuiz .introduction-quiz-form select{
   margin: 1px 0px;
@@ -861,7 +861,7 @@ min-width: 40%
      bottom right,
       center;
     color: #fff;
-    background-size: contain, contain cover;
+    background-size: 40px, 40px, cover;
     background-repeat: no-repeat !important;
     background-color: transparent !important;
   
