@@ -84,7 +84,7 @@ const Quiz = ({handleClose}) => {
 		}, {
 			desc: "I'm into some pops of colour", image: Qustion2Image3,
 		}, {
-			desc: "Tons, I cant get enough", image: Qustion2Image4,
+			desc: "Tons, I can't get enough", image: Qustion2Image4,
 		},]
 	};
 
@@ -222,9 +222,9 @@ const Quiz = ({handleClose}) => {
 		let field_name = option_group + '_' + id;
 		let is_required = Object.keys(inputs).toString().indexOf(option_group) > 1 ? false : 'required';
 		return (<label key={id} className='quiz-label'
-		               style={currentPage > 4 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
+		               style={currentPage > 9 && currentPage < 9 ? {flex: 1, minWidth: "40%"} : {}}>
 			<div className={(inputs[field_name] || '') ? "container pink" : 'container white'}
-			     style={currentPage > 4 && currentPage < 9 ? {width: "100%"} : {}}>
+			     style={currentPage > 9 && currentPage < 9 ? {width: "100%"} : {}}>
 				{item.image && <img src={item.image} alt={''}/>}
 				<input type="checkbox" className={'checkbox ' + option_group} name={field_name}
 				       value={JSON.stringify(item)}
