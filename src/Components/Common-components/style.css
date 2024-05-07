@@ -705,7 +705,7 @@ margin: 30px 0px;
   min-width: auto !important;
 }
 .introduction-quiz-form .container{
-  position: relative; width: 300px;   border-radius: 20px; padding: 15px; background-color: #fff;
+  position: relative; width: 500px;   border-radius: 20px; padding: 15px; background-color: #fff;
 }
 
 .introduction-quiz-form  .checkbox { position: absolute; bottom: 0px; right: 0px; width: 30px; }
@@ -804,7 +804,7 @@ line-height: normal !important;
     border-radius: 20px;
    
     padding: 0px !important; 
-    font-size: 16px; 
+    font-size: 18px; 
     /* font-weight: 500;*/
 }
 .formQuiz .quiz-label{
@@ -923,10 +923,14 @@ min-width: 40%
 max-width: 100% !important;
 display: flex;
 align-items: center;
+gap: 7px;
 
   }
   .images-form .container img{
-    width: 50%;
+    width: 65%;
+  }
+  .living-page .images-form .container img{
+    width: 60%;
   }
   .multi-check-text .option-desc{
     font-size: 14px;

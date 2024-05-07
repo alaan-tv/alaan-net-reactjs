@@ -57,7 +57,7 @@ function a11yProps(index) {
 }
 
 const VoiceOver = () => {
-	const options = [' مايو : الأيام 4, 5, 11, 12 ', ' يوليو : الأيام 6, 7 , 13, 14 ', ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
+	const options = [' يوليو : الأيام 6, 7 , 13, 14 ', ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
 	const defaultOption = options[0];
 	const [value, setValue] = React.useState(0);
 
@@ -208,23 +208,18 @@ const VoiceOver = () => {
 						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: </p></div>
 						<Box sx={{borderBottom: 1, borderColor: 'divider'}}>
 							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
-								<Tab label="مايو" {...a11yProps(0)} />
-								<Tab label="يوليو" {...a11yProps(1)} />
-								<Tab label="أغسطس" {...a11yProps(2)} />
+								
+								<Tab label="يوليو" {...a11yProps(0)} />
+								<Tab label="أغسطس" {...a11yProps(1)} />
 							</Tabs>
 						</Box>
+						
 						<CustomTabPanel value={value} index={0}>
-							<p> اليوم الأول :السبت 4 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثاني :الأحد 5 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثالث :السبت 11 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الرابع :الأحد 12 مايو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-						</CustomTabPanel>
-						<CustomTabPanel value={value} index={1}>
 							<p> اليوم الأول :السبت 6 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثاني :الأحد 7 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثالث :السبت 13 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الرابع :الأحد 14 يوليو من الساعة 12 ظهرا الى الساعة 4 ظهرا</p></CustomTabPanel>
-						<CustomTabPanel value={value} index={2}>
+						<CustomTabPanel value={value} index={1}>
 							<p> اليوم الأول :السبت 24 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثاني :الأحد 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثالث :السبت 31 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>

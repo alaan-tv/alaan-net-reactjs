@@ -515,7 +515,7 @@ font-weight: 600;
   position: relative;
 }
 .service-card-icon{
-  height: 140px;
+  /*height: 140px;*/
 }
 .sevice-more-icon{
   position: absolute;

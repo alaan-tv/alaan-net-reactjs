@@ -59,7 +59,7 @@ const Quiz2 = ({handleClose}) => {
 		}, {
 			title: `Sleek & Minimal `, image: Question1Image2,
 		}, {
-			title: `Earthy and Natural `, image: Question1Image3,
+			title: `Earthy & Natural `, image: Question1Image3,
 		}, {
 			title: `Productive & Aesthetic`, image: Question1Image4,
 		},]
@@ -93,14 +93,14 @@ const Quiz2 = ({handleClose}) => {
 		question: 'Choose your lighting preference: ', options: [{
 			title: "Bright & Well-lit", image: Qustion4Image1,
 		}, {
-			title: "Natural sunlight", image: Qustion4Image2,
+			title: "Natural & sunlight", image: Qustion4Image2,
 		}, {
 			title: "Moody & Intimate", image: Qustion4Image3,
 		},]
 	};
 	const page_8 = {
 		question: 'Which of these colours remind you of your content?', options: [{
-			title: "Bold and Minimal", image: Qustion5Image1,
+			title: "Bold & Minimal", image: Qustion5Image1,
 		}, {
 			title: "Bright & Loud", image: Qustion5Image2,
 		}, {
@@ -115,7 +115,7 @@ const Quiz2 = ({handleClose}) => {
 		}, {
 			title: "Red oak", image: Qustion6Image2
 		}, {
-			title: "Cross-weave light grey fabric", image: Qustion6Image3
+			title: "Light grey fabric", image: Qustion6Image3
 		}, {
 			title: "Concrete", image: Qustion6Image4,
 		}, {
@@ -330,7 +330,7 @@ const Quiz2 = ({handleClose}) => {
 
 			{currentPage === 7 && (<>
 				<h1 className='step-title step-title-light'>{page_7.question}</h1>
-				<div className='introduction-quiz-form images-form without-desc'>
+				<div className='introduction-quiz-form images-form'>
 					{page_7.options.map((item, i) => OptionHtml(i, {...item, id: 7, question: page_7.question}))}
 				</div>
 			</>)}
