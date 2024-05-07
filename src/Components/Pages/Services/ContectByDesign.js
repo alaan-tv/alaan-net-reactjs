@@ -22,6 +22,7 @@ import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
 import AboutImage from '../../../Assets/tripod.svg'
+import AboutImageMobile from '../../../Assets/tripod2.svg'
 import Arrow from '../../../Assets/arrow.png'
 import Quiz2 from '../../Common-components/Quiz2'
 import QuizModal2 from '../../Common-components/QuizModal2'
@@ -194,7 +195,11 @@ const ContentByDesign = () => {
 					<div className='about-container'>
 						<div className='trainers-container'>
 							<div className='trainer-image'>
-								<img className='CBD-AboutImage' src={AboutImage} alt='about'/>
+								<picture>
+     <source media='(max-width: 768px)' srcSet={AboutImageMobile} />
+     <source media='(min-width: 768px)' srcSet={AboutImage} />
+     <img className='CBD-AboutImage' CBD-AboutImagesrc={AboutImage}  alt='hero' />
+ </picture>
 
 
 							</div>
