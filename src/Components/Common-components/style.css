@@ -807,6 +807,10 @@ line-height: normal !important;
     font-size: 18px; 
     /* font-weight: 500;*/
 }
+.three-by-line .container{
+  width: 300px !important;
+}
+
 .formQuiz .quiz-label{
 background-color: transparent !important;
 }

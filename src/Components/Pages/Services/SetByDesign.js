@@ -15,7 +15,7 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
-import ContentLogo from '../../../Assets/cbd-logo.svg'
+import ContentLogo from '../../../Assets/SBD-03.svg'
 import CBDIcon from '../../../Assets/CBD-quiz-icon.svg'
 import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
@@ -31,7 +31,7 @@ import FormModal2 from "../../Common-components/FormModal2";
 
 const ContentByDesign = () => {
 	const meta = {
-		title: 'Content By Design',
+		title: 'Set By Design',
 		description: 'I am a description, and I can create multiple tags',
 		meta: {
 			charset: 'utf-8',
@@ -153,7 +153,7 @@ const ContentByDesign = () => {
 								Build the Set you’ve been waiting for with</h1>
 							<img className='service-logo' src={ContentLogo} alt={''}/>
 							<p className='primary-text light-text'>
-								Your content, <br />with a lot more of You in it.
+								Your set, <br />with a lot more of You in it.
 							</p>
 							<a className='service-cta primary-button living-cta' href="#contact-form">Book Now!</a>
 							{/*<div className='home-image-container banner-service-image'>

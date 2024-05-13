@@ -125,11 +125,11 @@ const Services = () => {
             <div className='service-card'>
               <img src={ContentIcon} alt='Living by design icon'/>
               <h2 className='third-heading' >
-              Content By Design         </h2>
+              Set By Design         </h2>
               <div className='service-desc'>
               <p className='third-text'>
-              Your content, with a lot more of You in it.</p>
-              <div className='sevice-more-icon'><Link to="/our-services/CBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              Your set, with a lot more of You in it.</p>
+              <div className='sevice-more-icon'><Link to="/our-services/SBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
             <div className='service-card'>
