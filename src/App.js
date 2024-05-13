@@ -16,7 +16,7 @@ import Terms from './Components/Common-components/Terms';
 import PersonalBranding from './Components/Pages/Services/PersonalBranding';
 import PersonalBranding2 from './Components/Pages/Workshops/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
-import ContentByDesign from './Components/Pages/Services/ContectByDesign';
+import SetByDesign from './Components/Pages/Services/SetByDesign';
 import ThankYou from './Components/Pages/ThankYou';
 import Page404 from './Components/Pages/Page404';
 import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
@@ -44,7 +44,7 @@ function App() {
 					<Route path="/our-services/be-a-presenter" element={<BeAPresenter/>}/>
 					<Route path="/our-services/personal-branding" element={<PersonalBranding/>}/>
 					<Route path="/our-services/LBD" element={<LivingByDesign/>}/>
-					<Route path="/our-services/CBD" element={<ContentByDesign/>}/>
+					<Route path="/our-services/SBD" element={<SetByDesign/>}/>
 					<Route path="/our-services/personal-coaching" element={<ProfessionalCoaching/>}/>
 
 

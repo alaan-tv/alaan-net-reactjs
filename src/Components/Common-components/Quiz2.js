@@ -343,7 +343,7 @@ const Quiz2 = ({handleClose}) => {
 
 			{currentPage === 9 && (<>
 				<h1 className='step-title step-title-light'>{page_9.question}</h1>
-				<div className='introduction-quiz-form images-form'>
+				<div className='introduction-quiz-form images-form three-by-line'>
 					{page_9.options.map((item, i) => OptionHtml(i, {...item, id: 9, question: page_9.question}))}
 				</div>
 			</>)}
