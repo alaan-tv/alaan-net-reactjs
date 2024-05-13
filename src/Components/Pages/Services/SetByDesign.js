@@ -16,6 +16,7 @@ import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import ContentLogo from '../../../Assets/SBD-03.svg'
+import ContentLogoMobile from '../../../Assets/sbd-mobile.svg'
 import CBDIcon from '../../../Assets/CBD-quiz-icon.svg'
 import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
@@ -151,7 +152,11 @@ const ContentByDesign = () => {
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
 								Build the Set you’ve been waiting for with</h1>
-							<img className='service-logo' src={ContentLogo} alt={''}/>
+							<picture style={{width:'100%'}}>
+     <source media='(max-width: 768px)' srcSet={ContentLogoMobile} />
+     <source media='(min-width: 768px)' srcSet={ContentLogo} />
+     <img src={ContentLogo} className='service-logo' alt='hero' />
+ </picture>
 							<p className='primary-text light-text'>
 								Your set, <br />with a lot more of You in it.
 							</p>
