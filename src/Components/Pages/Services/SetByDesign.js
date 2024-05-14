@@ -152,7 +152,7 @@ const ContentByDesign = () => {
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
 								Build the Set you’ve been waiting for with</h1>
-							<picture style={{width:'100%'}}>
+							<picture className='SBD-Logo-section'>
      <source media='(max-width: 768px)' srcSet={ContentLogoMobile} />
      <source media='(min-width: 768px)' srcSet={ContentLogo} />
      <img src={ContentLogo} className='service-logo' alt='hero' />
