@@ -501,7 +501,7 @@ const FormQuiz = ({handleClose1}) => {
 				</div>
 			</div>
 			<div style={{display: 'flex', justifyContent: 'space-between'}}>
-				<button className='back-button' onClick={(currentPage) => setCurrentPage(p => --p)}>Back</button>
+				<button className='back-button' onClick={() => { handleClose1(); }}>Back</button>
 				<button type='submit' className='continue-button'><span>Submit</span>
 					<KeyboardDoubleArrowRightIcon/></button>
 			</div>
