@@ -1,26 +1,26 @@
 import React, {useState} from 'react'
 import Stepper from 'react-stepper-horizontal';
-import Question1Image1 from '../../../src/Assets/quiz/CBD/q1/question1img1.png'
-import Question1Image2 from '../../../src/Assets/quiz/CBD/q1/question1img2.png'
-import Question1Image3 from '../../../src/Assets/quiz/CBD/q1/question1img3.png'
-import Question1Image4 from '../../../src/Assets/quiz/CBD/q1/question1img4.png'
-import Qustion2Image1 from '../../../src/Assets/quiz/CBD/q2/Modern and Sleek.png'
-import Qustion2Image2 from '../../../src/Assets/quiz/CBD/q2/Unique & bright.png'
-import Qustion2Image3 from '../../../src/Assets/quiz/CBD/q2/Sophisticated & impressive.png'
-import Qustion2Image4 from '../../../src/Assets/quiz/CBD/q2/Comfortable and Cozy.png'
-import Qustion4Image1 from '../../../src/Assets/quiz/CBD/q3/Bright and well-lit.png'
-import Qustion4Image2 from '../../../src/Assets/quiz/CBD/q3/Natural sunlight.png'
-import Qustion4Image3 from '../../../src/Assets/quiz/CBD/q3/Moody and intimate.png'
-import Qustion5Image1 from '../../../src/Assets/quiz/CBD/q4/Bold and minimal.png'
-import Qustion5Image2 from '../../../src/Assets/quiz/CBD/q4/Bright and loud.png'
-import Qustion5Image3 from '../../../src/Assets/quiz/CBD/q4/Soft Pastels.png'
-import Qustion5Image4 from '../../../src/Assets/quiz/CBD/q4/Neutral Tones.png'
-import Qustion6Image1 from '../../../src/Assets/quiz/CBD/q5/white marble.png'
-import Qustion6Image2 from '../../../src/Assets/quiz/CBD/q5/red oak.jpg'
-import Qustion6Image3 from '../../../src/Assets/quiz/CBD/q5/cross-weave light grey fabric.jpg'
-import Qustion6Image4 from '../../../src/Assets/quiz/CBD/q5/concrete.png'
-import Qustion6Image5 from '../../../src/Assets/quiz/CBD/q5/chrome.jpg'
-import Qustion6Image6 from '../../../src/Assets/quiz/CBD/q5/black acrylic.png'
+import Question1Image1 from '../../../src/Assets/quiz/SBD/q1/question1img1.png'
+import Question1Image2 from '../../../src/Assets/quiz/SBD/q1/question1img2.png'
+import Question1Image3 from '../../../src/Assets/quiz/SBD/q1/question1img3.png'
+import Question1Image4 from '../../../src/Assets/quiz/SBD/q1/question1img4.png'
+import Qustion2Image1 from '../../../src/Assets/quiz/SBD/q2/Modern and Sleek.png'
+import Qustion2Image2 from '../../../src/Assets/quiz/SBD/q2/Unique & bright.png'
+import Qustion2Image3 from '../../../src/Assets/quiz/SBD/q2/Sophisticated & impressive.png'
+import Qustion2Image4 from '../../../src/Assets/quiz/SBD/q2/Comfortable and Cozy.png'
+import Qustion4Image1 from '../../../src/Assets/quiz/SBD/q3/Bright and well-lit.png'
+import Qustion4Image2 from '../../../src/Assets/quiz/SBD/q3/Natural sunlight.png'
+import Qustion4Image3 from '../../../src/Assets/quiz/SBD/q3/Moody and intimate.png'
+import Qustion5Image1 from '../../../src/Assets/quiz/SBD/q4/Bold and minimal.png'
+import Qustion5Image2 from '../../../src/Assets/quiz/SBD/q4/Bright and loud.png'
+import Qustion5Image3 from '../../../src/Assets/quiz/SBD/q4/Soft Pastels.png'
+import Qustion5Image4 from '../../../src/Assets/quiz/SBD/q4/Neutral Tones.png'
+import Qustion6Image1 from '../../../src/Assets/quiz/SBD/q5/white marble.png'
+import Qustion6Image2 from '../../../src/Assets/quiz/SBD/q5/red oak.jpg'
+import Qustion6Image3 from '../../../src/Assets/quiz/SBD/q5/cross-weave light grey fabric.jpg'
+import Qustion6Image4 from '../../../src/Assets/quiz/SBD/q5/concrete.png'
+import Qustion6Image5 from '../../../src/Assets/quiz/SBD/q5/chrome.jpg'
+import Qustion6Image6 from '../../../src/Assets/quiz/SBD/q5/black acrylic.png'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import {ajax_url, formData} from "../../custom-functions";
 
@@ -183,9 +183,9 @@ const Quiz2 = ({handleClose}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		localStorage.setItem('CBD_name', inputs.name);
-		localStorage.setItem('CBD_email', inputs.email);
-		localStorage.setItem('CBD_phone', inputs.phone);
+		localStorage.setItem('SBD_name', inputs.name);
+		localStorage.setItem('SBD_email', inputs.email);
+		localStorage.setItem('SBD_phone', inputs.phone);
 		if (currentPage === 11) {
 			//copy object in new variable
 			let data = {...inputs}
@@ -208,7 +208,7 @@ const Quiz2 = ({handleClose}) => {
 				page_1: JSON.stringify({id: 1, question: page_1.question}),
 				page_2: JSON.stringify({id: 2, question: page_2.question}),
 				page_11: JSON.stringify({id: 11, question: page_11.question}),
-				lp_type: 'CBD',
+				lp_type: 'SBD',
 			});
 
 			// Send data to server
@@ -274,7 +274,7 @@ const Quiz2 = ({handleClose}) => {
 
 	return (<>
 
-		<form method={'post'} className="quiz-steps quiz-form CBD-quiz" onSubmit={handleSubmit}>
+		<form method={'post'} className="quiz-steps quiz-form SBD-quiz" onSubmit={handleSubmit}>
 			<Stepper
 				steps={sections}
 				activeStep={currentPage}

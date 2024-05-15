@@ -768,7 +768,7 @@ padding-left: 20px;
     /*width: 60% !important;*/
     margin: 30px auto;
    }
-   .CBD-AboutImage{
+   .SBD-AboutImage{
     position: absolute;
     left: 8%;
     bottom: -5px;
@@ -787,7 +787,7 @@ flex-direction: row;
     .content-page .features h2{
         padding: 20px 5px !important;
     }
-    .CBD-AboutImage{
+    .SBD-AboutImage{
         bottom: -15px !important;
         right: -130px !important;
         
@@ -842,7 +842,7 @@ flex-direction: row;
 }
 /*content by design page*/
 .content-page .hero-section{
-    background-image: url(../../../Assets/CBDBack2.svg);
+    background-image: url(../../../Assets/SBDBack2.svg);
     
    
 }
@@ -1050,7 +1050,7 @@ position: static;
     /*align-items: flex-start !important*/
 }
 .content-page .feature {
-    background-image: url(../../../Assets/CBDFeatureImage3.svg);
+    background-image: url(../../../Assets/SBDFeatureImage3.svg);
 }
 .content-page .desktop-v .feature{
     height: 350px;

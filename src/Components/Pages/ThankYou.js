@@ -21,7 +21,7 @@ const ThankYou = () => {
 					your consultant will contact you to confirm your appointment date & you’ll be on your way to your
 					dream home!</>
 			};
-		} else if (params.child === 'CBD' && +localStorage.getItem('CBD_Quiz')) {
+		} else if (params.child === 'SBD' && +localStorage.getItem('SBD_Quiz')) {
 			return {
 				title: 'Thank You',
 				content: <>Your content is this 👌 close to the best it's ever been!<br/> You’ll receive an email shortly
@@ -30,7 +30,7 @@ const ThankYou = () => {
 					dream set!”
 				</>
 			};
-		} else if (params.child === 'LBD' || params.child === 'CBD') {
+		} else if (params.child === 'LBD' || params.child === 'SBD') {
 			return {
 				title: 'Thank You',
 				content: <>We’ve received your inquiry, and we’ll get back to you soon!</>

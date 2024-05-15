@@ -17,7 +17,7 @@ import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import ContentLogo from '../../../Assets/SBD-03.svg'
 import ContentLogoMobile from '../../../Assets/sbd-mobile.svg'
-import CBDIcon from '../../../Assets/CBD-quiz-icon.svg'
+import SBDIcon from '../../../Assets/SBD-quiz-icon.svg'
 import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
@@ -203,7 +203,7 @@ const ContentByDesign = () => {
 								<picture>
      <source media='(max-width: 768px)' srcSet={AboutImageMobile} />
      <source media='(min-width: 768px)' srcSet={AboutImage} />
-     <img className='CBD-AboutImage' CBD-AboutImagesrc={AboutImage}  alt='hero' />
+     <img className='SBD-AboutImage' SBD-AboutImagesrc={AboutImage}  alt='hero' />
  </picture>
 
 
@@ -246,7 +246,7 @@ const ContentByDesign = () => {
 				<div className='left-section'>
 				<img src={Arrow} width={90}  className='arrow-quiz arrow-desctop-v'/>
 					<div className='left-section-container'>
-						<img src={CBDIcon} alt="LivingIcon"/>
+						<img src={SBDIcon} alt="LivingIcon"/>
 						<p className='third-heading'>
 						It takes years of experience to build the perfect set, we're using two decades of ours to give you a headstart on yours.
 						</p>
