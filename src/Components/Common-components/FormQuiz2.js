@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
 import Modal from './Modal';
@@ -98,14 +98,15 @@ const FormQuiz2 = ({handleClose1}) => {
 			answer: 'Yes'
 		}, {
 			answer: 'No'
-		}, ]
+		},]
 	};
 	const question_14 = {
 		question: `Anything else you want us to know? (e.g. things you really want to see in your space, any design style/vibe you want us to primarily bear in mind, etc.)
         `
 	};
 	const question_15 = {
-		question: `Address`,};
+		question: `Address`,
+	};
 	const question_16 = {
 		question: `Floor plan`,
 	};
@@ -123,6 +124,7 @@ const FormQuiz2 = ({handleClose1}) => {
 	const answer5File = useRef(null);
 	const answer16File = useRef(null);
 	const answer17File = useRef(null);
+	const navigateThankyou = useNavigate();
 
 	const handleChange = (event) => {
 		let name = event.target.name;
@@ -166,7 +168,7 @@ const FormQuiz2 = ({handleClose1}) => {
 				if (key.length > 10) {
 					delete data[key];
 				}
-			}else{
+			} else {
 				delete data[key];
 			}
 		}
@@ -185,12 +187,12 @@ const FormQuiz2 = ({handleClose1}) => {
 		// generate formData object
 		const form_data = formData({
 			...data,
-			question_1: JSON.stringify({ id: 1, answer: inputs.answer_1, question: question_1.question }),
-			question_2: JSON.stringify({ id: 2, answer: inputs.answer_2, question: question_2.question }),
-			question_3: JSON.stringify({ id: 3, answer: inputs.answer_3, question: question_3.question }),
+			question_1: JSON.stringify({id: 1, answer: inputs.answer_1, question: question_1.question}),
+			question_2: JSON.stringify({id: 2, answer: inputs.answer_2, question: question_2.question}),
+			question_3: JSON.stringify({id: 3, answer: inputs.answer_3, question: question_3.question}),
 			question_4: JSON.stringify({id: 4, question: question_4.question}),
 			question_5: JSON.stringify({id: 5, question: question_5.question}),
-			question_6: JSON.stringify({ id: 6, answer: inputs.answer_6, question: question_6.question }),
+			question_6: JSON.stringify({id: 6, answer: inputs.answer_6, question: question_6.question}),
 			question_8: JSON.stringify({id: 8, answer: inputs.answer_8, question: question_8.question}),
 			question_13: JSON.stringify({
 				id: 13,
@@ -207,6 +209,8 @@ const FormQuiz2 = ({handleClose1}) => {
 			question_18: JSON.stringify({
 				id: 18, date: selectedDate, time: inputs.time, question: question_18.question
 			}),
+			step: 2,
+			id: localStorage.getItem('SBD_id'),
 			name: localStorage.getItem('SBD_name'),
 			email: localStorage.getItem('SBD_email'),
 			phone: localStorage.getItem('SBD_phone'),
@@ -218,6 +222,7 @@ const FormQuiz2 = ({handleClose1}) => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
+				localStorage.removeItem('SBD_id');
 				localStorage.removeItem('SBD_name');
 				localStorage.removeItem('SBD_email');
 				localStorage.removeItem('SBD_phone');
@@ -225,15 +230,15 @@ const FormQuiz2 = ({handleClose1}) => {
 				window.location = '/our-services/SBD/thank-you';
 			})
 			.catch(error => console.error(error));
-
+		navigateThankyou("/our-services/SBD/thank-you");
 	};
 
 
 	//calculator price
 	const [items, setItems] = useState([
-		{ id: 'item1', name: 'Corner Room', quantity: 1, price: 2999, price1: 'AED 2,999', checked: false },
-		{ id: 'item2', name: 'Half Room ', quantity: 1, price: 3699, price1: 'AED 3,699 ', checked: false },
-		{ id: 'item3', name: 'Full Room', quantity: 1, price: 3999, price1: 'AED 3,999', checked: false },
+		{id: 'item1', name: 'Corner Room', quantity: 1, price: 2999, price1: 'AED 2,999', checked: false},
+		{id: 'item2', name: 'Half Room ', quantity: 1, price: 3699, price1: 'AED 3,699 ', checked: false},
+		{id: 'item3', name: 'Full Room', quantity: 1, price: 3999, price1: 'AED 3,999', checked: false},
 		// Add more items as needed
 	]);
 
@@ -323,7 +328,8 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>1-{question_1.question}</h1>
 				<div className='introduction-quiz-form'>
-					 <textarea name='answer_1' value={inputs.answer_1 || ''} onInvalid={invalidInput} onInput={validInput}
+					 <textarea name='answer_1' value={inputs.answer_1 || ''} onInvalid={invalidInput}
+					           onInput={validInput}
 					           onChange={handleChange} placeholder='Please write here ' required></textarea>
 
 				</div>
@@ -335,7 +341,7 @@ const FormQuiz2 = ({handleClose1}) => {
 					style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
 				<div className='introduction-quiz-form'>
                 <textarea name='answer_2' value={inputs.answer_2 || ''} onInvalid={invalidInput} onInput={validInput}
-                          onChange={handleChange} placeholder='Please write here ' ></textarea>
+                          onChange={handleChange} placeholder='Please write here '></textarea>
 
 				</div>
 			</div>
@@ -344,7 +350,8 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>3-{question_3.question}</h1>
 				<div className='introduction-quiz-form'>
-					<textarea name='answer_3' value={inputs.answer_3 || ''} onInvalid={invalidInput} onInput={validInput}
+					<textarea name='answer_3' value={inputs.answer_3 || ''} onInvalid={invalidInput}
+					          onInput={validInput}
 					          onChange={handleChange} placeholder='Please write here ' required></textarea>
 				</div>
 			</div>
@@ -373,8 +380,9 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'><h1 className='form-step-title'>6-{question_6.question}<small
 				style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small></h1>
 				<div className='introduction-quiz-form'>
-					<textarea name='answer_6' value={inputs.answer_6 || ''} onInvalid={invalidInput} onInput={validInput}
-					          onChange={handleChange} placeholder='Please write here' ></textarea>
+					<textarea name='answer_6' value={inputs.answer_6 || ''} onInvalid={invalidInput}
+					          onInput={validInput}
+					          onChange={handleChange} placeholder='Please write here'></textarea>
 				</div>
 			</div>
 
@@ -395,7 +403,8 @@ const FormQuiz2 = ({handleClose1}) => {
 			<div className='question'>
 				<h1 className='form-step-title'>8-{question_8.question}</h1>
 				<div className='introduction-quiz-form'>
-					<textarea name='answer_8' value={inputs.answer_8 || ''} onInvalid={invalidInput} onInput={validInput}
+					<textarea name='answer_8' value={inputs.answer_8 || ''} onInvalid={invalidInput}
+					          onInput={validInput}
 					          onChange={handleChange} placeholder='Please write here ' required></textarea>
 				</div>
 			</div>
@@ -499,8 +508,9 @@ const FormQuiz2 = ({handleClose1}) => {
 					<small style={{fontWeight: "normal", fontSize: "16px"}}> (Optional)</small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<textarea name='answer_14' value={inputs.answer_14 || ''} onInvalid={invalidInput} onInput={validInput}
-					          onChange={handleChange} placeholder='Please write here ' ></textarea>
+					<textarea name='answer_14' value={inputs.answer_14 || ''} onInvalid={invalidInput}
+					          onInput={validInput}
+					          onChange={handleChange} placeholder='Please write here '></textarea>
 				</div>
 			</div>
 
@@ -509,7 +519,8 @@ const FormQuiz2 = ({handleClose1}) => {
 					<small style={{fontWeight: "normal", fontSize: "16px"}}></small>
 				</h1>
 				<div className='introduction-quiz-form'>
-					<textarea name='answer_15' value={inputs.answer_15 || ''} onInvalid={invalidInput} onInput={validInput}
+					<textarea name='answer_15' value={inputs.answer_15 || ''} onInvalid={invalidInput}
+					          onInput={validInput}
 					          onChange={handleChange} placeholder='Please write Address ' required></textarea>
 				</div>
 			</div>
