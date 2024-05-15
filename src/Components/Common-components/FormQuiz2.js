@@ -207,10 +207,10 @@ const FormQuiz2 = ({handleClose1}) => {
 			question_18: JSON.stringify({
 				id: 18, date: selectedDate, time: inputs.time, question: question_18.question
 			}),
-			name: localStorage.getItem('CBD_name'),
-			email: localStorage.getItem('CBD_email'),
-			phone: localStorage.getItem('CBD_phone'),
-			lp_type: 'CBD',
+			name: localStorage.getItem('SBD_name'),
+			email: localStorage.getItem('SBD_email'),
+			phone: localStorage.getItem('SBD_phone'),
+			lp_type: 'SBD',
 		});
 
 		setModal(true);
@@ -218,11 +218,11 @@ const FormQuiz2 = ({handleClose1}) => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
-				localStorage.removeItem('CBD_name');
-				localStorage.removeItem('CBD_email');
-				localStorage.removeItem('CBD_phone');
-				localStorage.setItem('CBD_Quiz', '1');
-				window.location = '/our-services/CBD/thank-you';
+				localStorage.removeItem('SBD_name');
+				localStorage.removeItem('SBD_email');
+				localStorage.removeItem('SBD_phone');
+				localStorage.setItem('SBD_Quiz', '1');
+				window.location = '/our-services/SBD/thank-you';
 			})
 			.catch(error => console.error(error));
 
