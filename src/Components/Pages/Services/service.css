@@ -915,7 +915,10 @@ align-items: center;
  }
 }
 
-
+.SBD-Logo-section{
+    width: 100% !important;
+    text-align:center
+}
 
 .before-state , .after-state{
     position: absolute;
