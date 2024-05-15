@@ -171,9 +171,9 @@ const Quiz = ({handleClose}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		localStorage.setItem('LBD_name', inputs.name);
-		localStorage.setItem('LBD_email', inputs.email);
-		localStorage.setItem('LBD_phone', inputs.phone);
+		sessionStorage.setItem('LBD_name', inputs.name);
+		sessionStorage.setItem('LBD_email', inputs.email);
+		sessionStorage.setItem('LBD_phone', inputs.phone);
 		if (currentPage === 9) {
 			//copy object in new variable
 			let data = {...inputs}
@@ -203,7 +203,7 @@ const Quiz = ({handleClose}) => {
 			// Send data to server
 			fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 				.then(response => response.json())
-				.then(data => localStorage.setItem('LBD_id', data.id))
+				.then(data => sessionStorage.setItem('LBD_id', data.id))
 				.catch(error => console.error(error));
 			setCurrentPage(p => 10);
 		} else if (currentPage === 10) {

@@ -184,10 +184,10 @@ const FormQuiz = ({handleClose1}) => {
 				date: selectedDate, time: inputs.time, question: question_12.question
 			}),
 			step: 2,
-			id: localStorage.getItem('LBD_id'),
-			name: localStorage.getItem('LBD_name'),
-			email: localStorage.getItem('LBD_email'),
-			phone: localStorage.getItem('LBD_phone'),
+			id: sessionStorage.getItem('LBD_id'),
+			name: sessionStorage.getItem('LBD_name'),
+			email: sessionStorage.getItem('LBD_email'),
+			phone: sessionStorage.getItem('LBD_phone'),
 			lp_type: 'LBD',
 		});
 		setModal(true);
@@ -195,14 +195,14 @@ const FormQuiz = ({handleClose1}) => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
-				localStorage.removeItem('LBD_id');
-				localStorage.removeItem('LBD_name');
-				localStorage.removeItem('LBD_email');
-				localStorage.removeItem('LBD_phone');
-				localStorage.setItem('LBD_Quiz','1');
+				sessionStorage.removeItem('LBD_id');
+				sessionStorage.removeItem('LBD_name');
+				sessionStorage.removeItem('LBD_email');
+				sessionStorage.removeItem('LBD_phone');
 				window.location = '/our-services/LBD/thank-you';
 			})
 			.catch(error => console.error(error));
+		sessionStorage.setItem('LBD_Quiz','1');
 		navigateThankyou("/our-services/LBD/thank-you");
 	};
 

@@ -210,10 +210,10 @@ const FormQuiz2 = ({handleClose1}) => {
 				id: 18, date: selectedDate, time: inputs.time, question: question_18.question
 			}),
 			step: 2,
-			id: localStorage.getItem('SBD_id'),
-			name: localStorage.getItem('SBD_name'),
-			email: localStorage.getItem('SBD_email'),
-			phone: localStorage.getItem('SBD_phone'),
+			id: sessionStorage.getItem('SBD_id'),
+			name: sessionStorage.getItem('SBD_name'),
+			email: sessionStorage.getItem('SBD_email'),
+			phone: sessionStorage.getItem('SBD_phone'),
 			lp_type: 'SBD',
 		});
 
@@ -222,14 +222,15 @@ const FormQuiz2 = ({handleClose1}) => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
-				localStorage.removeItem('SBD_id');
-				localStorage.removeItem('SBD_name');
-				localStorage.removeItem('SBD_email');
-				localStorage.removeItem('SBD_phone');
-				localStorage.setItem('SBD_Quiz', '1');
+				sessionStorage.removeItem('SBD_id');
+				sessionStorage.removeItem('SBD_name');
+				sessionStorage.removeItem('SBD_email');
+				sessionStorage.removeItem('SBD_phone');
+
 				window.location = '/our-services/SBD/thank-you';
 			})
 			.catch(error => console.error(error));
+		sessionStorage.setItem('SBD_Quiz', '1');
 		navigateThankyou("/our-services/SBD/thank-you");
 	};
 

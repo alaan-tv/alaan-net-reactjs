@@ -13,7 +13,7 @@ const ThankYou = () => {
 	const get_msg = () => {
 		if (['podcast', 'media', 'be-a-presenter', 'voice-over'].includes(params.child)) {
 			return {title: 'شكرا لك', content: 'سوف يتم التواصل معك من قبل فريق أخبار الآن قريبا لتحديد الموعد'};
-		} else if (params.child === 'LBD' && +localStorage.getItem('LBD_Quiz')) {
+		} else if (params.child === 'LBD' && +sessionStorage.getItem('LBD_Quiz')) {
 			return {
 				title: 'Thank You',
 				content: <>We can't wait to get started!<br/> You’ll receive an email shortly with a link for a 50% down
@@ -21,7 +21,7 @@ const ThankYou = () => {
 					your consultant will contact you to confirm your appointment date & you’ll be on your way to your
 					dream home!</>
 			};
-		} else if (params.child === 'SBD' && +localStorage.getItem('SBD_Quiz')) {
+		} else if (params.child === 'SBD' && +sessionStorage.getItem('SBD_Quiz')) {
 			return {
 				title: 'Thank You',
 				content: <>Your content is this 👌 close to the best it's ever been!<br/> You’ll receive an email shortly
