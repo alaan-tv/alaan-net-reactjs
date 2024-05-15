@@ -174,7 +174,7 @@ const Quiz = ({handleClose}) => {
 		localStorage.setItem('LBD_name', inputs.name);
 		localStorage.setItem('LBD_email', inputs.email);
 		localStorage.setItem('LBD_phone', inputs.phone);
-		if (currentPage === 10) {
+		if (currentPage === 9) {
 			//copy object in new variable
 			let data = {...inputs}
 			// remove empty element
@@ -194,6 +194,7 @@ const Quiz = ({handleClose}) => {
 			// generate formData object
 			const form_data = formData({
 				...data,
+				step: 1,
 				page_1: JSON.stringify({id: 1, question: page_1.question}),
 				page_2: JSON.stringify({id: 2, question: page_2.question}),
 				page_10: JSON.stringify({id: 10, question: page_10.question}),
@@ -202,9 +203,11 @@ const Quiz = ({handleClose}) => {
 			// Send data to server
 			fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 				.then(response => response.json())
-				.then(data => handleClose())
+				.then(data => localStorage.setItem('LBD_id', data.id))
 				.catch(error => console.error(error));
-
+			setCurrentPage(p => 10);
+		} else if (currentPage === 10) {
+			handleClose();
 		} else {
 			setCurrentPage(p => ++p);
 		}
@@ -279,7 +282,8 @@ const Quiz = ({handleClose}) => {
 					       onChange={handleChange} required maxLength='50' onInvalid={invalidInput}
 					       onInput={validInput}></input>
 					<input type="email" name='email' placeholder='E-mail' value={inputs.email || ''}
-					       onChange={handleChange} required  maxLength='50' onInvalid={invalidInput} onInput={validInput}></input>
+					       onChange={handleChange} required  maxLength='50' onInvalid={invalidInput}
+					       onInput={validInput}></input>
 					<input type="text" name='phone' placeholder='Phone' value={inputs.phone || ''}
 					       onChange={handleChange} required pattern="[+]{0,1}[0-9]{10,15}" maxLength='15'
 					       onInvalid={invalidInput} onInput={validInput}></input>

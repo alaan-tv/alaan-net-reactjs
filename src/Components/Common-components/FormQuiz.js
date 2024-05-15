@@ -1,12 +1,11 @@
 import React, {useRef, useState} from 'react'
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
 import Modal from './Modal';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import {ajax_url, formData} from "../../custom-functions";
-
 const FormQuiz = ({handleClose1}) => {
 	const [modal, setModal] = useState(false);
 	const timeSlots = ['09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM', '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM', '08:00 PM'];
@@ -96,6 +95,7 @@ const FormQuiz = ({handleClose1}) => {
 	const otherRefFile = useRef(null);
 	const floorPlanFile = useRef(null);
 	const photosFile = useRef(null);
+	const navigateThankyou = useNavigate();
 
 	const handleChange = (event) => {
 		let name = event.target.name;
@@ -183,6 +183,8 @@ const FormQuiz = ({handleClose1}) => {
 				id: 12,
 				date: selectedDate, time: inputs.time, question: question_12.question
 			}),
+			step: 2,
+			id: localStorage.getItem('LBD_id'),
 			name: localStorage.getItem('LBD_name'),
 			email: localStorage.getItem('LBD_email'),
 			phone: localStorage.getItem('LBD_phone'),
@@ -193,6 +195,7 @@ const FormQuiz = ({handleClose1}) => {
 		fetch(ajax_url("wp-api/v2/alaan-net/store-quiz-data.php"), {method: 'Post', body: form_data})
 			.then(response => response.json())
 			.then(data => {
+				localStorage.removeItem('LBD_id');
 				localStorage.removeItem('LBD_name');
 				localStorage.removeItem('LBD_email');
 				localStorage.removeItem('LBD_phone');
@@ -200,7 +203,7 @@ const FormQuiz = ({handleClose1}) => {
 				window.location = '/our-services/LBD/thank-you';
 			})
 			.catch(error => console.error(error));
-
+		navigateThankyou("/our-services/LBD/thank-you");
 	};
 
 
