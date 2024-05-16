@@ -123,7 +123,7 @@ const OwnYourStory = () => {
 					<div className='home-banner-container banner-service'>
 						<div className='home-text-section'>
 							<h1 className='primary-heading light-heading'>
-								Master Your Story our expert content and media
+								Master Your Story with our expert content and media
 							</h1>
 							<p className='primary-text light-text'>
 								What do people know about you, your product or service, your success story, what sets
