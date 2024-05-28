@@ -54,7 +54,7 @@ const Services = () => {
           </div>
            <div className='our-services2'>
            <div className='our-services-container2'>
-            <div className='service-card'>
+            {/*<div className='service-card'>
               <img className='service-card-icon' src={MagicTouchIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Studio           </h2>
@@ -65,8 +65,8 @@ const Services = () => {
              
             </div>
             <div className='sevice-more-icon'><Link to="/our-services/magic-touch-studio"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
-              </div>
-            <div className='service-card'>
+  </div>*/}
+            {/*<div className='service-card'>
               <img className='service-card-icon' src={MagicTouchClinicIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Magic Touch Clinic           </h2>
@@ -77,7 +77,7 @@ const Services = () => {
              
             </div>
             <div className='sevice-more-icon'><Link to="/our-services/magic-touch-clinic"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
-              </div>
+              </div>*/}
             <div className='service-card'>
               <img className='service-card-icon' src={OwnYourStoryIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
@@ -91,7 +91,7 @@ const Services = () => {
             <div className='sevice-more-icon'><Link to="/our-services/own-your-story"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
               
-            <div className='service-card'>
+            {/*<div className='service-card'>
               <img src={BeAPresenterIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Be a Presenter         </h2>
@@ -100,8 +100,8 @@ const Services = () => {
               Begin your media career journey with skilled specialized experts.</p>
               <div className='sevice-more-icon'><Link to="/our-services/be-a-presenter"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>
-            <div className='service-card'>
+            </div>*/}
+            {/*<div className='service-card'>
               <img src={PersonalBrandingIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Personal Branding        </h2>
@@ -110,7 +110,7 @@ const Services = () => {
               Unlocking your authentic executive influence</p>
               <div className='sevice-more-icon'><Link to="/our-services/personal-branding"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>
+            </div>*/}
             <div className='service-card'>
               <img src={LivingIcon} alt='Living by design icon'/>
               <h2 className='third-heading' >
@@ -132,7 +132,7 @@ const Services = () => {
               <div className='sevice-more-icon'><Link to="/our-services/SBD"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
-            <div className='service-card'>
+            {/*<div className='service-card'>
               <img src={PersonalCoachingLogo} alt='Personal Coaching icon'/>
               <h2 className='third-heading' >
               Professional Coaching        </h2>
@@ -141,7 +141,7 @@ const Services = () => {
               Discover your life purpose and align it with your career goals on this transformative journey.</p>
               <div className='sevice-more-icon'><Link to="/our-services/personal-coaching"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>
+            </div>*/}
 
             </div>
           

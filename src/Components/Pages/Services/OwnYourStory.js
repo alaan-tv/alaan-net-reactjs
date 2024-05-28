@@ -8,7 +8,7 @@ import Advertise from '../../Common-components/Advertise'
 import FeatureIcon1 from '../../../Assets/feature-icon1.png'
 import FeatureIcon2 from '../../../Assets/feature-icon2.png'
 import FeatureIcon3 from '../../../Assets/feature-icon3.png'
-import FeatureIcon4 from '../../../Assets/feature-icon4.png'
+import FeatureIcon4 from '../../../Assets/feature-icon4.png' 
 import BookingIcon from '../../../Assets/book-icon.svg'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import {ajax_url, formData} from "../../../custom-functions";

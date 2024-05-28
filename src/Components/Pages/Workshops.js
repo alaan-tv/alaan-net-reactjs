@@ -60,7 +60,7 @@ const Workshops = () => {
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
               </div>
             </div>*/}
-            <div className='service-card'>
+            {/*<div className='service-card'>
               <img src={PodcastIcon2} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Podcast Workshop      </h2>
@@ -70,8 +70,8 @@ const Workshops = () => {
 </p>
               <div className='sevice-more-icon'><Link to="/our-workshops/podcast"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>
-            <div className='service-card'>
+          </div>*/}
+            {/*<div className='service-card'>
               <img src={MediaWorkshopIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
               Media Workshop         </h2>
@@ -81,8 +81,8 @@ const Workshops = () => {
 </p>
               <div className='sevice-more-icon'><Link to="/our-workshops/media"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>
-            <div className='service-card'>
+            </div>*/}
+            {/*<div className='service-card'>
               <img src={PersonalBrandingIcon} alt='Personal Branding Icon'/>
               <h2 className='third-heading' >
               Personal Branding Workshop
@@ -93,7 +93,7 @@ const Workshops = () => {
 </p>
               <div className='sevice-more-icon'><Link to="/our-workshops/personal-branding"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
-            </div>
+            </div>*/}
             <div className='service-card'>
               <img src={PodcastIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >

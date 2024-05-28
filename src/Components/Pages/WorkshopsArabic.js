@@ -64,7 +64,7 @@ const WorkshopsArabic = () => {
               <div className='sevice-more-icon'><img src={ServiceMoreIcon} alt="More Icon" /></div>
               </div>
             </div>*/}
-            <div className='service-card'>
+            {/*<div className='service-card'>
               <img src={PodcastIcon2} alt='magic touch icon'/>
               <h2 className='third-heading' >
 ورشات البودكاست
@@ -76,8 +76,8 @@ const WorkshopsArabic = () => {
               
             </div>
             <div className='sevice-more-icon'><Link to="/our-workshops/podcast"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
-              </div>
-            <div className='service-card'>
+              </div>*/}
+            {/*<div className='service-card'>
               <img src={MediaWorkshopIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
 ورشات الميديا
@@ -94,7 +94,7 @@ const WorkshopsArabic = () => {
               
             </div>
             <div className='sevice-more-icon'><Link to="/our-workshops/media"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
-              </div>
+              </div>*/}
               <div className='service-card'>
               <img src={PodcastIcon} alt='magic touch icon'/>
               <h2 className='third-heading' >
