@@ -31,7 +31,7 @@ import LogoImg from '../../Assets/newlogo.png';
       <div className="navbar-links-container">
         <NavHashLink to='/#about-us' className='link not-active' >About us</NavHashLink>
         <NavHashLink to='/#our-brands' className='link not-active'>Our Brands</NavHashLink>
-        <NavLink to='/our-services' className='link' exact activeClassName="active" >Our Services</NavLink>
+        <NavLink to='/our-products' className='link' exact activeClassName="active" >Our Products</NavLink>
         
        
         
@@ -78,7 +78,7 @@ English</a></li>
               </ListItem>
               
               <ListItem className='list-item'>
-                <ListItemButton><Link to='/our-services' className='link'>Our Services</Link></ListItemButton>
+                <ListItemButton><Link to='/our-products' className='link'>Our Products</Link></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
                 <ListItemButton>        <Link to='/our-workshops' className='link'>Our Workshops</Link></ListItemButton>

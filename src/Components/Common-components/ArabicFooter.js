@@ -28,7 +28,7 @@ const ArabicFooter = () => {
         <div className="footer-links-container">
         <NavHashLink to='/ar/#about-us' className='link'> من نحن </NavHashLink>
         <NavHashLink to='/ar/#our-brands' className='link not-active'>قنواتنا</NavHashLink>
-        <Link to='/our-services' className='link'>خدماتنا</Link>
+        <Link to='/our-products' className='link'>خدماتنا</Link>
 
         <br className='break-mobile' />
         <Link to='/our-workshops/ar' className='link'>ورشاتنا</Link>

@@ -126,13 +126,13 @@ const Home = () => {
             <div className='our-features'>
               <div className='our-services'>
               <div className='our-services-container'>
-               <Link to='/our-services'> <img src={OurServices} alt="" /></Link>
+               <Link to='/our-products'> <img src={OurServices} alt="" /></Link>
                <div className='features-desc'>
-                <h2 className='services-heading'>Our Services</h2>
+                <h2 className='services-heading'>Our Products</h2>
                 <picture>
      <source media='(max-width: 768px)' srcSet={ArrowIconMobile} />
      <source media='(min-width: 768px)' srcSet={ArrowIcon} />
-     <Link to='/our-services'><img src={ArrowIcon} className='banner-image' alt='hero' /></Link>
+     <Link to='/our-products'><img src={ArrowIcon} className='banner-image' alt='hero' /></Link>
  </picture>
                </div>
               </div>

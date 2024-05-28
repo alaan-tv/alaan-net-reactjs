@@ -30,7 +30,7 @@ const ArabicLightHeader = () => {
     <div className="navbar-links-container light-header">
       <NavHashLink to='/ar/#about-us' className='link'>من نحن</NavHashLink>
       <NavHashLink to='/ar/#our-brands' className='link'>قنواتنا</NavHashLink>
-      <Link to='/our-services' className='link' activeClassName="active">خدماتنا</Link>
+      <Link to='/our-products' className='link' activeClassName="active">خدماتنا</Link>
       <Link to='/our-workshops/ar' className='link' activeClassName="active">ورشاتنا</Link>
       <a href="#contact-us" className="link">تواصل معنا</a>
    <div className="divider"/>
@@ -73,7 +73,7 @@ English</a></li>
               </ListItem>
               
               <ListItem className='list-item'>
-                <ListItemButton><Link to='/our-services' className='link'>خدماتنا</Link></ListItemButton>
+                <ListItemButton><Link to='/our-products' className='link'>خدماتنا</Link></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
                 <ListItemButton>        <Link to='/our-workshops/ar' className='link'>ورشاتنا</Link></ListItemButton>

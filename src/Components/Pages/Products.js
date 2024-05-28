@@ -20,7 +20,7 @@ import DocumentMeta from 'react-document-meta';
 
 const Services = () => {
   const meta = {
-    title: 'Our Services',
+    title: 'Our Products',
     description: 'I am a description, and I can create multiple tags',
     meta: {
       charset: 'utf-8',
@@ -40,10 +40,11 @@ const Services = () => {
           </div>
           <div className='home-text-main-section'>
             <h1 className='primary-heading' >
-            Our Services
+            Our Products
             </h1>
             <p className='primary-text' >
-            We offer a variety of services designed to showcase your best self and ensure your story is heard loud and clear.
+            We offer a variety of products designed to showcase your best self and ensure your story is heard loud and clear.
+            
  </p>
           </div>
          

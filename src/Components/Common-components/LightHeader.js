@@ -30,7 +30,7 @@ const LightHeader = () => {
     <div className="navbar-links-container light-header">
       <NavHashLink to='/#about-us' className='link'>About us</NavHashLink>
       <NavHashLink to='/#our-brands' className='link'>Our Brands</NavHashLink>
-      <Link to='/our-services' className='link' activeClassName="active">Our Services</Link>
+      <Link to='/our-products' className='link' activeClassName="active">Our Products</Link>
       <Link to='/our-workshops' className='link' activeClassName="active">Our Workshops</Link>
       <a href="#contact-us" className="link">Contact Us</a>
    <div className="divider"/>
@@ -73,7 +73,7 @@ English</a></li>
               </ListItem>
               
               <ListItem className='list-item'>
-                <ListItemButton><Link to='/our-services' className='link'>Our Services</Link></ListItemButton>
+                <ListItemButton><Link to='/our-products' className='link'>OurProducts</Link></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
                 <ListItemButton>        <Link to='/our-workshops' className='link'>Our Workshops</Link></ListItemButton>

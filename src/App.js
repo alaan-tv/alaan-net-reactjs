@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './Components/Pages/Home';
-import Services from './Components/Pages/Services';
+import Products from './Components/Pages/Products';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Workshops from './Components/Pages/Workshops';
 import MagicTouchStudio from './Components/Pages/Services/MagicTouchStudio';
@@ -28,12 +28,12 @@ function App() {
 			<div className="App">
 				<Routes>
 					<Route path="/" index element={<Home/>}/>
-					<Route path="/our-services" element={<Services/>}/>
+					<Route path="/our-products" element={<Products/>}/>
 					<Route path="/our-workshops" element={<Workshops/>}/>
 
-					<Route path="/our-services/magic-touch-studio" element={<MagicTouchStudio/>}/>
-					<Route path="/our-services/magic-touch-clinic" element={<MagicTouchClinic/>}/>
-					<Route path="/our-services/own-your-story" element={<OwnYourStory/>}/>
+					<Route path="/our-products/magic-touch-studio" element={<MagicTouchStudio/>}/>
+					<Route path="/our-products/magic-touch-clinic" element={<MagicTouchClinic/>}/>
+					<Route path="/our-products/own-your-story" element={<OwnYourStory/>}/>
 
 					<Route path="/our-workshops/podcast" element={<Podcast/>}/>
 					<Route path="/our-workshops/media" element={<Media/>}/>
@@ -41,11 +41,11 @@ function App() {
 					<Route path="/our-workshops/personal-branding" element={<PersonalBranding2/>}/>
 					<Route path="/our-workshops/ar" element={<WorkshopsArabic/>}/>
 
-					<Route path="/our-services/be-a-presenter" element={<BeAPresenter/>}/>
-					<Route path="/our-services/personal-branding" element={<PersonalBranding/>}/>
-					<Route path="/our-services/LBD" element={<LivingByDesign/>}/>
-					<Route path="/our-services/SBD" element={<SetByDesign/>}/>
-					<Route path="/our-services/personal-coaching" element={<ProfessionalCoaching/>}/>
+					<Route path="/our-products/be-a-presenter" element={<BeAPresenter/>}/>
+					<Route path="/our-products/personal-branding" element={<PersonalBranding/>}/>
+					<Route path="/our-products/LBD" element={<LivingByDesign/>}/>
+					<Route path="/our-products/SBD" element={<SetByDesign/>}/>
+					<Route path="/our-products/personal-coaching" element={<ProfessionalCoaching/>}/>
 
 
 					<Route path="/:parent/:child/thank-you" element={<ThankYou/>}/>

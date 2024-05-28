@@ -29,7 +29,7 @@ import LogoImg from '../../Assets/newlogo.png';
       <div className="navbar-links-container">
         <NavHashLink to='/ar/#about-us' className='link' >من نحن</NavHashLink>
         <NavHashLink to='/ar/#our-brands' className='link not-active'>قنواتنا</NavHashLink>
-        <NavLink to='/our-services' className='link' exact activeClassName="active" >خدماتنا</NavLink>
+        <NavLink to='/our-products' className='link' exact activeClassName="active" >خدماتنا</NavLink>
         
        
         
@@ -75,7 +75,7 @@ English</a></li></li>
               </ListItem>
               
               <ListItem className='list-item'>
-                <ListItemButton><Link to='/our-services' className='link'>خدماتنا</Link></ListItemButton>
+                <ListItemButton><Link to='/our-products' className='link'>خدماتنا</Link></ListItemButton>
               </ListItem>
               <ListItem className='list-item'>
                 <ListItemButton>        <Link to='/our-workshops/ar' className='link'>ورشاتنا</Link></ListItemButton>
