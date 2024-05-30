@@ -24,6 +24,10 @@
 		//gtag('js', new date());
 		//gtag("config", "GTM-MLN8HT37");
 		//gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+		if((window.location.href).includes('our-services')){
+			window.location=(window.location.href).replace('our-services','our-products');
+		}
+		//console.log((window.location.href).replace('our-services','our-products'));
 	</script>
 	<!-- End Google Tag Manager consent-->
 </head>
