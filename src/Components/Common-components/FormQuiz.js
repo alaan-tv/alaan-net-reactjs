@@ -199,11 +199,11 @@ const FormQuiz = ({handleClose1}) => {
 				sessionStorage.removeItem('LBD_name');
 				sessionStorage.removeItem('LBD_email');
 				sessionStorage.removeItem('LBD_phone');
-				window.location = '/our-services/LBD/thank-you';
+				window.location = '/our-products/LBD/thank-you';
 			})
 			.catch(error => console.error(error));
 		sessionStorage.setItem('LBD_Quiz','1');
-		navigateThankyou("/our-services/LBD/thank-you");
+		navigateThankyou("/our-products/LBD/thank-you");
 	};
 
 

@@ -227,11 +227,11 @@ const FormQuiz2 = ({handleClose1}) => {
 				sessionStorage.removeItem('SBD_email');
 				sessionStorage.removeItem('SBD_phone');
 
-				window.location = '/our-services/SBD/thank-you';
+				window.location = '/our-products/SBD/thank-you';
 			})
 			.catch(error => console.error(error));
 		sessionStorage.setItem('SBD_Quiz', '1');
-		navigateThankyou("/our-services/SBD/thank-you");
+		navigateThankyou("/our-products/SBD/thank-you");
 	};
 
 

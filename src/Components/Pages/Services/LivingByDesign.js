@@ -96,7 +96,7 @@ const LivingByDesign = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location = '/our-services/LBD/thank-you';
+					window.location = '/our-products/LBD/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
