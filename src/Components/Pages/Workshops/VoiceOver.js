@@ -345,14 +345,14 @@ const VoiceOver = () => {
 								          placeholder="Select an option"/>
 
 							</div>
-							<div className="input-wrapper">
+							{/*<div className="input-wrapper">
 								<label htmlFor="first">كود الخصم </label>
 								<input type="text" name='promo_code' value={inputs.promo_code || ''}
 								       onChange={handleChange}
 								       onInput={validatePromoCode} onKeyUp={validatePromoCode}
 								       placeholder='أدخل كود الخصم '/>
 								<div className="invalid-code" ref={promoMsg}></div>
-							</div>
+							</div>*/}
 							<div className="input-wrapper">
 								<input name="terms" type='checkbox' required value="1" onChange={handleChange}
 								       checked={(inputs.terms || '') ? "checked" : ''}/>
