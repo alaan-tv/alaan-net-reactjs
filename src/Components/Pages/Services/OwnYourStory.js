@@ -81,7 +81,7 @@ const OwnYourStory = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location = '/our-services/own-your-story/thank-you';
+					window.location = '/our-products/own-your-story/thank-you';
 				}
 			}).catch(error => console.error(error));
 	}
