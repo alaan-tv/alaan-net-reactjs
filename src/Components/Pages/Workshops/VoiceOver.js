@@ -32,12 +32,12 @@ import DocumentMeta from 'react-document-meta';
 import { render } from 'react-dom';
 import ReactWhatsapp from 'react-whatsapp';
 import { Testimonial} from "../../Common-components/Card";
-import TistiImage1 from '../../../Assets/testi-fahad.png'
-import TistiImage2 from '../../../Assets/testi-mohammad.png'
-import TistiImage3 from '../../../Assets/testi-omar.png'
-import TistiImage4 from '../../../Assets/testi-reem.png'
-import TistiImage6 from '../../../Assets/testi-tareq.png'
-import TistiImage7 from '../../../Assets/testi-mona.png'
+import TistiImage1 from '../../../Assets/testi/5.png'
+import TistiImage2 from '../../../Assets/testi/6.png'
+import TistiImage3 from '../../../Assets/testi/3.png'
+import TistiImage4 from '../../../Assets/testi/1.png'
+import TistiImage6 from '../../../Assets/testi/2.png'
+import TistiImage7 from '../../../Assets/testi/4.png'
 import {responsive} from "../../../custom-functions";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
