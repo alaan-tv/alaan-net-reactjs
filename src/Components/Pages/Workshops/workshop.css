@@ -325,3 +325,58 @@ padding: 0px
         padding: 50px 0px 10px 0px;
     }
 }
+.arabic-testimonials{
+    text-align: right;
+}
+.arabic-testimonials .testi-desc{
+    font-size: 16px;
+}
+.arabic-testimonials .testimonail{
+    width: 100% !important;
+    box-shadow: none !important;
+
+}
+.react-multi-carousel-track{
+    gap: 30px !important
+}
+.slick-slider {
+    position: relative;
+    padding: 100px 50px;
+    max-width: 1200px;
+    margin: auto;}
+    .slick-prev:before, .slick-next:before{
+        color: #df1995 !important;
+        font-size: 30px !important;
+    }
+    .slick-prev, .slick-next{
+       
+    }
+    .slick-slide img{
+        min-width: 150px !important;
+        max-width: 150px !important;
+        border-radius: 50%;
+    }
+    .testimonail .divider2{
+        width: 2px !important;
+        height: 100% !important;
+    }
+    @media (max-width: 760px) {
+        .testimonail .divider2{
+            width: 100% !important;
+            height: 2px !important;
+        }
+        .slick-slider {
+        padding: 10px;
+    }
+    .testi-desc{
+        font-size: 16px;
+        text-align: center;
+    }
+    .slick-slide img{
+        min-width: 100px !important;
+        max-width: 100px !important;
+    }
+    .slick-prev:before, .slick-next:before{
+        display: none !important;
+    }
+}

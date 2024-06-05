@@ -2,6 +2,8 @@ import React, {useRef, useState} from 'react'
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import Tabs from '@mui/material/Tabs';
+import Carousel from 'react-multi-carousel';
+
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -29,10 +31,20 @@ import {Feature, Trainer} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import { render } from 'react-dom';
 import ReactWhatsapp from 'react-whatsapp';
-
+import { Testimonial} from "../../Common-components/Card";
+import TistiImage1 from '../../../Assets/testi-fahad.png'
+import TistiImage2 from '../../../Assets/testi-mohammad.png'
+import TistiImage3 from '../../../Assets/testi-omar.png'
+import TistiImage4 from '../../../Assets/testi-reem.png'
+import TistiImage6 from '../../../Assets/testi-tareq.png'
+import TistiImage7 from '../../../Assets/testi-mona.png'
+import {responsive} from "../../../custom-functions";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function CustomTabPanel(props) {
 	const {children, value, index, ...other} = props;
-
+	
 	return (<div
 		role="tabpanel"
 		hidden={value !== index}
@@ -57,6 +69,44 @@ function a11yProps(index) {
 }
 
 const VoiceOver = () => {
+	var settings = {
+		autoplay: true,
+		dots: true,
+		infinite: true,
+		speed:500,
+		autoplaySpeed: 8000,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		rtl: true,
+		cssEase: "linear"
+	}
+	const testimonialList = [
+		{
+			image: TistiImage1,
+			name: 'فهد سال',
+			desc: '“الصوتيات أساسية في السوشيال ميديا. دورة شاملة غطت التنغيم، درجات الصوت، الوقفات، والمعدات. استفدت كثيراً رغم خبرتي الطويلة في المجال. واحدة من أفضل الدورات التي أخذتها وتستحق كل درهم.”'
+		}, {
+			image: TistiImage2,
+			name: 'محمد عبدلله',
+			desc: '“وجدت تعاوناً كبيراً من أول دقيقة في الورشة. تعرفت على نقاط قوتي وضعفي الصوتية، وتعلمت الهدوء والتلقائية. أستطيع الآن بناء استوديو منزلي والتواصل مع العملاء بفعالية. المجموعة كانت متعاونة.”'
+		}, {
+			image: TistiImage3,
+			name: ' عمرو بدوي',
+			desc: '“أنصح كل الشباب المقبلين على التعليق الصوتي بهذه الورشة بقيادة الأستاذ محمد علي. استمتعنا وتعلمنا أشياء كثيرة، وستكون بداية جديدة لمن سيأتي.”'
+		}, {
+			image: TistiImage4,
+			name: ' ريم الحاجب ',
+			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”'
+		}, {
+			image: TistiImage6,
+			name: '  طارق جودة ',
+			desc: '“دورة رائعة شعرت وكأني في بيتي. استفدت كثيراً تقنياً وأداءً صوتياً. الحديث المتبادل مع المدرب أجاب عن كل استفساراتنا بعمق. المدرب محمد علي كان يعطي كل خبرته بصدق. فريق أخبار الآن كان متعاوناً.”'
+		},{
+			image: TistiImage7,
+			name: '  منى الخازن ',
+			desc: '“التعليق الصوتي شغفي القديم، ورشة محمد علي دفعتني للسفر من الدوحة إلى دبي. أربعة أيام فاقت توقعاتي بالمعلومات وتحسين الأداء. كانت تجربة مليئة بالألفة والتحدي والحماس، ولم أكن بحاجة لأي ورشة سوى هذه.”'
+		}
+	];
 	const options = [' يوليو : الأيام 6, 7 , 13, 14 ', ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
 	const defaultOption = options[0];
 	const [value, setValue] = React.useState(0);
@@ -283,6 +333,39 @@ const VoiceOver = () => {
 					{trainerList.map((item, i) => <Trainer key={i} item={item}/>)}
 				</div>
 			</div>
+
+			<div className='testimonials'>
+					<h2 className='primary-heading'> آراء متدربينا </h2>
+					<div className=''>
+					<Slider {...settings}>
+				
+    
+				{testimonialList.map((item, i) => <Testimonial key={i} item={item}/>)}
+				
+			  
+			  </Slider>
+</div>
+</div>
+				{/*<Carousel
+					swipeable={false}
+					draggable={false}
+					showDots={true}
+					responsive={responsive}
+					ssr={true} // means to render carousel on server-side.
+					infinite={true}
+					autoPlay={true}
+					autoPlaySpeed={5000}
+					keyBoardControl={true}
+					customTransition="all .9"
+					transitionDuration={2000}
+					containerClass="carousel-container "
+					removeArrowOnDeviceType={["tablet", "mobile"]}
+					dotListClass="custom-dot-list-style"
+					itemClass="div1"
+				>
+					{testimonialList.map((item, i) => <Testimonial key={i} item={item}/>)}
+				</Carousel>*/}
+				
 			<div className='booking workshops-booking' id="contact-form">
 				<div className='left-section'>
 					<div className='left-section-container'>
