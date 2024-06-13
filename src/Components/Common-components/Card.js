@@ -19,7 +19,7 @@ export const Testimonial = ({item, key}) => {
 	return (
 		<>
 			<div key={key} className='testimonail'>
-				<p className='testi-desc'>{item.desc}</p>
+				<p className='testi-desc'>{item.desc}<br/>{item.youtube}</p>
 				<div className='divider2'></div>
 				<div className='testi-info'>
 					<img className='testi-image' src={item.image} alt="customer"/>
@@ -33,7 +33,7 @@ export const Testimonial = ({item, key}) => {
 	);
 }
 
-export const Trainer = ({item,key}) => {
+export const Trainer = ({item, key}) => {
 	return (
 		<div key={key} className='trainers-container'>
 			<div className='trainer-image'>

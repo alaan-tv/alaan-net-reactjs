@@ -137,6 +137,10 @@ padding: 10px;
 direction: rtl;
 
 }
+.testi-desc a{
+    font-size: 16px;
+    color:#DF1995;
+}
 .testi-info{
     display: flex;
     align-items: center;
