@@ -42,6 +42,9 @@ import {responsive} from "../../../custom-functions";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import VideoModal from "../../Common-components/VideoModal";
+import TickIcon from "../../Common-components/TickIcon";
+import Modal from "../../Common-components/Modal";
 function CustomTabPanel(props) {
 	const {children, value, index, ...other} = props;
 	
@@ -82,42 +85,46 @@ const VoiceOver = () => {
 		rtl: true,
 		cssEase: "linear"
 	}
+	const [videoModal, setVideoModal] = useState(false);
+	const [ytId, setYtId] = useState(false);
+
+
+	const openVideoModel = (yt_id) => {
+		setYtId(()=>yt_id);
+		setVideoModal(()=>true);
+	}
+
 	const testimonialList = [
 		{
 			image: TistiImage1,
 			name: 'فهد سال',
-			desc: '“الصوتيات أساسية في السوشيال ميديا. دورة شاملة غطت التنغيم، درجات الصوت، الوقفات، والمعدات. استفدت كثيراً رغم خبرتي الطويلة في المجال. واحدة من أفضل الدورات التي أخذتها وتستحق كل درهم.”' ,
-			url: 'https://www.youtube.com/embed/NatnVeYDvX4'
+			desc: '“الصوتيات أساسية في السوشيال ميديا. دورة شاملة غطت التنغيم، درجات الصوت، الوقفات، والمعدات. استفدت كثيراً رغم خبرتي الطويلة في المجال. واحدة من أفضل الدورات التي أخذتها وتستحق كل درهم.”',
+			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4') }>  مشاهدة رأي  <span> فهد سال</span> بالورشة </a></>,
 		}, {
 			image: TistiImage2,
 			name: 'محمد عبدلله',
 			desc: '“وجدت تعاوناً كبيراً من أول دقيقة في الورشة. تعرفت على نقاط قوتي وضعفي الصوتية، وتعلمت الهدوء والتلقائية. أستطيع الآن بناء استوديو منزلي والتواصل مع العملاء بفعالية. المجموعة كانت متعاونة.”',
-			url: 'https://www.youtube.com/embed/NatnVeYDvX4'
-
+			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4-4') }>  مشاهدة رأي  <span> محمد عبدلله</span> بالورشة </a></>,
 		}, {
 			image: TistiImage3,
 			name: ' عمرو بدوي',
 			desc: '“أنصح كل الشباب المقبلين على التعليق الصوتي بهذه الورشة بقيادة الأستاذ محمد علي. استمتعنا وتعلمنا أشياء كثيرة، وستكون بداية جديدة لمن سيأتي.”',
-			url: 'https://www.youtube.com/embed/NatnVeYDvX4'
-
+			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4') }>  مشاهدة رأي  <span> عمرو بدوي</span> بالورشة </a></>,
 		}, {
 			image: TistiImage4,
 			name: ' ريم الحاجب ',
 			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”',
-			url: 'https://www.youtube.com/embed/NatnVeYDvX4'
-
+			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4') }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
 		}, {
 			image: TistiImage6,
 			name: '  طارق جودة ',
 			desc: '“دورة رائعة شعرت وكأني في بيتي. استفدت كثيراً تقنياً وأداءً صوتياً. الحديث المتبادل مع المدرب أجاب عن كل استفساراتنا بعمق. المدرب محمد علي كان يعطي كل خبرته بصدق. فريق أخبار الآن كان متعاوناً.”',
-			url: 'https://www.youtube.com/watch?v=oVIjvU5Sz7Q'
-
+			youtube: <><a  onClick={() => openVideoModel('oVIjvU5Sz7Q') }>   مشاهدة رأي  <span>  طارق جودة</span> بالورشة </a></>,
 		},{
 			image: TistiImage7,
 			name: '  منى الخازن ',
 			desc: '“التعليق الصوتي شغفي القديم، ورشة محمد علي دفعتني للسفر من الدوحة إلى دبي. أربعة أيام فاقت توقعاتي بالمعلومات وتحسين الأداء. كانت تجربة مليئة بالألفة والتحدي والحماس، ولم أكن بحاجة لأي ورشة سوى هذه.”',
-			url: 'https://www.youtube.com/watch?v=oVIjvU5Sz7Q'
-
+			youtube: <><a  onClick={() => openVideoModel('8hkIT0nxzj4') }>   مشاهدة رأي  <span> منى الخازن</span> بالورشة  </a></>,
 		}
 	];
 	const options = [' يوليو : الأيام 6, 7 , 13, 14 ', ' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
@@ -463,6 +470,9 @@ const VoiceOver = () => {
 			</div>
 			<Advertise/>
 		</div>
+
+		<VideoModal show={videoModal} handleClose={() => setVideoModal(!videoModal)} yt_id={ytId}/>
+
 		<Footer/>
 	</div>)
 }

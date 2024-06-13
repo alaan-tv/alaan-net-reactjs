@@ -339,6 +339,20 @@ padding: 0px
 .react-multi-carousel-track{
     gap: 30px !important
 }
+.yt-video__wrapper{
+    padding: 0;
+    width: 100%;
+    max-width: 640px;
+    background: transparent;
+}
+.yt-video__wrapper .modal-close {
+    right: 5px;
+    top: -40px;
+    color: #e1e1e1;
+    background: transparent;
+    padding: 0;
+    font-size: 35px;
+}
 .slick-slider {
     position: relative;
     padding: 100px 50px;

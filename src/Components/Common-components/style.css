@@ -423,7 +423,7 @@
   font-weight: 700;
   cursor: pointer;
   background: #fff;
-  padding: 5px 10px;
+  padding: 0px 5px;
   font-size: 20px;
 }
 
@@ -1031,10 +1031,10 @@ gap: 7px;
   border: none;
   width: 40px !important;
 }
-.modal-testi{
-  background-color: transparent;
-  border: none;
-  color: #DF1995;
-  font-size: 12px;
-  font-weight: bold;
+#yt-video{
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 10px;
 }
