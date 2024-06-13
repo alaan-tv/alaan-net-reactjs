@@ -1031,3 +1031,10 @@ gap: 7px;
   border: none;
   width: 40px !important;
 }
+.modal-testi{
+  background-color: transparent;
+  border: none;
+  color: #DF1995;
+  font-size: 12px;
+  font-weight: bold;
+}

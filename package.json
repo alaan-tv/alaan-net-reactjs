@@ -28,6 +28,7 @@
     "react-hook-form": "^7.50.0",
     "react-icons": "^4.12.0",
     "react-js-dropdavn": "^1.0.4",
+    "react-modal": "^3.16.1",
     "react-multi-carousel": "^2.8.4",
     "react-phone-input-2": "^2.15.1",
     "react-responsive-carousel": "^3.2.23",

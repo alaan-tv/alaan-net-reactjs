@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
 import Header from '../Common-components/Header'
 import Footer from '../Common-components/Footer'
 import Advertise from '../Common-components/Advertise'
@@ -15,6 +14,7 @@ import PersonalBrandingIcon from '../../Assets/Perspnal-branding-icon.svg'
 import DocumentMeta from 'react-document-meta';
 
 const Workshops = () => {
+  
   const meta = {
     title: 'Our Workshops',
     description: 'I am a description, and I can create multiple tags',

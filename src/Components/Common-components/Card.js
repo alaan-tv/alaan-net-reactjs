@@ -1,6 +1,11 @@
 import React from "react";
+import ReactDOM from 'react-dom';
+
+import Modal from 'react-modal';
+
 
 export const Feature = ({item, key}) => {
+	
 	return (
 		<div key={key} className='feature'>
 			{item.icon && <img src={item.icon} alt="Feature Icon" className='feature-icon'/>}
@@ -16,10 +21,46 @@ export const Feature = ({item, key}) => {
 }
 
 export const Testimonial = ({item, key}) => {
+	const customStyles = {
+		content: {
+		  top: '50%',
+		  left: '50%',
+		  right: 'auto',
+		  bottom: 'auto',
+		  marginRight: '-50%',
+		  transform: 'translate(-50%, -50%)',
+		},
+	  };
+	let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 	return (
 		<>
 			<div key={key} className='testimonail'>
-				<p className='testi-desc'>{item.desc}</p>
+				<p className='testi-desc'>{item.desc} <p> <button className="modal-testi" onClick={openModal}>مشاهدة رأي  {item.name} بالورشة </button>
+				</p></p>
+				<Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        
+        <button onClick={closeModal}>close</button>
+		<video style={{background: '#000'}} src={item.url} muted loop controls/>
+
+		      </Modal>
 				<div className='divider2'></div>
 				<div className='testi-info'>
 					<img className='testi-image' src={item.image} alt="customer"/>
@@ -28,6 +69,7 @@ export const Testimonial = ({item, key}) => {
 						{item.title && <p>{item.title}</p>}
 					</div>
 				</div>
+				
 			</div>
 		</>
 	);
