@@ -125,9 +125,9 @@ const VoiceOver = () => {
 			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4') }>   مشاهدة رأي  <span> منى الخازن</span> بالورشة  </a></>,
 		}
 	];
+	const [value, setValue] = React.useState(0);
 	const options = [' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
 	const defaultOption = options[0];
-	const [value, setValue] = React.useState(0);
 
 	const handleChange1 = (event, newValue) => {
 		setValue(newValue);
