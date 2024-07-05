@@ -5,7 +5,6 @@ import './workshop.css'
 import Header from '../../Common-components/ArabicHeader'
 import WorkshopImage from '../../../Assets/podcast-hero-image.webp'
 import EventIcon from '@mui/icons-material/Event'
-import video from '../../../Assets/podcast-video.mp4'
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import TrainerImage2 from '../../../Assets/maha.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -151,7 +150,7 @@ const Podcast = () => {
 				</div>
 			</div>
 			<div className='video-section'>
-				<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
+				<video height={480} style={{background: '#000'}} src='https://cdn.alaan.tv/2024/07/05/20240705-1720190255081-original.mp4' muted loop controls/>
 			</div>
 			<div className='workshop-features-section'>
 				<h2 className='light-heading'>

@@ -15,7 +15,6 @@ import Feature1 from '../../../Assets/f1.svg'
 import Feature2 from '../../../Assets/f2.svg'
 import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
-import video from '../../../Assets/promo.mp4'
 import TistiImage1 from '../../../Assets/testi-image1.svg'
 import TistiImage2 from '../../../Assets/testi-image2.svg'
 import TistiImage3 from '../../../Assets/testi-image3.svg'
@@ -200,7 +199,7 @@ const MagicTouchStudio = () => {
 					</div>
 				</div>
 				<div className='video-section'>
-					<video src={video} muted loop controls/>
+					<video src='https://cdn.alaan.tv/2024/07/05/20240705-1720189368926-original.mp4' muted loop controls/>
 				</div>
 				<div className='features'>
 					<h2 className='primary-heading'> How it works </h2>

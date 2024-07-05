@@ -19,7 +19,6 @@ import {ajax_url, formData} from "../../../custom-functions";
 import Advertise from '../../Common-components/Advertise';
 import DocumentMeta from 'react-document-meta';
 import {Feature} from "../../Common-components/Card";
-import video from '../../../Assets/personal-branding.mp4'
 
 const PersonalBranding = () => {
 	const meta = {
@@ -162,7 +161,7 @@ const PersonalBranding = () => {
 					</div>
 				</div>
 				<div className='video-section'>
-					<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
+					<video height={480} style={{background: '#000'}} src='https://cdn.alaan.tv/2024/07/05/20240705-1720190032146-original.mp4' muted loop controls/>
 				</div>
 				<div className='trainers-services trainers'>
 					<h2 className='primary-heading'> Our Expert </h2>
