@@ -11,12 +11,10 @@ export const VideoModal = ({ handleClose, show ,yt_id }) => {
       <div className={modelClass}  id="modal-one">
           <div className="modal-bg modal-exit"></div>
           <div className="modal-container yt-video__wrapper">
-              <iframe id="yt-video"
-                      src="https://www.akhbaralaan.net/robots.txt"
+              <iframe id="yt-video" src="https://www.akhbaralaan.net/robots.txt"
                       srcDoc={srcdoc_style}
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title="">
+                      allowFullScreen title="">
               </iframe>
               {<button className="modal-close modal-exit" onClick={handleClose}>&times;</button>}
           </div>
