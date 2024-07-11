@@ -104,7 +104,7 @@ const VoiceOver = () => {
 			image: TistiImage2,
 			name: 'محمد عبدلله',
 			desc: '“وجدت تعاوناً كبيراً من أول دقيقة في الورشة. تعرفت على نقاط قوتي وضعفي الصوتية، وتعلمت الهدوء والتلقائية. أستطيع الآن بناء استوديو منزلي والتواصل مع العملاء بفعالية. المجموعة كانت متعاونة.”',
-			youtube: <><a  onClick={() => openVideoModel('M1RmWn4qiS4') }>  مشاهدة رأي  <span> محمد عبدلله</span> بالورشة </a></>,
+			youtube: <><a  onClick={() => openVideoModel('iFhnO4534aE') }>  مشاهدة رأي  <span> محمد عبدلله</span> بالورشة </a></>,
 		}, {
 			image: TistiImage3,
 			name: ' عمرو بدوي',
@@ -114,12 +114,12 @@ const VoiceOver = () => {
 			image: TistiImage4,
 			name: ' ريم الحاجب ',
 			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”',
-			youtube: <><a  onClick={() => openVideoModel('fCK4Q_Gf2Mc') }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
+			youtube: <><a  onClick={() => openVideoModel('MjN-iWHlKl4') }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
 		}, {
 			image: TistiImage6,
 			name: '  طارق جودة ',
 			desc: '“دورة رائعة شعرت وكأني في بيتي. استفدت كثيراً تقنياً وأداءً صوتياً. الحديث المتبادل مع المدرب أجاب عن كل استفساراتنا بعمق. المدرب محمد علي كان يعطي كل خبرته بصدق. فريق أخبار الآن كان متعاوناً.”',
-			youtube: <><a  onClick={() => openVideoModel('M1RmWn4qiS4') }>   مشاهدة رأي  <span>  طارق جودة</span> بالورشة </a></>,
+			youtube: <><a  onClick={() => openVideoModel('7RV-QEHODS0') }>   مشاهدة رأي  <span>  طارق جودة</span> بالورشة </a></>,
 		},{
 			image: TistiImage7,
 			name: '  منى الخازن ',
