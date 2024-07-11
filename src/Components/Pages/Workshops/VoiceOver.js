@@ -15,7 +15,6 @@ import  CallIcon from '../../../Assets/call-icon.png';
 import  WhatsIcon from '../../../Assets/whats-icon.png';
 import Header from '../../Common-components/ArabicHeader'
 import EventIcon from '@mui/icons-material/Event'
-import video from '../../../Assets/voice-over-video.mp4'
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import YoutubeIcon from '@mui/icons-material/YouTube'
@@ -43,8 +42,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import VideoModal from "../../Common-components/VideoModal";
-import TickIcon from "../../Common-components/TickIcon";
-import Modal from "../../Common-components/Modal";
 function CustomTabPanel(props) {
 	const {children, value, index, ...other} = props;
 	
@@ -127,9 +124,9 @@ const VoiceOver = () => {
 			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4') }>   مشاهدة رأي  <span> منى الخازن</span> بالورشة  </a></>,
 		}
 	];
+	const [value, setValue] = React.useState(0);
 	const options = [' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
 	const defaultOption = options[0];
-	const [value, setValue] = React.useState(0);
 
 	const handleChange1 = (event, newValue) => {
 		setValue(newValue);
@@ -297,7 +294,7 @@ const VoiceOver = () => {
 						</a>
 					</div>
 					<div className='video-section'>
-						<video style={{background: '#000'}} src={video} muted loop controls/>
+						<video style={{background: '#000'}} src='https://cdn.alaan.tv/2024/07/05/20240705-1720188254288-original.mp4' muted loop controls/>
 					</div>
 				</div>
 			</div>
@@ -327,7 +324,7 @@ const VoiceOver = () => {
 				</div>
 			</div>
 			{/*<div className='video-section'>
-				<video height={480} style={{background: '#000'}} src={video} muted loop controls/>
+				<video height={480} style={{background: '#000'}} src='https://cdn.alaan.tv/2024/07/05/20240705-1720188254288-original.mp4' muted loop controls/>
 </div>*/}
 			<div className='workshop-features-section'>
 				<h2 className='light-heading'>

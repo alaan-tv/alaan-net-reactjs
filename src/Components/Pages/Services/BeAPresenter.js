@@ -19,7 +19,6 @@ import Feature3 from '../../../Assets/f3.svg'
 import Feature4 from '../../../Assets/f4.svg'
 import Feature5 from '../../../Assets/f5.svg'
 import Feature6 from '../../../Assets/f6.svg'
-//import video from '../../../Assets/promo.mp4'
 import BookingIcon from '../../../Assets/booking2.svg'
 import {ajax_url, formData} from "../../../custom-functions";
 import ArabicAdvertise from '../../Common-components/ArabicAdvertise';
