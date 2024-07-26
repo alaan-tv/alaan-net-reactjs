@@ -111,7 +111,9 @@ const VoiceOver = () => {
 			image: TistiImage4,
 			name: ' ريم الحاجب ',
 			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”',
-			youtube: <><a  onClick={() => openVideoModel('MjN-iWHlKl4') }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
+			youtube: <><a  onClick={() => openVideoModel('MjN-iWHlKl4')
+				
+			 }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
 		}, {
 			image: TistiImage6,
 			name: '  طارق جودة ',
@@ -125,7 +127,7 @@ const VoiceOver = () => {
 		}
 	];
 	const [value, setValue] = React.useState(0);
-	const options = [' أغسطس : الأيام 24 , 25, 32 و 1 سبتمير '];
+	const options = [' أغسطس : الأيام 24 , 25, 31 و 1 سبتمبر '];
 	const defaultOption = options[0];
 
 	const handleChange1 = (event, newValue) => {
