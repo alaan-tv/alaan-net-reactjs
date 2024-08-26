@@ -275,7 +275,7 @@ const VoiceOver = () => {
 		</div>
 		
 						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: </p></div>
-						<Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+						<Box sx={{borderBottom: 0, borderColor: 'divider'}}>
 							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
 								
 								
