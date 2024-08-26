@@ -127,7 +127,7 @@ const VoiceOver = () => {
 		}
 	];
 	const [value, setValue] = React.useState(0);
-	const options = [' أغسطس : الأيام 24 , 25, 31 و 1 سبتمبر ', 'أكتوبر: الأيام 19 ، 20 ،26 , 27 '];
+	const options = [ 'أكتوبر: الأيام 19 ، 20 ،26 , 27 '];
 	const defaultOption = options[0];
 
 	const handleChange1 = (event, newValue) => {
@@ -278,19 +278,14 @@ const VoiceOver = () => {
 						<Box sx={{borderBottom: 1, borderColor: 'divider'}}>
 							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
 								
-								<Tab label="أغسطس" {...a11yProps(1)} />
-								<Tab label="أكتوبر" {...a11yProps(1)} />
+								
+								<Tab label="أكتوبر" {...a11yProps(0)} />
 							</Tabs>
 						</Box>
 						
 						
+						
 						<CustomTabPanel value={value} index={0}>
-							<p> اليوم الأول :السبت 24 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثاني :الأحد 25 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثالث :السبت 31 أغسطس من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الرابع :الأحد 1 سبتمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-						</CustomTabPanel>
-						<CustomTabPanel value={value} index={1}>
 							<p> اليوم الأول :السبت 19 أكتوبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثاني :الأحد 20 أكتوبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثالث :السبت 26 أكتوبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
