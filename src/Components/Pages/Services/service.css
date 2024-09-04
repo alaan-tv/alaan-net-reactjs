@@ -1235,7 +1235,7 @@ border: 1px solid !important;
     position: relative;
   }
   .desktop-view1 .trainer-desc{
-    width: 50%;
+    width: 65%;
 
   }
   .desktop-view1 .trainer-desc .project-title{
@@ -1316,6 +1316,9 @@ border: 1px solid !important;
     .mobile-view1 video{
         margin: 70px 0px;
     }
-   
+    .mobile-view1  .trainer-desc p{
+        font-size: 14px !important;
+        margin-bottom: 12px;
+    }
   }
   
