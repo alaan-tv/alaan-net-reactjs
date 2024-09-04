@@ -2,6 +2,7 @@ import React, {Fragment, useRef, useState} from 'react'
 import {ReactCompareSlider, ReactCompareSliderImage} from 'react-compare-slider';
 import {Link} from "react-router-dom";
 import {CarouselProvider, DotGroup, Slide, Slider} from 'pure-react-carousel';
+import Slider1 from '../../Common-components/slider';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'react-multi-carousel/lib/styles.css';
 import "./service.css"
@@ -21,8 +22,9 @@ import {ajax_url, formData} from "../../../custom-functions";
 import {Feature} from "../../Common-components/Card";
 import DocumentMeta from 'react-document-meta';
 import Advertise from '../../Common-components/Advertise';
-import BeforeLiving from '../../../Assets/before living.png';
-import AfterLiving from '../../../Assets/after living.png';
+import VideoWithThumbnail from '../../Common-components/Video';
+import thumbnailImage from '../../../Assets/videoLbdThum.png';
+import videoFile from '../../../Assets/lbd-video.mp4';
 import LivingIcon from '../../../Assets/living-by-design-icon-orginal.svg';
 import QuizModal from '../../Common-components/QuizModal'
 import FormModal from '../../Common-components/FormModal'
@@ -31,6 +33,8 @@ import FormQuiz from '../../Common-components/FormQuiz'
 import Arrow from '../../../Assets/arrow.png'
 
 const LivingByDesign = () => {
+	
+	
 	const meta = {
 		title: 'Living By Design',
 		description: 'I am a description, and I can create multiple tags',
@@ -181,6 +185,7 @@ const LivingByDesign = () => {
 				<div className='features'>
 					<h2 className='primary-heading'> Everything you need to transform
 						your space, in 3 simple steps:
+						
 					</h2>
 					<div className='features-container desktop-v'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
@@ -203,10 +208,12 @@ const LivingByDesign = () => {
 				<div className='about-section'>
 					<h2 className='primary-heading'> Live better, faster.</h2>
 					<div className='about-container'>
-						<div className='trainers-container'>
-							<div className='trainer-image'>
+						<div className='trainers-container '>
+						
+						{ /*<div className='trainer-image'>
+							
 								{ /*<img src={AboutImage} alt='about'/> */}
-								<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5"
+								{/*<ReactCompareSlider changePositionOnHover={true} keyboardIncrement="5"
 								                    transition='.5s ease-in-out'
 								                    itemOne={<ReactCompareSliderImage src={BeforeLiving}
 								                                                      srcSet={BeforeLiving}
@@ -215,9 +222,11 @@ const LivingByDesign = () => {
 								                                                      srcSet={AfterLiving}
 								                                                      alt="Image two"/>}
 								/>
+								
 								<div className='before-state'> Before</div>
 								<div className='after-state'> After</div>
-							</div>
+							</div>*/}
+							<Slider1 />
 							<div className='trainer-desc'>
 								<p>Things change, people change, rooms change.</p><p> While we can’t do much about the
 								first two, we can make sure your rooms only change for the better.</p> <p>There were
@@ -230,6 +239,97 @@ const LivingByDesign = () => {
 
 					</div>
 				</div>
+				<div className="about-section about-section-video desctop-v2">
+      <h2 className="primary-heading">Our Portfolio</h2>
+      <div className="about-container">
+        {/* Desktop View */}
+        <div className="trainers-container video-section desktop-view1">
+          <div className="App">
+            {/* Video with thumbnail for desktop */}
+            <div className='trainer-image'>
+              <video controls poster={thumbnailImage} style={{ width: '100%', borderRadius: '10px' }}>
+                <source src={videoFile} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div className="trainer-desc video-sec">
+            {/* Main Content */}
+            <p className="project-title" style={{ color: 'black' }}>
+              <b>Project: Daisy.</b>
+            </p>
+
+            {/* Hidden Content that Appears on Hover */}
+            <div className="hovervedio">
+              <p>
+                Your home (no matter how small) is your base & your safe space - you deserve to have it meet every
+                aesthetic, functional, & personal requirement you have. No questions asked.
+              </p>
+              <p>
+                We developed Living by design so your home can give you everything you want it to, and we do that by
+                using everything you and your home have to give us. Every bit of input. Every square foot.
+              </p>
+              <p>Size matters. But knowing what to do with it matters more.</p>
+              <p>
+                A lot of people choose not to design their homes because they're waiting until they move into a bigger
+                place for it to be "worth it". We designed Daisy to prove those people wrong.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile View (Slider using CarouselProvider) */}
+        <div className="mobile-view1">
+          <CarouselProvider
+            className='mobile-v'
+            naturalSlideWidth={100}
+            naturalSlideHeight={125}
+            totalSlides={2}
+            isIntrinsicHeight={true}
+          >
+            <Slider>
+              {/* Slide 1: Video */}
+              <Slide index={0}>
+                <div className="App">
+                  <div className='trainer-image'>
+                    <video controls poster={thumbnailImage} style={{ width: '100%', borderRadius: '10px' }}>
+                      <source src={videoFile} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </Slide>
+
+              {/* Slide 2: Description */}
+              <Slide index={1}>
+                <div className="trainer-desc video-sec">
+                  {/* Title always shown with the description on mobile */}
+                  <p className="project-title" style={{ color: 'black' }}>
+                    <b>Project: Daisy.</b>
+                  </p>
+                  <div className="hovervedio">
+                    <p>
+					A lot of people choose not to design their homes because they're waiting until they move into a bigger place for it to be "worth it".
+
+                    </p>
+                    <p>
+					We designed <b>Daisy</b> to prove those people wrong.
+
+                    </p>
+                    <p>Your home (no matter how small) is your base & your safe space- you deserve to have it meet every aesthetic, functional, & personal requirement you have. No questions asked.
+					</p>
+                    
+                  </div>
+                </div>
+              </Slide>
+            </Slider>
+
+            <DotGroup />
+          </CarouselProvider>
+        </div>
+      </div>
+    </div>
 			</div>
 			<div className='features second-features'>
 				<h2 className='primary-heading'> How it works </h2>

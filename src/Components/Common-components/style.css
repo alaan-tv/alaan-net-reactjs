@@ -1038,3 +1038,186 @@ gap: 7px;
   border: 0;
   border-radius: 10px;
 }
+
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: auto;
+}
+
+.video-thumbnail,
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-thumbnail {
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.video-player {
+  border-radius: 8px;
+}
+
+body.blur-background {
+  filter: blur(5px); /* Blur effect on the entire page */
+  overflow: hidden;  /* Prevent scrolling when video is expanded */
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden; /* Ensure nothing overflows */
+  border-radius: 10px; /* Rounded corners */
+  transition: all 0.5s ease; /* Smooth transition */
+}
+
+.thumbnail-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Same rounded corners */
+  z-index: 1; /* Layer the video below the close button */
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none; /* Transparent background */
+  border: none;
+  cursor: pointer;
+  z-index: 2; /* Ensure play button appears above thumbnail */
+}
+
+.play-button img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+.play-button:hover {
+  opacity: 0.8; /* Hover effect */
+}
+
+/* Modal container for the expanded video */
+.video-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90vw;  /* 90% of the viewport width */
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Make sure it appears on top */
+  background: transparent; /* No background to avoid white space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* Maintain rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Overlay to place controls on top of the video */
+.video-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button {
+  background: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2; /* Higher than the video */
+}
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* To space out the arrows */
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center the content */
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
+  color: #DF1995; /* Adjust color as needed */
+  transition: color 0.3s;
+  padding: 10px;
+}
+
+.nav-button:hover {
+  color: #000; /* Adjust hover color as needed */
+}
+
+.compare-slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9em;
+  z-index: 2; /* Ensure the badge stays above the image */
+}
+
+.compare-badge.before {
+  top: 10px;
+  left: 10px;
+}
+
+.compare-badge.after {
+  top: 10px;
+  right: 10px;
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #DF1995;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}

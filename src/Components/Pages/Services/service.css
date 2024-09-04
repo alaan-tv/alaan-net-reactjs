@@ -458,7 +458,7 @@ padding-left: 20px;
             margin-top: 60px !important;
             padding: 40px 0px 40px 0px;
             box-shadow: 0px 5px 60px #817a9924;
-            border-radius: 20px;
+            
             font-size: 20px;
             font-weight: 500;
             margin: auto;
@@ -1187,3 +1187,135 @@ border: 1px solid !important;
     font-family: 'baloo' !important;
     font-size: 18px !important;
 }
+
+/* Slider.css */
+
+  
+ 
+  
+  .dots-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active,
+  .dot:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .slider img{ 
+    border-radius: 10px;
+  }
+
+  .hoverSectionvedio {
+    display: none; /* Initially hidden */
+  }
+  
+  .hoverButtonSectionvedio {
+    cursor: pointer; /* Change cursor to pointer */
+  }
+  
+  /* Show the hoverSectionvedio when hoverButtonSectionvedio is hovered */
+  .hoverButtonSectionvedio:hover + .hoverSectionvedio {
+    display: block; /* Show the content */
+    
+  }
+  .desktop-view1{
+    position: relative;
+  }
+  .desktop-view1 .trainer-desc{
+    width: 50%;
+
+  }
+  .desktop-view1 .trainer-desc .project-title{
+    text-align: center;
+    font-size: 24px;
+  }
+  /* Default Desktop View */
+.desktop-view1 .hovervedio {
+    display: none; /* Hidden by default on desktop */
+  }
+  .desktop-view1 .app{
+    width: 50%;
+  }
+  .desktop-view1 .trainer-desc:hover .hovervedio {
+    display: block; /* Show on hover for desktop */
+    opacity: 1;
+    position: absolute;
+    padding: 20px;
+    top: -12%;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  .desktop-view1 .trainer-desc:hover .project-title {
+    display: none; /* Hide the title on hover */
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .desktop-view1 {
+      display: none; /* Hide the desktop view on mobile */
+    }
+  
+    .mobile-view1 {
+      display: block; /* Show the mobile view */
+    }
+    
+    .mobile-view1 .trainer-desc .hovervedio {
+      display: block; /* Always show on mobile */
+      opacity: 1;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-top: 10px; /* Adjust margin to separate from the video */
+    }
+  
+    .mobile-view1 .trainer-desc .project-title {
+      display: block; /* Show the project title */
+      margin-bottom: 0px; /* Add margin to separate from the description */
+      font-size: 24px; /* Adjust font size for better visibility */
+      text-align: center; /* Center align the title */
+    }
+  
+    .mobile-view1 .trainer-desc {
+      position: relative; /* Adjust positioning for mobile view */
+      text-align: center; /* Center-align content */
+      margin: 20px 0; /* Add spacing */
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  
+    .mobile-v1 .carousel__inner-slide, .mobile-v1 .mobile-v .carousel__slider {
+      display: flex;
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+      height: 100%; /* Make sure the slide takes full height */
+    }
+  
+    .mobile-view1 .App {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; /* Make sure the video slide takes full height */
+    }
+    .mobile-view1 .trainer-desc p{
+        margin-bottom: 5px;
+    }
+    .mobile-view1 video{
+        margin: 70px 0px;
+    }
+   
+  }
+  
