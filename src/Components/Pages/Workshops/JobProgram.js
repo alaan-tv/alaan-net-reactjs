@@ -14,7 +14,9 @@ import './workshop.css'
 import  CallIcon from '../../../Assets/call-icon.png';
 import  WhatsIcon from '../../../Assets/whats-icon.png';
 import Header from '../../Common-components/ArabicHeader'
-import EventIcon from '@mui/icons-material/Event'
+import EventIcon from '@mui/icons-material/Event';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import TrainerImage1 from '../../../Assets/Mohammad-ali.webp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import YoutubeIcon from '@mui/icons-material/YouTube'
@@ -44,6 +46,15 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoModal from "../../Common-components/VideoModal";
 function CustomTabPanel(props) {
 	const {children, value, index, ...other} = props;
+	const [dob, setDob] = useState('');
+	const handleChangeDOB = (e) => {
+		setDob(e.target.value);
+	  };
+	
+	  const handleSubmitDOB = (e) => {
+		e.preventDefault();
+		console.log("Date of Birth:", dob);
+	  };
 	
 	return (<div
 		role="tabpanel"
@@ -69,7 +80,7 @@ function a11yProps(index) {
 	};
 }
 
-const VoiceOver = () => {
+const JobProgram = () => {
 	
 	var settings = {
 		autoplay: true,
@@ -127,14 +138,14 @@ const VoiceOver = () => {
 		}
 	];
 	const [value, setValue] = React.useState(0);
-	const options = [ 'نوفمبر: الأيام 16 ، 17 ،23 , 24 '];
+	const options = [ 'أكتوبر: الأيام 19 ، 20 ،26 , 27 '];
 	const defaultOption = options[0];
 
 	const handleChange1 = (event, newValue) => {
 		setValue(newValue);
 	};
 	const meta = {
-		title: 'ورشات التعليق الصوتي', description: 'I am a description, and I can create multiple tags', meta: {
+		title: 'برنامج التدريب الاعلامي', description: 'I am a description, and I can create multiple tags', meta: {
 			charset: 'utf-8', name: {
 				keywords: 'react,meta,document,html,tags'
 			}
@@ -261,38 +272,27 @@ const VoiceOver = () => {
 			<div className="home-banner-container">
 				<div className='hero-workshop-section podcast-hero'>
 					<div className='hero-text'>
-						<h1 className='light-heading podcast-heading'> اكتشف القوة الحقيقية لصوتك!</h1>
-						<p>اكتشف وطور مهاراتك الصوتية مع ورشة عمل احتراف التعليق الصوتي مع محمد علي!</p>
+						<h1 className='training-heading podcast-heading'> برنامج التدريب الإعلامي المتكامل</h1>
+						<p>
 
-						<p>مقابل 3,000 درهم فقط للورشة الحضورية في <a
-							href='https://maps.app.goo.gl/6WsNgfxpMhQgJ2NL8'> مقر الآن </a><br/> أو 2,000 درهم أونلاين
-							عبر تطبيق زووم
+						سرد القصص هو سلاحك الأقوى في الإعلام. مع تدريبنا العملي بقيادة خبراء، ستتعلم كيف تحوّل القصص إلى روايات مؤثرة وجذابة. خلال أشهر قليلة، ستتألق أمام الكاميرا، وتزداد ثقتك مع كل قصة تشاركها ويستمتع بها جمهورك.
 						</p>
 						<div className='cta-buttons'>
 						<ReactWhatsapp className='whats-button'  number="971-525-06-0035" > <img src={WhatsIcon} /> </ReactWhatsapp>
 <br />
         <a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
 		</div>
-		
-						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: </p></div>
-						<Box sx={{borderBottom: 0, borderColor: 'divider'}}>
-							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
-								
-								
-								<Tab label="نوفمبر" {...a11yProps(0)} />
-							</Tabs>
-						</Box>
-						
-						
-						
-						<CustomTabPanel value={value} index={0}>
-							<p> اليوم الأول :السبت 16 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثاني :الأحد 17 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثالث :السبت 23 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الرابع :الأحد 24 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-						</CustomTabPanel>
+		<div className='training-details'>
+						<div className='workshop-date'><EventIcon/> <p> مدة البرنامج التدريبي : 6 أشهر </p></div>
+						<div className='workshop-date'><EmojiPeopleIcon/> <p> الحضور : 3 مرات في الأسبوع/4 ساعات يوميا (مرن)</p></div>
+						<div className='workshop-date'><ListAltIcon/> <p>الخطة التدريبية :</p></div>
+						<div className='workshop-date'> <p> الشهر الأول : التعريف بمهارات الصحافة الأساسية <span className='price-month'> (التكلفة : 5000 درهم اماراتي)</span></p></div>
 
+						<div className='workshop-date'> <p> الشهر الثاني :    الكتابة و استخدام وسائل التواصل الاجتماعي <span className='price-month'> (التكلفة : 5000 درهم اماراتي)</span></p></div>
+						<div className='workshop-date'> <p> الشهر الثالث :    العرض <span className='price-month'> (التكلفة : 5000 درهم اماراتي)</span></p></div>
+						<div className='workshop-date'> <p> الشهر الرابع و الخامس و السادس :    الممارسة <span className='price-month'> (التكلفة :مجانا)</span></p></div>
 
+</div>
 						<a href='#contact-form'>
 							<button className='cta-button'>احجز الآن</button>
 						</a>
@@ -305,19 +305,12 @@ const VoiceOver = () => {
 			<div className='workshop-details-section'>
 				<div className='workshop-intro'>
 					<h2 className='third-heading'>
-						هل تعتقد بأنك تمتلك صوتاً جميلاً؟ ولكنك لست متأكداً إن كنت تصلح لتكون معلقاً صوتياً أو صانع
-						محتوى؟ الخبر الجيد هو أن كل الأصوات جميلة وتصلح للتعليق الصوتي إذا تم تدريبها وتطويرها بشكل
-						صحيح! لكن من أين تبدأ؟ أو كيف تصل إلى الجمهور؟ أو كيف تدخل سوق العمل وتبني مساراً مهنياً ناجحاً
-						من خلال صوتك؟ لا تقلق، نحن هنا لمساعدتك لتضع قدمك على الطريق الصحيح!
+					هل تعلم أن سرد القصص هو قوتك العظمى في عالم الإعلام؟ بينما يمكنك إتقان المهارات التقنية مع مرور الوقت، نحن هنا لنساعدك في العثور على قصص مؤثرة وسردها بطريقة جذابة! كيف تبدأ في اكتشاف القصص المدهشة من مصادرها الأصلية؟ كيف تقوم بتطوير شخصيتك الفريدة أمام الكاميرا وتصل إلى جمهورك؟ لا تقلق، فنحن هنا لدعمك في هذه الرحلة!
 
+لذلك، نقدم لك برنامجًا تدريبيًا عمليًا بقيادة كبار المحررين لمساعدتك على تحويل القصص المثيرة إلى روايات مشوقة. في غضون أشهر قليلة، ستتألق تحت الأضواء، وسترى كيف تعزز كل قصة مهاراتك وثقتك بنفسك.
 
 					</h2>
-					<p>لهذا السبب قمنا بتصميم ورشة عمل مكثفة لمدة 4 أيام لمساعدة محبي التعليق الصوتي في رحلة التحوّل إلى
-						فنانين ومعلقين صوتيين ناجحين! نحن هنا لنمكنك من الحصول على المعرفة، والمهارات، والأدوات، والثقة
-						التي تحتاجها لاكتشاف القوة الحقيقية لصوتك وكيفية استثمارها بشكل فعّال!
-
-
-					</p>
+					
 				</div>
 				<div className='workshop-features-section'>
 					<h2 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
@@ -332,23 +325,13 @@ const VoiceOver = () => {
 </div>*/}
 			<div className='workshop-features-section'>
 				<h2 className='light-heading'>
-					مقابل 3,000 درهم فقط للورشة الحضورية في مقر الآن أو 2,000 درهم أونلاين عبر تطبيق زووم ، إليك ما
-					ستتعلمه في أيام الورشة
+					مقابل 5,000 درهم لمدة ثلاثة أشهر و 3 أشهر مجانية اليك الخطة التدريبية
 				</h2>
-				<div className='features'>
+				<div className='features training-features'>
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 				</div>
 			</div>
-			<div className='trainers workshops-trainers'>
-				<h2 className='primary-heading'>
-					المدربون
-				</h2>
-				<p className='secondary-text'>نقدم لطلابنا مهارات متنوعة من خبراء لديهم الكثير من المعرفة التي تبحث
-					عنها لتميز نفسك</p>
-				<div className=''>
-					{trainerList.map((item, i) => <Trainer key={i} item={item}/>)}
-				</div>
-			</div>
+			
 
 			<div className='testimonials'>
 					<h2 className='primary-heading'> آراء متدربينا </h2>
@@ -387,10 +370,10 @@ const VoiceOver = () => {
 					<div className='left-section-container'>
 						<img src={BookingIcon} alt="Booking Icon"/>
 						<p className='third-heading'>
-							هل أنت مستعد لإطلاق العنان لإمكانيات صوتك الحقيقية؟
+							هل أنت مستعد لتحويل قصتك الى نجاح اعلامي؟
 						</p>
 						<p className='third-heading'>
-							كن معنا في الورشات القادمة
+							كن معنا في البرنامج التدريبي
 
 						</p>
 						<h2 className='secondary-heading'>
@@ -418,38 +401,50 @@ const VoiceOver = () => {
 								value={phone.number}
 								country={'ae'}
 								onChange={handleOnChange}/>
-							<div className="input-wrapper ">
-								<p className='question-type'> كيف تريد حضور الورشة :</p>
-								<div className='question-workshop'>
-									<div className='option'>
-										<label>
-											<input name="attend" type='radio' required value="online"
-											       onChange={handleChange}
-											       checked={(inputs.attend || '') === 'online' ? "checked" : ''}/>
-											<span>أونلاين </span>
-										</label>
-									</div>
-									<div className='option'>
-										<label>
-											<input name="attend" type='radio' required value="face to face"
-											       onChange={handleChange}
-											       checked={(inputs.attend || '') === 'face to face' ? "checked" : ''}/>
-											<span>حضوري في مقر الآن </span></label>
-									</div>
-								</div>
+							<div className="input-wrapper">
+								<label for="first"> الجنسية</label>
+								<input type="email" name='email' value={inputs.nationality || ""} onChange={handleChange}
+								       placeholder='أدخل جنسيتك   ' required/>
 							</div>
 							<div className="input-wrapper">
-								<p className='question-type'> اختر موعد الورشة :</p>
-								<Dropdown options={options} value={workshopDate} onChange={setWorkshopDate}
-								          placeholder="Select an option"/>
-
+								<label for="first"> مكان الاقامة</label>
+								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								       placeholder='أدخل مكان اقامتك الحالي    ' required/>
 							</div>
+							<div className="input-wrapper">
+								<label for="first"> تاريخ ميلادك</label>
+								<input type="date" name='dob' value={inputs.residence || ""} onChange={handleChange}
+								       placeholder='   ' required/>
+							</div>
+							<div className="input-wrapper">
+								<label for="first">  الحالة الدراسية</label>
+								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								       placeholder='   ' required/>
+							</div>
+							<div className="input-wrapper">
+								<label for="first"> مجال الدراسة </label>
+								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								       placeholder='   ' required/>
+							</div>
+							<div className="input-wrapper">
+								<label for="first">  متى يمكنك الانضمام الى البرنامج؟</label>
+								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								       placeholder='   ' required/>
+							</div>
+							<div className="input-wrapper">
+								<label for="first"> هل أنت مرتاح مع الحضور في مقر القناة في دبي 3 مرات أسبوعيا؟ </label>
+								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								       placeholder='   ' required/>
+							</div>
+							
+						
 							{/*<div className="input-wrapper">
 								<label htmlFor="first">كود الخصم </label>
 								<input type="text" name='promo_code' value={inputs.promo_code || ''}
 								       onChange={handleChange}
 								       onInput={validatePromoCode} onKeyUp={validatePromoCode}
 								       placeholder='أدخل كود الخصم '/>
+									   
 								<div className="invalid-code" ref={promoMsg}></div>
 							</div>*/}
 							<div className="input-wrapper">
@@ -473,4 +468,4 @@ const VoiceOver = () => {
 	</div>)
 }
 
-export default VoiceOver
+export default JobProgram

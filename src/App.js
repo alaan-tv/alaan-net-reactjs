@@ -22,6 +22,7 @@ import Page404 from './Components/Pages/Page404';
 import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
 import LBDTerms from './Components/Common-components/TermsLBD'
 import VoiceOver from './Components/Pages/Workshops/VoiceOver';
+import JobProgram from './Components/Pages/Workshops/JobProgram';
 function App() {
 	return (<Router>
 			<ScrollToTop/>
@@ -55,6 +56,7 @@ function App() {
 					<Route path="/ar" element={<AR/>}></Route>
 
 					<Route path="*" element={<Page404/>} />
+					<Route path="/our-workshops/job-program" element={<JobProgram/>}/>
 
 				</Routes>
 			</div>

@@ -394,3 +394,12 @@ padding: 0px
         display: none !important;
     }
 }
+.price-month{
+    color:  #000
+}
+.training-heading{
+    font-size: 40px;
+}
+.training-details{
+    margin: 0 0 20px 0;
+}
