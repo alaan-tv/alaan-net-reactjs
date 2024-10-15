@@ -1148,6 +1148,26 @@ position: static;
     max-width: 1400px;
 
 }
+.job-program-hero .hero-workshop-section{
+    gap: 200px !important;
+}
+.program-process  .workshop-features-section .features{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+.program-process  .workshop-features-section .feature {
+    background-image:none;
+    width: 100% !important;
+    height: 138px;
+    background-color: #f9a2bd99;
+    text-align: right;
+    height: auto !important;
+    padding: 50px !important;
+}
 .voice-page .hero-workshop-section a{
     color: #DF1995;
 }
@@ -1321,4 +1341,17 @@ border: 1px solid !important;
         margin-bottom: 12px;
     }
   }
-  
+  .form-organizer{
+    display: flex;
+  }
+  .form-organizer input{
+    width: 95% !important;
+    gap:10px
+  }
+
+  @media (max-width: 1290px) {
+    .program-process .workshop-features-section .feature {
+         max-width: 100% !important; 
+         margin: 100px;
+    }
+}

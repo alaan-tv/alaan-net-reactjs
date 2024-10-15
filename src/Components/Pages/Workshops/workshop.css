@@ -154,6 +154,15 @@ padding: 0px
     text-align: right;
 
    }
+   .workshops-booking .long-label{
+   left: 220px !important;
+    text-align: right;
+    right: 20px;}
+    .workshops-booking .longest-label{
+        left: 90px !important;
+        text-align: right;
+        right: 20px;
+    }
    .question-workshop label{
        position: unset;
        font-size: 16px;

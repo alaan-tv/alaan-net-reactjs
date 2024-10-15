@@ -33,12 +33,18 @@ import DocumentMeta from 'react-document-meta';
 import { render } from 'react-dom';
 import ReactWhatsapp from 'react-whatsapp';
 import { Testimonial} from "../../Common-components/Card";
-import TistiImage1 from '../../../Assets/testi/5.png'
-import TistiImage2 from '../../../Assets/testi/6.png'
-import TistiImage3 from '../../../Assets/testi/3.png'
-import TistiImage4 from '../../../Assets/testi/1.png'
-import TistiImage6 from '../../../Assets/testi/2.png'
-import TistiImage7 from '../../../Assets/testi/4.png'
+import TistiImage1 from '../../../Assets/trainers/1.png'
+import TistiImage2 from '../../../Assets/trainers/2.png'
+import TistiImage3 from '../../../Assets/trainers/3.png'
+import TistiImage4 from '../../../Assets/trainers/4.png'
+import TistiImage5 from '../../../Assets/trainers/5.png'
+import TistiImage6 from '../../../Assets/trainers/6.png'
+import TistiImage7 from '../../../Assets/trainers/7.png'
+import TistiImage8 from '../../../Assets/trainers/8.png'
+import TistiImage9 from '../../../Assets/trainers/9.png'
+import TistiImage10 from '../../../Assets/trainers/10.png'
+
+
 import {responsive} from "../../../custom-functions";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -105,36 +111,45 @@ const JobProgram = () => {
 	const testimonialList = [
 		{
 			image: TistiImage1,
-			name: 'فهد سال',
-			desc: '“الصوتيات أساسية في السوشيال ميديا. دورة شاملة غطت التنغيم، درجات الصوت، الوقفات، والمعدات. استفدت كثيراً رغم خبرتي الطويلة في المجال. واحدة من أفضل الدورات التي أخذتها وتستحق كل درهم.”',
-			youtube: <><a  onClick={() => openVideoModel('alnQOvwSTuY') }>  مشاهدة رأي  <span> فهد سال</span> بالورشة </a></>,
+			name: ' أروى القيوضي',
+			desc: '  كتابة أول نص وتصوير أول فيديو والتعلم من خبرات كافة أعضاء الفريق، هي تجربة مميزة من جميع النواحي،و فرصة لاكتساب مهارات جديدة وتطوير القدرات الإعلامية بشكل عملي وفعال.',
 		}, {
 			image: TistiImage2,
-			name: 'محمد عبدلله',
-			desc: '“وجدت تعاوناً كبيراً من أول دقيقة في الورشة. تعرفت على نقاط قوتي وضعفي الصوتية، وتعلمت الهدوء والتلقائية. أستطيع الآن بناء استوديو منزلي والتواصل مع العملاء بفعالية. المجموعة كانت متعاونة.”',
-			youtube: <><a  onClick={() => openVideoModel('iFhnO4534aE') }>  مشاهدة رأي  <span> محمد عبدلله</span> بالورشة </a></>,
+			name: 'باسم جميل',
+			desc: '“ تجربتي في اخبار الان عطتني فرصة اني اصقل مهاراتي واكتشف ذاتي، وساعدتني اني اوقف قدام الكاميرا بكل ثقة.”',
 		}, {
 			image: TistiImage3,
-			name: ' عمرو بدوي',
-			desc: '“أنصح كل الشباب المقبلين على التعليق الصوتي بهذه الورشة بقيادة الأستاذ محمد علي. استمتعنا وتعلمنا أشياء كثيرة، وستكون بداية جديدة لمن سيأتي.”',
-			youtube: <><a  onClick={() => openVideoModel('M1RmWn4qiS4') }>  مشاهدة رأي  <span> عمرو بدوي</span> بالورشة </a></>,
+			name: '  ايمان المطيري',
+			desc: '“أود أن أوجه شكري وتقديري لاخبار الآن على فرصة التدريب الرائعة التي قدموها لي. لقد تعلمت الكثير من المهارات مثل كتابة النص والتصوير، مما ساهم في تطوير مهاراتي و زاد ثقتي بنفسي”',
 		}, {
 			image: TistiImage4,
-			name: ' ريم الحاجب ',
-			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”',
-			youtube: <><a  onClick={() => openVideoModel('MjN-iWHlKl4')
-				
-			 }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
+			name: '  جوري خزعل  ',
+			desc: '		“تجربتي بالان كانت حلوة، تعلمت فيها كيفية صناعة المحتوى من خلال كتابة النص و الوقوف أمام الكاميرا و غيرها .”'},
+		{
+			image: TistiImage5,
+			name: '  مظفر اسماعيل  ',
+			desc: '“تجربتي مع العمل كصانع محتوى طورك جانب التخطيط و التواصل المستمر لتحقيق محتوى ممتع وجذاب وطور مهارات عديدة ومنها توسع معرفتي بما يحدث في العالم يوميا”',
 		}, {
 			image: TistiImage6,
-			name: '  طارق جودة ',
-			desc: '“دورة رائعة شعرت وكأني في بيتي. استفدت كثيراً تقنياً وأداءً صوتياً. الحديث المتبادل مع المدرب أجاب عن كل استفساراتنا بعمق. المدرب محمد علي كان يعطي كل خبرته بصدق. فريق أخبار الآن كان متعاوناً.”',
-			youtube: <><a  onClick={() => openVideoModel('7RV-QEHODS0') }>   مشاهدة رأي  <span>  طارق جودة</span> بالورشة </a></>,
+			name: '  سارة خالد  ',
+			desc: '“تجربتي في اخبار الآن مميزة جدا لأنني تعلمت كيفية كتابة الآخبار وتحويل خبر يحمل الكثير من التفاصيل إلى قصة اخبارية قصيرة لنشرها على مواقع التواصل الاجتماعي.”',
 		},{
 			image: TistiImage7,
-			name: '  منى الخازن ',
-			desc: '“التعليق الصوتي شغفي القديم، ورشة محمد علي دفعتني للسفر من الدوحة إلى دبي. أربعة أيام فاقت توقعاتي بالمعلومات وتحسين الأداء. كانت تجربة مليئة بالألفة والتحدي والحماس، ولم أكن بحاجة لأي ورشة سوى هذه.”',
-			youtube: <><a  onClick={() => openVideoModel('NatnVeYDvX4') }>   مشاهدة رأي  <span> منى الخازن</span> بالورشة  </a></>,
+			name: '  أميرة الخطيب  ',
+			desc: '“لطالما كانت الكتابة هي شغفي، وفي قناة الآن، استطعت أن أوظِّف ذلك بما هو مفيد من كتابة المحتوى وحتى التقارير الصحفية”',
+		},{
+			image: TistiImage8,
+			name: '   ناصر عيسى ',
+			desc: '“التجربة جدا ممتازة مع أخبار الآن، القائمين عليه ساهموا باكتشاف وتطوير قدراتي بالكتابة والتحرير”',
+		}
+		,{
+			image: TistiImage10,
+			name: '   جميل بدر',
+			desc: '“من مهندس كيماء حيوية إلى مقدم محتوى، سعيد أن أول تجربة كانت مع أخبار الآن تعلمت فيها التعامل مع الكاميرا أمام الجميع و أعطتني فرصة كتابة نصوص كنت جدا شغوف فيها منذ الصغر.”',
+		},{
+			image: TistiImage9,
+			name: '   عبدالحكيم حسين ',
+			desc: '“اختصاصي هو التسويق والسيارات، تجربتي مع أخبار الآن ساعدتني على اكتشاف شغفي بالإعلام، وكانت فرصة رائعة لتعلم مهارات جديدة في بيئة داعمة.”',
 		}
 	];
 	const [value, setValue] = React.useState(0);
@@ -233,19 +248,16 @@ const JobProgram = () => {
 	 *  Content Object
 	 *
 	 */
-	const youWillGetList = [{desc: 'فهم مشهد العام لمجال التعليق الصوتي والاستقرار على تخصصك الفريد.'}, {desc: 'فهم عناصر التعليق الصوتي الناجح وكيفية التحكم بها بشكل صحيح.     '}, {desc: 'التسجيل والتعديل الصوتي باستخدام المعدات الاحترافية.       '}, {desc: 'اكتشاف نقاط القوة والضعف في الأداء والعمل على تصحيح الأخطاء.'}, {desc: 'معرفة كيف تجهّز الاستوديو المنزلي الاحترافي الخاص بك.'}, {desc: 'فهم أساسيات الهندسة الصوتية لصناعة تسجيل متكامل.        '}, {desc: 'فهم سوق العمل وكيفية الحصول على أعمال صوتية.'}, {desc: 'الاستعداد الجيّد للتسجيل والتعامل الاحترافي داخل الاستوديو.        '}, {desc: 'فهم كيفية بناء شبكة علاقات جيّدة مع العملاء والمنتجين والمحافظة عليها.'}, {desc: 'فهم طرق التسويق الفعّالة للمعلّق الصوتي.'},];
+	const youWillGetList = [{desc: 'تطوير القدرة على تحديد الأفكار القصصية المثيرة وتحويلها إلى محتوى إعلامي فعال'}, {desc: 'فهم كيفية جمع وتحليل المعلومات من مصادر موثوقة ومباشرة لبناء تقارير دقيقة     '}, {desc: 'تحسين مهارات صياغة المقالات والتقارير بطريقة جذابة وواضحة'}, {desc: 'تطوير القدرة على جمع البيانات وتوثيق المعلومات بشكل مباشر من قلب الحدث'}, {desc: 'تعلم تقنيات إجراء مقابلات ناجحة تساهم في إثراء المحتوى الصحفي'}, {desc: 'فهم خطوات إنتاج الفيديوهات الإعلامية من مرحلة التصوير إلى مرحلة التحرير        '}, {desc: '  تعلم كيفية التحدث بوضوح وثقة أمام الكاميرا لعرض الأخبار والمحتوى'}, {desc: 'امتلاك المتدربون محفظة أعمال تحتوي على قصصهم المكتوبة والمحتويات التي أنجزوها      '}, {desc: ' تعلم مهارات التحقيق والبحث العميق في المواضيع الصحفية لكشف الحقائق'}, {desc: ' تطوير استراتيجيات مبتكرة للوصول إلى الجمهور وجذب الانتباه عبر منصات التواصل الاجتماعي'},];
 
 	const howItWorkList = [{
-		subtitle: "اليوم الأول", desc: " فهم أساسيات مجال التعليق الصوتي، مع تدريبات عملية لتطوير الآداء.        "
+		subtitle: " الشهر الأول: التعريف بمهارات الصحافة الأساسية ", desc: " تعرف على أساسيات الصحافة وأهميتها، واكتشف أنواعها المختلفة مثل الأخبار، التقارير، والتحقيقات. تعلم المبادئ الأخلاقية والمسؤوليات التي يجب على الصحفيين الالتزام بها. ستتعرف أيضًا على الصحافة الاستقصائية وما يميزها، وكيفية كتابة تقرير استقصائي متكامل. ستتعلم مهارات جمع الأخبار واكتشاف القصص باستخدام أدوات مثل الإنترنت، الأرشيفات، والمقابلات، بالإضافة إلى كيفية تحليل البيانات للعثور على قصص جديدة. كما ستتعرف على كيفية العثور على المصادر وتقييم مصداقيتها وبناء شبكة من المصادر الموثوقة. في النهاية، ستشارك في ورشة عمل لاكتشاف قدراتك الشخصية وتطويرها، بإشراف مدرب متخصص. "
 	}, {
-		subtitle: "اليوم الثاني",
-		desc: ' تجهيز الاستوديو المنزلي الاحترافي من الألف إلى الياء، مع تدريبات تطبيقية لتطوير الآداء الصوتي.        '
+		subtitle: "الشهر الثاني: الكتابة - الكتابة واستخدام وسائل التواصل الاجتماعي ",
+		desc: ' ستتعلم كيفية كتابة تقارير استقصائية بفعالية، مع التركيز على اختيار العناوين الجذابة وكتابة المقدمات المشوقة، بالإضافة إلى استخدام لغة واضحة ودقيقة. كما ستكتسب مهارات استخدام وسائل التواصل الاجتماعي للعثور على الأخبار والمصادر، مع فهم الأخلاقيات اللازمة وتطوير محتوى جذاب على هذه المنصات. ستتعرف أيضًا على تقنيات إجراء مختلف أنواع المقابلات، سواء كانت شخصية، عبر الهاتف، أو البريد الإلكتروني، مع التدريب على طرح الأسئلة المناسبة وإدارة المواقف الصعبة. بالنسبة للصحفيين الاستقصائيين، ستتعلم كيفية استخدام أدوات التواصل الاجتماعي في البحث والتحقق من المعلومات. في النهاية، ستشارك في ورشة عمل لتطوير الشخصية الإعلامية بإشراف مدرب مختص. '
 	}, {
-		subtitle: "اليوم الثالث",
-		desc: ' تعلم أساسيات التسجيل والتعديل الصوتي  وأساسيات الهندسة الصوتية بشكل عملي وإنتاج ملف صوتي عالي الجودة.    '
-	}, {
-		subtitle: "اليوم الرابع",
-		desc: '  تسجيل مشاريع التخرّج واكتساب مهارات ما بعد الإنتاج وتعلم استراتيجيات التسويق الفعّالة لاستكشاف فرص تحقيق الربح.        '
+		subtitle: " الشهر الثالث: العرض",
+		desc: '  كيفية نشر المحتوى بصورته النهائية  عبر صفحات أخبار الآن على كافة منصات التواصل الاجتماعي (انستغرام- فيسبوك- تويتر -تيكتوك) و سيتيح لك التدريب مشاركة الفيديوهات على حساباتك الخاصة لتكون على اتصال مباشر مع الجمهور لتتمكن من بناء قاعدة جماهيرية.'
 	},];
 
 
@@ -269,7 +281,7 @@ const JobProgram = () => {
 		<DocumentMeta {...meta} />
 		<div className='home-container'>
 			<Header/>
-			<div className="home-banner-container">
+			<div className="home-banner-container job-program-hero">
 				<div className='hero-workshop-section podcast-hero'>
 					<div className='hero-text'>
 						<h1 className='training-heading podcast-heading'> برنامج التدريب الإعلامي المتكامل</h1>
@@ -283,14 +295,13 @@ const JobProgram = () => {
         <a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
 		</div>
 		<div className='training-details'>
-						<div className='workshop-date'><EventIcon/> <p> مدة البرنامج التدريبي : 6 أشهر </p></div>
+						<div className='workshop-date'><EventIcon/> <p> مدة البرنامج التدريبي : 3 أشهر </p></div>
 						<div className='workshop-date'><EmojiPeopleIcon/> <p> الحضور : 3 مرات في الأسبوع/4 ساعات يوميا (مرن)</p></div>
 						<div className='workshop-date'><ListAltIcon/> <p>الخطة التدريبية :</p></div>
 						<div className='workshop-date'> <p> الشهر الأول : التعريف بمهارات الصحافة الأساسية <span className='price-month'> (التكلفة : 5000 درهم اماراتي)</span></p></div>
 
 						<div className='workshop-date'> <p> الشهر الثاني :    الكتابة و استخدام وسائل التواصل الاجتماعي <span className='price-month'> (التكلفة : 5000 درهم اماراتي)</span></p></div>
 						<div className='workshop-date'> <p> الشهر الثالث :    العرض <span className='price-month'> (التكلفة : 5000 درهم اماراتي)</span></p></div>
-						<div className='workshop-date'> <p> الشهر الرابع و الخامس و السادس :    الممارسة <span className='price-month'> (التكلفة :مجانا)</span></p></div>
 
 </div>
 						<a href='#contact-form'>
@@ -298,7 +309,7 @@ const JobProgram = () => {
 						</a>
 					</div>
 					<div className='video-section'>
-						<video style={{background: '#000'}} src='https://cdn.alaan.tv/2024/07/05/20240705-1720188254288-original.mp4' muted loop controls/>
+						<video style={{background: '#000'}} src='https://cdn.alaan.tv/2024/10/14/20241014-1728906333981-original.mp4' muted loop controls/>
 					</div>
 				</div>
 			</div>
@@ -313,7 +324,7 @@ const JobProgram = () => {
 					
 				</div>
 				<div className='workshop-features-section'>
-					<h2 className='light-heading'>بنهاية هذه الورشة ستكون قادرًا على
+					<h2 className='light-heading'>بنهاية هذا التدريب  ستكون قادرًا على
 					</h2>
 					<div className='features features-wrap'>
 						{youWillGetList.map((item, i) => <Feature key={i} item={item}/>)}
@@ -323,15 +334,16 @@ const JobProgram = () => {
 			{/*<div className='video-section'>
 				<video height={480} style={{background: '#000'}} src='https://cdn.alaan.tv/2024/07/05/20240705-1720188254288-original.mp4' muted loop controls/>
 </div>*/}
+<div className='program-process'>
 			<div className='workshop-features-section'>
 				<h2 className='light-heading'>
-					مقابل 5,000 درهم لمدة ثلاثة أشهر و 3 أشهر مجانية اليك الخطة التدريبية
+				مقابل 15,000 درهم لمدة ثلاثة أشهر , كل شهر 5,000 درهم إليك الخطة التدريبية: 
 				</h2>
 				<div className='features training-features'>
 					{howItWorkList.map((item, i) => <Feature key={i} item={item}/>)}
 				</div>
 			</div>
-			
+			</div>
 
 			<div className='testimonials'>
 					<h2 className='primary-heading'> آراء متدربينا </h2>
@@ -403,37 +415,39 @@ const JobProgram = () => {
 								onChange={handleOnChange}/>
 							<div className="input-wrapper">
 								<label for="first"> الجنسية</label>
-								<input type="email" name='email' value={inputs.nationality || ""} onChange={handleChange}
+								<input type="text" name='Nationality' value={inputs.nationality || ""} onChange={handleChange}
 								       placeholder='أدخل جنسيتك   ' required/>
 							</div>
 							<div className="input-wrapper">
 								<label for="first"> مكان الاقامة</label>
-								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								<input type="text" name='Current Residence' value={inputs.residence || ""} onChange={handleChange}
 								       placeholder='أدخل مكان اقامتك الحالي    ' required/>
 							</div>
 							<div className="input-wrapper">
 								<label for="first"> تاريخ ميلادك</label>
-								<input type="date" name='dob' value={inputs.residence || ""} onChange={handleChange}
+								<input type="date" name='dob' value={inputs.dob || ""} onChange={handleChange}
 								       placeholder='   ' required/>
 							</div>
+							
 							<div className="input-wrapper">
 								<label for="first">  الحالة الدراسية</label>
-								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								<input type="text" name='Education Level' value={inputs.education || ""} onChange={handleChange}
 								       placeholder='   ' required/>
 							</div>
 							<div className="input-wrapper">
 								<label for="first"> مجال الدراسة </label>
-								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								<input type="text" name='Field of Study' value={inputs.field || ""} onChange={handleChange}
+								       placeholder='   ' required/>
+							</div>
+							
+							<div className="input-wrapper">
+								<label for="first" className='long-label'>  متى يمكنك الانضمام الى البرنامج؟</label>
+								<input type="text" name='joining time' value={inputs.joining || ""} onChange={handleChange}
 								       placeholder='   ' required/>
 							</div>
 							<div className="input-wrapper">
-								<label for="first">  متى يمكنك الانضمام الى البرنامج؟</label>
-								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
-								       placeholder='   ' required/>
-							</div>
-							<div className="input-wrapper">
-								<label for="first"> هل أنت مرتاح مع الحضور في مقر القناة في دبي 3 مرات أسبوعيا؟ </label>
-								<input type="email" name='email' value={inputs.residence || ""} onChange={handleChange}
+								<label for="first" className='longest-label'> هل أنت مرتاح مع الحضور في مقر القناة في دبي 3 مرات أسبوعيا؟ </label>
+								<input type="text" name='commuting to Dubai' value={inputs.commuting || ""} onChange={handleChange}
 								       placeholder='   ' required/>
 							</div>
 							
