@@ -412,3 +412,6 @@ padding: 0px
 .training-details{
     margin: 0 0 20px 0;
 }
+#job-prgoram-page input{
+    line-height: normal;
+}
