@@ -109,6 +109,20 @@ const WorkshopsArabic = () => {
             </div>
             <div className='sevice-more-icon'><Link to="/our-workshops/voice-over"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
+              <div className='service-card'>
+              <img src={MediaWorkshopIcon} alt='magic touch icon'/>
+              <h2 className='third-heading' >
+برنامج التدريب الاعلامي                   </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              هل أنت مستعد لتحويل قصتك الى نجاح اعلامي؟
+
+كن معنا في برنامج التدريب الاعلامي  
+            </p>
+              
+            </div>
+            <div className='sevice-more-icon'><Link to="/our-workshops/media-training-program"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
             </div>
           
            </div>

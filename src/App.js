@@ -56,7 +56,7 @@ function App() {
 					<Route path="/ar" element={<AR/>}></Route>
 
 					<Route path="*" element={<Page404/>} />
-					<Route path="/our-workshops/job-program" element={<JobProgram/>}/>
+					<Route path="/our-workshops/media-training-program" element={<JobProgram/>}/>
 
 				</Routes>
 			</div>

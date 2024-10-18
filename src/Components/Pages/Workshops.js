@@ -105,6 +105,17 @@ const Workshops = () => {
               <div className='sevice-more-icon'><Link to="/our-workshops/voice-over"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
               </div>
             </div>
+            <div className='service-card'>
+              <img src={MediaWorkshopIcon} alt='magic touch icon'/>
+              <h2 className='third-heading' >
+              Media Training Program      </h2>
+              <div className='service-desc'>
+              <p className='third-text'>
+              Master the Art of Storytelling with Expert Media Training!
+</p>
+              <div className='sevice-more-icon'><Link to="/our-workshops/media-training-program"><img src={ServiceMoreIcon} alt="More Icon" /></Link></div>
+              </div>
+            </div>
             </div>
           
            </div>
