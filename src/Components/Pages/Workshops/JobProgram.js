@@ -184,7 +184,7 @@ const JobProgram = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location = '/our-workshops/job-program/thank-you';
+					window.location = '/our-workshops/media-training-program/thank-you';
 				}
 			}).catch(error => console.error(error));
 
