@@ -175,7 +175,7 @@ const JobProgram = () => {
 				...inputs,
 				phone: phone.number,
 				country: phone.country,
-				lp_type: 'job-program-workshop',
+				lp_type: 'media-training-program',
 				page_url: page_url,
 			}),
 		})
