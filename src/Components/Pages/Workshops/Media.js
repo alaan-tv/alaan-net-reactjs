@@ -205,7 +205,7 @@ const Media = () => {
 								<PhoneInput
 									inputProps={{pattern: ".{12,25}",}}
 									specialLabel="رقم الهاتف"
-									placeholder="Enter phone number"
+									placeholder="Enter phone number"  
 									value={phone.number}
 									country={'ae'}
 									onChange={handleOnChange}/>
