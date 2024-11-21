@@ -127,7 +127,7 @@ const VoiceOver = () => {
 		}
 	];
 	const [value, setValue] = React.useState(0);
-	const options = [ 'نوفمبر: الأيام 16 ، 17 ،23 , 24 '];
+	const options = [ 'ديسمبر: 28,29 - يناير: 4,5'];
 	const defaultOption = options[0];
 
 	const handleChange1 = (event, newValue) => {
@@ -279,17 +279,17 @@ const VoiceOver = () => {
 							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
 								
 								
-								<Tab label="نوفمبر" {...a11yProps(0)} />
+								<Tab label="ديسمبر" {...a11yProps(0)} />
 							</Tabs>
 						</Box>
 						
 						
 						
 						<CustomTabPanel value={value} index={0}>
-							<p> اليوم الأول :السبت 16 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثاني :الأحد 17 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثالث :السبت 23 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الرابع :الأحد 24 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الأول :السبت 28 ديسمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثاني :الأحد 29 ديسمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثالث :السبت 4 يناير من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الرابع :الأحد 5 يناير من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 						</CustomTabPanel>
 
 
