@@ -44,7 +44,7 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoModal from "../../Common-components/VideoModal";
 function CustomTabPanel(props) {
 	const {children, value, index, ...other} = props;
-	
+
 	return (<div
 		role="tabpanel"
 		hidden={value !== index}
@@ -58,7 +58,7 @@ function CustomTabPanel(props) {
 	</div>);
 }
 
-  
+
 CustomTabPanel.propTypes = {
 	children: PropTypes.node, index: PropTypes.number.isRequired, value: PropTypes.number.isRequired,
 };
@@ -70,7 +70,7 @@ function a11yProps(index) {
 }
 
 const VoiceOver = () => {
-	
+
 	var settings = {
 		autoplay: true,
 		dots: true,
@@ -112,8 +112,8 @@ const VoiceOver = () => {
 			name: ' ريم الحاجب ',
 			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”',
 			youtube: <><a  onClick={() => openVideoModel('MjN-iWHlKl4')
-				
-			 }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
+
+			}>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
 		}, {
 			image: TistiImage6,
 			name: '  طارق جودة ',
@@ -127,7 +127,7 @@ const VoiceOver = () => {
 		}
 	];
 	const [value, setValue] = React.useState(0);
-	const options = [ 'نوفمبر: الأيام 16 ، 17 ،23 , 24 '];
+	const options = [ 'ديسمبر: 28,29 - يناير: 4,5'];
 	const defaultOption = options[0];
 
 	const handleChange1 = (event, newValue) => {
@@ -222,7 +222,7 @@ const VoiceOver = () => {
 	 *  Content Object
 	 *
 	 */
-	const youWillGetList = [{desc: 'فهم المشهد  العام لمجال التعليق الصوتي والاستقرار على تخصصك الفريد.'}, {desc: 'فهم عناصر التعليق الصوتي الناجح وكيفية التحكم بها بشكل صحيح.     '}, {desc: 'التسجيل والتعديل الصوتي باستخدام المعدات الاحترافية.       '}, {desc: 'اكتشاف نقاط القوة والضعف في الأداء والعمل على تصحيح الأخطاء.'}, {desc: 'معرفة كيف تجهّز الاستوديو المنزلي الاحترافي الخاص بك.'}, {desc: 'فهم أساسيات الهندسة الصوتية لصناعة تسجيل متكامل.        '}, {desc: 'فهم سوق العمل وكيفية الحصول على أعمال صوتية.'}, {desc: 'الاستعداد الجيّد للتسجيل والتعامل الاحترافي داخل الاستوديو.        '}, {desc: 'فهم كيفية بناء شبكة علاقات جيّدة مع العملاء والمنتجين والمحافظة عليها.'}, {desc: 'فهم طرق التسويق الفعّالة للمعلّق الصوتي.'},];
+	const youWillGetList = [{desc: 'فهم مشهد العام لمجال التعليق الصوتي والاستقرار على تخصصك الفريد.'}, {desc: 'فهم عناصر التعليق الصوتي الناجح وكيفية التحكم بها بشكل صحيح.     '}, {desc: 'التسجيل والتعديل الصوتي باستخدام المعدات الاحترافية.       '}, {desc: 'اكتشاف نقاط القوة والضعف في الأداء والعمل على تصحيح الأخطاء.'}, {desc: 'معرفة كيف تجهّز الاستوديو المنزلي الاحترافي الخاص بك.'}, {desc: 'فهم أساسيات الهندسة الصوتية لصناعة تسجيل متكامل.        '}, {desc: 'فهم سوق العمل وكيفية الحصول على أعمال صوتية.'}, {desc: 'الاستعداد الجيّد للتسجيل والتعامل الاحترافي داخل الاستوديو.        '}, {desc: 'فهم كيفية بناء شبكة علاقات جيّدة مع العملاء والمنتجين والمحافظة عليها.'}, {desc: 'فهم طرق التسويق الفعّالة للمعلّق الصوتي.'},];
 
 	const howItWorkList = [{
 		subtitle: "اليوم الأول", desc: " فهم أساسيات مجال التعليق الصوتي، مع تدريبات عملية لتطوير الآداء.        "
@@ -254,7 +254,7 @@ const VoiceOver = () => {
 	},];
 
 	return (<div style={{overflow_x: 'hidden'}} className='arabic-page voice-page'>
-		
+
 		<DocumentMeta {...meta} />
 		<div className='home-container'>
 			<Header/>
@@ -269,27 +269,27 @@ const VoiceOver = () => {
 							عبر تطبيق زووم
 						</p>
 						<div className='cta-buttons'>
-						<ReactWhatsapp className='whats-button'  number="971-525-06-0035" > <img src={WhatsIcon} /> </ReactWhatsapp>
-<br />
-        <a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
-		</div>
-		
+							<ReactWhatsapp className='whats-button'  number="971-525-06-0035" > <img src={WhatsIcon} /> </ReactWhatsapp>
+							<br />
+							<a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
+						</div>
+
 						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: </p></div>
 						<Box sx={{borderBottom: 0, borderColor: 'divider'}}>
 							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
-								
-								
-								<Tab label="نوفمبر" {...a11yProps(0)} />
+
+
+								<Tab label="ديسمبر" {...a11yProps(0)} />
 							</Tabs>
 						</Box>
-						
-						
-						
+
+
+
 						<CustomTabPanel value={value} index={0}>
-							<p> اليوم الأول :السبت 16 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثاني :الأحد 17 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الثالث :السبت 23 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
-							<p> اليوم الرابع :الأحد 24 نوفمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الأول :السبت 28 ديسمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثاني :الأحد 29 ديسمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الثالث :السبت 4 يناير من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
+							<p> اليوم الرابع :الأحد 5 يناير من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 						</CustomTabPanel>
 
 
@@ -351,18 +351,18 @@ const VoiceOver = () => {
 			</div>
 
 			<div className='testimonials'>
-					<h2 className='primary-heading'> آراء متدربينا </h2>
-					<div className=''>
+				<h2 className='primary-heading'> آراء متدربينا </h2>
+				<div className=''>
 					<Slider {...settings}>
-				
-    
-				{testimonialList.map((item, i) =><Testimonial key={i} item={item}/>)}
-				
-			  
-			  </Slider>
-</div>
-</div>
-				{/*<Carousel
+
+
+						{testimonialList.map((item, i) =><Testimonial key={i} item={item}/>)}
+
+
+					</Slider>
+				</div>
+			</div>
+			{/*<Carousel
 					swipeable={false}
 					draggable={false}
 					showDots={true}
@@ -381,7 +381,7 @@ const VoiceOver = () => {
 				>
 					{testimonialList.map((item, i) => <Testimonial key={i} item={item}/>)}
 				</Carousel>*/}
-				
+
 			<div className='booking workshops-booking' id="contact-form">
 				<div className='left-section'>
 					<div className='left-section-container'>
