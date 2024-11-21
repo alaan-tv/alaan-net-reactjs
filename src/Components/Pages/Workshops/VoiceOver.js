@@ -44,7 +44,7 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoModal from "../../Common-components/VideoModal";
 function CustomTabPanel(props) {
 	const {children, value, index, ...other} = props;
-	
+
 	return (<div
 		role="tabpanel"
 		hidden={value !== index}
@@ -58,7 +58,7 @@ function CustomTabPanel(props) {
 	</div>);
 }
 
-  
+
 CustomTabPanel.propTypes = {
 	children: PropTypes.node, index: PropTypes.number.isRequired, value: PropTypes.number.isRequired,
 };
@@ -70,7 +70,7 @@ function a11yProps(index) {
 }
 
 const VoiceOver = () => {
-	
+
 	var settings = {
 		autoplay: true,
 		dots: true,
@@ -112,8 +112,8 @@ const VoiceOver = () => {
 			name: ' ريم الحاجب ',
 			desc: '“شكراً جزيلاً لكم، أخذت ورشات عديدة لكن ورشة أخبار الآن كانت الأكثر إفادة وكثافة بالمعلومات، سواء كنت مبتدئاً أو لديك خبرة. استطاعوا تبسيط المعلومات وإيصالها بشكل ممتاز.”',
 			youtube: <><a  onClick={() => openVideoModel('MjN-iWHlKl4')
-				
-			 }>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
+
+			}>  مشاهدة رأي  <span>ريم الحاجب</span> بالورشة </a></>,
 		}, {
 			image: TistiImage6,
 			name: '  طارق جودة ',
@@ -254,7 +254,7 @@ const VoiceOver = () => {
 	},];
 
 	return (<div style={{overflow_x: 'hidden'}} className='arabic-page voice-page'>
-		
+
 		<DocumentMeta {...meta} />
 		<div className='home-container'>
 			<Header/>
@@ -269,22 +269,22 @@ const VoiceOver = () => {
 							عبر تطبيق زووم
 						</p>
 						<div className='cta-buttons'>
-						<ReactWhatsapp className='whats-button'  number="971-525-06-0035" > <img src={WhatsIcon} /> </ReactWhatsapp>
-<br />
-        <a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
-		</div>
-		
+							<ReactWhatsapp className='whats-button'  number="971-525-06-0035" > <img src={WhatsIcon} /> </ReactWhatsapp>
+							<br />
+							<a  href='tel:+971 525 06 0035'><img className='whats-button' src={CallIcon} /></a>
+						</div>
+
 						<div className='workshop-date'><EventIcon/> <p> تاريخ ومواعيد الورشات القادمة: </p></div>
 						<Box sx={{borderBottom: 0, borderColor: 'divider'}}>
 							<Tabs value={value} onChange={handleChange1} aria-label="basic tabs example">
-								
-								
+
+
 								<Tab label="ديسمبر" {...a11yProps(0)} />
 							</Tabs>
 						</Box>
-						
-						
-						
+
+
+
 						<CustomTabPanel value={value} index={0}>
 							<p> اليوم الأول :السبت 28 ديسمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
 							<p> اليوم الثاني :الأحد 29 ديسمبر من الساعة 12 ظهرا الى الساعة 4 ظهرا</p>
@@ -351,18 +351,18 @@ const VoiceOver = () => {
 			</div>
 
 			<div className='testimonials'>
-					<h2 className='primary-heading'> آراء متدربينا </h2>
-					<div className=''>
+				<h2 className='primary-heading'> آراء متدربينا </h2>
+				<div className=''>
 					<Slider {...settings}>
-				
-    
-				{testimonialList.map((item, i) =><Testimonial key={i} item={item}/>)}
-				
-			  
-			  </Slider>
-</div>
-</div>
-				{/*<Carousel
+
+
+						{testimonialList.map((item, i) =><Testimonial key={i} item={item}/>)}
+
+
+					</Slider>
+				</div>
+			</div>
+			{/*<Carousel
 					swipeable={false}
 					draggable={false}
 					showDots={true}
@@ -381,7 +381,7 @@ const VoiceOver = () => {
 				>
 					{testimonialList.map((item, i) => <Testimonial key={i} item={item}/>)}
 				</Carousel>*/}
-				
+
 			<div className='booking workshops-booking' id="contact-form">
 				<div className='left-section'>
 					<div className='left-section-container'>

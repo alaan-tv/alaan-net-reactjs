@@ -166,7 +166,7 @@ const JobProgram = () => {
 			...inputs,
 			phone: phone.number,
 			country: phone.country,
-			lp_type: 'job-program-workshop',
+			lp_type: 'media-training-program',
 			page_url: page_url,
 		});
 
@@ -175,7 +175,7 @@ const JobProgram = () => {
 				...inputs,
 				phone: phone.number,
 				country: phone.country,
-				lp_type: 'job-program-workshop',
+				lp_type: 'media-training-program',
 				page_url: page_url,
 			}),
 		})
@@ -184,7 +184,7 @@ const JobProgram = () => {
 				setInputs({});
 				setPhone('971');
 				if (data.id) {
-					window.location = '/our-workshops/job-program/thank-you';
+					window.location = '/our-workshops/media-training-program/thank-you';
 				}
 			}).catch(error => console.error(error));
 
