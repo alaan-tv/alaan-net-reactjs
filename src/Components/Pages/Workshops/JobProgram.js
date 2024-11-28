@@ -378,8 +378,14 @@ const JobProgram = () => {
 								       placeholder='' required/>
 							</div>
 							<div className="input-wrapper">
-								<label className='longest-label'> هل أنت مرتاح مع الحضور في مقر القناة في دبي 3 مرات
-									أسبوعيا؟ </label>
+								<label className='longest-label'> هل يناسبك الحضور لمقر القناة في دبي 3 مرات أسبوعياً؟
+
+
+
+
+
+
+</label>
 								<input type="text" name='commuting' value={inputs.commuting || ""}
 								       onChange={handleChange}
 								       placeholder='' required/>
