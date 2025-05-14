@@ -402,6 +402,12 @@ padding: 0px
     .slick-prev:before, .slick-next:before{
         display: none !important;
     }
+    .workshops-booking .long-label{
+        left: 100px !important;
+    }
+    .workshops-booking .longest-label{
+        left: 10px !important;
+    }
 }
 .price-month{
     color:  #000
