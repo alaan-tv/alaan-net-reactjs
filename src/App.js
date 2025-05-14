@@ -18,6 +18,7 @@ import PersonalBranding2 from './Components/Pages/Workshops/PersonalBranding';
 import LivingByDesign from './Components/Pages/Services/LivingByDesign';
 import SetByDesign from './Components/Pages/Services/SetByDesign';
 import ThankYou from './Components/Pages/ThankYou';
+import Mosabaqa from './Components/Pages/Mosabaqa';
 import Page404 from './Components/Pages/Page404';
 import ProfessionalCoaching from './Components/Pages/Services/ProfessionalCoaching';
 import LBDTerms from './Components/Common-components/TermsLBD'
@@ -57,6 +58,8 @@ function App() {
 
 					<Route path="*" element={<Page404/>} />
 					<Route path="/our-workshops/media-training-program" element={<JobProgram/>}/>
+
+					<Route path="/mosabaqa" element={<Mosabaqa/>}/>
 
 				</Routes>
 			</div>
